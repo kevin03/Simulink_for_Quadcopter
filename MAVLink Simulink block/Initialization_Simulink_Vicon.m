@@ -13,7 +13,7 @@ Client.LoadViconDataStreamSDK();
 
 %% Program options
 % 
-HostName = '10.0.0.1';
+HostName = 'localhost';
 
 % Make a new client
 global MyClient;
