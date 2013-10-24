@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1466"
+    ComputedModelVersion    "1.1470"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "admin"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 24 09:49:23 2013"
-  RTWModifiedTimeStamp	  304508168
-  ModelVersionFormat	  "1.%<AutoIncrement:1466>"
+  LastModifiedDate	  "Thu Oct 24 11:09:33 2013"
+  RTWModifiedTimeStamp	  304511609
+  ModelVersionFormat	  "1.%<AutoIncrement:1470>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1697,7 +1697,7 @@ Model {
 	  System {
 	    Name		    "Trajectory Logic"
 	    Location		    [10, 82, 950, 995]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1833,8 +1833,8 @@ Model {
 	      BlockType		      SubSystem
 	      Name		      "UAV SF"
 	      SID		      "572"
-	      Ports		      [7, 4]
-	      Position		      [205, 49, 340, 401]
+	      Ports		      [8, 4]
+	      Position		      [205, 51, 340, 404]
 	      ErrorFcn		      "Stateflow.Translate.translate"
 	      PermitHierarchicalResolution "ExplicitOnly"
 	      TreatAsAtomicUnit	      on
@@ -1870,60 +1870,68 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"69"
+		SIDHighWatermark	"70"
 		Block {
 		  BlockType		  Inport
-		  Name			  "Pos"
-		  SID			  "572::20"
+		  Name			  "RC"
+		  SID			  "572::70"
 		  Position		  [20, 101, 40, 119]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "PerchPos"
-		  SID			  "572::23"
+		  Name			  "Pos"
+		  SID			  "572::20"
 		  Position		  [20, 136, 40, 154]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "PerchError"
-		  SID			  "572::36"
+		  Name			  "PerchPos"
+		  SID			  "572::23"
 		  Position		  [20, 171, 40, 189]
 		  Port			  "3"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "draw"
-		  SID			  "572::41"
+		  Name			  "PerchError"
+		  SID			  "572::36"
 		  Position		  [20, 206, 40, 224]
 		  Port			  "4"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "Heightcontrol"
-		  SID			  "572::67"
+		  Name			  "draw"
+		  SID			  "572::41"
 		  Position		  [20, 246, 40, 264]
 		  Port			  "5"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "Scale_Factor"
-		  SID			  "572::68"
+		  Name			  "Heightcontrol"
+		  SID			  "572::67"
 		  Position		  [20, 281, 40, 299]
 		  Port			  "6"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "yoffset"
-		  SID			  "572::69"
+		  Name			  "Scale_Factor"
+		  SID			  "572::68"
 		  Position		  [20, 316, 40, 334]
 		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "yoffset"
+		  SID			  "572::69"
+		  Position		  [20, 351, 40, 369]
+		  Port			  "8"
 		  IconDisplay		  "Port number"
 		}
 		Block {
@@ -1939,11 +1947,11 @@ Model {
 		  Name			  " SFunction "
 		  SID			  "572::7"
 		  Tag			  "Stateflow S-Function WK_MaoBi_Redited_22102013_Offline 3"
-		  Ports			  [7, 5]
-		  Position		  [180, 136, 230, 344]
+		  Ports			  [8, 5]
+		  Position		  [180, 138, 230, 347]
 		  FunctionName		  "sf_sfun"
 		  Parameters		  "DeltaT,H0,Kl,PI"
-		  PortCounts		  "[7 5]"
+		  PortCounts		  "[8 5]"
 		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
@@ -2008,46 +2016,52 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "Pos"
+		  SrcBlock		  "RC"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "PerchPos"
+		  SrcBlock		  "Pos"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "PerchError"
+		  SrcBlock		  "PerchPos"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  3
 		}
 		Line {
-		  SrcBlock		  "draw"
+		  SrcBlock		  "PerchError"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
-		  SrcBlock		  "Heightcontrol"
+		  SrcBlock		  "draw"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
-		  SrcBlock		  "Scale_Factor"
+		  SrcBlock		  "Heightcontrol"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
-		  SrcBlock		  "yoffset"
+		  SrcBlock		  "Scale_Factor"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
+		}
+		Line {
+		  SrcBlock		  "yoffset"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  8
 		}
 		Line {
 		  Name			  "PosDesired"
@@ -2168,7 +2182,7 @@ Model {
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      1
-	      Points		      [5, 0]
+	      Points		      [0, -5; 5, 0]
 	      Branch {
 		DstBlock		"PosRefSystem"
 		DstPort			1
@@ -2184,7 +2198,9 @@ Model {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [95, 0; 0, -20; 10, 0]
+	      Points		      [95, 0]
+	      DstBlock		      "UAV SF"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
@@ -2198,12 +2214,12 @@ Model {
 	      SrcPort		      1
 	      Points		      [0, -60; 125, 0]
 	      DstBlock		      "UAV SF"
-	      DstPort		      2
+	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      3
-	      Points		      [0, -40]
+	      Points		      [0, -45]
 	      DstBlock		      "Mode"
 	      DstPort		      1
 	    }
@@ -2242,21 +2258,21 @@ Model {
 	      SrcBlock		      "Mux"
 	      SrcPort		      1
 	      DstBlock		      "UAV SF"
-	      DstPort		      1
+	      DstPort		      2
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      4
-	      Points		      [0, -60]
+	      Points		      [0, -65]
 	      DstBlock		      "PWM"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Landing Error"
 	      SrcPort		      1
-	      Points		      [60, 0; 0, -155]
+	      Points		      [60, 0; 0, -125]
 	      DstBlock		      "UAV SF"
-	      DstPort		      3
+	      DstPort		      4
 	    }
 	    Line {
 	      SrcBlock		      "PosRefSystem"
@@ -2289,30 +2305,30 @@ Model {
 	    Line {
 	      SrcBlock		      "draw"
 	      SrcPort		      1
-	      Points		      [0, -15; 110, 0; 0, -135]
-	      DstBlock		      "UAV SF"
-	      DstPort		      4
-	    }
-	    Line {
-	      SrcBlock		      "Height"
-	      SrcPort		      1
-	      Points		      [60, 0; 0, -155]
+	      Points		      [0, -15; 110, 0; 0, -110]
 	      DstBlock		      "UAV SF"
 	      DstPort		      5
 	    }
 	    Line {
-	      SrcBlock		      "Scale"
+	      SrcBlock		      "Height"
 	      SrcPort		      1
-	      Points		      [70, 0; 0, -160]
+	      Points		      [60, 0; 0, -135]
 	      DstBlock		      "UAV SF"
 	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Scale"
+	      SrcPort		      1
+	      Points		      [70, 0; 0, -145]
+	      DstBlock		      "UAV SF"
+	      DstPort		      7
 	    }
 	    Line {
 	      SrcBlock		      "y offset"
 	      SrcPort		      1
 	      Points		      [125, 0]
 	      DstBlock		      "UAV SF"
-	      DstPort		      7
+	      DstPort		      8
 	    }
 	  }
 	}
@@ -8145,7 +8161,7 @@ Stateflow {
     name		    "WK_MaoBi_Redited_22102013_Offline"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    65
+    firstTarget		    67
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [1 1 0 1]
@@ -8272,22 +8288,21 @@ Stateflow {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
     windowPosition	    [0 30 960 681]
-    viewLimits		    [0 1145.625 59.854 866.104]
-    zoomFactor		    1.25
+    viewLimits		    [0 3055 0 2150]
+    zoomFactor		    3.333
     chartColor		    [1 1 1]
     screen		    [1 1 1280 1024 1.333333333333333]
     treeNode		    [0 19 0 0]
-    firstTransition	    27
+    firstTransition	    28
     viewObj		    9
-    visible		    1
     machine		    1
     subviewS {
-      x1		      141.069
-      y1		      22.148
+      y1		      59.854
+      zoomFactor	      1.25
     }
-    ssIdHighWaterMark	    459
+    ssIdHighWaterMark	    462
     decomposition	    CLUSTER_CHART
-    firstData		    44
+    firstData		    46
     chartFileNumber	    3
     disableImplicitCasting  1
     supportVariableSizing   0
@@ -8299,8 +8314,7 @@ Stateflow {
     fontSize		    8
     chart		    9
     treeNode		    [9 13 19 0]
-    firstTransition	    29
-    visible		    0
+    firstTransition	    30
     subviewer		    9
     ssIdNumber		    9
     type		    OR_STATE
@@ -8321,13 +8335,12 @@ Stateflow {
   }
   state {
     id			    12
-    labelString		    "Descent1\ndescentrate=0.01;"
+    labelString		    "Descent1\ndescentrate=descentrate+0.01;"
     position		    [128.0729 868.6661 318.0202 53.8298]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
     treeNode		    [19 0 15 0]
-    visible		    0
     subviewer		    9
     ssIdNumber		    323
     type		    OR_STATE
@@ -8342,7 +8355,6 @@ Stateflow {
     arrowSize		    7.053
     chart		    9
     treeNode		    [10 0 0 14]
-    visible		    0
     subviewer		    9
     ssIdNumber		    75
     type		    OR_STATE
@@ -8356,7 +8368,6 @@ Stateflow {
     arrowSize		    7.053
     chart		    9
     treeNode		    [10 0 13 0]
-    visible		    0
     subviewer		    9
     ssIdNumber		    78
     type		    OR_STATE
@@ -8377,13 +8388,13 @@ Stateflow {
   }
   state {
     id			    16
-    labelString		    "drawing straight line\nen:\nPosDesired[0]=draw[0]+count-0.25, PosDesired[1]=draw[1]-0.2+yoffset,"
+    labelString		    "drawing_straight_line\nen:\nPosDesired[0]=draw[0]+count-0.25, PosDesired[1]=draw[1]-0.2+yoffset,"
     "PosDesired[2]= draw[2]-Heightcontrol-0.1;"
     position		    [757.4636 112.9163 639.3167 103.2549]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 0 23]
+    treeNode		    [21 0 0 20]
     subviewer		    9
     ssIdNumber		    233
     type		    OR_STATE
@@ -8419,11 +8430,11 @@ Stateflow {
   state {
     id			    19
     labelString		    "Airborne"
-    position		    [0 0 2437.2151 1000.0656]
+    position		    [0 0 1885.1318 941.3156]
     fontSize		    12
     chart		    9
     treeNode		    [9 24 0 10]
-    firstTransition	    31
+    firstTransition	    32
     subviewer		    9
     ssIdNumber		    8
     type		    OR_STATE
@@ -8432,11 +8443,11 @@ Stateflow {
   state {
     id			    20
     labelString		    "MBdown\nen:\nPosDesired[2]=draw[2]-Heightcontrol;\nxdata=0.5-0.5/scale;"
-    position		    [883.7136 249.9788 236.348 89.8487]
+    position		    [827.6198 262.6351 236.348 89.8487]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 23 22]
+    treeNode		    [21 0 16 25]
     subviewer		    9
     ssIdNumber		    425
     type		    OR_STATE
@@ -8445,11 +8456,11 @@ Stateflow {
   state {
     id			    21
     labelString		    "Loop"
-    position		    [692.5 78 832.3438 543.6562]
+    position		    [692.5 78 1112.0313 550.2187]
     fontSize		    12
     chart		    9
     treeNode		    [19 16 24 11]
-    firstTransition	    39
+    firstTransition	    44
     subviewer		    9
     ssIdNumber		    432
     type		    OR_STATE
@@ -8459,11 +8470,11 @@ Stateflow {
     id			    22
     labelString		    "End_Point\nen:\nPosDesired[0]=draw[0]+0.25, PosDesired[1]=0.2+yoffset,PosDesired[2]= draw[2]-Hei"
     "ghtcontrol-0.1;"
-    position		    [742.3386 480.0413 594.973 89.4737]
+    position		    [721.8698 514.2601 594.973 89.4737]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 20 0]
+    treeNode		    [21 0 23 0]
     subviewer		    9
     ssIdNumber		    439
     type		    OR_STATE
@@ -8472,12 +8483,11 @@ Stateflow {
   state {
     id			    23
     labelString		    "counting\nen:\ncount =xdata;"
-    position		    [1212.8074 248.385 236.348 89.8487]
+    position		    [1102.3386 266.6662 236.348 89.8487]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 16 20]
-    visible		    0
+    treeNode		    [21 0 25 22]
     subviewer		    9
     ssIdNumber		    442
     type		    OR_STATE
@@ -8496,10 +8506,24 @@ Stateflow {
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
-  transition {
+  state {
     id			    25
+    labelString		    "drawing_straight_line1\nen:\nPosDesired[0]=draw[0]+count-0.25, PosDesired[1]=draw[1]-0.2+yoffset"
+    ";\nPosDesired[2]=draw[2]-Heightcontrol;"
+    position		    [1374.6511 263.8538 405.0979 93.4112]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [21 0 20 23]
+    subviewer		    9
+    ssIdNumber		    460
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  transition {
+    id			    26
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [68.506 1240.437 64.656 11.228]
+    labelPosition	    [68.506 1240.437 79.961 14.971]
     fontSize		    8
     src {
       intersection	      [0 1 0 0 60.1149 1259.1589 0 0]
@@ -8510,8 +8534,7 @@ Stateflow {
     }
     midPoint		    [105.1708 1259.1589]
     chart		    9
-    linkNode		    [9 26 0]
-    visible		    0
+    linkNode		    [9 27 0]
     dataLimits		    [60.115 154.638 1256.759 1261.559]
     subviewer		    9
     drawStyle		    SMART
@@ -8519,23 +8542,22 @@ Stateflow {
     ssIdNumber		    16
   }
   transition {
-    id			    26
+    id			    27
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [623.177 1142.1 84.334 17.778]
+    labelPosition	    [623.177 1142.1 77.463 19.961]
     fontSize		    14
     src {
       id		      19
-      intersection	      [3 0 1 0.7023 725.4825 1000.0656 0 -244.6501]
+      intersection	      [3 0 1 0.6152 725.4825 941.3156 0 -244.6501]
     }
     dst {
       id		      10
       intersection	      [1 0 -1 0.835 725.4825 1163.9303 0 229.0138]
     }
-    midPoint		    [725.4825 1081.2995]
+    midPoint		    [725.4825 1053.2017]
     chart		    9
-    linkNode		    [9 27 25]
-    visible		    0
-    dataLimits		    [723.082 727.882 1000.066 1163.93]
+    linkNode		    [9 28 26]
+    dataLimits		    [723.083 727.883 941.316 1163.93]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8547,23 +8569,22 @@ Stateflow {
     ssIdNumber		    18
   }
   transition {
-    id			    27
+    id			    28
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [375.323 1141.493 79.649 17.778]
+    labelPosition	    [375.323 1133.159 72.465 19.961]
     fontSize		    14
     src {
       id		      10
-      intersection	      [1 -0 -1 0.4682 474.7283 1163.9303 0 -43.3643]
+      intersection	      [1 0 -1 0.4682 474.7283 1163.9303 0 -43.3643]
     }
     dst {
       id		      19
-      intersection	      [3 0 1 0.8052 474.7283 1000.0656 0 43.3643]
+      intersection	      [3 0 1 0.7482 474.7283 941.3156 0 43.3643]
     }
-    midPoint		    [474.7283 1082.6964]
+    midPoint		    [474.7283 1052.0442]
     chart		    9
-    linkNode		    [9 0 26]
-    visible		    0
-    dataLimits		    [472.328 477.128 1000.066 1163.93]
+    linkNode		    [9 0 27]
+    dataLimits		    [472.328 477.128 941.316 1163.93]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8573,23 +8594,23 @@ Stateflow {
     ssIdNumber		    17
   }
   transition {
-    id			    28
+    id			    29
     labelString		    "[RC[5] > 0]"
-    labelPosition	    [585.661 205.474 61.845 16.842]
+    labelPosition	    [621.928 199.987 62.47 19.961]
     fontSize		    12
     arrowSize		    13.343
     src {
       id		      21
-      intersection	      [4 -1 0 0.839 692.5 165.5287 0 50.3401]
+      intersection	      [4 -1 0 0.839 692.5 166.5852 0 50.3401]
     }
     dst {
       id		      17
-      intersection	      [1 0 -1 0.3421 198.7433 364.9779 0 -430.1804]
+      intersection	      [1 0 -1 0.8106 456.25 364.9779 0 -430.1804]
     }
-    midPoint		    [437.3617 222.6242]
+    midPoint		    [529.8596 224.9771]
     chart		    9
-    linkNode		    [19 43 33]
-    dataLimits		    [194.74 692.5 165.529 364.978]
+    linkNode		    [19 38 45]
+    dataLimits		    [452.247 692.5 166.585 364.978]
     stampAngle		    NaN
     subviewer		    9
     slide {
@@ -8601,8 +8622,8 @@ Stateflow {
     ssIdNumber		    276
   }
   transition {
-    id			    29
-    labelPosition	    [230.822 1202.87 5.622 11.228]
+    id			    30
+    labelPosition	    [230.822 1202.87 9.995 14.971]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8614,7 +8635,7 @@ Stateflow {
     }
     midPoint		    [242.6196 1214.3482]
     chart		    9
-    linkNode		    [10 0 30]
+    linkNode		    [10 0 31]
     dataLimits		    [209.139 280.51 1212.232 1216.464]
     subviewer		    9
     drawStyle		    SMART
@@ -8625,9 +8646,9 @@ Stateflow {
     ssIdNumber		    84
   }
   transition {
-    id			    30
+    id			    31
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [768.847 1226.177 89.956 11.228]
+    labelPosition	    [768.847 1226.177 112.446 14.971]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8640,7 +8661,7 @@ Stateflow {
     }
     midPoint		    [725.9239 1240.3725]
     chart		    9
-    linkNode		    [10 29 0]
+    linkNode		    [10 30 0]
     dataLimits		    [690.909 758.77 1235.636 1252.967]
     stampAngle		    NaN
     subviewer		    9
@@ -8653,9 +8674,9 @@ Stateflow {
     ssIdNumber		    85
   }
   transition {
-    id			    31
+    id			    32
     labelString		    "{PosDesired = Pos;  PosDesired[2] =-1.2;}"
-    labelPosition	    [61.81 82.996 189.283 14.971]
+    labelPosition	    [61.81 82.996 179.913 17.466]
     fontSize		    9.883
     arrowSize		    13.343
     src {
@@ -8667,7 +8688,7 @@ Stateflow {
     }
     midPoint		    [286.6818 86.7935]
     chart		    9
-    linkNode		    [19 0 32]
+    linkNode		    [19 0 33]
     dataLimits		    [282.679 290.685 73.288 112.794]
     subviewer		    9
     drawStyle		    SMART
@@ -8675,9 +8696,9 @@ Stateflow {
     ssIdNumber		    13
   }
   transition {
-    id			    32
+    id			    33
     labelString		    "after(5,sec)"
-    labelPosition	    [471.199 82.245 62.782 16.842]
+    labelPosition	    [471.199 82.245 72.465 19.961]
     fontSize		    12
     arrowSize		    13.343
     src {
@@ -8690,8 +8711,8 @@ Stateflow {
     }
     midPoint		    [535.8248 110.5102]
     chart		    9
-    linkNode		    [19 31 43]
-    dataLimits		    [524.178 560.523 86.788 132.979]
+    linkNode		    [19 32 38]
+    dataLimits		    [524.179 560.523 86.788 132.979]
     stampAngle		    NaN
     subviewer		    9
     slide {
@@ -8701,9 +8722,9 @@ Stateflow {
     ssIdNumber		    213
   }
   transition {
-    id			    33
+    id			    34
     labelString		    "after (3, sec)"
-    labelPosition	    [253.499 483.418 70.278 16.842]
+    labelPosition	    [253.499 483.418 77.463 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -8716,20 +8737,18 @@ Stateflow {
     }
     midPoint		    [332.4005 459.4175]
     chart		    9
-    linkNode		    [19 28 34]
+    linkNode		    [19 45 35]
     dataLimits		    [329.857 334.944 412.472 511.104]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    218
   }
   transition {
-    id			    34
+    id			    35
     labelString		    "[PerchError < 0.01]"
-    labelPosition	    [336.351 657.837 105.886 16.842]
+    labelPosition	    [336.351 657.837 112.446 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -8742,34 +8761,32 @@ Stateflow {
     }
     midPoint		    [323.411 651.552]
     chart		    9
-    linkNode		    [19 33 41]
+    linkNode		    [19 34 42]
     dataLimits		    [320.868 325.954 571.413 733.666]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    231
   }
   transition {
-    id			    35
+    id			    36
     labelString		    "[PerchError < 0.01]"
-    labelPosition	    [42.445 821.014 105.886 16.842]
+    labelPosition	    [42.445 821.014 112.446 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      15
-      intersection	      [3 0 1 0.785 146.8364 770.6209 0 46.1976]
+      intersection	      [3 0 1 0.785 146.8361 770.6209 0 46.1976]
     }
     dst {
       id		      12
-      intersection	      [1 0 -1 0.059 146.8486 868.6661 0 -47.1351]
+      intersection	      [1 -0 -1 0.059 146.8361 868.6661 0 -47.1351]
     }
     midPoint		    [146.8429 817.2601]
     chart		    9
-    linkNode		    [19 41 42]
-    dataLimits		    [144.306 149.392 770.621 868.666]
+    linkNode		    [19 43 0]
+    dataLimits		    [144.305 149.392 770.621 868.666]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8779,23 +8796,23 @@ Stateflow {
     ssIdNumber		    325
   }
   transition {
-    id			    36
+    id			    37
     labelString		    "[abs(PosDesired[0]-draw[0]+count-0.25)+abs(PosDesired[1]-draw[1]+count-0.2)<0.1]"
-    labelPosition	    [993.723 227.907 458.216 16.842]
+    labelPosition	    [937.629 240.563 499.758 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      16
-      intersection	      [3 0 1 0.6544 978.4419 216.1712 0 24.0625]
+      intersection	      [3 0 1 0.7421 922.3481 216.1712 0 24.0625]
     }
     dst {
       id		      20
-      intersection	      [1 0 -1 0.4008 978.4419 249.9788 0 -24.0625]
+      intersection	      [1 -0 -1 0.4008 922.3481 262.6351 0 -24.0625]
     }
-    midPoint		    [978.4419 229.2952]
+    midPoint		    [922.3481 235.8985]
     chart		    9
-    linkNode		    [21 40 38]
-    dataLimits		    [975.899 980.985 216.171 249.979]
+    linkNode		    [21 41 40]
+    dataLimits		    [919.805 924.891 216.171 262.635]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8805,49 +8822,49 @@ Stateflow {
     ssIdNumber		    426
   }
   transition {
-    id			    37
-    labelString		    "[abs(xdata)<0]"
-    labelPosition	    [1001.113 387.494 80.586 16.842]
+    id			    38
+    labelPosition	    [658.763 107.413 12.494 19.961]
     fontSize		    12
-    arrowSize		    8.477
     src {
-      id		      20
-      intersection	      [3 0 1 0.5641 986.7377 339.8275 0 15.1551]
+      id		      24
+      intersection	      [2 1 0 0.4361 636.5222 90.7912 0 -2.4771]
     }
     dst {
-      id		      22
-      intersection	      [1 0 -1 0.4108 986.7377 480.0413 0 -15.1551]
+      id		      21
+      intersection	      [4 -1 0 0.8656 692.5 151.9501 0 -58.6818]
     }
-    midPoint		    [986.7377 408.4678]
+    midPoint		    [661.1751 123.3637]
     chart		    9
-    linkNode		    [21 38 0]
-    dataLimits		    [984.195 989.281 339.827 480.041]
+    linkNode		    [19 33 29]
+    dataLimits		    [636.522 692.5 90.791 154.35]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
     }
-    executionOrder	    2
-    ssIdNumber		    440
+    executionOrder	    1
+    ssIdNumber		    459
   }
   transition {
-    id			    38
+    id			    39
     labelString		    "[abs(xdata)>0]"
-    labelPosition	    [1121.108 348.21 80.586 16.842]
+    labelPosition	    [1038.92 364.62 89.956 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      20
-      intersection	      [2 1 0 0.5925 1120.0616 303.21 0 10.0879]
+      intersection	      [2 1 0 0.796 1063.9678 334.1517 0 10.0879]
     }
     dst {
       id		      23
-      intersection	      [4 -1 0 0.3898 1212.8074 303.21 0 -10.8379]
+      intersection	      [4 -1 0 0.2489 1102.3386 334.1517 0 -10.8379]
     }
-    midPoint		    [1163.9359 303.21]
+    midPoint		    [1079.4726 334.1517]
     chart		    9
-    linkNode		    [21 36 37]
-    dataLimits		    [1120.062 1212.807 300.667 305.753]
+    linkNode		    [21 40 0]
+    dataLimits		    [1063.968 1102.339 331.609 336.695]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8857,51 +8874,49 @@ Stateflow {
     ssIdNumber		    444
   }
   transition {
-    id			    39
+    id			    40
     labelString		    "after (2,sec)"
-    labelPosition	    [1482.349 269.571 66.53 16.842]
+    labelPosition	    [1323.751 369.498 74.964 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      23
-      intersection	      [2 1 0 0.366 1449.1554 281.2723 0 151.0613]
+      intersection	      [2 1 -0 0.432 1338.6866 305.479 0 -12.037]
     }
     dst {
-      id		      16
-      intersection	      [2 1 0 0.4213 1396.7804 156.4162 0 -125.554]
+      id		      25
+      intersection	      [4 -1 0 0.5544 1374.6511 305.479 0 6.1116]
     }
-    midPoint		    [1459.5609 214.7755]
+    midPoint		    [1352.936 305.479]
     chart		    9
-    linkNode		    [21 0 40]
-    dataLimits		    [1396.78 1468.098 153.873 281.272]
+    linkNode		    [21 37 39]
+    dataLimits		    [1338.687 1374.651 302.936 308.022]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    445
   }
   transition {
-    id			    40
-    labelString		    "[abs(PosDesired[0]==0.25)]"
-    labelPosition	    [819.006 359.097 151.802 16.842]
+    id			    41
+    labelString		    "[abs(PosDesired[0]>draw[0]+0.25)]"
+    labelPosition	    [798.563 378.166 207.4 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      16
-      intersection	      [3 0 1 0.909 815.6139 216.1712 0 224.2176]
+      intersection	      [3 -0 1 0.941 795.1705 216.1712 0 224.2176]
     }
     dst {
       id		      22
-      intersection	      [1 0 -1 0.1232 815.6139 480.0413 0 -224.2176]
+      intersection	      [1 0 -1 0.1232 795.1705 514.2601 0 -224.2176]
     }
-    midPoint		    [815.6139 349.3278]
+    midPoint		    [795.1705 367.1811]
     chart		    9
-    linkNode		    [21 39 36]
-    dataLimits		    [813.071 818.157 216.171 480.041]
+    linkNode		    [21 44 37]
+    dataLimits		    [792.627 797.714 216.171 514.26]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8911,9 +8926,9 @@ Stateflow {
     ssIdNumber		    447
   }
   transition {
-    id			    41
+    id			    42
     labelString		    "after (5,sec)"
-    labelPosition	    [552.115 678.609 66.53 16.842]
+    labelPosition	    [552.115 678.609 74.964 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -8926,7 +8941,7 @@ Stateflow {
     }
     midPoint		    [551.5313 653.527]
     chart		    9
-    linkNode		    [19 34 35]
+    linkNode		    [19 35 43]
     dataLimits		    [548.988 554.074 571.413 733.666]
     stampAngle		    NaN
     subviewer		    9
@@ -8939,22 +8954,22 @@ Stateflow {
     ssIdNumber		    448
   }
   transition {
-    id			    42
-    labelString		    "after (0.1,sec)"
-    labelPosition	    [397.188 803.115 76.838 16.842]
+    id			    43
+    labelString		    "after (0.5,sec)"
+    labelPosition	    [405.938 810.615 84.959 19.961]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      12
-      intersection	      [1 0 -1 0.8497 398.2813 868.6661 0 -25.0518]
+      intersection	      [1 -0 -1 0.8497 398.2947 868.6661 0 -25.0518]
     }
     dst {
       id		      15
-      intersection	      [3 0 1 0.3578 398.2813 770.6209 0 24.1143]
+      intersection	      [3 0 1 0.3578 398.2947 770.6209 0 24.1143]
     }
     midPoint		    [398.2813 822.0268]
     chart		    9
-    linkNode		    [19 35 0]
+    linkNode		    [19 42 36]
     dataLimits		    [395.738 400.824 770.621 868.666]
     stampAngle		    NaN
     subviewer		    9
@@ -8965,21 +8980,23 @@ Stateflow {
     ssIdNumber		    456
   }
   transition {
-    id			    43
-    labelPosition	    [658.75 101.104 8.433 16.842]
+    id			    44
+    labelString		    "after (2,sec)"
+    labelPosition	    [1470.148 201.417 74.964 19.961]
     fontSize		    12
+    arrowSize		    8.477
     src {
-      id		      24
-      intersection	      [2 1 0 0.4361 636.5222 90.7912 0 -2.4771]
+      id		      25
+      intersection	      [1 0 -1 0.2774 1487.0226 263.8538 0 90.2423]
     }
     dst {
-      id		      21
-      intersection	      [4 -1 0 0.8851 692.5 140.4787 0 -47.2104]
+      id		      16
+      intersection	      [2 1 0 0.6029 1396.7803 175.1665 0 -41.0047]
     }
-    midPoint		    [661.2626 117.2542]
+    midPoint		    [1459.9477 201.5204]
     chart		    9
-    linkNode		    [19 32 28]
-    dataLimits		    [636.522 692.5 90.791 142.879]
+    linkNode		    [21 0 41]
+    dataLimits		    [1396.78 1487.023 172.623 263.854]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8988,13 +9005,39 @@ Stateflow {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    459
+    ssIdNumber		    461
+  }
+  transition {
+    id			    45
+    labelString		    "[RC[5] > 0]"
+    labelPosition	    [332.5 220.313 62.47 19.961]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      11
+      intersection	      [3 0 1 0.4361 329.6875 167.4925 0 -28.5085]
+    }
+    dst {
+      id		      17
+      intersection	      [1 0 -1 0.5803 329.6875 364.9779 0 28.5085]
+    }
+    midPoint		    [329.6875 263.422]
+    chart		    9
+    linkNode		    [19 29 34]
+    dataLimits		    [325.685 333.69 167.493 364.978]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    462
   }
   data {
-    id			    44
+    id			    46
     ssIdNumber		    28
     name		    "PosDesired"
-    linkNode		    [9 0 45]
+    linkNode		    [9 0 47]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9011,10 +9054,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    45
+    id			    47
     ssIdNumber		    29
     name		    "HoverThrottle"
-    linkNode		    [9 44 46]
+    linkNode		    [9 46 48]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9031,10 +9074,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    46
+    id			    48
     ssIdNumber		    30
     name		    "Mode"
-    linkNode		    [9 45 47]
+    linkNode		    [9 47 49]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9051,11 +9094,11 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    47
+    id			    49
     ssIdNumber		    31
     name		    "RC"
-    linkNode		    [9 46 48]
-    scope		    LOCAL_DATA
+    linkNode		    [9 48 50]
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -9072,10 +9115,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    48
+    id			    50
     ssIdNumber		    32
     name		    "Pos"
-    linkNode		    [9 47 49]
+    linkNode		    [9 49 51]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9093,10 +9136,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    49
+    id			    51
     ssIdNumber		    35
     name		    "PerchPos"
-    linkNode		    [9 48 50]
+    linkNode		    [9 50 52]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9114,10 +9157,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    50
+    id			    52
     ssIdNumber		    47
     name		    "DeltaT"
-    linkNode		    [9 49 51]
+    linkNode		    [9 51 53]
     scope		    PARAMETER_DATA
     machine		    1
     props {
@@ -9135,10 +9178,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    51
+    id			    53
     ssIdNumber		    48
     name		    "H0"
-    linkNode		    [9 50 52]
+    linkNode		    [9 52 54]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 1
     machine		    1
@@ -9157,10 +9200,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    52
+    id			    54
     ssIdNumber		    49
     name		    "Kl"
-    linkNode		    [9 51 53]
+    linkNode		    [9 53 55]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 2
     machine		    1
@@ -9179,10 +9222,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    53
+    id			    55
     ssIdNumber		    94
     name		    "VelCmd"
-    linkNode		    [9 52 54]
+    linkNode		    [9 54 56]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9199,10 +9242,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    54
+    id			    56
     ssIdNumber		    119
     name		    "PWM"
-    linkNode		    [9 53 55]
+    linkNode		    [9 55 57]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9216,10 +9259,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    55
+    id			    57
     ssIdNumber		    135
     name		    "PerchError"
-    linkNode		    [9 54 56]
+    linkNode		    [9 56 58]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9237,10 +9280,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    56
+    id			    58
     ssIdNumber		    183
     name		    "PI"
-    linkNode		    [9 55 57]
+    linkNode		    [9 57 59]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 3
     machine		    1
@@ -9259,10 +9302,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    57
+    id			    59
     ssIdNumber		    190
     name		    "draw"
-    linkNode		    [9 56 58]
+    linkNode		    [9 58 60]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9280,44 +9323,11 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    58
+    id			    60
     ssIdNumber		    428
     name		    "Heightcontrol"
-    linkNode		    [9 57 59]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    59
-    ssIdNumber		    429
-    name		    "Scale_Factor"
-    linkNode		    [9 58 60]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    60
-    ssIdNumber		    434
-    name		    "xdata"
     linkNode		    [9 59 61]
-    scope		    LOCAL_DATA
-    paramIndexForInitFromWorkspace 4
+    scope		    INPUT_DATA
     machine		    1
     props {
       type {
@@ -9330,8 +9340,8 @@ Stateflow {
   }
   data {
     id			    61
-    ssIdNumber		    453
-    name		    "yoffset"
+    ssIdNumber		    429
+    name		    "Scale_Factor"
     linkNode		    [9 60 62]
     scope		    INPUT_DATA
     machine		    1
@@ -9346,10 +9356,11 @@ Stateflow {
   }
   data {
     id			    62
-    ssIdNumber		    455
-    name		    "descentrate"
+    ssIdNumber		    434
+    name		    "xdata"
     linkNode		    [9 61 63]
     scope		    LOCAL_DATA
+    paramIndexForInitFromWorkspace 4
     machine		    1
     props {
       type {
@@ -9362,9 +9373,41 @@ Stateflow {
   }
   data {
     id			    63
+    ssIdNumber		    453
+    name		    "yoffset"
+    linkNode		    [9 62 64]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    64
+    ssIdNumber		    455
+    name		    "descentrate"
+    linkNode		    [9 63 65]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    65
     ssIdNumber		    457
     name		    "count"
-    linkNode		    [9 62 0]
+    linkNode		    [9 64 0]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9377,22 +9420,22 @@ Stateflow {
     dataType		    "double"
   }
   instance {
-    id			    64
+    id			    66
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    65
+    id			    67
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 66]
+    linkNode		    [1 0 68]
   }
   target {
-    id			    66
+    id			    68
     name		    "rtw"
     machine		    1
-    linkNode		    [1 65 0]
+    linkNode		    [1 67 0]
   }
 }
