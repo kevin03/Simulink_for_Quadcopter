@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 12 16:21:48 2013"
-  RTWModifiedTimeStamp	  303495636
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Sat Oct 26 12:05:49 2013"
+  RTWModifiedTimeStamp	  304689945
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -821,7 +821,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "199"
+    SIDHighWatermark	    "262"
     Block {
       BlockType		      SubSystem
       Name		      "Horizontal Pos controller"
@@ -1749,8 +1749,8 @@ Library {
       "ing,Vertical Setting"
       System {
 	Name			"PosRefSystem"
-	Location		[2, 74, 1918, 1019]
-	Open			off
+	Location		[2, 82, 1902, 1027]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"[0.800000, 0.909804, 0.811765]"
@@ -2261,6 +2261,25 @@ Library {
 	}
 	Block {
 	  BlockType		  Saturate
+	  Name			  "XY Limits"
+	  SID			  "261"
+	  Ports			  [1, 1]
+	  Position		  [1465, 70, 1495, 100]
+	  InputPortMap		  "u0"
+	  UpperLimit		  "3"
+	  LowerLimit		  "-3"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Z Limits"
+	  SID			  "262"
+	  Ports			  [1, 1]
+	  Position		  [1495, 345, 1525, 375]
+	  InputPortMap		  "u0"
+	  LowerLimit		  "-2"
+	}
+	Block {
+	  BlockType		  Saturate
 	  Name			  "acc lim"
 	  SID			  "142"
 	  Ports			  [1, 1]
@@ -2395,9 +2414,8 @@ Library {
 	  }
 	  Branch {
 	    Labels		    [1, 1]
-	    Points		    [170, 0]
-	    DstBlock		    "Mux"
-	    DstPort		    2
+	    DstBlock		    "Z Limits"
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -2540,14 +2558,13 @@ Library {
 	  SrcPort		  1
 	  Points		  [55, 0]
 	  Branch {
-	    Points		    [200, 0]
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [0, 115; -455, 0]
 	    DstBlock		    "Sum"
 	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "XY Limits"
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -2650,6 +2667,7 @@ Library {
 	Line {
 	  SrcBlock		  "Selector4"
 	  SrcPort		  1
+	  Points		  [35, 0]
 	  DstBlock		  "Sum8"
 	  DstPort		  1
 	}
@@ -2705,6 +2723,20 @@ Library {
 	  SrcPort		  1
 	  DstBlock		  "Gain3"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "XY Limits"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Z Limits"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  2
 	}
       }
     }
@@ -2979,7 +3011,7 @@ Library {
 	  System {
 	    Name		    "Verticall Pos Controller"
 	    Location		    [970, 82, 1910, 1011]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
