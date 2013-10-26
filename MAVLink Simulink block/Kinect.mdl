@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.720"
+    ComputedModelVersion    "1.721"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,11 +25,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "CHIEW"
+  LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Oct 21 10:13:37 2013"
-  RTWModifiedTimeStamp	  304251173
-  ModelVersionFormat	  "1.%<AutoIncrement:720>"
+  LastModifiedDate	  "Mon Oct 21 15:13:51 2013"
+  RTWModifiedTimeStamp	  304261660
+  ModelVersionFormat	  "1.%<AutoIncrement:721>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1020,8 +1020,8 @@ Model {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Kinect Roll Pitch Trigger"
-	Location		[2, 82, 1331, 698]
-	Open			off
+	Location		[0, 50, 1350, 736]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1032,7 +1032,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"73"
+	ZoomFactor		"87"
 	Block {
 	  BlockType		  Sum
 	  Name			  "Add"
@@ -9693,67 +9693,6 @@ Model {
       Lockdown		      off
     }
     Block {
-      BlockType		      S-Function
-      Name		      "MAVLink Serial"
-      SID		      "195"
-      Ports		      [1, 2]
-      Position		      [400, 53, 750, 322]
-      BackgroundColor	      "cyan"
-      DropShadow	      on
-      FontName		      "Arial Black"
-      FontSize		      11
-      FontWeight	      "bold"
-      FunctionName	      "MAVLink_Interface"
-      Parameters	      "COM_Port,Baud_Rate,MSG_INPUT,MSG_OUTPUT"
-      EnableBusSupport	      off
-      MaskPromptString	      "COM Port|Baud Rate|HEART BEAT|ATTITUDE|RAW IMU|GLOBAL POSITION |VFR HUD|RC CHANNELS SCAL"
-      "ED|SERVO OUTPUT RAW|VICON Output|SET MODE|REQUEST DATA STREAM|ATTITUDE COMMAND|ATTITUDE (HIL)|GPS RAW (HIL)|AIRS"
-      "PEED (HIL)|VICON POSITION|VICON SPEED|Position Desired"
-      MaskStyleString	      "edit,edit,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbo"
-      "x,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox,checkbox"
-      MaskVariables	      "COM_Port=@1;Baud_Rate=@2;HEART_BEAT=@3;ATTITUDE_OUT=@4;RAW_IMU=@5;POSITION_OUT=@6;VFR_HUD=@"
-      "7;RC_SCALED=@8;SERVO_OUT_RAW=@9;VICON_XYZ_RPY_Output=@10;SET_MODE=@11;DATA_STREAM=@12;ATTITUDE_COMMAND=@13;ATTIT"
-      "UDE_IN=@14;GPS_RAW_IN=@15;VFR_HUD_IN=@16;VICON_XYZ_RPY=@17;VICON_VEL=@18;POSITION_DESIRED=@19;"
-      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
-      MaskCallbackString      "||||||||||||||||||"
-      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
-      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
-      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
-      MaskInitialization      "MSG_ID_NUM_INPUT = [uint8(11) uint8(66) uint8(59) uint8(30) uint8(32) uint8(73) uint8(1"
-      "04) uint8(103) uint8(50)];\nMSG_ID_NAME_INPUT = [SET_MODE DATA_STREAM ATTITUDE_COMMAND ATTITUDE_IN GPS_RAW_IN VF"
-      "R_HUD_IN VICON_XYZ_RPY VICON_VEL POSITION_DESIRED];\n\nMSG_ID_NUM_OUTPUT = [uint8(0) uint8(30) uint8(27) uint8(7"
-      "3) uint8(74) uint8(34) uint8(37) uint8(104)];\nMSG_ID_NAME_OUTPUT = [HEART_BEAT ATTITUDE_OUT RAW_IMU VFR_HUD POS"
-      "ITION_OUT RC_SCALED SERVO_OUT_RAW VICON_XYZ_RPY_Output];\n\nidx_input = find(MSG_ID_NAME_INPUT);\nMSG_INPUT = MS"
-      "G_ID_NUM_INPUT(idx_input);\n\nidx_output = find(MSG_ID_NAME_OUTPUT);\nMSG_OUTPUT = MSG_ID_NUM_OUTPUT(idx_output)"
-      ";"
-      MaskDisplay	      "% Block image\nimage(imread('10-inch Quad Heat Map.png'));\n\n%Label block\nfprintf('MAVLink "
-      "Serial\\n%s\\n%dbps', COM_Port,  Baud_Rate)\n\n\n%Label input ports\n\nin = 1;\nif (SET_MODE == 1)\n    port_lab"
-      "el('input', in, 'SET MODE');\n    in = in + 1;\nend\nif (DATA_STREAM == 1)\n    port_label('input', in, 'REQUEST"
-      " DATA STREAM');\n    in = in + 1;\nend\nif (ATTITUDE_COMMAND == 1)\n    port_label('input', in, 'ATTITUDE COMMAN"
-      "D');\n    in = in + 1;\nend\nif (ATTITUDE_IN == 1)\n    port_label('input', in, 'ATTITUDE (HIL)');\n    in = in "
-      "+ 1;\nend\nif (GPS_RAW_IN == 1)\n    port_label('input', in, 'GPS RAW (HIL)');\n    in = in + 1;\nend\nif (VFR_H"
-      "UD_IN == 1)\n    port_label('input', in, 'AIRSPEED (HIL)');\n    in = in + 1;\nend\nif (VICON_XYZ_RPY == 1)\n   "
-      " port_label('input', in, 'JOYSTICK CMD');\n    in = in + 1;\nend\nif (VICON_VEL == 1)\n    port_label('input', i"
-      "n, 'VICON_VEL');\n    in = in + 1;\nend\n\nif (POSITION_DESIRED == 1)\n    port_label('input', in, 'POSITION_DES"
-      "IRED');\n    in = in + 1;\nend\n\n%Label output ports\n\nout = 1;\nif (HEART_BEAT == 1)\n    port_label('output'"
-      ", out, 'HEART BEAT');\n    out = out + 1;\nend\nif (ATTITUDE_OUT == 1)\n    port_label('output', out, 'DEBUG');\n"
-      "    out = out + 1;\nend\nif (RAW_IMU == 1)\n    port_label('output', out, 'RAW IMU');\n    out = out + 1;\nend\n"
-      "if (POSITION_OUT == 1)\n    port_label('output', out, 'GLOBAL POSITION');\n    out = out + 1;\nend\nif (VFR_HUD "
-      "== 1)\n    port_label('output', out, 'VFR HUD');\n    out = out + 1;\nend\nif (RC_SCALED == 1)\n    port_label('"
-      "output', out, 'RC CMD');\n    out = out + 1;\nend\nif (SERVO_OUT_RAW == 1)\n    port_label('output', out, 'SERVO"
-      " OUTPUT RAW');\n    out = out + 1;\nend\n% weihua, vicon output\nif (VICON_XYZ_RPY_Output == 1)\n    port_label("
-      "'output', out, 'VICON_XYZ_RPY');\n    out = out + 1;\nend"
-      MaskIconFrame	      on
-      MaskIconOpaque	      off
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM8'|57600|off|on|off|off|off|on|off|off|off|off|off|off|off|off|on|off|off"
-      MaskTabNameString	      "Setting,Setting,Output Message,Output Message,Output Message,Output Message,Output Mess"
-      "age,Output Message,Output Message,Output Message,Input Message,Input Message,Input Message,Input Message,Input M"
-      "essage,Input Message,Input Message,Input Message,Input Message"
-    }
-    Block {
       BlockType		      Display
       Name		      "RC Cmd"
       SID		      "1665"
@@ -9871,7 +9810,7 @@ Model {
       System {
 	Name			"Subsystem3"
 	Location		[701, 124, 1193, 693]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -11683,9 +11622,7 @@ Model {
       SaveFormat	      "Structure With Time"
     }
     Line {
-      SrcBlock		      "MAVLink Serial"
-      SrcPort		      2
-      Points		      [25, 0; 0, 90]
+      Points		      [755, 255; 25, 0; 0, 90]
       DstBlock		      "RC Cmd"
       DstPort		      1
     }
@@ -11729,9 +11666,7 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "MAVLink Serial"
-      SrcPort		      1
-      Points		      [20, 0]
+      Points		      [755, 120; 20, 0]
       Branch {
 	DstBlock		"Subsystem3"
 	DstPort			1
@@ -11747,8 +11682,7 @@ Model {
       SrcPort		      1
       Points		      [25, 0]
       Branch {
-	DstBlock		"MAVLink Serial"
-	DstPort			1
+	Points			[20, 0]
       }
       Branch {
 	Points			[0, 305]
