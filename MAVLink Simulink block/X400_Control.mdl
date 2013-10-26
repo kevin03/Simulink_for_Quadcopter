@@ -1,5 +1,5 @@
 Library {
-  Name			  "X330_Control"
+  Name			  "X400_Control"
   Version		  7.7
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 12 16:21:48 2013"
-  RTWModifiedTimeStamp	  303495636
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Wed Oct 02 13:03:44 2013"
+  RTWModifiedTimeStamp	  301426114
+  ModelVersionFormat	  "1.%<AutoIncrement:41>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -806,7 +806,7 @@ Library {
     }
   }
   System {
-    Name		    "X330_Control"
+    Name		    "X400_Control"
     Location		    [970, 82, 1910, 1011]
     Open		    on
     ModelBrowserVisibility  off
@@ -1364,7 +1364,7 @@ Library {
 	      ShowName		      off
 	      InputPortWidth	      "8"
 	      IndexOptions	      "Index vector (dialog)"
-	      Indices		      "[5]"
+	      Indices		      "[7]"
 	      OutputSizes	      "1"
 	      Port {
 		PortNumber		1
@@ -2910,7 +2910,7 @@ Library {
 	  ShowName		  off
 	  InputPortWidth	  "8"
 	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[5]"
+	  Indices		  "[7]"
 	  OutputSizes		  "1"
 	  Port {
 	    PortNumber		    1
@@ -2978,8 +2978,8 @@ Library {
 	  }
 	  System {
 	    Name		    "Verticall Pos Controller"
-	    Location		    [970, 82, 1910, 1011]
-	    Open		    on
+	    Location		    [2, 82, 1902, 1027]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2990,7 +2990,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "87"
+	    ZoomFactor		    "174"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Pos Error"
@@ -3058,8 +3058,8 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Force --> Control"
 	      SID		      "192"
-	      Position		      [830, 415, 935, 445]
-	      Expr		      "u(1)*0.0287 + 0.1485"
+	      Position		      [830, 413, 990, 447]
+	      Expr		      "-0.0004*(u(1)^2) + 0.0334*u(1) + 0.0717"
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -3170,7 +3170,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "T  Commands [0, 1]"
 	      SID		      "89"
-	      Position		      [1010, 423, 1040, 437]
+	      Position		      [1025, 423, 1055, 437]
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -4421,7 +4421,7 @@ Library {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "51::14"
-	      Tag		      "Stateflow S-Function X330_Control 1"
+	      Tag		      "Stateflow S-Function X400_Control 1"
 	      Ports		      [1, 2]
 	      Position		      [180, 100, 230, 160]
 	      FunctionName	      "sf_sfun"
@@ -4643,7 +4643,7 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "X330_Control"
+    name		    "X400_Control"
     created		    "06-Sep-2013 16:11:40"
     isLibrary		    1
     firstTarget		    9
