@@ -1,12 +1,12 @@
 Model {
-  Name			  "WK_MaoBi_circle_25102013_Offline"
+  Name			  "WK_Maobi_writingDTP25"
   Version		  7.7
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1475"
+    ComputedModelVersion    "1.1507"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,17 +23,21 @@ Model {
   InitFcn		  "sample_time=0.005;%0.004;%0.0025;%0.02;\nDeltaT = 0.02;\ng = 9.81;\nH0 = g%0.3165;\nKl = 1;\n\nOmega_r ="
   " 1.6;%for Horizontal reference\nZeta_r = 0.7; %for Horizontal reference\nOmega = 1.8;%for Horizontal Control\nZeta ="
   " 0.5;    %for Horizontal Control\n\nOmega_h_r = 2.5; %for vertical reference\nZeta_h_r = 0.8;  %for vertical referen"
-  "ce\nOmega_h = 2.7;    %for vertical control\nZeta_h = 0.8;         %for vertical control\nPI=pi;\n\nMass = 1.1;\nAcc"
-  "_Max = 4;\nAcc_Max_h = 4;\n\nMax_RP = 60;\n\nload MaoBi_Oct04_2_int.mat\nMB_Interp.time = [];"
+  "ce\nOmega_h = 2.7;    %for vertical control\nZeta_h = 0.8;         %for vertical control\nPI=pi;\n\nMass = 1.15;\nAc"
+  "c_Max = 4;\nAcc_Max_h = 4;\n\nMax_RP = 60;\n\n% for NN\nn = 5;\nr = 3;\nn2 = 5;\nNN_ST = 0.02;\n\nGAMA_V = 6;\ngama_"
+  "V_e = 0.01;\n\nGAMA_W = GAMA_V;\ngama_W_e =0.01;\n\n% deadzone\nNN_Deadzone_Z = 0;\n\n% inputs nomalizaton parameter"
+  "s\nNN_Z_y_min = -3;\nNN_Z_y_max = 0.5;\n\nNN_Z_v_max = 8;\nNN_Z_v_min = -NN_Z_v_max;\n\n% alpha = 0.034;\nalpha = 1;"
+  "\n% c_f = 0.0015;\nc_f = 0.001;\nc_y_tilt = 1*0.5;\n\n%for WK paras\nHeightcontrol = 0.08;\nScale_Factor=1;\nyoffset"
+  "=0;\n\nload MaoBi_Oct04_2_int.mat\nMB_Interp.time = [];"
   Created		  "Thu Nov 24 10:40:23 2011"
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Vicon"
+  LastModifiedBy	  "wee kiat"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Oct 25 17:09:52 2013"
-  RTWModifiedTimeStamp	  304621685
-  ModelVersionFormat	  "1.%<AutoIncrement:1475>"
+  LastModifiedDate	  "Sat Oct 26 03:57:36 2013"
+  RTWModifiedTimeStamp	  304618106
+  ModelVersionFormat	  "1.%<AutoIncrement:1507>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -946,10 +950,19 @@ Model {
       FixptAsFi		      off
       NumInputs		      "1"
     }
+    Block {
+      BlockType		      TransportDelay
+      DelayTime		      "1"
+      InitialOutput	      "0"
+      BufferSize	      "1024"
+      FixedBuffer	      off
+      TransDelayFeedthrough   off
+      PadeOrder		      "0"
+    }
   }
   System {
-    Name		    "WK_MaoBi_circle_25102013_Offline"
-    Location		    [2, 82, 946, 978]
+    Name		    "WK_Maobi_writingDTP25"
+    Location		    [8, 50, 956, 1016]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -963,7 +976,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2034"
+    SIDHighWatermark	    "2084"
     Block {
       BlockType		      From
       Name		      "From"
@@ -1024,7 +1037,7 @@ Model {
       Name		      "Planning"
       SID		      "1084"
       Ports		      [4, 2]
-      Position		      [255, 131, 360, 474]
+      Position		      [240, 131, 345, 474]
       BackgroundColor	      "darkGreen"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1047,7 +1060,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"103"
+	ZoomFactor		"78"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vicon"
@@ -1208,6 +1221,980 @@ Model {
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  Expr			  "abs(u(1)-u(5)) + abs(u(2)-u(6))"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
+	  SID			  "2035"
+	  Ports			  [3, 2]
+	  Position		  [880, 325, 980, 465]
+	  BackgroundColor	  "darkGreen"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskPromptString	  "Omega (P Gain  = Omega^2)|Zeta (D Gain = 2*Omega*Zeta)|I Gain|Mass"
+	  MaskStyleString	  "edit,edit,edit,edit"
+	  MaskVariables		  "Omega_h=@1;Zeta_h=@2;PID_I_h=@3;mass=@4;"
+	  MaskTunableValueString  "on,on,on,on"
+	  MaskCallbackString	  "|||"
+	  MaskEnableString	  "on,on,on,on"
+	  MaskVisibilityString	  "on,on,on,on"
+	  MaskToolTipString	  "on,on,on,on"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "Omega_h|Zeta_h|0|0.75"
+	  MaskTabNameString	  "Control Paramters,Control Paramters,Control Paramters,Mass"
+	  System {
+	    Name		    "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
+	    Location		    [970, 82, 1910, 1011]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "94"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "UAV bus"
+	      SID		      "2036"
+	      Position		      [15, 208, 45, 222]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Hover Throttle"
+	      SID		      "2037"
+	      Position		      [490, 263, 520, 277]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "XY_Acc_d"
+	      SID		      "2038"
+	      Position		      [25, 428, 55, 442]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "2039"
+	      Ports		      [1, 6]
+	      Position		      [105, 40, 115, 390]
+	      ShowName		      off
+	      OutputSignals	      "Position,position des,rc,velocity,velocity des,Acc des"
+	      Port {
+		PortNumber		1
+		Name			"<Position>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<position des>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<rc>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<velocity>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<velocity des>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<Acc des>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector3"
+	      SID		      "2040"
+	      Ports		      [1, 1]
+	      Position		      [365, 150, 370, 200]
+	      ShowName		      off
+	      OutputSignals	      "rc"
+	      Port {
+		PortNumber		1
+		Name			"<rc>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector1"
+	      SID		      "2041"
+	      Ports		      [1, 1]
+	      Position		      [265, 132, 290, 158]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "3"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector3"
+	      SID		      "2042"
+	      Ports		      [1, 1]
+	      Position		      [365, 217, 390, 243]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "3"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector4"
+	      SID		      "2043"
+	      Ports		      [1, 1]
+	      Position		      [275, 97, 300, 123]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "3"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector5"
+	      SID		      "2044"
+	      Ports		      [1, 1]
+	      Position		      [365, 257, 390, 283]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "3"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector6"
+	      SID		      "2045"
+	      Ports		      [1, 1]
+	      Position		      [365, 293, 390, 337]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "4"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[3]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Selector7"
+	      SID		      "2046"
+	      Ports		      [1, 1]
+	      Position		      [440, 133, 465, 207]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "8"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[5]"
+	      OutputSizes	      "1"
+	      Port {
+		PortNumber		1
+		Name			"reset"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "2047"
+	      Ports		      [2, 1]
+	      Position		      [365, 90, 385, 110]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|-+"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Down error"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "2048"
+	      Ports		      [2, 1]
+	      Position		      [435, 220, 455, 240]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|-+"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Vel_error"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Verticall Pos Controller"
+	      SID		      "2049"
+	      Ports		      [10, 2]
+	      Position		      [630, 35, 845, 900]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      Port {
+		PortNumber		1
+		Name			"T"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      System {
+		Name			"Verticall Pos Controller"
+		Location		[970, 82, 1910, 1011]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"105"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Pos Error"
+		  SID			  "2050"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Reset"
+		  SID			  "2051"
+		  Position		  [25, 158, 55, 172]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Vel Error"
+		  SID			  "2052"
+		  Position		  [25, 198, 55, 212]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Hover Throttle"
+		  SID			  "2053"
+		  Position		  [20, 328, 50, 342]
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Gravity"
+		    PropagatedSignals	    "Hover Throttle"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Acc des"
+		  SID			  "2054"
+		  Position		  [25, 243, 55, 257]
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "XY_Acc_d"
+		  SID			  "2055"
+		  Position		  [20, 418, 50, 432]
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Height\nRef"
+		  SID			  "2056"
+		  Position		  [20, 583, 50, 597]
+		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Height"
+		  SID			  "2057"
+		  Position		  [20, 658, 50, 672]
+		  Port			  "8"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "RC"
+		  SID			  "2058"
+		  Position		  [20, 513, 50, 527]
+		  Port			  "9"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Vel"
+		  SID			  "2059"
+		  Position		  [15, 808, 45, 822]
+		  Port			  "10"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "D Gain"
+		  SID			  "2061"
+		  Position		  [135, 186, 330, 224]
+		  Gain			  "2*Omega_h*Zeta_h"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Fcn1"
+		  SID			  "2062"
+		  Position		  [85, 798, 200, 832]
+		  BackgroundColor	  "gray"
+		  ShowName		  off
+		  Expr			  "-0.04*c_y_tilt*u(1)"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Force --> Control"
+		  SID			  "2064"
+		  Position		  [760, 288, 955, 322]
+		  Expr			  "-0.0004*(u(1)^2) + 0.0334*u(1) + 0.0717"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Integral Gain"
+		  SID			  "2065"
+		  Position		  [110, 91, 210, 139]
+		  DisableCoverage	  on
+		  Gain			  "PID_I_h"
+		  ParamDataTypeStr	  "double"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  DiscreteIntegrator
+		  Name			  "Integrator"
+		  SID			  "2066"
+		  Ports			  [2, 1]
+		  Position		  [285, 98, 360, 162]
+		  DisableCoverage	  on
+		  IntegratorMethod	  "Integration: Trapezoidal"
+		  ExternalReset		  "rising"
+		  InitialConditionSource  "internal"
+		  InitialConditionMode	  "State only (most efficient)"
+		  SampleTime		  "-1"
+		  OutDataTypeStr	  "double"
+		  UpperSaturationLimit	  "0.3"
+		  LowerSaturationLimit	  "-0.3"
+		  ICPrevOutput		  "DiscIntNeverNeededParam"
+		  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+		}
+		Block {
+		  BlockType		  M-S-Function
+		  Name			  "Level-2 M-file\nS-Function"
+		  SID			  "2067"
+		  Ports			  [4, 4]
+		  Position		  [360, 547, 485, 858]
+		  BackgroundColor	  "gray"
+		  FunctionName		  "msfcn_Adaptive_NN_HeightOnly"
+		  Parameters		  "n,r,n2,NN_ST,GAMA_V,gama_V_e,GAMA_W,gama_W_e,alpha,c_f,c_y_tilt,NN_Deadzone_Z,NN_Z_y_min,NN_Z_y_max"
+		  ",NN_Z_v_min,NN_Z_v_max"
+		  MaskDisplay		  "fprintf('Output Feedback NN \\n Control Block')"
+		  MaskIconFrame		  on
+		  MaskIconOpaque	  on
+		  MaskIconRotate	  "none"
+		  MaskPortRotate	  "default"
+		  MaskIconUnits		  "autoscale"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Mass"
+		  SID			  "2068"
+		  Position		  [595, 291, 650, 319]
+		  DisableCoverage	  on
+		  Gain			  "mass"
+		  ParamDataTypeStr	  "double"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux"
+		  SID			  "2069"
+		  Ports			  [2, 1]
+		  Position		  [205, 395, 210, 455]
+		  ShowName		  off
+		  Inputs		  "2"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Mux
+		  Name			  "Mux1"
+		  SID			  "2070"
+		  Ports			  [2, 1]
+		  Position		  [745, 660, 750, 720]
+		  ShowName		  off
+		  Inputs		  "2"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Proportional Gain"
+		  SID			  "2071"
+		  Position		  [115, 24, 250, 56]
+		  DisableCoverage	  on
+		  Gain			  "Omega_h^2"
+		  ParamDataTypeStr	  "double"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Selector
+		  Name			  "Selector7"
+		  SID			  "2073"
+		  Ports			  [1, 1]
+		  Position		  [100, 483, 125, 557]
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  InputPortWidth	  "8"
+		  IndexOptions		  "Index vector (dialog)"
+		  Indices		  "[6]"
+		  OutputSizes		  "1"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "2074"
+		  Ports			  [5, 1]
+		  Position		  [425, 120, 495, 180]
+		  DisableCoverage	  on
+		  IconShape		  "round"
+		  Inputs		  "----+|"
+		  InputSameDT		  off
+		  AccumDataTypeStr	  "double"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		  SampleTime		  "0.02"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Des Acc "
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum2"
+		  SID			  "2075"
+		  Ports			  [2, 1]
+		  Position		  [515, 285, 545, 325]
+		  ShowName		  off
+		  DisableCoverage	  on
+		  IconShape		  "round"
+		  Inputs		  "++|"
+		  InputSameDT		  off
+		  AccumDataTypeStr	  "double"
+		  OutDataTypeStr	  "double"
+		  SaturateOnIntegerOverflow off
+		  SampleTime		  "0.02"
+		}
+		Block {
+		  BlockType		  Fcn
+		  Name			  "Total Acc des"
+		  SID			  "2077"
+		  Position		  [245, 414, 340, 446]
+		  Expr			  "sqrt(u(1)^2+u(2)^2)"
+		}
+		Block {
+		  BlockType		  TransportDelay
+		  Name			  "Transport\nDelay"
+		  SID			  "2078"
+		  Ports			  [1, 1]
+		  Position		  [230, 725, 260, 755]
+		  BackgroundColor	  "gray"
+		  DelayTime		  "0.02"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "T  Commands [0, 1]"
+		  SID			  "2079"
+		  Position		  [1020, 298, 1050, 312]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "NN"
+		  SID			  "2081"
+		  Position		  [965, 693, 995, 707]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Force --> Control"
+		  SrcPort		  1
+		  DstBlock		  "T  Commands [0, 1]"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum2"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, 65; -370, 0]
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Mass"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "XY_Acc_d"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, 10; 120, 0]
+		  DstBlock		  "Mux"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Mux"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "Total Acc des"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Mass"
+		  SrcPort		  1
+		  DstBlock		  "Force --> Control"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Des Acc "
+		  Labels		  [0, 0; 0, 0]
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    Points		    [0, 135; -215, 0; 0, 405; -120, 0; 0, 50]
+		    DstBlock		    "Transport\nDelay"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Labels		    [1, 0]
+		    Points		    [30, 0; 0, 90]
+		    Branch {
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [200, 0]
+		    DstBlock		    "Mux1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  Name			  "Gravity"
+		  Labels		  [5, 0]
+		  SrcBlock		  "Hover Throttle"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -5; 390, 0; 0, -25]
+		  DstBlock		  "Sum2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Acc des"
+		  SrcPort		  1
+		  Points		  [370, 0; 0, -35; -16, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "D Gain"
+		  SrcPort		  1
+		  Points		  [79, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Vel Error"
+		  SrcPort		  1
+		  DstBlock		  "D Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Reset"
+		  SrcPort		  1
+		  Points		  [0, 5; 185, 0; 0, -25]
+		  DstBlock		  "Integrator"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Pos Error"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Integral Gain"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Proportional Gain"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Proportional Gain"
+		  SrcPort		  1
+		  Points		  [205, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  Points		  [0, -10; 70, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Integral Gain"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Height\nRef"
+		  SrcPort		  1
+		  DstBlock		  "Level-2 M-file\nS-Function"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Level-2 M-file\nS-Function"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  Branch {
+		    Points		    [0, 115]
+		    DstBlock		    "Mux1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -35; 140, 0; 0, -355; -215, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    5
+		  }
+		}
+		Line {
+		  SrcBlock		  "RC"
+		  SrcPort		  1
+		  DstBlock		  "Selector7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Fcn1"
+		  SrcPort		  1
+		  DstBlock		  "Level-2 M-file\nS-Function"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Transport\nDelay"
+		  SrcPort		  1
+		  DstBlock		  "Level-2 M-file\nS-Function"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Mux1"
+		  SrcPort		  1
+		  Points		  [195, 0]
+		  DstBlock		  "NN"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Vel"
+		  SrcPort		  1
+		  DstBlock		  "Fcn1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Height"
+		  SrcPort		  1
+		  DstBlock		  "Level-2 M-file\nS-Function"
+		  DstPort		  2
+		}
+		Annotation {
+		  Name			  " "
+		  Position		  [775, 202]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "T"
+	      SID		      "2080"
+	      Position		      [945, 223, 975, 237]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "NN"
+	      SID		      "2082"
+	      Position		      [945, 678, 975, 692]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "XY_Acc_d"
+	      SrcPort		      1
+	      Points		      [335, 0; 0, 75]
+	      DstBlock		      "Verticall Pos Controller"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "T"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "Verticall Pos Controller"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "T"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector6"
+	      SrcPort		      1
+	      Points		      [170, 0; 0, 110]
+	      DstBlock		      "Verticall Pos Controller"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<Acc des>"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      6
+	      Points		      [0, -50]
+	      DstBlock		      "Selector6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Hover Throttle"
+	      SrcPort		      1
+	      Points		      [90, 0]
+	      DstBlock		      "Verticall Pos Controller"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<velocity des>"
+	      Labels		      [3, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      5
+	      Points		      [135, 0; 0, -25]
+	      DstBlock		      "Selector5"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<velocity>"
+	      Labels		      [3, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      4
+	      Points		      [145, 0; 0, -10]
+	      DstBlock		      "Selector3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector5"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Selector3"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Vel_error"
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Labels			[1, 1]
+		Points			[85, 0; 0, 25]
+		DstBlock		"Verticall Pos Controller"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 620]
+		DstBlock		"Verticall Pos Controller"
+		DstPort			10
+	      }
+	    }
+	    Line {
+	      Name		      "reset"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Selector7"
+	      SrcPort		      1
+	      DstBlock		      "Verticall Pos Controller"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<rc>"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[15, 0]
+		DstBlock		"Selector7"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 590]
+		DstBlock		"Verticall Pos Controller"
+		DstPort			9
+	      }
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Selector1"
+	      SrcPort		      1
+	      Points		      [25, 0]
+	      Branch {
+		Points			[55, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 450]
+		DstBlock		"Verticall Pos Controller"
+		DstPort			7
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Selector4"
+	      SrcPort		      1
+	      Points		      [0, -10; 30, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 580]
+		DstBlock		"Verticall Pos Controller"
+		DstPort			8
+	      }
+	    }
+	    Line {
+	      Name		      "Down error"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [225, 0]
+	      DstBlock		      "Verticall Pos Controller"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<position des>"
+	      Labels		      [0, 0; 0, 0; 1, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      2
+	      Points		      [130, 0]
+	      DstBlock		      "Selector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<Position>"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      Points		      [0, -5; 140, 0]
+	      DstBlock		      "Selector4"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<rc>"
+	      Labels		      [0, 0; 0, 0; 1, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      3
+	      Points		      [90, 0; 0, -10]
+	      DstBlock		      "Bus\nSelector3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "UAV bus"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Verticall Pos Controller"
+	      SrcPort		      2
+	      DstBlock		      "NN"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      Name		      "Manual Thrust"
+	      Position		      [722, 24]
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Reference
@@ -1472,16 +2459,6 @@ Model {
 	}
 	Block {
 	  BlockType		  Mux
-	  Name			  "Mux3"
-	  SID			  "2023"
-	  Ports			  [2, 1]
-	  Position		  [990, 856, 995, 894]
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
 	  Name			  "Mux4"
 	  SID			  "1768"
 	  Ports			  [2, 1]
@@ -1491,53 +2468,25 @@ Model {
 	  DisplayOption		  "bar"
 	}
 	Block {
-	  BlockType		  Mux
-	  Name			  "Mux5"
-	  SID			  "2028"
-	  Ports			  [2, 1]
-	  Position		  [220, 601, 225, 639]
-	  ShowName		  off
-	  Inputs		  "2"
-	  DisplayOption		  "bar"
-	}
-	Block {
 	  BlockType		  Scope
-	  Name			  "P  Vs Rec"
-	  SID			  "2021"
-	  Ports			  [1]
-	  Position		  [1020, 859, 1050, 891]
+	  Name			  "NN\nPos"
+	  SID			  "2083"
+	  Ports			  [2]
+	  Position		  [1075, 565, 1170, 700]
+	  BackgroundColor	  "red"
 	  Floating		  off
 	  Location		  [969, 56, 1913, 1031]
 	  Open			  off
-	  NumInputPorts		  "1"
+	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
 	  }
 	  TimeRange		  "10"
-	  YMin			  "-0.75"
-	  YMax			  "1.75"
-	  SaveName		  "ScopeData2"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "P vs P_des"
-	  SID			  "1769"
-	  Ports			  [1]
-	  Position		  [1020, 719, 1050, 751]
-	  Floating		  off
-	  Location		  [969, 56, 1913, 1031]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  YMin			  "-0.7"
-	  YMax			  "1.5"
+	  YMin			  "-11~-1.25"
+	  YMax			  "4~1.25"
+	  SaveName		  "ScopeData3"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
 	  SampleTime		  "0"
@@ -1588,45 +2537,6 @@ Model {
 	  SID			  "1513"
 	  Ports			  [1, 1]
 	  Position		  [160, 266, 180, 304]
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  InputPortWidth	  "3"
-	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[3]"
-	  OutputSizes		  "1"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector3"
-	  SID			  "2022"
-	  Ports			  [1, 1]
-	  Position		  [920, 856, 940, 894]
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  InputPortWidth	  "4"
-	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[1 2 3]"
-	  OutputSizes		  "1"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector4"
-	  SID			  "2025"
-	  Ports			  [1, 1]
-	  Position		  [1025, 776, 1045, 814]
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  InputPortWidth	  "3"
-	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[3]"
-	  OutputSizes		  "1"
-	}
-	Block {
-	  BlockType		  Selector
-	  Name			  "Selector5"
-	  SID			  "2027"
-	  Ports			  [1, 1]
-	  Position		  [155, 641, 175, 679]
 	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  InputPortWidth	  "3"
@@ -1696,7 +2606,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [2, 82, 1278, 971]
+	    Location		    [10, 82, 950, 1011]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1736,7 +2646,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "draw"
 	      SID		      "1683"
-	      Position		      [20, 368, 50, 382]
+	      Position		      [15, 428, 45, 442]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
@@ -1821,7 +2731,7 @@ Model {
 	      Name		      "UAV SF"
 	      SID		      "572"
 	      Ports		      [5, 4]
-	      Position		      [205, 70, 340, 430]
+	      Position		      [140, 102, 275, 458]
 	      ErrorFcn		      "Stateflow.Translate.translate"
 	      PermitHierarchicalResolution "ExplicitOnly"
 	      TreatAsAtomicUnit	      on
@@ -1857,7 +2767,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"73"
+		SIDHighWatermark	"94"
 		Block {
 		  BlockType		  Inport
 		  Name			  "RC"
@@ -1902,16 +2812,16 @@ Model {
 		  Name			  " Demux "
 		  SID			  "572::8"
 		  Ports			  [1, 1]
-		  Position		  [270, 375, 320, 415]
+		  Position		  [270, 370, 320, 410]
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "572::7"
-		  Tag			  "Stateflow S-Function WK_MaoBi_circle_25102013_Offline 3"
+		  Tag			  "Stateflow S-Function WK_Maobi_writingDTP25 3"
 		  Ports			  [5, 5]
-		  Position		  [180, 156, 230, 374]
+		  Position		  [180, 152, 230, 368]
 		  FunctionName		  "sf_sfun"
 		  Parameters		  "DeltaT,H0,Kl,PI"
 		  PortCounts		  "[5 5]"
@@ -1944,8 +2854,8 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "572::66"
-		  Position		  [460, 386, 480, 404]
+		  SID			  "572::94"
+		  Position		  [460, 381, 480, 399]
 		}
 		Block {
 		  BlockType		  Outport
@@ -2120,7 +3030,7 @@ Model {
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      1
-	      Points		      [0, -25; 5, 0]
+	      Points		      [0, -60; 70, 0]
 	      Branch {
 		DstBlock		"PosRefSystem"
 		DstPort			1
@@ -2136,28 +3046,28 @@ Model {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [95, 0]
+	      Points		      [30, 0]
 	      DstBlock		      "UAV SF"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      2
-	      Points		      [0, -15]
+	      Points		      [0, -45]
 	      DstBlock		      "HoverThrottle"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "MB platform"
 	      SrcPort		      1
-	      Points		      [0, -60; 125, 0]
+	      Points		      [0, -60; 60, 0]
 	      DstBlock		      "UAV SF"
 	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      3
-	      Points		      [0, -65]
+	      Points		      [0, -100]
 	      DstBlock		      "Mode"
 	      DstPort		      1
 	    }
@@ -2195,20 +3105,21 @@ Model {
 	    Line {
 	      SrcBlock		      "Mux"
 	      SrcPort		      1
+	      Points		      [-65, 0]
 	      DstBlock		      "UAV SF"
 	      DstPort		      2
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      4
-	      Points		      [0, -85]
+	      Points		      [0, -120]
 	      DstBlock		      "PWM"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Landing Error"
 	      SrcPort		      1
-	      Points		      [60, 0; 0, -10]
+	      Points		      [60, 0]
 	      DstBlock		      "UAV SF"
 	      DstPort		      4
 	    }
@@ -2243,57 +3154,11 @@ Model {
 	    Line {
 	      SrcBlock		      "draw"
 	      SrcPort		      1
-	      Points		      [0, 15]
+	      Points		      [0, -10; 45, 0; 0, -5]
 	      DstBlock		      "UAV SF"
 	      DstPort		      5
 	    }
 	  }
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Vertical Controller"
-	  SID			  "1971"
-	  Ports			  [3, 1]
-	  Position		  [885, 330, 985, 470]
-	  ForegroundColor	  "green"
-	  BackgroundColor	  "darkGreen"
-	  LibraryVersion	  "1.41"
-	  SourceBlock		  "X400_Control/Vertical Controller"
-	  SourceType		  ""
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
-	  Omega_h		  "Omega_h"
-	  Zeta_h		  "Zeta_h"
-	  PID_I_h		  "2"
-	  mass			  "Mass"
-	}
-	Block {
-	  BlockType		  Scope
-	  Name			  "Yaw"
-	  SID			  "2026"
-	  Ports			  [1]
-	  Position		  [1125, 779, 1155, 811]
-	  Floating		  off
-	  Location		  [331, 43, 1275, 1018]
-	  Open			  off
-	  NumInputPorts		  "1"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	  }
-	  YMin			  "-0.7"
-	  YMax			  "1.5"
-	  SaveName		  "ScopeData3"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -2778,7 +3643,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "335::14"
-		  Tag			  "Stateflow S-Function WK_MaoBi_circle_25102013_Offline 1"
+		  Tag			  "Stateflow S-Function WK_Maobi_writingDTP25 1"
 		  Ports			  [1, 2]
 		  Position		  [180, 100, 230, 160]
 		  FunctionName		  "sf_sfun"
@@ -3042,8 +3907,8 @@ Model {
 		DstPort			1
 	      }
 	      Branch {
-		Points			[50, 0]
-		DstBlock		"Vertical Controller"
+		Points			[45, 0]
+		DstBlock		"HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
 		DstPort			1
 	      }
 	    }
@@ -3075,9 +3940,9 @@ Model {
 	  DstPort		  3
 	}
 	Line {
-	  SrcBlock		  "Vertical Controller"
+	  SrcBlock		  "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, -180]
+	  Points		  [25, 0; 0, -140]
 	  DstBlock		  "Mixer"
 	  DstPort		  2
 	}
@@ -3122,8 +3987,8 @@ Model {
 	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  5
-	  Points		  [0, -10; 285, 0; 0, -50; 195, 0]
-	  DstBlock		  "Vertical Controller"
+	  Points		  [0, -10; 285, 0; 0, -50; 190, 0]
+	  DstBlock		  "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
 	  DstPort		  2
 	}
 	Line {
@@ -3285,8 +4150,8 @@ Model {
 	Line {
 	  SrcBlock		  "Horizontal Pos controller"
 	  SrcPort		  2
-	  Points		  [15, 0; 0, 185; -135, 0; 0, 130]
-	  DstBlock		  "Vertical Controller"
+	  Points		  [15, 0; 0, 185; -135, 0; 0, 125]
+	  DstBlock		  "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
 	  DstPort		  3
 	}
 	Line {
@@ -3301,30 +4166,24 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector2"
 	  SrcPort		  1
-	  DstBlock		  "Mux5"
-	  DstPort		  1
+	  Points		  [130, 0; 0, 10; 10, 0; 0, -80]
+	  DstBlock		  "Trajectory Logic"
+	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Mux4"
 	  SrcPort		  1
-	  DstBlock		  "P vs P_des"
-	  DstPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "NN\nPos"
+	  DstPort		  2
 	}
 	Line {
 	  Name			  "<Position>"
 	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  1
-	  Points		  [40, 0]
-	  Branch {
-	    DstBlock		    "Mux4"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 140]
-	    DstBlock		    "Mux3"
-	    DstPort		    1
-	  }
+	  DstBlock		  "Mux4"
+	  DstPort		  1
 	}
 	Line {
 	  Name			  "<position des>"
@@ -3336,61 +4195,11 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Trajectory Logic"
-	  SrcPort		  8
-	  Points		  [375, 0; 0, 320]
-	  DstBlock		  "Selector3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Selector3"
-	  SrcPort		  1
-	  Points		  [15, 0; 0, 10]
-	  DstBlock		  "Mux3"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux3"
-	  SrcPort		  1
-	  DstBlock		  "P  Vs Rec"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "<Attitude>"
-	  Labels		  [0, 0; 0, 0]
-	  SrcBlock		  "Bus\nSelector3"
-	  SrcPort		  3
-	  DstBlock		  "Selector4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Selector4"
-	  SrcPort		  1
-	  DstBlock		  "Yaw"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Selector5"
-	  SrcPort		  1
-	  Points		  [25, 0]
-	  DstBlock		  "Mux5"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "<Attitude>"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Bus\nSelector2"
+	  SrcBlock		  "HanMa Vertical Controller\nTunigy Motor + Plastic Prop"
 	  SrcPort		  2
-	  Points		  [20, 0; 0, 5]
-	  DstBlock		  "Selector5"
+	  Points		  [30, 0; 0, 170]
+	  DstBlock		  "NN\nPos"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mux5"
-	  SrcPort		  1
-	  Points		  [10, 0; 0, -80]
-	  DstBlock		  "Trajectory Logic"
-	  DstPort		  4
 	}
 	Annotation {
 	  Position		  [830, 128]
@@ -7966,14 +8775,14 @@ Model {
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      Points		      [180, 0]
+      Points		      [165, 0]
       DstBlock		      "Planning"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Planning"
       SrcPort		      1
-      Points		      [-20, 0; 0, 15]
+      Points		      [0, 15]
       DstBlock		      "MAVLink Serial"
       DstPort		      1
     }
@@ -8016,14 +8825,14 @@ Model {
     Line {
       SrcBlock		      "Rate Transition"
       SrcPort		      1
-      Points		      [85, 0]
+      Points		      [70, 0]
       DstBlock		      "Planning"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Rate Transition1"
       SrcPort		      1
-      Points		      [85, 0]
+      Points		      [70, 0]
       DstBlock		      "Planning"
       DstPort		      2
     }
@@ -8075,10 +8884,10 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "WK_MaoBi_circle_25102013_Offline"
+    name		    "WK_Maobi_writingDTP25"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    62
+    firstTarget		    186
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [1 1 0 1]
@@ -8205,22 +9014,23 @@ Stateflow {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
     windowPosition	    [0 30 1440 723]
-    viewLimits		    [201.169 1946.794 36.227 894.977]
-    zoomFactor		    1.25
+    viewLimits		    [1305.04 4796.29 0 1717.5]
+    zoomFactor		    2.5
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
-    treeNode		    [0 19 0 0]
-    firstTransition	    27
+    treeNode		    [0 18 0 0]
+    firstTransition	    168
     viewObj		    9
+    visible		    1
     machine		    1
     subviewS {
-      x1		      514.646
-      y1		      36.227
+      x1		      249.188
+      y1		      253.125
       zoomFactor	      1.25
     }
-    ssIdHighWaterMark	    472
+    ssIdHighWaterMark	    776
     decomposition	    CLUSTER_CHART
-    firstData		    45
+    firstData		    169
     chartFileNumber	    3
     disableImplicitCasting  1
     supportVariableSizing   0
@@ -8228,11 +9038,12 @@ Stateflow {
   state {
     id			    10
     labelString		    "Landing"
-    position		    [154.6384 1163.9303 683.6606 143.2013]
+    position		    [304.4363 1605.159 767.0356 142.8263]
     fontSize		    8
     chart		    9
-    treeNode		    [9 13 19 0]
-    firstTransition	    29
+    treeNode		    [9 13 18 0]
+    firstTransition	    87
+    superState		    GROUPED
     visible		    0
     subviewer		    9
     ssIdNumber		    9
@@ -8242,11 +9053,12 @@ Stateflow {
   state {
     id			    11
     labelString		    "TakeOff\ndu:HoverThrottle = (H0 - HoverThrottle)*3*DeltaT + HoverThrottle ;"
-    position		    [78.1795 112.7942 445.999 54.6983]
+    position		    [84.6795 162.2942 445.999 54.6983]
     fontSize		    12
     arrowSize		    13.343
     chart		    9
-    treeNode		    [19 0 21 17]
+    treeNode		    [18 0 64 17]
+    visible		    0
     subviewer		    9
     ssIdNumber		    7
     type		    OR_STATE
@@ -8254,12 +9066,13 @@ Stateflow {
   }
   state {
     id			    12
-    labelString		    "Descent1\ndescentrate=descentrate+0.01;"
-    position		    [128.0729 868.6661 318.0202 53.8298]
+    labelString		    "Descent1\ndescentrate=descentrate+0.02;"
+    position		    [291.5729 1238.4161 318.0202 53.8298]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [19 0 15 0]
+    treeNode		    [18 0 66 0]
+    visible		    0
     subviewer		    9
     ssIdNumber		    323
     type		    OR_STATE
@@ -8269,11 +9082,12 @@ Stateflow {
     id			    13
     labelString		    "Descending\nen:PosDesired = Pos;\ndu:PosDesired[2] = (PerchPos[2]- PosDesired[2])*1*DeltaT + Pos"
     "Desired[2] ;"
-    position		    [280.5101 1191.7243 432.1659 43.9117]
+    position		    [430.308 1632.953 432.1659 43.9117]
     fontSize		    7.84
     arrowSize		    7.053
     chart		    9
     treeNode		    [10 0 0 14]
+    isGrouped		    1
     visible		    0
     subviewer		    9
     ssIdNumber		    75
@@ -8282,12 +9096,13 @@ Stateflow {
   }
   state {
     id			    14
-    labelString		    "CutThrottle\ndu:HoverThrottle = (0 - HoverThrottle)*3*DeltaT + HoverThrottle ;"
-    position		    [282.0731 1252.9674 507.085 36.5387]
+    labelString		    "CutThrottle\ndu:HoverThrottle = (PerchPos[2] - HoverThrottle)*3*DeltaT + HoverThrottle ;"
+    position		    [431.871 1694.1961 507.085 36.5387]
     fontSize		    7.84
     arrowSize		    7.053
     chart		    9
     treeNode		    [10 0 13 0]
+    isGrouped		    1
     visible		    0
     subviewer		    9
     ssIdNumber		    78
@@ -8296,12 +9111,13 @@ Stateflow {
   }
   state {
     id			    15
-    labelString		    "Descent\nen:PosDesired[2] = PerchPos[2]-0.2+descentrate;"
-    position		    [20.2605 733.6661 588.6452 36.9548]
+    labelString		    "Descent\nen:PosDesired[2] = PerchPos[2]-0.50+descentrate;"
+    position		    [45.6772 1109.9161 588.6452 36.9548]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [19 0 18 12]
+    treeNode		    [18 0 16 66]
+    visible		    0
     subviewer		    9
     ssIdNumber		    225
     type		    OR_STATE
@@ -8309,27 +9125,28 @@ Stateflow {
   }
   state {
     id			    16
-    labelString		    "drawing_circle_line\nen:\nPosDesired[0]=draw[0]-0.25, PosDesired[1]=draw[1],PosDesired[2]= draw["
-    "2]-1.1;\ndegree=0;"
-    position		    [765.2761 114.7913 639.3167 103.2549]
+    labelString		    "Prelanding\nen:PosDesired[0] = PerchPos[0]; PosDesired[1] = PerchPos[1];PosDesired[2] = PerchPos"
+    "[2]-0.8 ;\ndescentrate=0;"
+    position		    [32.6651 987.1614 591.0159 60.3089]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 0 24]
-    isGrouped		    1
+    treeNode		    [18 0 17 15]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    233
+    ssIdNumber		    216
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    17
-    labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]=-1.2;"
-    position		    [10.7192 364.9779 549.6174 47.4942]
+    labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]=-1.0;"
+    position		    [18.6359 883.7279 549.6174 47.4942]
     fontSize		    12
     arrowSize		    13.343
     chart		    9
-    treeNode		    [19 0 11 18]
+    treeNode		    [18 0 11 16]
+    visible		    0
     subviewer		    9
     ssIdNumber		    212
     type		    OR_STATE
@@ -8337,171 +9154,965 @@ Stateflow {
   }
   state {
     id			    18
-    labelString		    "Prelanding\nen:PosDesired[0] = PerchPos[0]; PosDesired[1] = PerchPos[1];PosDesired[2] = PerchPos"
-    "[2]-0.5 ;\ndescentrate=0;"
-    position		    [12.2484 518.4114 591.0159 60.3089]
+    labelString		    "Airborne"
+    position		    [0 0 6729.9547 1393.1656]
     fontSize		    12
-    arrowSize		    8.477
     chart		    9
-    treeNode		    [19 0 17 15]
+    treeNode		    [9 19 0 10]
+    firstTransition	    89
     subviewer		    9
-    ssIdNumber		    216
+    ssIdNumber		    492
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    19
-    labelString		    "Airborne"
-    position		    [0 0 1885.1318 941.3156]
+    labelString		    "D_Letter"
+    position		    [642.3593 29.2031 780.5313 930.4687]
     fontSize		    12
     chart		    9
-    treeNode		    [9 21 0 10]
-    firstTransition	    31
+    treeNode		    [18 20 0 39]
+    firstTransition	    97
     subviewer		    9
-    ssIdNumber		    8
+    ssIdNumber		    530
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    20
-    labelString		    "MBdown\nen:\nPosDesired[0]=draw[0]-0.25+0.1cos(degree);\nPosDesired[1]=draw[1]+0.1sin(degree);\n"
-    "PosDesired[2]=draw[2]-0.46"
-    position		    [730.2761 262.6351 333.848 103.9112]
+    labelString		    "drawing_straight_line\nen:\nPosDesired[0]=draw[0]-0.23, PosDesired[1]=draw[1]-0.1,PosDesired[2]="
+    " draw[2]-1.0;\ndegree=-1.5707;"
+    position		    [724.4167 101.5257 512.0042 75.8799]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 24 22]
-    isGrouped		    1
+    treeNode		    [19 0 0 22]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    425
+    ssIdNumber		    537
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    21
-    labelString		    "Loop"
-    position		    [687.9688 57.8438 1112.0313 550.2187]
+    labelString		    "drawing_circle_line1\nen:\nPosDesired[0]=draw[0]-0.23, PosDesired[1]=draw[1]-0.1,PosDesired[2]= "
+    "draw[2]-1.0;"
+    position		    [717.2291 533.7132 521.3792 76.8174]
     fontSize		    12
+    arrowSize		    8.477
     chart		    9
-    treeNode		    [19 16 0 11]
-    firstTransition	    37
-    superState		    GROUPED
+    treeNode		    [19 0 24 27]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    432
+    ssIdNumber		    559
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    22
-    labelString		    "End_Point\nen:\nPosDesired[0]=draw[0]-0.25, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0.4"
-    "6;"
-    position		    [750.6198 509.5726 594.973 89.4737]
+    labelString		    "MBdown\nen:\nPosDesired[0]=draw[0]-0.23, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.455"
+    position		    [717.6979 232.9633 570.2542 69.6924]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 20 23]
-    isGrouped		    1
+    treeNode		    [19 0 20 23]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    439
+    ssIdNumber		    539
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    23
-    labelString		    "MBup\nen:\nPosDesired[2]= draw[2]-Heightcontrol-0.1;"
-    position		    [1436.2448 510.0413 254.5042 92.755]
+    labelString		    "End_Point\nen:\nPosDesired[0]=draw[0]-0.23, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0.4"
+    "55;"
+    position		    [705.0729 343.4945 567.2543 61.8174]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 22 0]
-    isGrouped		    1
+    treeNode		    [19 0 22 24]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    464
+    ssIdNumber		    540
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    24
-    labelString		    "drawing_circle_line1\nen:\ndegree=degree+0.08726;\nPosDesired[2]=draw[2]-Heightcontrol;"
-    position		    [1327.1511 259.1663 234.7854 87.7862]
+    labelString		    "MBup\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [722.4479 448.7756 363.4104 39.7862]
     fontSize		    12
     arrowSize		    8.477
     chart		    9
-    treeNode		    [21 0 16 20]
-    isGrouped		    1
+    treeNode		    [19 0 23 21]
+    visible		    0
     subviewer		    9
-    ssIdNumber		    460
+    ssIdNumber		    541
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    25
+    labelString		    "End_Point1\nen:\nPosDesired[0]=draw[0]-0.23, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0."
+    "455;"
+    position		    [721.2604 777.182 508.0668 68.1924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [19 0 26 28]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    565
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    26
+    labelString		    "drawing_circle_line2\nen:\ndegree= degree+0.08726;\nPosDesired[2]=draw[2]-0.455;"
+    position		    [1158.948 650.6193 234.9104 72.4112]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [19 0 27 25]
+    subviewer		    9
+    ssIdNumber		    562
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    27
+    labelString		    "MBdown1\nen:\nPosDesired[0]=draw[0]-0.023+0.1*cos(degree);\nPosDesired[1]=draw[1]+0.1*sin(degree"
+    ");\nPosDesired[2]=draw[2]-0.455"
+    position		    [720.4792 641.432 337.723 87.0362]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [19 0 21 26]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    561
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    28
+    labelString		    "MBup1\nen:\nPosDesired[2]= draw[2]-1.0;"
+    position		    [788.3541 879.3694 197.6292 69.88]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [19 0 25 0]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    568
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    29
+    labelString		    "T_Letter"
+    position		    [1482.6093 32.9531 780.5313 930.4687]
+    fontSize		    12
+    chart		    9
+    treeNode		    [18 30 39 54]
+    firstTransition	    108
+    subviewer		    9
+    ssIdNumber		    570
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    30
+    labelString		    "drawing_straight_line1\nen:\nPosDesired[0]=draw[0]-0.16, PosDesired[1]=draw[1]-0.1,PosDesired[2]"
+    "= draw[2]-1.0;"
+    position		    [1548.6354 94.4944 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 0 31]
+    subviewer		    9
+    ssIdNumber		    572
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    31
+    labelString		    "MBdown2\nen:\nPosDesired[0]=draw[0]-0.16, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.455"
+    position		    [1533.6354 214.2133 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 30 32]
+    subviewer		    9
+    ssIdNumber		    576
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    32
+    labelString		    "End_Point2\nen:\nPosDesired[0]=draw[0]-0.06, PosDesired[1]=draw[1]-0.1,PosDesired[2]= draw[2]-0."
+    "455;"
+    position		    [1537.1041 308.3383 567.2543 61.8174]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 31 33]
+    subviewer		    9
+    ssIdNumber		    578
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    33
+    labelString		    "MBup2\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [1547.9166 410.8069 363.4104 39.7862]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 32 34]
+    subviewer		    9
+    ssIdNumber		    580
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    34
+    labelString		    "drawing_straight_line2\nen:\nPosDesired[0]=draw[0]-0.11, PosDesired[1]=draw[1]-0.1,PosDesired[2]"
+    "= draw[2]-1.0;"
+    position		    [1544.2604 487.3069 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 33 35]
+    subviewer		    9
+    ssIdNumber		    582
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    35
+    labelString		    "MBdown3\nen:\nPosDesired[0]=draw[0]-0.11, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.455"
+    position		    [1543.3229 604.2133 570.2542 69.6924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 34 36]
+    subviewer		    9
+    ssIdNumber		    584
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    36
+    labelString		    "Mid_Point\nen:\nPosDesired[0]=draw[0]-0.11, PosDesired[1]=draw[1],PosDesired[2]= draw[2]-0.455;"
+    position		    [1540.5416 707.7132 567.2543 61.8174]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 35 37]
+    subviewer		    9
+    ssIdNumber		    586
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    37
+    labelString		    "End_Point4\nen:\nPosDesired[0]=draw[0]-0.11, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0."
+    "455;"
+    position		    [1546.3229 798.182 551.473 58.5362]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 36 38]
+    subviewer		    9
+    ssIdNumber		    588
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    38
+    labelString		    "MBup2\nen:\nPosDesired[2]= draw[2]-1.0;"
+    position		    [1591.9479 888.2756 197.6292 69.88]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [29 0 37 0]
+    subviewer		    9
+    ssIdNumber		    591
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    39
+    labelString		    "P_Letter"
+    position		    [2296.828 32.8125 780.5313 930.4687]
+    fontSize		    12
+    chart		    9
+    treeNode		    [18 40 19 29]
+    firstTransition	    117
+    subviewer		    9
+    ssIdNumber		    593
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    40
+    labelString		    "drawing_straight_line1\nen:\nPosDesired[0]=draw[0]-0.04, PosDesired[1]=draw[1]-0.1,PosDesired[2]"
+    "= draw[2]-1.0;\ndegree=-1.5707;"
+    position		    [2362.8541 94.3538 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 0 41]
+    subviewer		    9
+    ssIdNumber		    603
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    41
+    labelString		    "MBdown2\nen:\nPosDesired[0]=draw[0]-0.04, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.455"
+    position		    [2347.8542 214.0726 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 40 42]
+    subviewer		    9
+    ssIdNumber		    604
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    42
+    labelString		    "End_Point2\nen:\nPosDesired[0]=draw[0]-0.04, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0."
+    "455;"
+    position		    [2351.3229 308.1976 567.2543 61.8174]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 41 43]
+    subviewer		    9
+    ssIdNumber		    605
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    43
+    labelString		    "MBup3\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [2362.1353 410.6663 363.4104 39.7862]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 42 44]
+    subviewer		    9
+    ssIdNumber		    606
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    44
+    labelString		    "drawing_circle_line3\nen:\nPosDesired[0]=draw[0]-0.04, PosDesired[1]=draw[1]-0.1,PosDesired[2]= "
+    "draw[2]-1.0;"
+    position		    [2349.5104 503.2444 521.3792 76.8174]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 43 45]
+    subviewer		    9
+    ssIdNumber		    615
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    45
+    labelString		    "MBdown2\nen:\nPosDesired[0]=draw[0]-0.04+0.05*cos(degree);\nPosDesired[1]=draw[1]-0.05+0.05*sin("
+    "degree);\nPosDesired[2]=draw[2]-0.455"
+    position		    [2353.8855 617.3382 337.723 87.0362]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 44 46]
+    subviewer		    9
+    ssIdNumber		    616
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    46
+    labelString		    "drawing_circle_line3\nen:\ndegree= degree+0.08726;\nPosDesired[2]=draw[2]-0.455;"
+    position		    [2794.9167 623.3381 234.9104 72.4112]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 45 47]
+    subviewer		    9
+    ssIdNumber		    617
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    47
+    labelString		    "End_Point2\nen:\nPosDesired[0]=draw[0]-0.04, PosDesired[1]=draw[1],PosDesired[2]= draw[2]-0.455;"
+    position		    [2410.4792 769.2132 508.0668 68.1924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 46 48]
+    subviewer		    9
+    ssIdNumber		    618
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    48
+    labelString		    "MBup2\nen:\nPosDesired[2]= draw[2]-1.0;"
+    position		    [2353.1041 862.1194 197.6292 69.88]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [39 0 47 0]
+    subviewer		    9
+    ssIdNumber		    619
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    49
+    labelString		    "MBup3\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [3220.4791 425.8069 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 53 55]
+    subviewer		    9
+    ssIdNumber		    656
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    50
+    labelString		    "drawing_straight_line1\nen:\nPosDesired[0]=draw[0]+0.075, PosDesired[1]=draw[1]-0.05,PosDesired["
+    "2]= draw[2]-1.0;\ndegree=3.1415;"
+    position		    [3212.1041 107.1038 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 0 51]
+    subviewer		    9
+    ssIdNumber		    636
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    51
+    labelString		    "MBdown3\nen:\nPosDesired[0]=draw[0]+0.075+0.05*cos(degree);\nPosDesired[1]=draw[1]-0.05+0.05*sin"
+    "(degree);\nPosDesired[2]=draw[2]-0.455"
+    position		    [3208.2605 216.0882 337.723 87.0362]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 50 52]
+    subviewer		    9
+    ssIdNumber		    650
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    52
+    labelString		    "drawing_circle_line4\nen:\ndegree= degree+0.08726;\nPosDesired[2]=draw[2]-0.455;"
+    position		    [3669.2917 220.2131 234.9104 72.4112]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 51 53]
+    subviewer		    9
+    ssIdNumber		    651
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    53
+    labelString		    "End_Point3\nen:\nPosDesired[0]=draw[0]+0.125, PosDesired[1]=draw[1]-0.05,PosDesired[2]= draw[2]-"
+    "0.455;"
+    position		    [3188.9167 337.0257 508.0668 68.1924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 52 49]
+    subviewer		    9
+    ssIdNumber		    652
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    54
+    labelString		    "2_Letter1"
+    position		    [3148.1093 40.4062 1349.2188 1047.0937]
+    fontSize		    12
+    chart		    9
+    treeNode		    [18 50 29 64]
+    firstTransition	    128
+    subviewer		    9
+    ssIdNumber		    625
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    55
+    labelString		    "drawing_diagonal_line\nen:\nPosDesired[0]=draw[0]+0.125, PosDesired[1]=draw[1]-0.05,PosDesired[2"
+    "]= draw[2]-1.0;"
+    position		    [3197.1041 497.1038 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 49 56]
+    subviewer		    9
+    ssIdNumber		    658
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    56
+    labelString		    "MBdown3\nen:\nPosDesired[0]=draw[0]+0.125, PosDesired[1]=draw[1]-0.05, PosDesired[2]=draw[2]-0.4"
+    "55"
+    position		    [3200.3542 620.0101 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 55 63]
+    subviewer		    9
+    ssIdNumber		    660
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    57
+    labelString		    "drawing_diagonal_line_mid\nen:\nPosDesired[0]=draw[0]+0.075, PosDesired[1]=draw[1]+0.025,PosDesi"
+    "red[2]= draw[2]-0.455;"
+    position		    [3201.3229 701.01 529.0354 76.3486]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 63 58]
+    subviewer		    9
+    ssIdNumber		    663
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    58
+    labelString		    "drawing_diagonal_line_end\nen:\nPosDesired[0]=draw[0]+0.025, PosDesired[1]=draw[1]+0.1,PosDesire"
+    "d[2]= draw[2]-0.455;"
+    position		    [3195.8541 802.7288 507.6292 50.5674]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 57 62]
+    subviewer		    9
+    ssIdNumber		    665
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    59
+    labelString		    "drawing_straight_line2\nen:\nPosDesired[0]=draw[0]+0.025, PosDesired[1]=draw[1]+0.1,PosDesired[2"
+    "]= draw[2]-1.0;"
+    position		    [3493.3541 896.9475 505.2854 60.4111]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 62 60]
+    subviewer		    9
+    ssIdNumber		    668
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    60
+    labelString		    "MBup4\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [3167.5104 898.7756 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 59 61]
+    subviewer		    9
+    ssIdNumber		    670
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    61
+    labelString		    "MBdown4\nen:\nPosDesired[0]=draw[0]+0.025, PosDesired[1]=draw[1]+0.1, PosDesired[2]=draw[2]-0.45"
+    "5"
+    position		    [3329.8854 994.5414 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 60 0]
+    subviewer		    9
+    ssIdNumber		    673
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    62
+    labelString		    "End_Point4\nen:\nPosDesired[0]=draw[0]+0.125, PosDesired[1]=draw[1]+0.1,PosDesired[2]= draw[2]-0"
+    ".455;"
+    position		    [3935.4792 814.2132 508.0668 68.1924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 58 59]
+    subviewer		    9
+    ssIdNumber		    675
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    63
+    labelString		    "MBup5\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [4108.9166 688.3069 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [54 0 56 57]
+    subviewer		    9
+    ssIdNumber		    677
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    64
+    labelString		    "5_Letter"
+    position		    [4536.4531 52.875 1508.7501 1064.4374]
+    fontSize		    12
+    chart		    9
+    treeNode		    [18 65 54 11]
+    firstTransition	    144
+    subviewer		    9
+    ssIdNumber		    682
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    65
+    labelString		    "drawing_straight_line1\nen:\nPosDesired[0]=draw[0]+0.235, PosDesired[1]=draw[1]-0.1,PosDesired[2"
+    "]= draw[2]-1.0;"
+    position		    [4602.1042 113.1038 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 0 78]
+    subviewer		    9
+    ssIdNumber		    698
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    66
+    labelString		    "SafyHover1\nen:PosDesired = Pos; PosDesired[2]=-1.0;"
+    position		    [936.5525 1204.9779 549.6174 47.4942]
+    fontSize		    12
+    arrowSize		    13.343
+    chart		    9
+    treeNode		    [18 0 15 12]
+    subviewer		    9
+    ssIdNumber		    720
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    67
+    labelString		    "MBdown5\nen:\nPosDesired[0]=draw[0]+0.235, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.45"
+    "5"
+    position		    [4572.3854 229.5414 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 79 68]
+    subviewer		    9
+    ssIdNumber		    730
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    68
+    labelString		    "drawing_straight_line_end1\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1]-0.1,PosDesir"
+    "ed[2]= draw[2]-0.455;"
+    position		    [4578.0417 360.6038 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 67 69]
+    subviewer		    9
+    ssIdNumber		    731
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    69
+    labelString		    "MBup6\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [5225.7916 377.8069 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 68 80]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    733
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    70
+    labelString		    "drawing_straight_line3\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1]-0.1,PosDesired[2"
+    "]= draw[2]-1.0;"
+    position		    [4577.2604 474.51 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 80 81]
+    subviewer		    9
+    ssIdNumber		    736
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    71
+    labelString		    "MBdown6\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1]-0.1, PosDesired[2]=draw[2]-0.45"
+    "5"
+    position		    [4571.7604 586.7289 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 81 82]
+    subviewer		    9
+    ssIdNumber		    738
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    72
+    labelString		    "drawing_straight_line_end2\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1],PosDesired[2"
+    "]= draw[2]-0.455;"
+    position		    [4567.2604 703.26 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 82 73]
+    subviewer		    9
+    ssIdNumber		    739
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    73
+    labelString		    "MBup7\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [5186.1979 707.1506 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 72 74]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    742
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    74
+    labelString		    "drawing_straight_line5\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1],PosDesired[2]= d"
+    "raw[2]-1.0;"
+    position		    [4565.2292 821.8538 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 73 75]
+    subviewer		    9
+    ssIdNumber		    744
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    75
+    labelString		    "MBdown7\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1], PosDesired[2]=draw[2]-0.455"
+    position		    [4566.2917 933.1352 544.1605 59.8487]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 74 76]
+    subviewer		    9
+    ssIdNumber		    751
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    76
+    labelString		    "drawing_straight_line_end3\nen:\nPosDesired[0]=draw[0]+0.195, PosDesired[1]=draw[1],PosDesired[2"
+    "]= draw[2]-0.455;"
+    position		    [4581.4792 1019.6663 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 75 77]
+    subviewer		    9
+    ssIdNumber		    752
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    77
+    labelString		    "MBup8\nen: PosDesired[2]= draw[2]-1.0;\ndegree=0;"
+    position		    [5277.9791 1022.9944 191.8167 58.255]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 76 0]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    754
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    78
+    labelString		    "MBdown5\nen:\nPosDesired[0]=draw[0]+0.195+0.05*cos(degree);\nPosDesired[1]=draw[1]+0.05+0.05*sin"
+    "(degree);\nPosDesired[2]=draw[2]-0.455"
+    position		    [5389.7605 178.5882 337.723 87.0362]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 65 79]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    756
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    79
+    labelString		    "drawing_circle_line5\nen:\ndegree= degree+0.08726;\nPosDesired[2]=draw[2]-0.455;"
+    position		    [5801.5417 195.4631 234.9104 72.4112]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 78 67]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    758
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    80
+    labelString		    "End_Point5\nen:\nPosDesired[0]=draw[0]+0.195, PosDesired[1]=draw[1]-0.1,PosDesired[2]= draw[2]-0"
+    ".455;"
+    position		    [5521.9167 397.0257 508.0668 68.1924]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 69 70]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    763
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    81
+    labelString		    "drawing_straight_line_end4\nen:\nPosDesired[0]=draw[0]+0.145, PosDesired[1]=draw[1]-0.1,PosDesir"
+    "ed[2]= draw[2]-0.455;"
+    position		    [5508.2917 532.3538 512.0042 75.8799]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 70 71]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    765
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    82
+    labelString		    "MBup9\nen: PosDesired[2]= draw[2]-1.0;"
+    position		    [5579.6979 696.6506 188.5667 45.505]
+    fontSize		    12
+    arrowSize		    8.477
+    chart		    9
+    treeNode		    [64 0 71 72]
+    visible		    0
+    subviewer		    9
+    ssIdNumber		    767
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   transition {
-    id			    25
+    id			    83
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [68.506 1240.437 64.656 11.228]
+    labelPosition	    [219.354 1681.417 61.845 13.099]
     fontSize		    8
     src {
-      intersection	      [0 1 0 0 60.1149 1259.1589 0 0]
+      intersection	      [0 1 0 0 209.9128 1700.1385 0 0]
     }
     dst {
       id		      10
-      intersection	      [4 -1 0 0.335 154.6384 1259.1589 0 0]
+      intersection	      [4 -1 0 0.335 304.4363 1700.1385 0 0]
     }
-    midPoint		    [105.1708 1259.1589]
+    midPoint		    [254.9687 1700.1385]
     chart		    9
-    linkNode		    [9 26 0]
+    linkNode		    [9 84 0]
     visible		    0
-    dataLimits		    [60.115 154.638 1256.759 1261.559]
+    dataLimits		    [209.913 304.436 1697.738 1702.538]
     subviewer		    9
     drawStyle		    SMART
     executionOrder	    1
     ssIdNumber		    16
   }
   transition {
-    id			    26
+    id			    84
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [623.177 1142.1 84.334 17.778]
+    labelPosition	    [807.82 1583.329 89.956 22.456]
     fontSize		    14
     src {
-      id		      19
-      intersection	      [3 0 1 0.6152 725.4825 941.3156 0 -244.6501]
+      id		      18
+      intersection	      [3 0 1 0.8648 910.0876 1393.1656 0 -222.1709]
     }
     dst {
       id		      10
-      intersection	      [1 0 -1 0.835 725.4825 1163.9303 0 229.0138]
+      intersection	      [1 -0 -1 0.7896 910.0876 1605.159 0 222.1709]
     }
-    midPoint		    [725.4825 1053.2017]
+    midPoint		    [910.0876 1499.5102]
     chart		    9
-    linkNode		    [9 27 25]
+    linkNode		    [9 85 83]
     visible		    0
-    dataLimits		    [723.082 727.882 941.316 1163.93]
+    dataLimits		    [907.688 912.488 1393.166 1605.159]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
-      mode		      MIRROR_SLIDE
-      sticky		      DST_STICK
     }
     executionOrder	    1
     ssIdNumber		    18
   }
   transition {
-    id			    27
+    id			    85
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [375.323 1133.159 79.649 17.778]
+    labelPosition	    [531.339 1568.026 84.334 22.456]
     fontSize		    14
     src {
       id		      10
-      intersection	      [1 -0 -1 0.4682 474.7283 1163.9303 0 -43.3643]
+      intersection	      [1 -0 -1 0.4254 630.7332 1605.159 0 -57.2041]
     }
     dst {
-      id		      19
-      intersection	      [3 0 1 0.7482 474.7283 941.3156 0 43.3643]
+      id		      18
+      intersection	      [3 0 1 0.9063 630.7332 1393.1656 0 57.2041]
     }
-    midPoint		    [474.7283 1052.0442]
+    midPoint		    [630.7332 1498.8145]
     chart		    9
-    linkNode		    [9 0 26]
+    linkNode		    [9 168 84]
     visible		    0
-    dataLimits		    [472.328 477.128 941.316 1163.93]
+    dataLimits		    [628.333 633.133 1393.166 1605.159]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8511,354 +10122,23 @@ Stateflow {
     ssIdNumber		    17
   }
   transition {
-    id			    28
-    labelString		    "[RC[5] > 0]"
-    labelPosition	    [620.956 267.334 61.845 16.842]
-    fontSize		    12
-    arrowSize		    13.343
-    src {
-      id		      21
-      intersection	      [4 -1 0 0.6661 687.9688 241.5395 0 50.3401]
-    }
-    dst {
-      id		      17
-      intersection	      [1 0 -1 0.8106 456.25 364.9779 0 -430.1804]
-    }
-    midPoint		    [533.226 265.9946]
-    chart		    9
-    linkNode		    [19 44 33]
-    dataLimits		    [452.247 687.969 241.539 364.978]
-    stampAngle		    NaN
-    subviewer		    9
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-      midPointSticky	      1
-    }
-    executionOrder	    1
-    ssIdNumber		    276
-  }
-  transition {
-    id			    29
-    labelPosition	    [230.822 1202.87 5.622 11.228]
-    fontSize		    7.84
-    arrowSize		    7.053
-    src {
-      intersection	      [0 1 0 0 209.1387 1214.3488 0 0]
-    }
-    dst {
-      id		      13
-      intersection	      [4 -1 0 0.4848 280.5101 1214.3476 0 0]
-    }
-    midPoint		    [242.6196 1214.3482]
-    chart		    9
-    linkNode		    [10 0 30]
-    dataLimits		    [209.139 280.51 1212.232 1216.464]
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    84
-  }
-  transition {
-    id			    30
-    labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [768.847 1226.177 89.956 11.228]
-    fontSize		    7.84
-    arrowSize		    7.053
-    src {
-      id		      13
-      intersection	      [3 0 1 0.0504 690.9089 1235.636 0 -155.2933]
-    }
-    dst {
-      id		      14
-      intersection	      [1 0 -1 0.9359 756.654 1252.9674 0 221.0384]
-    }
-    midPoint		    [725.9239 1240.3725]
-    chart		    9
-    linkNode		    [10 29 0]
-    dataLimits		    [690.909 758.77 1235.636 1252.967]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    85
-  }
-  transition {
-    id			    31
-    labelString		    "{PosDesired = Pos;  PosDesired[2] =-1.2;}"
-    labelPosition	    [61.81 82.996 189.283 14.971]
-    fontSize		    9.883
-    arrowSize		    13.343
-    src {
-      intersection	      [0 0 1 0.1082 286.6818 73.2878 0 -63.2472]
-    }
-    dst {
-      id		      11
-      intersection	      [1 0 -1 0.4675 286.6818 112.7942 0 63.2472]
-    }
-    midPoint		    [286.6818 86.7935]
-    chart		    9
-    linkNode		    [19 0 32]
-    dataLimits		    [282.679 290.685 73.288 112.794]
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    1
-    ssIdNumber		    13
-  }
-  transition {
-    id			    32
-    labelString		    "after(5,sec)"
-    labelPosition	    [564.991 145.144 62.782 16.842]
-    fontSize		    12
-    src {
-      id		      11
-      intersection	      [2 1 -0 0.6512 524.1785 148.4139 0 27.3337]
-    }
-    dst {
-      id		      21
-      intersection	      [4 -1 0 0.8354 687.9688 148.4139 0 -27.3337]
-    }
-    midPoint		    [605.3616 158.5667]
-    chart		    9
-    linkNode		    [19 31 44]
-    dataLimits		    [524.178 687.969 148.414 169.877]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    213
-  }
-  transition {
-    id			    33
-    labelString		    "after (3, sec)"
-    labelPosition	    [211.538 490.725 70.278 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      17
-      intersection	      [3 0 1 0.4911 290.4396 412.4721 0 -38.2554]
-    }
-    dst {
-      id		      18
-      intersection	      [1 0 -1 0.4707 290.4396 518.4114 0 37.5742]
-    }
-    midPoint		    [290.4396 463.2301]
-    chart		    9
-    linkNode		    [19 28 34]
-    dataLimits		    [287.897 292.983 412.472 518.411]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    1
-    ssIdNumber		    218
-  }
-  transition {
-    id			    34
-    labelString		    "[PerchError < 0.01]"
-    labelPosition	    [336.353 660.742 105.886 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      18
-      intersection	      [3 0 1 0.4735 323.4128 578.7203 0 -32.1881]
-    }
-    dst {
-      id		      15
-      intersection	      [1 0 -1 0.515 323.4128 733.6661 0 32.1881]
-    }
-    midPoint		    [323.4128 655.0469]
-    chart		    9
-    linkNode		    [19 33 41]
-    dataLimits		    [320.87 325.956 578.72 733.666]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    1
-    ssIdNumber		    231
-  }
-  transition {
-    id			    35
-    labelString		    "[PerchError < 0.01]"
-    labelPosition	    [42.445 821.014 105.886 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      15
-      intersection	      [3 0 1 0.785 146.8361 770.6209 0 46.1976]
-    }
-    dst {
-      id		      12
-      intersection	      [1 -0 -1 0.059 146.8361 868.6661 0 -47.1351]
-    }
-    midPoint		    [146.8429 817.2601]
-    chart		    9
-    linkNode		    [19 41 42]
-    dataLimits		    [144.293 149.379 770.621 868.666]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    2
-    ssIdNumber		    325
-  }
-  transition {
-    id			    36
-    labelString		    "[abs(PosDesired[0]-draw[0]-0.25)+abs(PosDesired[1]-draw[1])<0.1]"
-    labelPosition	    [939.66 235.407 362.637 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      16
-      intersection	      [3 0 1 0.7543 922.3389 218.0462 0 24.0625]
-    }
-    dst {
-      id		      20
-      intersection	      [1 -0 -1 0.5753 922.3389 262.6351 0 -24.0625]
-    }
-    midPoint		    [922.3481 236.7952]
-    chart		    9
-    linkNode		    [21 37 38]
-    isGrouped		    1
-    dataLimits		    [919.805 924.891 218.046 262.635]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    426
-  }
-  transition {
-    id			    37
-    labelPosition	    [741.781 145.312 8.433 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      intersection	      [0 1 0 0 735.2761 160.3125 0 0]
-    }
-    dst {
-      id		      16
-      intersection	      [4 -1 0 0.5591 765.2761 160.3125 0 0]
-    }
-    midPoint		    [746.4135 160.3125]
-    chart		    9
-    linkNode		    [21 0 36]
-    isGrouped		    1
-    dataLimits		    [735.276 765.276 157.769 162.856]
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    1
-    ssIdNumber		    463
-  }
-  transition {
-    id			    38
-    labelString		    "[degree<3.1415]"
-    labelPosition	    [1137.385 304.218 89.956 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      20
-      intersection	      [2 1 0 0.2784 1064.1241 291.5594 0 -15.997]
-    }
-    dst {
-      id		      24
-      intersection	      [4 -1 -0 0.631 1327.1511 291.5594 0 15.997]
-    }
-    midPoint		    [1196.8408 291.5625]
-    chart		    9
-    linkNode		    [21 36 43]
-    isGrouped		    1
-    dataLimits		    [1064.124 1327.151 289.019 294.106]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    444
-  }
-  transition {
-    id			    39
-    labelString		    "after (1,sec)"
-    labelPosition	    [1355.915 536.719 66.53 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      22
-      intersection	      [2 1 0 0.5811 1345.5928 561.5667 0 5.3781]
-    }
-    dst {
-      id		      23
-      intersection	      [4 -1 -0 0.4445 1436.2448 561.5667 0 -5.3781]
-    }
-    midPoint		    [1388.3747 561.5625]
-    chart		    9
-    linkNode		    [21 40 0]
-    isGrouped		    1
-    dataLimits		    [1345.593 1436.245 559.019 564.106]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    465
-  }
-  transition {
-    id			    40
-    labelString		    "[abs(PosDesired[1]-draw[1]-0.1)<0.01]"
-    labelPosition	    [918.283 469.244 208.024 16.842]
-    fontSize		    12
-    arrowSize		    8.477
-    src {
-      id		      20
-      intersection	      [3 0 1 0.7734 805.9415 366.5463 0 91.2586]
-    }
-    dst {
-      id		      22
-      intersection	      [1 0 -1 0.2867 921.2086 509.5726 0 24.0085]
-    }
-    midPoint		    [867.3314 436.2128]
-    chart		    9
-    linkNode		    [21 43 39]
-    isGrouped		    1
-    dataLimits		    [805.941 923.752 366.546 509.573]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    2
-    ssIdNumber		    447
-  }
-  transition {
-    id			    41
+    id			    86
     labelString		    "after (5,sec)"
-    labelPosition	    [552.115 680.565 66.53 16.842]
+    labelPosition	    [580.694 1079.91 74.964 16.842]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      15
-      intersection	      [1 0 -1 0.9025 551.5313 733.6661 0 236.9482]
+      intersection	      [1 0 -1 0.9025 576.948 1109.9161 0 236.9482]
     }
     dst {
-      id		      18
-      intersection	      [3 0 1 0.0875 551.5313 578.7203 0 -255.6982]
+      id		      16
+      intersection	      [3 0 1 0.0473 595.698 1047.4703 0 -255.6982]
     }
-    midPoint		    [551.5313 657.3396]
+    midPoint		    [586.934 1081.8803]
     chart		    9
-    linkNode		    [19 34 35]
-    dataLimits		    [548.988 554.074 578.72 733.666]
+    linkNode		    [18 92 146]
+    dataLimits		    [576.948 598.241 1047.47 1109.916]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8870,48 +10150,51 @@ Stateflow {
     ssIdNumber		    448
   }
   transition {
-    id			    42
-    labelString		    "after (0.5,sec)"
-    labelPosition	    [405.938 810.615 76.838 16.842]
-    fontSize		    12
-    arrowSize		    8.477
+    id			    87
+    labelPosition	    [380.62 1644.099 7.496 13.099]
+    fontSize		    7.84
+    arrowSize		    7.053
     src {
-      id		      12
-      intersection	      [1 -0 -1 0.8497 398.2947 868.6661 0 -25.0518]
+      intersection	      [0 1 0 0 358.9366 1655.5775 0 0]
     }
     dst {
-      id		      15
-      intersection	      [3 0 1 0.3578 398.2947 770.6209 0 24.1143]
+      id		      13
+      intersection	      [4 -1 0 0.4848 430.308 1655.5763 0 0]
     }
-    midPoint		    [398.2813 822.0268]
+    midPoint		    [392.4175 1655.5769]
     chart		    9
-    linkNode		    [19 35 0]
-    dataLimits		    [395.752 400.838 770.621 868.666]
-    stampAngle		    NaN
+    linkNode		    [10 0 88]
+    visible		    0
+    isGrouped		    1
+    dataLimits		    [358.937 430.308 1653.46 1657.692]
     subviewer		    9
     drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
     executionOrder	    1
-    ssIdNumber		    456
+    ssIdNumber		    84
   }
   transition {
-    id			    43
-    labelString		    "after(2,sec)"
-    labelPosition	    [1090.234 339.473 62.782 16.842]
-    fontSize		    12
-    arrowSize		    8.477
+    id			    88
+    labelString		    "[Pos[2] >(PerchPos[2] -0.1)]"
+    labelPosition	    [918.645 1667.406 89.956 13.099]
+    fontSize		    7.84
+    arrowSize		    7.053
     src {
-      id		      24
-      intersection	      [4 -1 0 0.4686 1327.1511 305.8124 0 -2.753]
+      id		      13
+      intersection	      [3 0 1 0.0504 840.6927 1676.8647 0 -155.2793]
     }
     dst {
-      id		      20
-      intersection	      [3 0 1 0.159 1011.0381 366.5463 0 116.5729]
+      id		      14
+      intersection	      [1 0 -1 0.9359 906.4519 1694.1961 0 221.0384]
     }
-    midPoint		    [1120.3784 384.5802]
+    midPoint		    [875.7218 1681.6012]
     chart		    9
-    linkNode		    [21 38 40]
+    linkNode		    [10 87 0]
+    visible		    0
     isGrouped		    1
-    dataLimits		    [1008.495 1327.151 305.812 399.22]
+    dataLimits		    [840.693 908.568 1676.865 1694.196]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8920,37 +10203,2124 @@ Stateflow {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    461
+    ssIdNumber		    85
   }
   transition {
-    id			    44
-    labelString		    "[RC[5] > 0]"
-    labelPosition	    [332.5 220.313 61.845 16.842]
+    id			    89
+    labelString		    "{PosDesired = Pos;  PosDesired[2] =-1.2;}"
+    labelPosition	    [284.81 86.503 183.661 14.971]
+    fontSize		    9.883
+    arrowSize		    13.343
+    src {
+      intersection	      [0 0 1 0.1082 293.1818 122.7878 0 -63.2472]
+    }
+    dst {
+      id		      11
+      intersection	      [1 0 -1 0.4675 293.1818 162.2942 0 63.2472]
+    }
+    midPoint		    [293.1818 136.2935]
+    chart		    9
+    linkNode		    [18 0 96]
+    dataLimits		    [289.179 297.185 122.788 162.294]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    13
+  }
+  transition {
+    id			    90
+    labelString		    "after (3, sec)"
+    labelPosition	    [239.871 959.475 78.712 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      17
+      intersection	      [3 0 1 0.4539 318.7729 931.2221 0 -38.2554]
+    }
+    dst {
+      id		      16
+      intersection	      [1 0 -1 0.4841 318.7729 987.1614 0 37.5742]
+    }
+    midPoint		    [318.7729 955.8931]
+    chart		    9
+    linkNode		    [18 95 130]
+    dataLimits		    [316.23 321.316 931.222 987.161]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    218
+  }
+  transition {
+    id			    91
+    labelString		    "after (0.5,sec)"
+    labelPosition	    [629.12 1202.515 86.208 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      12
+      intersection	      [2 1 0 0.4222 609.5931 1261.1421 0 137.542]
+    }
+    dst {
+      id		      15
+      intersection	      [3 0 1 0.0353 613.5434 1146.8709 0 -137.542]
+    }
+    midPoint		    [625.3422 1219.683]
+    chart		    9
+    linkNode		    [18 93 0]
+    dataLimits		    [609.593 627.61 1146.871 1261.142]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    456
+  }
+  transition {
+    id			    92
+    labelString		    "[PerchError < 0.01]"
+    labelPosition	    [361.77 1076.938 116.194 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      16
+      intersection	      [3 0 1 0.465 348.8294 1047.4703 0 -32.1881]
+    }
+    dst {
+      id		      15
+      intersection	      [1 0 -1 0.515 348.8294 1109.9161 0 32.1881]
+    }
+    midPoint		    [348.8294 1075.536]
+    chart		    9
+    linkNode		    [18 163 86]
+    dataLimits		    [346.286 351.373 1047.47 1109.916]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    231
+  }
+  transition {
+    id			    93
+    labelString		    "[PerchError < 0.02]"
+    labelPosition	    [231.354 1193.046 116.194 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      15
+      intersection	      [3 0 1 0.5072 335.7528 1146.8709 0 46.1976]
+    }
+    dst {
+      id		      12
+      intersection	      [1 0 -1 0.1389 335.7528 1238.4161 0 -47.1351]
+    }
+    midPoint		    [335.7528 1190.1189]
+    chart		    9
+    linkNode		    [18 146 91]
+    dataLimits		    [333.21 338.296 1146.871 1238.416]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    325
+  }
+  transition {
+    id			    94
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [140.803 504.221 78.712 16.842]
     fontSize		    12
     arrowSize		    13.343
     src {
       id		      11
-      intersection	      [3 0 1 0.4361 329.6875 167.4925 0 -28.5085]
+      intersection	      [3 0 1 0.9144 122.8349 216.9925 0 192.7415]
     }
     dst {
       id		      17
-      intersection	      [1 0 -1 0.5803 329.6875 364.9779 0 28.5085]
+      intersection	      [1 0 -1 0.1896 122.8349 883.7279 0 -192.7415]
     }
-    midPoint		    [329.6875 263.422]
+    midPoint		    [122.8349 557.7481]
     chart		    9
-    linkNode		    [19 32 28]
-    dataLimits		    [325.685 333.69 167.493 364.978]
+    linkNode		    [18 96 95]
+    dataLimits		    [118.832 126.838 216.992 883.728]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    2
-    ssIdNumber		    462
+    ssIdNumber		    486
+  }
+  transition {
+    id			    95
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [472.401 802.465 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      19
+      intersection	      [4 -1 0 0.1484 642.3593 821.5625 0 85.9125]
+    }
+    dst {
+      id		      17
+      intersection	      [1 0 -1 0.8869 506.0879 883.7279 0 -85.9125]
+    }
+    midPoint		    [551.908 828.065]
+    chart		    9
+    linkNode		    [18 94 90]
+    dataLimits		    [502.085 642.359 821.561 883.728]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    3
+    ssIdNumber		    525
+  }
+  transition {
+    id			    96
+    labelString		    "after (5,sec)"
+    labelPosition	    [572.081 179.144 74.964 16.842]
+    fontSize		    12
+    src {
+      id		      11
+      intersection	      [2 1 0 0.6512 530.6785 197.9137 0 20.3566]
+    }
+    dst {
+      id		      19
+      intersection	      [4 -1 0 0.8187 642.3593 197.9137 0 -20.3566]
+    }
+    midPoint		    [584.686 197.9137]
+    chart		    9
+    linkNode		    [18 89 94]
+    dataLimits		    [530.678 642.359 195.514 200.314]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    527
+  }
+  transition {
+    id			    97
+    labelPosition	    [700.922 119.978 11.245 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      intersection	      [0 1 0 0 694.4167 134.9772 0 0]
+    }
+    dst {
+      id		      20
+      intersection	      [4 -1 0 0.5591 724.4167 134.9811 0 0]
+    }
+    midPoint		    [705.554 134.9772]
+    chart		    9
+    linkNode		    [19 0 98]
+    dataLimits		    [694.417 724.417 132.438 137.524]
+    subviewer		    9
+    executionOrder	    1
+    ssIdNumber		    531
+  }
+  transition {
+    id			    98
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [782.118 202.943 646.562 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      20
+      intersection	      [3 -0 1 0.9108 770.1093 177.4055 0 210.3094]
+    }
+    dst {
+      id		      22
+      intersection	      [1 0 -1 0.0919 770.1093 232.9633 0 -210.3094]
+    }
+    midPoint		    [770.1093 201.8774]
+    chart		    9
+    linkNode		    [19 97 101]
+    dataLimits		    [767.566 772.652 177.406 232.963]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    532
+  }
+  transition {
+    id			    99
+    labelString		    "[PosDesired[2]-draw[2]+1.0<0.01]"
+    labelPosition	    [783.391 495.897 204.276 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      24
+      intersection	      [3 0 1 0.8796 766.2031 488.5619 0 136.075]
+    }
+    dst {
+      id		      21
+      intersection	      [1 0 -1 0.0939 766.2031 533.7132 0 -137.95]
+    }
+    midPoint		    [766.2031 507.6043]
+    chart		    9
+    linkNode		    [19 102 106]
+    dataLimits		    [763.66 768.746 488.562 533.713]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    560
+  }
+  transition {
+    id			    100
+    labelString		    "[degree<3.1415]"
+    labelPosition	    [1063.375 656.835 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      27
+      intersection	      [2 1 0 0.4417 1058.2022 679.8776 0 -13.6973]
+    }
+    dst {
+      id		      26
+      intersection	      [4 -1 -0 0.5959 1158.948 679.8776 0 14.6348]
+    }
+    midPoint		    [1106.2505 679.8776]
+    chart		    9
+    linkNode		    [19 106 105]
+    dataLimits		    [1058.202 1158.948 677.335 682.421]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    563
+  }
+  transition {
+    id			    101
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [777.653 314.672 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      22
+      intersection	      [3 0 1 0.9163 765.4187 302.6557 0 242.1875]
+    }
+    dst {
+      id		      23
+      intersection	      [1 0 -1 0.1064 765.4187 343.4945 0 -242.1875]
+    }
+    midPoint		    [765.4187 319.4482]
+    chart		    9
+    linkNode		    [19 98 102]
+    dataLimits		    [762.876 767.962 302.656 343.495]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    535
+  }
+  transition {
+    id			    102
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [770.796 410.372 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      23
+      intersection	      [3 0 1 0.892 766.3562 405.3119 0 83.3437]
+    }
+    dst {
+      id		      24
+      intersection	      [1 -0 -1 0.1208 766.3562 448.7756 0 -83.3437]
+    }
+    midPoint		    [766.3562 423.4739]
+    chart		    9
+    linkNode		    [19 101 99]
+    dataLimits		    [763.813 768.899 405.312 448.776]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    536
+  }
+  transition {
+    id			    103
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]-0.1)<0.02]"
+    labelPosition	    [864.152 853.125 438.538 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      25
+      intersection	      [3 0 1 0.7356 855.6114 845.3744 0 31.5573]
+    }
+    dst {
+      id		      28
+      intersection	      [1 0 -1 0.3403 855.6114 879.3694 0 -31.5573]
+    }
+    midPoint		    [855.6114 858.5962]
+    chart		    9
+    linkNode		    [19 104 0]
+    dataLimits		    [853.068 858.155 845.374 879.369]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    569
+  }
+  transition {
+    id			    104
+    labelString		    "[degree>3.1415]"
+    labelPosition	    [861.861 745.661 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      27
+      intersection	      [3 -0 1 0.6328 844.4865 728.4682 0 43.0418]
+    }
+    dst {
+      id		      25
+      intersection	      [1 0 -1 0.2425 844.4865 777.182 0 -44.5418]
+    }
+    midPoint		    [844.4865 749.3693]
+    chart		    9
+    linkNode		    [19 105 103]
+    dataLimits		    [841.943 847.03 728.468 777.182]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    567
+  }
+  transition {
+    id			    105
+    labelString		    "after (1,sec)"
+    labelPosition	    [1078.856 719.15 74.964 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      26
+      intersection	      [4 -1 -0 0.2306 1158.948 706.3349 0 -10.3224]
+    }
+    dst {
+      id		      27
+      intersection	      [2 1 0 0.742 1058.2022 706.0096 0 11.8224]
+    }
+    midPoint		    [1110.8997 706.1617]
+    chart		    9
+    linkNode		    [19 100 104]
+    dataLimits		    [1058.202 1158.948 703.467 708.553]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    566
+  }
+  transition {
+    id			    106
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1)) <"
+    "0.02]"
+    labelPosition	    [770.986 619.71 635.317 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      21
+      intersection	      [3 0 1 0.9187 759.6114 610.5305 0 127.7918]
+    }
+    dst {
+      id		      27
+      intersection	      [1 -0 -1 0.1159 759.6114 641.432 0 -127.7918]
+    }
+    midPoint		    [759.6114 622.1383]
+    chart		    9
+    linkNode		    [19 99 100]
+    dataLimits		    [757.068 762.155 610.531 641.432]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    564
+  }
+  transition {
+    id			    107
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.23)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [1231.759 1057.559 642.814 16.842]
+    fontSize		    12
+    src {
+      id		      19
+      intersection	      [3 0 1 0.1395 1314.0449 959.6718 0 574.08]
+    }
+    dst {
+      id		      29
+      intersection	      [3 0 1 0.8654 1587.705 963.4218 0 -574.08]
+    }
+    midPoint		    [1459.793 1034.2218]
+    chart		    9
+    linkNode		    [18 164 166]
+    dataLimits		    [1314.045 1590.105 959.672 1034.222]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    571
+  }
+  transition {
+    id			    108
+    labelPosition	    [1524.359 124.087 11.245 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      intersection	      [0 1 0 0 1518.6354 139.0866 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [4 -1 0 0.4123 1548.6354 139.0866 0 0]
+    }
+    midPoint		    [1528.9617 139.0866]
+    chart		    9
+    linkNode		    [29 0 109]
+    dataLimits		    [1518.635 1548.635 136.544 141.63]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    574
+  }
+  transition {
+    id			    109
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.16)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [1639.621 179.399 646.562 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      30
+      intersection	      [3 0 1 0.8409 1630.0898 170.3743 0 175.6414]
+    }
+    dst {
+      id		      31
+      intersection	      [1 0 -1 0.1773 1630.0898 214.2133 0 -174.7039]
+    }
+    midPoint		    [1630.0898 188.732]
+    chart		    9
+    linkNode		    [29 108 110]
+    dataLimits		    [1627.547 1632.633 170.374 214.213]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    577
+  }
+  transition {
+    id			    110
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.16)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [1641.652 280.894 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      31
+      intersection	      [3 0 1 0.8156 1633.9961 274.062 0 186.7352]
+    }
+    dst {
+      id		      32
+      intersection	      [1 0 -1 0.1708 1633.9961 308.3383 0 -186.7352]
+    }
+    midPoint		    [1633.9961 287.4305]
+    chart		    9
+    linkNode		    [29 109 111]
+    dataLimits		    [1631.453 1636.539 274.062 308.338]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    579
+  }
+  transition {
+    id			    111
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.06)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [1631.184 380.839 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      32
+      intersection	      [3 0 1 0.8358 1630.2461 370.1557 0 100.3132]
+    }
+    dst {
+      id		      33
+      intersection	      [1 0 -1 0.2265 1630.2461 410.8069 0 -99.3757]
+    }
+    midPoint		    [1630.2461 386.8503]
+    chart		    9
+    linkNode		    [29 110 112]
+    dataLimits		    [1627.703 1632.789 370.156 410.807]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    581
+  }
+  transition {
+    id			    112
+    labelString		    "[PosDesired[2]-draw[2]+1.0<0.01]"
+    labelPosition	    [1641.652 454.678 204.276 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      33
+      intersection	      [3 0 1 0.7661 1632.9023 450.5931 0 97.657]
+    }
+    dst {
+      id		      34
+      intersection	      [1 0 -1 0.1731 1632.9023 487.3069 0 -96.7195]
+    }
+    midPoint		    [1632.9023 465.2334]
+    chart		    9
+    linkNode		    [29 111 113]
+    dataLimits		    [1630.359 1635.445 450.593 487.307]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    583
+  }
+  transition {
+    id			    113
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.11)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [1636.027 566.872 646.562 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      34
+      intersection	      [3 0 1 0.8192 1636.8086 563.1868 0 162.6727]
+    }
+    dst {
+      id		      35
+      intersection	      [1 0 -1 0.1639 1636.8086 604.2133 0 -160.7977]
+    }
+    midPoint		    [1636.8086 580.0772]
+    chart		    9
+    linkNode		    [29 112 114]
+    dataLimits		    [1634.265 1639.352 563.187 604.213]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    585
+  }
+  transition {
+    id			    114
+    labelString		    "after(1,sec)"
+    labelPosition	    [1640.559 677.996 71.216 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      35
+      intersection	      [3 0 1 0.8339 1638.0586 673.9057 0 186.2664]
+    }
+    dst {
+      id		      36
+      intersection	      [1 -0 -1 0.1719 1638.0586 707.7132 0 -183.4539]
+    }
+    midPoint		    [1638.0586 687.0297]
+    chart		    9
+    linkNode		    [29 113 115]
+    dataLimits		    [1635.515 1640.602 673.906 707.713]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    587
+  }
+  transition {
+    id			    115
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.11)+abs(PosDesired[1]-draw[1])+abs(PosDesired[2]-draw[2]+1.0)) <0."
+    "02]"
+    labelPosition	    [1643.059 770.91 620.325 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      36
+      intersection	      [3 0 1 0.8364 1633.3711 769.5307 0 190.1727]
+    }
+    dst {
+      id		      37
+      intersection	      [1 -0 -1 0.1578 1633.3711 798.182 0 -188.2977]
+    }
+    midPoint		    [1633.3711 779.9645]
+    chart		    9
+    linkNode		    [29 114 116]
+    dataLimits		    [1630.828 1635.914 769.531 798.182]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    589
+  }
+  transition {
+    id			    116
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.11)+abs(PosDesired[1]-draw[1]-0.1)<0.02]"
+    labelPosition	    [1667.59 864.375 438.538 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      37
+      intersection	      [3 0 1 0.7906 1661.8086 856.7182 0 27.0789]
+    }
+    dst {
+      id		      38
+      intersection	      [1 -0 -1 0.3535 1661.8086 888.2756 0 -28.9539]
+    }
+    midPoint		    [1661.8086 868.6682]
+    chart		    9
+    linkNode		    [29 115 0]
+    dataLimits		    [1659.265 1664.352 856.718 888.276]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    592
+  }
+  transition {
+    id			    117
+    labelPosition	    [2338.578 123.946 11.245 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      intersection	      [0 1 0 0 2332.8541 138.946 0 0]
+    }
+    dst {
+      id		      40
+      intersection	      [4 -1 0 0.4123 2362.8541 138.946 0 0]
+    }
+    midPoint		    [2343.1804 138.946]
+    chart		    9
+    linkNode		    [39 0 118]
+    dataLimits		    [2332.854 2362.854 136.403 141.489]
+    subviewer		    9
+    executionOrder	    1
+    ssIdNumber		    594
+  }
+  transition {
+    id			    118
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.04)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [2453.84 179.259 646.562 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      40
+      intersection	      [3 -0 1 0.8409 2444.3086 170.2337 0 175.6414]
+    }
+    dst {
+      id		      41
+      intersection	      [1 0 -1 0.1773 2444.3086 214.0726 0 -174.7039]
+    }
+    midPoint		    [2444.3086 188.5914]
+    chart		    9
+    linkNode		    [39 117 119]
+    dataLimits		    [2441.765 2446.852 170.234 214.073]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    595
+  }
+  transition {
+    id			    119
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.04)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [2455.871 280.753 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      41
+      intersection	      [3 0 1 0.8156 2448.2148 273.9214 0 186.7352]
+    }
+    dst {
+      id		      42
+      intersection	      [1 -0 -1 0.1708 2448.2148 308.1976 0 -186.7352]
+    }
+    midPoint		    [2448.2148 287.2899]
+    chart		    9
+    linkNode		    [39 118 120]
+    dataLimits		    [2445.672 2450.758 273.921 308.198]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    596
+  }
+  transition {
+    id			    120
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.04)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+0.455"
+    ")) <0.02]"
+    labelPosition	    [2451.184 379.292 657.807 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      42
+      intersection	      [3 0 1 0.8358 2444.4648 370.0151 0 100.3132]
+    }
+    dst {
+      id		      43
+      intersection	      [1 0 -1 0.2265 2444.4648 410.6663 0 -99.3757]
+    }
+    midPoint		    [2444.4648 386.7097]
+    chart		    9
+    linkNode		    [39 119 121]
+    dataLimits		    [2441.922 2447.008 370.015 410.666]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    597
+  }
+  transition {
+    id			    121
+    labelString		    "[PosDesired[2]-draw[2]+1.0<0.01]"
+    labelPosition	    [2480.997 465.639 204.276 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      43
+      intersection	      [3 -0 1 0.697 2472.2473 450.4525 0 71.5932]
+    }
+    dst {
+      id		      44
+      intersection	      [1 0 -1 0.2354 2472.2473 503.2444 0 -71.5932]
+    }
+    midPoint		    [2472.2473 473.4814]
+    chart		    9
+    linkNode		    [39 120 126]
+    dataLimits		    [2469.704 2474.79 450.453 503.244]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    598
+  }
+  transition {
+    id			    122
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.11)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [2001.757 1043.582 642.814 16.842]
+    fontSize		    12
+    src {
+      id		      29
+      intersection	      [3 0 1 0.1213 2168.4755 963.4218 0 559.8995]
+    }
+    dst {
+      id		      39
+      intersection	      [3 0 1 0.8161 2440.3505 963.2812 0 -608.6162]
+    }
+    midPoint		    [2313.2729 1035.4479]
+    chart		    9
+    linkNode		    [18 166 165]
+    dataLimits		    [2168.476 2442.751 963.281 1035.448]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    612
+  }
+  transition {
+    id			    123
+    labelString		    "[degree<3.1415]"
+    labelPosition	    [2705.351 621.809 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      45
+      intersection	      [2 1 0 0.4553 2691.6085 656.9656 0 -9.1406]
+    }
+    dst {
+      id		      46
+      intersection	      [4 -1 -0 0.5356 2794.9167 656.9656 0 2.5781]
+    }
+    midPoint		    [2740.9937 656.9656]
+    chart		    9
+    linkNode		    [39 126 124]
+    dataLimits		    [2691.608 2794.917 654.422 659.509]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    620
+  }
+  transition {
+    id			    124
+    labelString		    "after (1,sec)"
+    labelPosition	    [2719.454 691.184 74.964 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      46
+      intersection	      [4 -1 -0 0.3285 2794.9167 671.9656 0 -15.2344]
+    }
+    dst {
+      id		      45
+      intersection	      [2 1 0 0.6276 2691.6085 671.9656 0 12.4219]
+    }
+    midPoint		    [2745.5315 671.9656]
+    chart		    9
+    linkNode		    [39 123 125]
+    dataLimits		    [2691.608 2794.917 669.422 674.509]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    621
+  }
+  transition {
+    id			    125
+    labelString		    "[degree>3.1415]"
+    labelPosition	    [2549.591 743.437 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      45
+      intersection	      [3 -0 1 0.4571 2537.2473 704.3744 0 48.4684]
+    }
+    dst {
+      id		      47
+      intersection	      [1 0 -1 0.2495 2537.2473 769.2132 0 -48.4684]
+    }
+    midPoint		    [2537.2473 733.6886]
+    chart		    9
+    linkNode		    [39 124 127]
+    dataLimits		    [2534.704 2539.79 704.374 769.213]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    622
+  }
+  transition {
+    id			    126
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.04)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [2458.678 593.182 646.562 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      44
+      intersection	      [3 0 1 0.7802 2464.1005 580.0618 0 59.584]
+    }
+    dst {
+      id		      45
+      intersection	      [1 -0 -1 0.3263 2464.1005 617.3382 0 -58.6465]
+    }
+    midPoint		    [2464.1005 594.9956]
+    chart		    9
+    linkNode		    [39 121 123]
+    dataLimits		    [2461.557 2466.644 580.062 617.338]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    623
+  }
+  transition {
+    id			    127
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.04))+abs(PosDesired[1]-draw[1])<0.02]"
+    labelPosition	    [2464.101 839.275 419.797 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      47
+      intersection	      [3 0 1 0.9 2461.288 837.4057 0 -11.2443]
+    }
+    dst {
+      id		      48
+      intersection	      [1 0 -1 0.5474 2461.288 862.1194 0 9.3693]
+    }
+    midPoint		    [2461.288 845.7851]
+    chart		    9
+    linkNode		    [39 125 0]
+    dataLimits		    [2458.745 2463.831 837.406 862.119]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    624
+  }
+  transition {
+    id			    128
+    labelPosition	    [3187.828 136.696 11.245 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      intersection	      [0 1 0 0 3182.1041 151.696 0 0]
+    }
+    dst {
+      id		      50
+      intersection	      [4 -1 0 0.4123 3212.1041 151.696 0 0]
+    }
+    midPoint		    [3192.4304 151.696]
+    chart		    9
+    linkNode		    [54 0 129]
+    dataLimits		    [3182.104 3212.104 149.153 154.239]
+    subviewer		    9
+    executionOrder	    1
+    ssIdNumber		    626
+  }
+  transition {
+    id			    129
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.075)+abs(PosDesired[1]-draw[1]+0.05)+abs(PosDesired[2]-draw[2]+1.0"
+    ")) <0.02]"
+    labelPosition	    [3319.288 189.99 657.807 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      50
+      intersection	      [3 0 1 0.8093 3309.7567 182.9837 0 67.3652]
+    }
+    dst {
+      id		      51
+      intersection	      [1 0 -1 0.3005 3309.7567 216.0882 0 -67.3652]
+    }
+    midPoint		    [3309.7567 195.7409]
+    chart		    9
+    linkNode		    [54 128 132]
+    dataLimits		    [3307.214 3312.3 182.984 216.088]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    627
+  }
+  transition {
+    id			    130
+    labelString		    "[(abs(PosDesired[0]-draw[0]+0.11)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+1.0))"
+    " <0.02]"
+    labelPosition	    [2555.835 1011.339 642.814 16.842]
+    fontSize		    12
+    src {
+      id		      39
+      intersection	      [3 0 1 0.1259 2979.0937 963.2812 0 563.5]
+    }
+    dst {
+      id		      54
+      intersection	      [4 -1 0 0.1276 3148.1093 953.8678 0 -455.8209]
+    }
+    midPoint		    [3042.8108 978.4692]
+    chart		    9
+    linkNode		    [18 90 164]
+    dataLimits		    [2979.094 3148.109 951.468 986.128]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    645
+  }
+  transition {
+    id			    131
+    labelString		    "after (1,sec)"
+    labelPosition	    [3582.867 275.748 74.964 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      52
+      intersection	      [4 -1 0 0.2607 3669.2917 273.75 0 -11.7063]
+    }
+    dst {
+      id		      51
+      intersection	      [2 1 0 0.6625 3545.9835 273.75 0 17.3313]
+    }
+    midPoint		    [3609.4717 273.75]
+    chart		    9
+    linkNode		    [54 132 134]
+    dataLimits		    [3545.983 3669.292 271.207 276.293]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    654
+  }
+  transition {
+    id			    132
+    labelString		    "[degree<6.283]"
+    labelPosition	    [3573.492 228.869 93.705 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      51
+      intersection	      [2 1 0 0.3717 3545.9835 248.4375 0 -10.7937]
+    }
+    dst {
+      id		      52
+      intersection	      [4 -1 0 0.6102 3669.2917 248.4375 0 7.9812]
+    }
+    midPoint		    [3605.8034 248.4375]
+    chart		    9
+    linkNode		    [54 129 131]
+    dataLimits		    [3545.983 3669.292 245.894 250.981]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    653
+  }
+  transition {
+    id			    133
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.125)+abs(PosDesired[1]-draw[1]+0.05)+abs(PosDesired[2]-draw[2]+0.4"
+    "55)) <0.02]"
+    labelPosition	    [3326.788 408.462 672.799 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      53
+      intersection	      [3 0 1 0.7474 3317.2567 405.2182 0 1.0995]
+    }
+    dst {
+      id		      49
+      intersection	      [1 0 -1 0.5132 3317.2567 425.8069 0 -2.037]
+    }
+    midPoint		    [3317.2567 411.4454]
+    chart		    9
+    linkNode		    [54 134 135]
+    dataLimits		    [3314.714 3319.8 405.218 425.807]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    657
+  }
+  transition {
+    id			    134
+    labelString		    "[degee >6.283]"
+    labelPosition	    [3333.492 308.557 93.705 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      51
+      intersection	      [3 0 1 0.6764 3317.5541 303.1244 0 6.2866]
+    }
+    dst {
+      id		      53
+      intersection	      [1 0 -1 0.2532 3317.5541 337.0257 0 -9.0991]
+    }
+    midPoint		    [3317.5541 316.2973]
+    chart		    9
+    linkNode		    [54 131 133]
+    dataLimits		    [3315.011 3320.097 303.124 337.026]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    655
+  }
+  transition {
+    id			    135
+    labelString		    "[PosDesired[2]-draw[2]+1.0<0.01]"
+    labelPosition	    [3332.569 474.657 204.276 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      49
+      intersection	      [3 0 1 0.4569 3322.8817 471.3119 0 -3.588]
+    }
+    dst {
+      id		      55
+      intersection	      [1 0 -1 0.2457 3322.8817 497.1038 0 3.588]
+    }
+    midPoint		    [3322.8817 480.2538]
+    chart		    9
+    linkNode		    [54 133 136]
+    dataLimits		    [3320.339 3325.425 471.312 497.104]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    659
+  }
+  transition {
+    id			    136
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.125)+abs(PosDesired[1]-draw[1]+0.05)+abs(PosDesired[2]-draw[2]+0.4"
+    "55)) <0.02]"
+    labelPosition	    [3261.319 590.825 672.799 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      55
+      intersection	      [3 0 1 0.903 3246.788 572.9837 0 220.8027]
+    }
+    dst {
+      id		      56
+      intersection	      [1 0 -1 0.0853 3246.788 620.0101 0 -220.8027]
+    }
+    midPoint		    [3246.788 593.0045]
+    chart		    9
+    linkNode		    [54 135 137]
+    dataLimits		    [3244.245 3249.331 572.984 620.01]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    661
+  }
+  transition {
+    id			    137
+    labelString		    "after(1,sec)"
+    labelPosition	    [3359.913 680.601 71.216 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      56
+      intersection	      [3 0 1 0.7229 3351.163 679.8588 0 121.4277]
+    }
+    dst {
+      id		      57
+      intersection	      [1 0 -1 0.2832 3351.163 701.01 0 -116.7402]
+    }
+    midPoint		    [3351.163 686.3795]
+    chart		    9
+    linkNode		    [54 136 143]
+    dataLimits		    [3348.62 3353.706 679.859 701.01]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    664
+  }
+  transition {
+    id			    138
+    labelString		    "after(1,sec)"
+    labelPosition	    [3346.475 779.446 71.216 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      57
+      intersection	      [3 0 1 0.7292 3344.6005 777.3587 0 117.6464]
+    }
+    dst {
+      id		      58
+      intersection	      [1 0 -1 0.293 3344.6005 802.7288 0 -116.7089]
+    }
+    midPoint		    [3344.6005 786.0805]
+    chart		    9
+    linkNode		    [54 143 139]
+    dataLimits		    [3342.057 3347.144 777.359 802.729]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    666
+  }
+  transition {
+    id			    139
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.125)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [3263.975 860.921 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      58
+      intersection	      [3 0 1 0.879 3257.2567 853.2962 0 5.4745]
+    }
+    dst {
+      id		      60
+      intersection	      [1 0 -1 0.4759 3257.2567 898.7756 0 -4.537]
+    }
+    midPoint		    [3257.2567 872.5099]
+    chart		    9
+    linkNode		    [54 138 142]
+    dataLimits		    [3254.714 3259.8 853.296 898.776]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    671
+  }
+  transition {
+    id			    140
+    labelString		    "[abs(PosDesired[2]-draw[2]+1.0)<0.01]"
+    labelPosition	    [3284.069 958.108 234.262 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      60
+      intersection	      [2 1 -0 0.5185 3356.0771 922.3678 0 -8.0666]
+    }
+    dst {
+      id		      59
+      intersection	      [4 -1 0 0.5792 3493.3541 922.3678 0 -0.8396]
+    }
+    midPoint		    [3423.1851 922.3678]
+    chart		    9
+    linkNode		    [54 142 141]
+    dataLimits		    [3356.077 3493.354 919.825 924.911]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    672
+  }
+  transition {
+    id			    141
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.025)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+1)) "
+    "<0.02]"
+    labelPosition	    [3541.413 965.621 635.317 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      59
+      intersection	      [3 0 1 0.9067 3540.4755 957.3587 0 205.5214]
+    }
+    dst {
+      id		      61
+      intersection	      [1 -0 -1 0.387 3540.4755 994.5414 0 -187.8978]
+    }
+    midPoint		    [3540.4755 972.2436]
+    chart		    9
+    linkNode		    [54 140 0]
+    dataLimits		    [3537.932 3543.019 957.359 994.541]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    674
+  }
+  transition {
+    id			    142
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.025)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [3875.319 1042.027 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      61
+      intersection	      [2 1 0 0.6512 3874.0459 1033.5151 0 38.9737]
+    }
+    dst {
+      id		      62
+      intersection	      [3 0 1 0.277 4302.8192 882.4057 0 -367.3401]
+    }
+    midPoint		    [4161.1005 984.3705]
+    chart		    9
+    linkNode		    [54 139 140]
+    dataLimits		    [3874.046 4305.362 882.406 1033.515]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    676
+  }
+  transition {
+    id			    143
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.125)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [3844.23 658.117 661.555 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      62
+      intersection	      [1 0 -1 0.1064 3989.538 814.2132 0 -213.662]
+    }
+    dst {
+      id		      63
+      intersection	      [4 -1 0 0.7244 4108.9166 700.8466 0 139.7883]
+    }
+    midPoint		    [4027.1699 734.1886]
+    chart		    9
+    linkNode		    [54 137 138]
+    dataLimits		    [3989.538 4108.917 698.303 814.213]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    678
+  }
+  transition {
+    id			    144
+    labelPosition	    [4577.828 142.696 11.245 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      intersection	      [0 1 0 0 4572.1042 157.696 0 0]
+    }
+    dst {
+      id		      65
+      intersection	      [4 -1 0 0.4123 4602.1042 157.696 0 0]
+    }
+    midPoint		    [4582.4304 157.696]
+    chart		    9
+    linkNode		    [64 0 145]
+    dataLimits		    [4572.104 4602.104 155.153 160.239]
+    subviewer		    9
+    executionOrder	    1
+    ssIdNumber		    683
+  }
+  transition {
+    id			    145
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.235)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0)"
+    ") <0.02]"
+    labelPosition	    [4712.474 203.443 650.31 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      65
+      intersection	      [3 0 1 0.8031 4702.9426 188.9837 0 141.5231]
+    }
+    dst {
+      id		      67
+      intersection	      [1 -0 -1 0.2399 4702.9426 229.5414 0 -141.5231]
+    }
+    midPoint		    [4702.9426 205.6295]
+    chart		    9
+    linkNode		    [64 144 158]
+    dataLimits		    [4700.399 4705.486 188.984 229.541]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    684
+  }
+  transition {
+    id			    146
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.125)+abs(PosDesired[1]-draw[1]-0.1)+abs(PosDesired[2]-draw[2]+1.0)"
+    ") <0.02]"
+    labelPosition	    [4404.985 1182.424 646.562 16.842]
+    fontSize		    12
+    src {
+      id		      54
+      intersection	      [3 0 1 0.0907 4375 1087.4999 0 645.875]
+    }
+    dst {
+      id		      64
+      intersection	      [3 0 1 0.9101 4672.0313 1117.3124 0 -688.9375]
+    }
+    midPoint		    [4533.1953 1182.1283]
+    chart		    9
+    linkNode		    [18 86 93]
+    dataLimits		    [4375 4674.431 1087.5 1183.578]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    713
+  }
+  transition {
+    id			    147
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.235)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [4715.436 314.717 665.303 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      67
+      intersection	      [3 0 1 0.7423 4712.6231 289.3901 0 130.1238]
+    }
+    dst {
+      id		      68
+      intersection	      [1 -0 -1 0.2629 4712.6231 360.6038 0 -128.2488]
+    }
+    midPoint		    [4712.6231 322.0303]
+    chart		    9
+    linkNode		    [64 160 148]
+    dataLimits		    [4710.08 4715.166 289.39 360.604]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    732
+  }
+  transition {
+    id			    148
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.145)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [5092.236 345.723 665.303 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      68
+      intersection	      [2 1 0 0.5069 5090.0459 399.0671 0 -1.4923]
+    }
+    dst {
+      id		      69
+      intersection	      [4 -1 0 0.5328 5225.7916 399.0671 0 1.4923]
+    }
+    midPoint		    [5156.355 399.0671]
+    chart		    9
+    linkNode		    [64 147 149]
+    dataLimits		    [5090.046 5225.792 396.524 401.61]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    734
+  }
+  transition {
+    id			    149
+    labelString		    "[abs(PosDesired[2]-draw[2]+1) <0.02]"
+    labelPosition	    [5246.018 502.695 226.765 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      69
+      intersection	      [3 0 1 0.1156 5392.5548 423.3119 0 -166.7632]
+    }
+    dst {
+      id		      70
+      intersection	      [2 1 0 0.5959 5089.2646 519.7234 0 45.2133]
+    }
+    midPoint		    [5329.1176 475.3837]
+    chart		    9
+    linkNode		    [64 148 161]
+    dataLimits		    [5089.265 5392.555 423.312 522.266]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    737
+  }
+  transition {
+    id			    150
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.145)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+1.0)"
+    ") <0.02]"
+    labelPosition	    [4697.555 554.961 650.31 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      70
+      intersection	      [3 0 1 0.769 4695.5235 550.3899 0 153.1609]
+    }
+    dst {
+      id		      71
+      intersection	      [1 -0 -1 0.2274 4695.5235 586.7289 0 -153.1609]
+    }
+    midPoint		    [4695.5235 564.8347]
+    chart		    9
+    linkNode		    [64 161 162]
+    dataLimits		    [4692.98 4698.067 550.39 586.729]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    740
+  }
+  transition {
+    id			    151
+    labelString		    "[abs(PosDesired[2]-draw[2]+0.455) <0.02]"
+    labelPosition	    [4690.68 654.275 253.003 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      71
+      intersection	      [3 0 1 0.7832 4689.7423 646.5776 0 148.6297]
+    }
+    dst {
+      id		      72
+      intersection	      [1 -0 -1 0.2392 4689.7423 703.26 0 -151.4422]
+    }
+    midPoint		    [4689.7423 671.6363]
+    chart		    9
+    linkNode		    [64 162 152]
+    dataLimits		    [4687.199 4692.285 646.578 703.26]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    741
+  }
+  transition {
+    id			    152
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.145)+abs(PosDesired[1]-draw[1])+abs(PosDesired[2]-draw[2]+0.455)) "
+    "<0.02]"
+    labelPosition	    [5032.47 672.642 639.066 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      72
+      intersection	      [2 1 0 0.3809 5079.2646 732.1609 0 2.2577]
+    }
+    dst {
+      id		      73
+      intersection	      [4 -1 0 0.4504 5186.1979 732.1609 0 -2.2577]
+    }
+    midPoint		    [5130.5411 732.1609]
+    chart		    9
+    linkNode		    [64 151 153]
+    dataLimits		    [5079.265 5186.198 729.618 734.704]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    743
+  }
+  transition {
+    id			    153
+    labelString		    "[abs(PosDesired[2]-draw[2]+1) <0.02]"
+    labelPosition	    [5077.898 774.574 226.765 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      73
+      intersection	      [3 0 1 0.242 5329.125 752.6556 0 -142.9271]
+    }
+    dst {
+      id		      74
+      intersection	      [2 1 0 0.5215 5077.2334 861.4218 0 39.568]
+    }
+    midPoint		    [5235.2051 843.3265]
+    chart		    9
+    linkNode		    [64 152 154]
+    dataLimits		    [5077.233 5329.125 752.656 863.965]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    745
+  }
+  transition {
+    id			    154
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.145)+abs(PosDesired[1]-draw[1])+abs(PosDesired[2]-draw[2]+1.0)) <0"
+    ".02]"
+    labelPosition	    [4743.875 898.916 624.073 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      74
+      intersection	      [3 0 1 0.6547 4742 897.7337 0 96.372]
+    }
+    dst {
+      id		      75
+      intersection	      [1 -0 -1 0.3229 4742 933.1352 0 -96.372]
+    }
+    midPoint		    [4742 911.6893]
+    chart		    9
+    linkNode		    [64 153 155]
+    dataLimits		    [4739.457 4744.543 897.734 933.135]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    749
+  }
+  transition {
+    id			    155
+    labelString		    "[abs(PosDesired[2]-draw[2]+0.455) <0.02]"
+    labelPosition	    [4783.406 995.98 253.003 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      75
+      intersection	      [3 0 1 0.6202 4772.9375 992.9839 0 65.4345]
+    }
+    dst {
+      id		      76
+      intersection	      [1 0 -1 0.3739 4772.9375 1019.6663 0 -65.4345]
+    }
+    midPoint		    [4772.9375 1002.3904]
+    chart		    9
+    linkNode		    [64 154 156]
+    dataLimits		    [4770.394 4775.481 992.984 1019.666]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    753
+  }
+  transition {
+    id			    156
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.195)+abs(PosDesired[1]-draw[1])+abs(PosDesired[2]-draw[2]+0.455)) "
+    "<0.02]"
+    labelPosition	    [5050.383 987.555 639.066 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      76
+      intersection	      [2 1 0 0.3612 5093.4834 1047.0736 0 1.3267]
+    }
+    dst {
+      id		      77
+      intersection	      [4 -1 0 0.5867 5277.9791 1047.0736 0 -1.3267]
+    }
+    midPoint		    [5185.2273 1047.0736]
+    chart		    9
+    linkNode		    [64 155 0]
+    dataLimits		    [5093.483 5277.979 1044.531 1049.617]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    755
+  }
+  transition {
+    id			    157
+    labelString		    "[abs(PosDesired[2]-draw[2]+0.455) <0.02]"
+    labelPosition	    [5176.108 609.022 253.003 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      77
+      intersection	      [2 1 0 0.3048 5469.7958 1040.75 0 97.791]
+    }
+    dst {
+      id		      78
+      intersection	      [3 0 1 0.4753 5566.9547 265.6244 0 -177.1942]
+    }
+    midPoint		    [5445.4547 537]
+    chart		    9
+    linkNode		    [64 159 160]
+    dataLimits		    [5431.158 5569.498 265.624 1040.75]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    759
+  }
+  transition {
+    id			    158
+    labelString		    "[degree<3.1415]"
+    labelPosition	    [5745.705 161.25 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      78
+      intersection	      [2 1 0 0.4471 5727.4835 217.5 0 -14.1687]
+    }
+    dst {
+      id		      79
+      intersection	      [4 -1 0 0.6957 5801.5417 217.5 0 14.1687]
+    }
+    midPoint		    [5761.6078 217.5]
+    chart		    9
+    linkNode		    [64 145 159]
+    dataLimits		    [5727.483 5801.542 214.957 220.043]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    761
+  }
+  transition {
+    id			    159
+    labelString		    "after(1,seec)"
+    labelPosition	    [5738.205 243.75 78.712 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      79
+      intersection	      [4 -1 0 0.4678 5801.5417 234 0 -15.8313]
+    }
+    dst {
+      id		      78
+      intersection	      [2 1 0 0.6367 5727.4835 234 0 2.3313]
+    }
+    midPoint		    [5767.4174 234]
+    chart		    9
+    linkNode		    [64 158 157]
+    dataLimits		    [5727.483 5801.542 231.457 236.543]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    762
+  }
+  transition {
+    id			    160
+    labelString		    "[degree>3.1415]"
+    labelPosition	    [5718.455 327 101.201 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      78
+      intersection	      [3 0 1 0.12 5686.9547 265.6244 0 -128.3327]
+    }
+    dst {
+      id		      80
+      intersection	      [1 0 -1 0.3957 5722.9547 397.0257 0 164.3327]
+    }
+    midPoint		    [5706.1278 329.6144]
+    chart		    9
+    linkNode		    [64 157 147]
+    dataLimits		    [5686.955 5725.498 265.624 397.026]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    764
+  }
+  transition {
+    id			    161
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.195)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [5519.205 488.25 665.303 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      80
+      intersection	      [3 0 1 0.9025 5571.4547 465.2182 0 204.4954]
+    }
+    dst {
+      id		      81
+      intersection	      [1 0 -1 0.1234 5571.4547 532.3538 0 -204.4954]
+    }
+    midPoint		    [5571.4547 495.7307]
+    chart		    9
+    linkNode		    [64 149 150]
+    dataLimits		    [5568.912 5573.998 465.218 532.354]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    766
+  }
+  transition {
+    id			    162
+    labelString		    "[(abs(PosDesired[0]-draw[0]-0.145)+abs(PosDesired[1]-draw[1]+0.1)+abs(PosDesired[2]-draw[2]+0.45"
+    "5)) <0.02]"
+    labelPosition	    [5607.455 625.5 665.303 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      81
+      intersection	      [3 0 1 0.8034 5608.9547 608.2337 0 65.0265]
+    }
+    dst {
+      id		      82
+      intersection	      [1 0 -1 0.1552 5608.9547 696.6506 0 -65.0265]
+    }
+    midPoint		    [5608.9547 649.8495]
+    chart		    9
+    linkNode		    [64 150 151]
+    dataLimits		    [5606.412 5611.498 608.234 696.651]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    768
+  }
+  transition {
+    id			    163
+    labelString		    "after(3,sec)"
+    labelPosition	    [878.75 1023.75 71.216 16.842]
+    fontSize		    12
+    arrowSize		    8.477
+    src {
+      id		      66
+      intersection	      [1 0 -1 0.195 1043.75 1204.9779 0 107.1975]
+    }
+    dst {
+      id		      16
+      intersection	      [2 1 0 0.4772 623.681 1015.9396 0 -31.5307]
+    }
+    midPoint		    [884.5115 1049.3254]
+    chart		    9
+    linkNode		    [18 167 92]
+    dataLimits		    [623.681 1043.75 1013.396 1204.978]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    769
+  }
+  transition {
+    id			    164
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [1165.625 1059.375 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      19
+      intersection	      [3 0 1 0.3248 1169.375 959.6718 0 45.7362]
+    }
+    dst {
+      id		      66
+      intersection	      [1 0 -1 0.4236 1169.375 1204.9779 0 -41.9862]
+    }
+    midPoint		    [1169.375 1080.5513]
+    chart		    9
+    linkNode		    [18 130 107]
+    dataLimits		    [1165.372 1173.378 959.672 1204.978]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    770
+  }
+  transition {
+    id			    165
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [1308.125 1076.25 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      29
+      intersection	      [3 0 1 0.3275 2007.5 963.4218 0 -524.8907]
+    }
+    dst {
+      id		      66
+      intersection	      [1 0 -1 0.5737 1251.875 1204.9779 0 -230.7343]
+    }
+    midPoint		    [1308.125 1106.25]
+    chart		    9
+    linkNode		    [18 122 167]
+    dataLimits		    [1247.872 2007.5 963.422 1204.978]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    771
+  }
+  transition {
+    id			    166
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [1433.75 1091.25 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      39
+      intersection	      [3 0 1 0.6909 2538.125 963.2812 0 -241.297]
+    }
+    dst {
+      id		      66
+      intersection	      [1 0 -1 0.8603 1409.375 1204.9779 0 -76.7949]
+    }
+    midPoint		    [1936.9661 1072.3763]
+    chart		    9
+    linkNode		    [18 107 122]
+    dataLimits		    [1405.372 2538.125 963.281 1204.978]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    772
+  }
+  transition {
+    id			    167
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [2539.599 1156.875 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      54
+      intersection	      [3 0 1 0.884 3304.5988 1087.4999 0 -156.4895]
+    }
+    dst {
+      id		      66
+      intersection	      [1 0 -1 0.938 1452.1041 1204.9779 0 -34.0658]
+    }
+    midPoint		    [2317.9821 1122.8229]
+    chart		    9
+    linkNode		    [18 165 163]
+    dataLimits		    [1448.101 3304.599 1000.514 1278.621]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    773
+  }
+  transition {
+    id			    168
+    labelString		    "[RC[5] > 0.5]"
+    labelPosition	    [3488.79 1342.5 78.712 16.842]
+    fontSize		    12
+    arrowSize		    13.343
+    src {
+      id		      64
+      intersection	      [3 0 1 0.868 4735.6651 1117.3124 0 -199.212]
+    }
+    dst {
+      id		      66
+      intersection	      [2 1 0 0.3989 1486.1699 1223.9227 0 18.9448]
+    }
+    midPoint		    [4349.4151 1374.375]
+    chart		    9
+    linkNode		    [9 0 85]
+    dataLimits		    [1486.17 4735.665 1117.312 1394.073]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+      midPointSticky	      1
+    }
+    executionOrder	    1
+    ssIdNumber		    776
   }
   data {
-    id			    45
+    id			    169
     ssIdNumber		    28
     name		    "PosDesired"
-    linkNode		    [9 0 46]
+    linkNode		    [9 0 170]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8967,10 +12337,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    46
+    id			    170
     ssIdNumber		    29
     name		    "HoverThrottle"
-    linkNode		    [9 45 47]
+    linkNode		    [9 169 171]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8987,10 +12357,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    47
+    id			    171
     ssIdNumber		    30
     name		    "Mode"
-    linkNode		    [9 46 48]
+    linkNode		    [9 170 172]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9007,10 +12377,10 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    48
+    id			    172
     ssIdNumber		    31
     name		    "RC"
-    linkNode		    [9 47 49]
+    linkNode		    [9 171 173]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9028,10 +12398,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    49
+    id			    173
     ssIdNumber		    32
     name		    "Pos"
-    linkNode		    [9 48 50]
+    linkNode		    [9 172 174]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9049,10 +12419,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    50
+    id			    174
     ssIdNumber		    35
     name		    "PerchPos"
-    linkNode		    [9 49 51]
+    linkNode		    [9 173 175]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9070,10 +12440,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    51
+    id			    175
     ssIdNumber		    47
     name		    "DeltaT"
-    linkNode		    [9 50 52]
+    linkNode		    [9 174 176]
     scope		    PARAMETER_DATA
     machine		    1
     props {
@@ -9091,10 +12461,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    52
+    id			    176
     ssIdNumber		    48
     name		    "H0"
-    linkNode		    [9 51 53]
+    linkNode		    [9 175 177]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 1
     machine		    1
@@ -9113,10 +12483,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    53
+    id			    177
     ssIdNumber		    49
     name		    "Kl"
-    linkNode		    [9 52 54]
+    linkNode		    [9 176 178]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 2
     machine		    1
@@ -9135,10 +12505,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    54
+    id			    178
     ssIdNumber		    94
     name		    "VelCmd"
-    linkNode		    [9 53 55]
+    linkNode		    [9 177 179]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9155,10 +12525,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    55
+    id			    179
     ssIdNumber		    119
     name		    "PWM"
-    linkNode		    [9 54 56]
+    linkNode		    [9 178 180]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9172,10 +12542,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    56
+    id			    180
     ssIdNumber		    135
     name		    "PerchError"
-    linkNode		    [9 55 57]
+    linkNode		    [9 179 181]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9193,10 +12563,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    57
+    id			    181
     ssIdNumber		    183
     name		    "PI"
-    linkNode		    [9 56 58]
+    linkNode		    [9 180 182]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 3
     machine		    1
@@ -9215,10 +12585,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    58
+    id			    182
     ssIdNumber		    190
     name		    "draw"
-    linkNode		    [9 57 59]
+    linkNode		    [9 181 183]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9236,12 +12606,11 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    59
-    ssIdNumber		    429
-    name		    "degree"
-    linkNode		    [9 58 60]
+    id			    183
+    ssIdNumber		    455
+    name		    "descentrate"
+    linkNode		    [9 182 184]
     scope		    LOCAL_DATA
-    paramIndexForInitFromWorkspace 6
     machine		    1
     props {
       type {
@@ -9253,10 +12622,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    60
-    ssIdNumber		    455
-    name		    "descentrate"
-    linkNode		    [9 59 0]
+    id			    184
+    ssIdNumber		    542
+    name		    "degree"
+    linkNode		    [9 183 0]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9269,22 +12638,22 @@ Stateflow {
     dataType		    "double"
   }
   instance {
-    id			    61
+    id			    185
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    62
+    id			    186
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 63]
+    linkNode		    [1 0 187]
   }
   target {
-    id			    63
+    id			    187
     name		    "rtw"
     machine		    1
-    linkNode		    [1 62 0]
+    linkNode		    [1 186 0]
   }
 }
