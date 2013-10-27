@@ -1,12 +1,12 @@
 Model {
   Name			  "WK_MaoBi_Record_using_box"
-  Version		  7.8
+  Version		  7.7
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1453"
+    ComputedModelVersion    "1.1452"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,7 +19,6 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
-  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   InitFcn		  "sample_time=0.005;%0.004;%0.0025;%0.02;\nDeltaT = 0.02;\ng = 9.81;\nH0 = g%0.3165;\nKl = 1;\n\nOmega_r ="
   " 1.6;%for Horizontal reference\nZeta_r = 0.7; %for Horizontal reference\nOmega = 1.8;%for Horizontal Control\nZeta ="
@@ -30,11 +29,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Birdman"
+  LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Oct 27 10:17:22 2013"
-  RTWModifiedTimeStamp	  304769648
-  ModelVersionFormat	  "1.%<AutoIncrement:1453>"
+  LastModifiedDate	  "Fri Oct 11 17:31:28 2013"
+  RTWModifiedTimeStamp	  303411419
+  ModelVersionFormat	  "1.%<AutoIncrement:1452>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -42,7 +41,6 @@ Model {
   WideLines		  off
   ShowLineDimensions	  on
   ShowPortDataTypes	  off
-  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -110,13 +108,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      1
-      Version		      "1.11.1"
+      Version		      "1.11.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -150,7 +148,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -182,7 +180,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -201,7 +199,6 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
-	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -238,7 +235,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -293,7 +290,6 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -322,11 +318,10 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
-	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -363,7 +358,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -378,7 +373,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -393,7 +388,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -446,7 +441,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -511,7 +506,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -539,7 +534,9 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
+	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
+	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -549,7 +546,6 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
-	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -904,7 +900,6 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
     }
@@ -954,8 +949,8 @@ Model {
   }
   System {
     Name		    "WK_MaoBi_Record_using_box"
-    Location		    [8, 95, 948, 1007]
-    Open		    on
+    Location		    [8, 50, 948, 962]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1040,7 +1035,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[2, 95, 1900, 1040]
+	Location		[2, 82, 1902, 1027]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1221,9 +1216,18 @@ Model {
 	  Ports			  [1, 2]
 	  Position		  [855, 40, 965, 180]
 	  BackgroundColor	  "green"
-	  LibraryVersion	  "1.39"
+	  LibraryVersion	  "1.38"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
 	  SourceType		  ""
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	  Max_RP		  "Max_RP"
 	  Omega			  "Omega"
 	  PID_i			  "1"
@@ -1647,8 +1651,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [2, 95, 1900, 1040]
-	    Open		    on
+	    Location		    [2, 82, 1902, 1027]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1735,9 +1739,18 @@ Model {
 	      Ports		      [1, 4]
 	      Position		      [370, 42, 490, 118]
 	      BackgroundColor	      "orange"
-	      LibraryVersion	      "1.39"
+	      LibraryVersion	      "1.38"
 	      SourceBlock	      "X330_Control/PosRefSystem"
 	      SourceType	      ""
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      Omega_r		      "Omega_r"
 	      Zeta_r		      "Zeta_r"
 	      Acc_Max		      "Acc_Max"
@@ -1774,7 +1787,6 @@ Model {
 	      Opaque		      off
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
-	      SFBlockType	      "Chart"
 	      MaskType		      "Stateflow"
 	      MaskDescription	      "Stateflow diagram"
 	      MaskSelfModifiable      on
@@ -1800,7 +1812,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"45"
+		SIDHighWatermark	"41"
 		Block {
 		  BlockType		  Inport
 		  Name			  "RC"
@@ -1843,22 +1855,22 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "572::43"
+		  SID			  "572::8"
 		  Ports			  [1, 1]
-		  Position		  [270, 245, 320, 285]
+		  Position		  [270, 265, 320, 305]
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "572::42"
+		  SID			  "572::7"
 		  Tag			  "Stateflow S-Function WK_MaoBi_Record_using_box 3"
 		  Ports			  [5, 5]
-		  Position		  [180, 100, 230, 220]
+		  Position		  [180, 116, 230, 264]
 		  FunctionName		  "sf_sfun"
 		  Parameters		  "DeltaT,H0,Kl,PI"
 		  PortCounts		  "[5 5]"
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "PosDesired"
@@ -1887,8 +1899,8 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "572::45"
-		  Position		  [460, 256, 480, 274]
+		  SID			  "572::37"
+		  Position		  [460, 276, 480, 294]
 		}
 		Block {
 		  BlockType		  Outport
@@ -1953,7 +1965,7 @@ Model {
 		}
 		Line {
 		  Name			  "PosDesired"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
 		  DstBlock		  "PosDesired"
@@ -1961,7 +1973,7 @@ Model {
 		}
 		Line {
 		  Name			  "HoverThrottle"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  3
 		  DstBlock		  "HoverThrottle"
@@ -1969,7 +1981,7 @@ Model {
 		}
 		Line {
 		  Name			  "Mode"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  4
 		  DstBlock		  "Mode"
@@ -1977,7 +1989,7 @@ Model {
 		}
 		Line {
 		  Name			  "PWM"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  5
 		  DstBlock		  "PWM"
@@ -2089,7 +2101,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "<Position>"
-	      Labels		      [0, 0]
+	      Labels		      [0, 0; 0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      Points		      [70, 0]
@@ -2098,7 +2110,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "<Attitude>"
-	      Labels		      [0, 0]
+	      Labels		      [0, 0; 0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      Points		      [0, -5]
@@ -2172,6 +2184,15 @@ Model {
 	  LibraryVersion	  "1.41"
 	  SourceBlock		  "X400_Control/Vertical Controller"
 	  SourceType		  ""
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	  Omega_h		  "Omega_h"
 	  Zeta_h		  "Zeta_h"
 	  PID_I_h		  "1"
@@ -2615,7 +2636,6 @@ Model {
 	      Opaque		      off
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
-	      SFBlockType	      "MATLAB Function"
 	      MaskType		      "Stateflow"
 	      MaskDescription	      "Embedded MATLAB block"
 	      MaskSelfModifiable      on
@@ -2641,7 +2661,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"21"
+		SIDHighWatermark	"17"
 		Block {
 		  BlockType		  Inport
 		  Name			  "u"
@@ -2652,7 +2672,7 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "335::19"
+		  SID			  "335::15"
 		  Ports			  [1, 1]
 		  Position		  [270, 160, 320, 200]
 		  Outputs		  "1"
@@ -2660,13 +2680,13 @@ Model {
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "335::18"
+		  SID			  "335::14"
 		  Tag			  "Stateflow S-Function WK_MaoBi_Record_using_box 1"
 		  Ports			  [1, 2]
 		  Position		  [180, 100, 230, 160]
 		  FunctionName		  "sf_sfun"
 		  PortCounts		  "[1 2]"
-		  EnableBusSupport	  off
+		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
 		    Name		    "y"
@@ -2677,7 +2697,7 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "335::21"
+		  SID			  "335::17"
 		  Position		  [460, 171, 480, 189]
 		}
 		Block {
@@ -2688,9 +2708,15 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "u"
+		  SrcBlock		  " SFunction "
 		  SrcPort		  1
-		  DstBlock		  " SFunction "
+		  DstBlock		  " Demux "
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  " Demux "
+		  SrcPort		  1
+		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
@@ -2702,15 +2728,9 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  " Demux "
+		  SrcBlock		  "u"
 		  SrcPort		  1
-		  DstBlock		  " Terminator "
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  " SFunction "
-		  SrcPort		  1
-		  DstBlock		  " Demux "
+		  DstBlock		  " SFunction "
 		  DstPort		  1
 		}
 	      }
@@ -2804,7 +2824,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "desire yaw rate"
-	      Labels		      [0, 0]
+	      Labels		      [0, 0; 0, 0]
 	      SrcBlock		      "Heading"
 	      SrcPort		      1
 	      DstBlock		      "Gain"
@@ -2854,7 +2874,7 @@ Model {
 	    }
 	    Line {
 	      Name		      "<rc>"
-	      Labels		      [0, 0; 1, 0]
+	      Labels		      [0, 0; 0, 0; 1, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
 	      Points		      [185, 0]
@@ -3015,7 +3035,7 @@ Model {
 	}
 	Line {
 	  Name			  "Hover Throttle"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  5
 	  Points		  [0, -25; 235, 0; 0, -45]
@@ -3024,7 +3044,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Position>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  1
 	  Points		  [75, 0]
@@ -3049,7 +3069,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Attitude>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  2
 	  Points		  [50, 0]
@@ -3074,7 +3094,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Velocity>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  3
 	  DstBlock		  "Rate Transition"
@@ -3145,7 +3165,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Position>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  1
 	  DstBlock		  "Mux"
@@ -3153,7 +3173,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Attitude>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  2
 	  DstBlock		  "Selector1"
@@ -3237,7 +3257,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Position>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  1
 	  Points		  [20, 0; 0, 5]
@@ -3246,7 +3266,7 @@ Model {
 	}
 	Line {
 	  Name			  "<position des>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  2
 	  Points		  [0, 10]
@@ -3255,7 +3275,7 @@ Model {
 	}
 	Line {
 	  Name			  "<Attitude>"
-	  Labels		  [0, 0]
+	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  3
 	  Points		  [0, 110]
@@ -5472,7 +5492,7 @@ Model {
 		}
 		Line {
 		  Name			  "yaw"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -5536,7 +5556,7 @@ Model {
 		}
 		Line {
 		  Name			  "pitch"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  5
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -6307,7 +6327,7 @@ Model {
 		}
 		Line {
 		  Name			  "yaw"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -6371,7 +6391,7 @@ Model {
 		}
 		Line {
 		  Name			  "pitch"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  5
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -7161,7 +7181,7 @@ Model {
 		}
 		Line {
 		  Name			  "pitch"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  5
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -7225,7 +7245,7 @@ Model {
 		}
 		Line {
 		  Name			  "yaw"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  "Demux"
 		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
@@ -7939,7 +7959,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Aug  6 2011, 13:17:15
+#    Stateflow Version 7.5 (R2010a) dated Mar  4 2011, 22:36:02
 #
 #
 
@@ -7956,7 +7976,7 @@ Stateflow {
       runTimeCheck	      [0 0 0 0]
       animation		      [0 0 0]
     }
-    sfVersion		    76014001.0002
+    sfVersion		    75014001
   }
   chart {
     id			    2
@@ -8076,11 +8096,11 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [6.828 1.241 1160.69 608.897]
-    viewLimits		    [0 1305.787 0 672.11]
-    zoomFactor		    1.161
+    windowPosition	    [18.75 30 1440 723]
+    viewLimits		    [0 1305.728 0 642.345]
+    zoomFactor		    0.935
     chartColor		    [1 1 1]
-    screen		    [1 1 1920 1080 1.611111111111111]
+    screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 12 0 0]
     firstTransition	    22
     viewObj		    9
@@ -8235,7 +8255,7 @@ Stateflow {
   transition {
     id			    20
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [26.876 549.711 76.288 12.261]
+    labelPosition	    [26.876 549.711 74.297 11.898]
     fontSize		    8
     src {
       intersection	      [0 0 0 0 20.5837 568.4057 0 0]
@@ -8256,24 +8276,26 @@ Stateflow {
   transition {
     id			    21
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [525.893 414.804 82.765 17.31]
+    labelPosition	    [565.699 414.56 86.913 17.497]
     fontSize		    14
     src {
       id		      12
-      intersection	      [3 0 1 0.1729 623.3074 318.892 0 -153.9768]
+      intersection	      [3 0 1 0.1731 623.2058 318.892 0 -153.9768]
     }
     dst {
       id		      10
-      intersection	      [1 0 -1 0.7175 623.3074 500.7115 0 154.0784]
+      intersection	      [1 0 -1 0.8234 698.243 500.7115 0 229.0139]
     }
-    midPoint		    [623.3074 409.4936]
+    midPoint		    [663.1697 409.3323]
     chart		    9
     linkNode		    [9 22 20]
-    dataLimits		    [620.907 625.707 318.892 500.712]
+    dataLimits		    [623.206 700.643 318.892 500.712]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    18
@@ -8281,7 +8303,7 @@ Stateflow {
   transition {
     id			    22
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [344.656 413.012 78.447 17.31]
+    labelPosition	    [348.66 325.936 82.007 17.497]
     fontSize		    14
     src {
       id		      10
@@ -8304,7 +8326,7 @@ Stateflow {
   transition {
     id			    23
     labelString		    "{PosDesired = Pos;  PosDesired[2] = -1.2;}"
-    labelPosition	    [406.832 42.905 181.363 12.983]
+    labelPosition	    [406.832 42.905 176.63 12.598]
     fontSize		    9.327
     arrowSize		    12.592
     src {
@@ -8329,7 +8351,7 @@ Stateflow {
   }
   transition {
     id			    24
-    labelPosition	    [204.991 518.537 6.477 12.261]
+    labelPosition	    [204.991 518.537 5.607 11.198]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8354,7 +8376,7 @@ Stateflow {
   transition {
     id			    25
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [710.573 519.693 109.394 12.261]
+    labelPosition	    [710.573 519.693 94.623 11.198]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8382,7 +8404,7 @@ Stateflow {
   transition {
     id			    26
     labelString		    "after(5,sec)"
-    labelPosition	    [1049.001 213.296 58.295 14.425]
+    labelPosition	    [1049.001 213.296 65.185 16.097]
     fontSize		    12
     arrowSize		    7.053
     src {
@@ -8407,7 +8429,7 @@ Stateflow {
   transition {
     id			    27
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [1024.983 334.724 133.144 13.704]
+    labelPosition	    [1024.983 334.724 129.668 13.298]
     fontSize		    10
     arrowSize		    7.053
     src {

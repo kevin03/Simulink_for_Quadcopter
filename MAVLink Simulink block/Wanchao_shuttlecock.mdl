@@ -1,12 +1,12 @@
 Model {
-  Name			  "WK_MaoBi_Record_using_box"
+  Name			  "Wanchao_shuttlecock"
   Version		  7.8
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1453"
+    ComputedModelVersion    "1.1455"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,17 +24,17 @@ Model {
   InitFcn		  "sample_time=0.005;%0.004;%0.0025;%0.02;\nDeltaT = 0.02;\ng = 9.81;\nH0 = g%0.3165;\nKl = 1;\n\nOmega_r ="
   " 1.6;%for Horizontal reference\nZeta_r = 0.7; %for Horizontal reference\nOmega = 1.8;%for Horizontal Control\nZeta ="
   " 0.5;    %for Horizontal Control\n\nOmega_h_r = 2.5; %for vertical reference\nZeta_h_r = 0.8;  %for vertical referen"
-  "ce\nOmega_h = 2.7;    %for vertical control\nZeta_h = 0.8;         %for vertical control\nPI=pi;\n\nMass = 1;\nAcc_M"
-  "ax = 4;\nAcc_Max_h = 4;\n\nMax_RP = 60;"
+  "ce\nOmega_h = 2.7;    %for vertical control\nZeta_h = 0.8;         %for vertical control\nPI=pi;\n\nMass = 1.1;\nAcc"
+  "_Max = 4;\nAcc_Max_h = 4;\n\nMax_RP = 60;\n\nload MaoBi_Oct04_2_int.mat\nMB_Interp.time = [];"
   Created		  "Thu Nov 24 10:40:23 2011"
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Birdman"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Oct 27 10:17:22 2013"
-  RTWModifiedTimeStamp	  304769648
-  ModelVersionFormat	  "1.%<AutoIncrement:1453>"
+  LastModifiedDate	  "Sun Oct 27 15:15:56 2013"
+  RTWModifiedTimeStamp	  304786905
+  ModelVersionFormat	  "1.%<AutoIncrement:1455>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -711,6 +711,19 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
+    }
+    Block {
       BlockType		      Fcn
       Expr		      "sin(u[1])"
       SampleTime	      "-1"
@@ -719,6 +732,14 @@ Model {
       BlockType		      From
       IconDisplay	      "Tag"
       TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
       BlockType		      Gain
@@ -951,10 +972,27 @@ Model {
       FixptAsFi		      off
       NumInputs		      "1"
     }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      PropagateVarSize	      "During execution"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+      PortDimensions	      "-1"
+      TriggerSignalSampleTime "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      Interpolate	      on
+    }
   }
   System {
-    Name		    "WK_MaoBi_Record_using_box"
-    Location		    [8, 95, 948, 1007]
+    Name		    "Wanchao_shuttlecock"
+    Location		    [0, 63, 944, 1052]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -966,9 +1004,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "94"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1978"
+    SIDHighWatermark	    "2028"
     Block {
       BlockType		      From
       Name		      "From"
@@ -1029,7 +1067,7 @@ Model {
       Name		      "Planning"
       SID		      "1084"
       Ports		      [4, 2]
-      Position		      [275, 106, 380, 449]
+      Position		      [255, 101, 360, 444]
       BackgroundColor	      "darkGreen"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1040,7 +1078,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[2, 95, 1900, 1040]
+	Location		[0, 63, 1902, 1064]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1052,7 +1090,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"103"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vicon"
@@ -1062,7 +1100,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "Perch Pos"
+	  Name			  "MB platform"
 	  SID			  "1088"
 	  Position		  [25, 498, 55, 512]
 	  Port			  "2"
@@ -1180,11 +1218,11 @@ Model {
 	Block {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector3"
-	  SID			  "1972"
-	  Ports			  [1, 3]
-	  Position		  [885, 669, 890, 721]
+	  SID			  "1767"
+	  Ports			  [1, 4]
+	  Position		  [905, 687, 910, 798]
 	  ShowName		  off
-	  OutputSignals		  "Position,position des,Attitude"
+	  OutputSignals		  "Position,position des,Attitude,attitude des"
 	  Port {
 	    PortNumber		    1
 	    Name		    "<Position>"
@@ -1203,6 +1241,12 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<attitude des>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
 	}
 	Block {
 	  BlockType		  Fcn
@@ -1212,14 +1256,14 @@ Model {
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  Expr			  "abs((u(6) - u(2))*cos(u(8)) - (u(5) - u(1))*sin(u(8)))"
+	  Expr			  "abs(u(1)-u(5)) + abs(u(2)-u(6))"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Horizontal Pos controller"
-	  SID			  "1968"
+	  SID			  "1970"
 	  Ports			  [1, 2]
-	  Position		  [855, 40, 965, 180]
+	  Position		  [865, 25, 975, 165]
 	  BackgroundColor	  "green"
 	  LibraryVersion	  "1.39"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
@@ -1469,9 +1513,9 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux3"
-	  SID			  "1759"
+	  SID			  "2023"
 	  Ports			  [2, 1]
-	  Position		  [575, 46, 580, 84]
+	  Position		  [990, 856, 995, 894]
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
@@ -1479,29 +1523,81 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux4"
-	  SID			  "1973"
+	  SID			  "1768"
 	  Ports			  [2, 1]
-	  Position		  [935, 676, 940, 714]
+	  Position		  [990, 691, 995, 729]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux5"
+	  SID			  "2028"
+	  Ports			  [2, 1]
+	  Position		  [1070, 761, 1075, 799]
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  Scope
-	  Name			  "P vs P_des"
-	  SID			  "1971"
+	  Name			  "P  Vs Rec"
+	  SID			  "2021"
 	  Ports			  [1]
-	  Position		  [995, 679, 1025, 711]
+	  Position		  [1020, 859, 1050, 891]
 	  Floating		  off
 	  Location		  [969, 56, 1913, 1031]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	  }
-	  YMin			  "-2"
-	  YMax			  "2"
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  TimeRange		  "10"
+	  YMin			  "-0.6"
+	  YMax			  "0.9"
+	  SaveName		  "ScopeData2"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "P vs P_des"
+	  SID			  "1769"
+	  Ports			  [1]
+	  Position		  [1080, 694, 1110, 726]
+	  Floating		  off
+	  Location		  [969, 56, 1913, 1031]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-0.7"
+	  YMax			  "0.9"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
 	  SampleTime		  "0"
@@ -1562,9 +1658,22 @@ Model {
 	Block {
 	  BlockType		  Selector
 	  Name			  "Selector3"
-	  SID			  "1760"
+	  SID			  "2022"
 	  Ports			  [1, 1]
-	  Position		  [505, 56, 525, 94]
+	  Position		  [920, 856, 940, 894]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  InputPortWidth	  "4"
+	  IndexOptions		  "Index vector (dialog)"
+	  Indices		  "[1 2 3]"
+	  OutputSizes		  "1"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector4"
+	  SID			  "2026"
+	  Ports			  [1, 1]
+	  Position		  [1015, 736, 1035, 774]
 	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  InputPortWidth	  "3"
@@ -1574,10 +1683,10 @@ Model {
 	}
 	Block {
 	  BlockType		  Selector
-	  Name			  "Selector4"
-	  SID			  "1977"
+	  Name			  "Selector5"
+	  SID			  "2027"
 	  Ports			  [1, 1]
-	  Position		  [1050, 801, 1070, 839]
+	  Position		  [1020, 781, 1040, 819]
 	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  InputPortWidth	  "3"
@@ -1588,20 +1697,20 @@ Model {
 	Block {
 	  BlockType		  ToWorkspace
 	  Name			  "To Workspace"
-	  SID			  "1761"
+	  SID			  "2024"
 	  Ports			  [1]
-	  Position		  [635, 50, 695, 80]
-	  VariableName		  "MB"
+	  Position		  [925, 600, 985, 630]
+	  VariableName		  "MB_realtime"
 	  MaxDataPoints		  "inf"
-	  SampleTime		  "0.02"
-	  SaveFormat		  "Structure With Time"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure"
 	}
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Trajectory Logic"
 	  SID			  "573"
-	  Ports			  [4, 7]
-	  Position		  [320, 329, 435, 561]
+	  Ports			  [4, 8]
+	  Position		  [270, 329, 385, 561]
 	  BackgroundColor	  "orange"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -1647,7 +1756,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [2, 95, 1900, 1040]
+	    Location		    [2, 95, 942, 1024]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1669,7 +1778,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "PerchPos"
+	      Name		      "MB platform"
 	      SID		      "580"
 	      Position		      [30, 283, 60, 297]
 	      Port		      "2"
@@ -1677,7 +1786,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "PerchError"
+	      Name		      "Landing Error"
 	      SID		      "1517"
 	      Position		      [30, 323, 60, 337]
 	      Port		      "3"
@@ -1731,9 +1840,9 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "PosRefSystem"
-	      SID		      "1967"
+	      SID		      "2019"
 	      Ports		      [1, 4]
-	      Position		      [370, 42, 490, 118]
+	      Position		      [370, 52, 490, 128]
 	      BackgroundColor	      "orange"
 	      LibraryVersion	      "1.39"
 	      SourceBlock	      "X330_Control/PosRefSystem"
@@ -1800,7 +1909,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"45"
+		SIDHighWatermark	"69"
 		Block {
 		  BlockType		  Inport
 		  Name			  "RC"
@@ -1843,21 +1952,21 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "572::43"
+		  SID			  "572::67"
 		  Ports			  [1, 1]
-		  Position		  [270, 245, 320, 285]
+		  Position		  [270, 300, 320, 340]
 		  Outputs		  "1"
 		}
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "572::42"
-		  Tag			  "Stateflow S-Function WK_MaoBi_Record_using_box 3"
-		  Ports			  [5, 5]
-		  Position		  [180, 100, 230, 220]
+		  SID			  "572::66"
+		  Tag			  "Stateflow S-Function Wanchao_shuttlecock 3"
+		  Ports			  [9, 6]
+		  Position		  [180, 100, 230, 300]
 		  FunctionName		  "sf_sfun"
 		  Parameters		  "DeltaT,H0,Kl,PI"
-		  PortCounts		  "[5 5]"
+		  PortCounts		  "[9 6]"
 		  EnableBusSupport	  off
 		  Port {
 		    PortNumber		    2
@@ -1885,10 +1994,367 @@ Model {
 		  }
 		}
 		Block {
-		  BlockType		  Terminator
-		  Name			  " Terminator "
-		  SID			  "572::45"
-		  Position		  [460, 256, 480, 274]
+		  BlockType		  SubSystem
+		  Name			  "traj"
+		  SID			  "572::42"
+		  Ports			  [1, 4, 0, 1]
+		  Position		  [180, 370, 230, 460]
+		  BlockMirror		  on
+		  UndoDeleteFcn		  "Stateflow.SLINSF.SimulinkMan.restorePreDeleteFcn"
+		  PreDeleteFcn		  "Stateflow.SLINSF.SimulinkMan.removePreDeleteFcn"
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "traj"
+		    Location		    [2, 95, 1900, 1040]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "194"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "u"
+		    SID			    "572::43"
+		    Position		    [15, 58, 45, 72]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    TriggerPort
+		    Name		    "f"
+		    SID			    "572::44"
+		    Ports		    []
+		    Position		    [15, 15, 35, 35]
+		    CopyFcn		    "set_param(gcbh,'PreDeleteFcn','')"
+		    PreDeleteFcn	    "Stateflow.SLINSF.SimulinkMan.unsafePredeleteFcn"
+		    TriggerType		    "function-call"
+		    StatesWhenEnabling	    "held"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "572::45"
+		    Position		    [15, 90, 45, 120]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Enabled\nSubsystem1"
+		    SID			    "572::46"
+		    Ports		    [0, 4, 1]
+		    Position		    [195, 86, 290, 204]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Enabled\nSubsystem1"
+		    Location		    [2, 95, 638, 571]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "572::47"
+		    Ports		    []
+		    Position		    [235, 20, 255, 40]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "572::65"
+		    Position		    [280, 290, 310, 320]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    FromWorkspace
+		    Name		    "From\nWorkspace"
+		    SID			    "572::48"
+		    Position		    [110, 98, 175, 122]
+		    VariableName	    "MB_Interp"
+		    Interpolate		    off
+		    ZeroCross		    on
+		    OutputAfterFinalValue   "Holding final value"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector1"
+		    SID			    "572::58"
+		    Ports		    [1, 1]
+		    Position		    [245, 153, 270, 197]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    InputPortWidth	    "4"
+		    IndexOptions	    "Index vector (dialog)"
+		    Indices		    "[2]"
+		    OutputSizes		    "1"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector2"
+		    SID			    "572::59"
+		    Ports		    [1, 1]
+		    Position		    [245, 238, 270, 282]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    InputPortWidth	    "4"
+		    IndexOptions	    "Index vector (dialog)"
+		    Indices		    "[3]"
+		    OutputSizes		    "1"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector3"
+		    SID			    "572::61"
+		    Ports		    [1, 1]
+		    Position		    [245, 328, 270, 372]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    InputPortWidth	    "4"
+		    IndexOptions	    "Index vector (dialog)"
+		    Indices		    "[4]"
+		    OutputSizes		    "1"
+		    }
+		    Block {
+		    BlockType		    Selector
+		    Name		    "Selector6"
+		    SID			    "572::52"
+		    Ports		    [1, 1]
+		    Position		    [245, 88, 270, 132]
+		    NamePlacement	    "alternate"
+		    ShowName		    off
+		    InputPortWidth	    "4"
+		    IndexOptions	    "Index vector (dialog)"
+		    Indices		    "[1]"
+		    OutputSizes		    "1"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    "572::64"
+		    Ports		    [2, 1]
+		    Position		    [310, 250, 330, 270]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "x"
+		    SID			    "572::49"
+		    Position		    [370, 103, 400, 117]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y"
+		    SID			    "572::56"
+		    Position		    [370, 168, 400, 182]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "z"
+		    SID			    "572::57"
+		    Position		    [370, 253, 400, 267]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Psi"
+		    SID			    "572::62"
+		    Position		    [370, 343, 400, 357]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "From\nWorkspace"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Selector6"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65; 5, 0]
+		    Branch {
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 85]
+		    Branch {
+		    DstBlock		    "Selector2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "Selector3"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Selector6"
+		    SrcPort		    1
+		    DstBlock		    "x"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector1"
+		    SrcPort		    1
+		    DstBlock		    "y"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector3"
+		    SrcPort		    1
+		    DstBlock		    "Psi"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Selector2"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [5, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    DstBlock		    "z"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    "572::50"
+		    Ports		    [2, 1]
+		    Position		    [155, 55, 175, 75]
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "|++"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y1"
+		    SID			    "572::53"
+		    Position		    [395, 93, 425, 107]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y2"
+		    SID			    "572::54"
+		    Position		    [395, 123, 425, 137]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y3"
+		    SID			    "572::55"
+		    Position		    [395, 153, 425, 167]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "y4"
+		    SID			    "572::63"
+		    Position		    [395, 188, 425, 202]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [115, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "u"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [60, 0]
+		    DstBlock		    "Enabled\nSubsystem1"
+		    DstPort		    enable
+		    }
+		    Line {
+		    SrcBlock		    "Enabled\nSubsystem1"
+		    SrcPort		    1
+		    DstBlock		    "y1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Enabled\nSubsystem1"
+		    SrcPort		    2
+		    DstBlock		    "y2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Enabled\nSubsystem1"
+		    SrcPort		    3
+		    DstBlock		    "y3"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Enabled\nSubsystem1"
+		    SrcPort		    4
+		    Points		    [40, 0; 0, 5]
+		    DstBlock		    "y4"
+		    DstPort		    1
+		    }
+		  }
 		}
 		Block {
 		  BlockType		  Outport
@@ -1984,10 +2450,40 @@ Model {
 		  DstPort		  1
 		}
 		Line {
+		  SrcBlock		  " SFunction "
+		  SrcPort		  6
+		  DstBlock		  "traj"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "traj"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  6
+		}
+		Line {
+		  SrcBlock		  "traj"
+		  SrcPort		  2
+		  DstBlock		  " SFunction "
+		  DstPort		  7
+		}
+		Line {
+		  SrcBlock		  "traj"
+		  SrcPort		  3
+		  DstBlock		  " SFunction "
+		  DstPort		  8
+		}
+		Line {
+		  SrcBlock		  "traj"
+		  SrcPort		  4
+		  DstBlock		  " SFunction "
+		  DstPort		  9
+		}
+		Line {
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
-		  DstBlock		  " Terminator "
-		  DstPort		  1
+		  DstBlock		  "traj"
+		  DstPort		  trigger
 		}
 		Line {
 		  SrcBlock		  " SFunction "
@@ -2052,12 +2548,27 @@ Model {
 	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Recorded Traj"
+	      SID		      "2020"
+	      Position		      [580, 393, 610, 407]
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      1
-	      Points		      [5, 0]
-	      DstBlock		      "PosRefSystem"
-	      DstPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"PosRefSystem"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 310]
+		DstBlock		"Recorded Traj"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      Name		      "<rc>"
@@ -2074,6 +2585,13 @@ Model {
 	      Points		      [165, 0]
 	      DstBlock		      "HoverThrottle"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "MB platform"
+	      SrcPort		      1
+	      Points		      [0, -60; 125, 0]
+	      DstBlock		      "UAV SF"
+	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "UAV SF"
@@ -2125,9 +2643,16 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      SrcBlock		      "Landing Error"
+	      SrcPort		      1
+	      Points		      [60, 0; 0, -75]
+	      DstBlock		      "UAV SF"
+	      DstPort		      4
+	    }
+	    Line {
 	      SrcBlock		      "PosRefSystem"
 	      SrcPort		      1
-	      Points		      [0, 15; 70, 0]
+	      Points		      [0, 5; 70, 0]
 	      DstBlock		      "PosRef"
 	      DstPort		      1
 	    }
@@ -2141,14 +2666,14 @@ Model {
 	    Line {
 	      SrcBlock		      "PosRefSystem"
 	      SrcPort		      4
-	      Points		      [0, 40]
+	      Points		      [0, 30]
 	      DstBlock		      "AccRef"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "PosRefSystem"
 	      SrcPort		      2
-	      Points		      [35, 0; 0, 15]
+	      Points		      [35, 0; 0, 5]
 	      DstBlock		      "attitude des"
 	      DstPort		      1
 	    }
@@ -2164,9 +2689,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Vertical Controller"
-	  SID			  "1970"
+	  SID			  "1971"
 	  Ports			  [3, 1]
-	  Position		  [890, 340, 990, 480]
+	  Position		  [885, 330, 985, 470]
 	  ForegroundColor	  "green"
 	  BackgroundColor	  "darkGreen"
 	  LibraryVersion	  "1.41"
@@ -2182,7 +2707,7 @@ Model {
 	  Name			  "Yaw Controller"
 	  SID			  "328"
 	  Ports			  [1, 1]
-	  Position		  [855, 213, 980, 277]
+	  Position		  [860, 213, 985, 277]
 	  BackgroundColor	  "lightBlue"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -2661,7 +3186,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "335::18"
-		  Tag			  "Stateflow S-Function WK_MaoBi_Record_using_box 1"
+		  Tag			  "Stateflow S-Function Wanchao_shuttlecock 1"
 		  Ports			  [1, 2]
 		  Position		  [180, 100, 230, 160]
 		  FunctionName		  "sf_sfun"
@@ -2866,11 +3391,11 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "heading"
-	  SID			  "1978"
+	  SID			  "2025"
 	  Ports			  [1]
-	  Position		  [1210, 804, 1240, 836]
+	  Position		  [1110, 764, 1140, 796]
 	  Floating		  off
-	  Location		  [969, 56, 1913, 1031]
+	  Location		  [1, 48, 1921, 1039]
 	  Open			  off
 	  NumInputPorts		  "1"
 	  ZoomMode		  "xonly"
@@ -2878,9 +3403,9 @@ Model {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	  }
-	  YMin			  "-0.05"
+	  YMin			  "-0.7"
 	  YMax			  "0.9"
-	  SaveName		  "ScopeData2"
+	  SaveName		  "ScopeData3"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
 	  SampleTime		  "0"
@@ -2903,7 +3428,7 @@ Model {
 	Line {
 	  SrcBlock		  "Horizontal Pos controller"
 	  SrcPort		  1
-	  Points		  [0, 25]
+	  Points		  [0, 40]
 	  DstBlock		  "Mixer"
 	  DstPort		  1
 	}
@@ -2930,50 +3455,59 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nCreator"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [0, 0]
 	  Branch {
-	    Points		    [10, 0; 0, 5]
+	    Labels		    [1, 0]
+	    Points		    [15, 0; 0, 5]
 	    Branch {
-	      Points		      [20, 0]
+	      Points		      [25, 0]
 	      DstBlock		      "Yaw Controller"
 	      DstPort		      1
 	    }
 	    Branch {
-	      Points		      [10, 0; 0, 125; -10, 0]
+	      Points		      [0, 125]
 	      Branch {
-		Points			[-350, 0; 0, -85; -165, 0]
+		Points			[-350, 0; 0, -85; -215, 0]
 		DstBlock		"Trajectory Logic"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, 10; 55, 0]
+		Points			[50, 0]
 		DstBlock		"Vertical Controller"
 		DstPort			1
 	      }
 	    }
 	    Branch {
-	      Points		      [0, -25; 10, 0; 0, -115]
+	      Points		      [0, -155]
 	      DstBlock		      "Horizontal Pos controller"
 	      DstPort		      1
 	    }
 	  }
 	  Branch {
-	    Points		    [0, 455]
-	    DstBlock		    "Bus\nSelector3"
-	    DstPort		    1
+	    Points		    [0, 490; 35, 0]
+	    Branch {
+	      Points		      [50, 0]
+	      DstBlock		      "Bus\nSelector3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -120]
+	      DstBlock		      "To Workspace"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Line {
 	  SrcBlock		  "Yaw Controller"
 	  SrcPort		  1
-	  Points		  [35, 0]
+	  Points		  [30, 0]
 	  DstBlock		  "Mixer"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Vertical Controller"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, -190]
+	  Points		  [20, 0; 0, -180]
 	  DstBlock		  "Mixer"
 	  DstPort		  2
 	}
@@ -2991,7 +3525,7 @@ Model {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  1
-	  Points		  [305, 0; 0, -120]
+	  Points		  [355, 0; 0, -120]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  4
 	}
@@ -3000,7 +3534,7 @@ Model {
 	  Labels		  [0, 1]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  2
-	  Points		  [315, 0; 0, -130]
+	  Points		  [365, 0; 0, -125]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  5
 	}
@@ -3009,7 +3543,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  3
-	  Points		  [340, 0]
+	  Points		  [390, 0]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  6
 	}
@@ -3018,7 +3552,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  5
-	  Points		  [0, -25; 235, 0; 0, -45]
+	  Points		  [0, -5; 285, 0; 0, -50; 195, 0]
 	  DstBlock		  "Vertical Controller"
 	  DstPort		  2
 	}
@@ -3034,17 +3568,9 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [95, 0]
-	    Branch {
-	      Points		      [525, 0]
-	      DstBlock		      "Bus\nCreator"
-	      DstPort		      1
-	    }
-	    Branch {
-	      Points		      [0, -95]
-	      DstBlock		      "Mux3"
-	      DstPort		      1
-	    }
+	    Points		    [620, 0]
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -3059,17 +3585,9 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [135, 0]
-	    Branch {
-	      Labels		      [1, 0]
-	      DstBlock		      "Bus\nCreator"
-	      DstPort		      2
-	    }
-	    Branch {
-	      Points		      [0, -95]
-	      DstBlock		      "Selector3"
-	      DstPort		      1
-	    }
+	    Labels		    [1, 0]
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    2
 	  }
 	}
 	Line {
@@ -3098,7 +3616,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  4
-	  Points		  [0, -10; 340, 0]
+	  Points		  [0, 5; 390, 0]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  9
 	}
@@ -3107,7 +3625,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [25, 0]
 	  Branch {
-	    Points		    [75, 0]
+	    Points		    [25, 0]
 	    DstBlock		    "Trajectory Logic"
 	    DstPort		    2
 	  }
@@ -3120,7 +3638,7 @@ Model {
 	Line {
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  6
-	  Points		  [0, -35]
+	  Points		  [0, -10]
 	  DstBlock		  "Mode"
 	  DstPort		  1
 	}
@@ -3133,12 +3651,12 @@ Model {
 	Line {
 	  SrcBlock		  "Trajectory Logic"
 	  SrcPort		  7
-	  Points		  [580, 0]
+	  Points		  [630, 0]
 	  DstBlock		  "Mixer"
 	  DstPort		  4
 	}
 	Line {
-	  SrcBlock		  "Perch Pos"
+	  SrcBlock		  "MB platform"
 	  SrcPort		  1
 	  DstBlock		  "Bus\nSelector1"
 	  DstPort		  1
@@ -3190,14 +3708,14 @@ Model {
 	Line {
 	  SrcBlock		  "Fcn"
 	  SrcPort		  1
-	  Points		  [0, 85; 185, 0]
+	  Points		  [0, 75; 125, 0; 0, 25]
 	  DstBlock		  "Trajectory Logic"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Horizontal Pos controller"
 	  SrcPort		  2
-	  Points		  [25, 0; 0, 170; -120, 0]
+	  Points		  [15, 0; 0, 185; -135, 0; 0, 130]
 	  DstBlock		  "Vertical Controller"
 	  DstPort		  3
 	}
@@ -3218,18 +3736,6 @@ Model {
 	  DstPort		  4
 	}
 	Line {
-	  SrcBlock		  "Mux3"
-	  SrcPort		  1
-	  DstBlock		  "To Workspace"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Selector3"
-	  SrcPort		  1
-	  DstBlock		  "Mux3"
-	  DstPort		  2
-	}
-	Line {
 	  SrcBlock		  "Mux4"
 	  SrcPort		  1
 	  DstBlock		  "P vs P_des"
@@ -3240,30 +3746,80 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, 5]
-	  DstBlock		  "Mux4"
-	  DstPort		  1
+	  Points		  [0, 20; 45, 0]
+	  Branch {
+	    Points		    [0, -5; 15, 0]
+	    DstBlock		    "Mux4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Mux3"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "<position des>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  2
-	  Points		  [0, 10]
+	  Points		  [60, 0]
 	  DstBlock		  "Mux4"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Trajectory Logic"
+	  SrcPort		  8
+	  Points		  [375, 0; 0, 325]
+	  DstBlock		  "Selector3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector3"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Mux3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux3"
+	  SrcPort		  1
+	  DstBlock		  "P  Vs Rec"
+	  DstPort		  1
 	}
 	Line {
 	  Name			  "<Attitude>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  3
-	  Points		  [0, 110]
 	  DstBlock		  "Selector4"
 	  DstPort		  1
 	}
 	Line {
+	  Name			  "<attitude des>"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  4
+	  Points		  [90, 0]
+	  DstBlock		  "Selector5"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "Selector4"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, 15]
+	  DstBlock		  "Mux5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector5"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "Mux5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux5"
 	  SrcPort		  1
 	  DstBlock		  "heading"
 	  DstPort		  1
@@ -3374,9 +3930,9 @@ Model {
     Block {
       BlockType		      SubSystem
       Name		      "Vicon_Data"
-      SID		      "622"
+      SID		      "1770"
       Ports		      [0, 3]
-      Position		      [15, 72, 80, 368]
+      Position		      [15, 67, 80, 363]
       BackgroundColor	      "lightBlue"
       FontName		      "Arial"
       FontSize		      14
@@ -3401,11 +3957,11 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"79"
+	ZoomFactor		"137"
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator1"
-	  SID			  "1724"
+	  SID			  "1771"
 	  Ports			  [4, 1]
 	  Position		  [860, 538, 865, 677]
 	  ShowName		  off
@@ -3414,7 +3970,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator7"
-	  SID			  "1404"
+	  SID			  "1772"
 	  Ports			  [4, 1]
 	  Position		  [1065, 233, 1070, 372]
 	  ShowName		  off
@@ -3423,7 +3979,7 @@ Model {
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator8"
-	  SID			  "1479"
+	  SID			  "1773"
 	  Ports			  [4, 1]
 	  Position		  [860, 383, 865, 522]
 	  ShowName		  off
@@ -3432,7 +3988,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux1"
-	  SID			  "1725"
+	  SID			  "1774"
 	  Ports			  [1, 6]
 	  Position		  [560, 537, 570, 618]
 	  ShowName		  off
@@ -3442,7 +3998,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux7"
-	  SID			  "1405"
+	  SID			  "1775"
 	  Ports			  [1, 6]
 	  Position		  [560, 232, 570, 313]
 	  ShowName		  off
@@ -3452,7 +4008,7 @@ Model {
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux8"
-	  SID			  "1480"
+	  SID			  "1776"
 	  Ports			  [1, 6]
 	  Position		  [560, 382, 570, 463]
 	  ShowName		  off
@@ -3462,7 +4018,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Filter1"
-	  SID			  "1726"
+	  SID			  "1777"
 	  Ports			  [1, 3]
 	  Position		  [720, 609, 785, 671]
 	  BackgroundColor	  "cyan"
@@ -3504,14 +4060,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "1727"
+	      SID		      "1778"
 	      Position		      [30, 153, 60, 167]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain"
-	      SID		      "1728"
+	      SID		      "1779"
 	      Position		      [150, 139, 200, 181]
 	      ShowName		      off
 	      Gain		      "15"
@@ -3522,7 +4078,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain1"
-	      SID		      "1729"
+	      SID		      "1780"
 	      Position		      [220, 369, 270, 411]
 	      ShowName		      off
 	      Gain		      "20"
@@ -3533,7 +4089,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator"
-	      SID		      "1730"
+	      SID		      "1781"
 	      Ports		      [1, 1]
 	      Position		      [270, 145, 300, 175]
 	      ShowName		      off
@@ -3541,7 +4097,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator1"
-	      SID		      "1731"
+	      SID		      "1782"
 	      Ports		      [1, 1]
 	      Position		      [340, 375, 370, 405]
 	      ShowName		      off
@@ -3549,7 +4105,7 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Kalman Filter"
-	      SID		      "1732"
+	      SID		      "1783"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
 	      LibraryVersion	      "1.790"
@@ -3586,7 +4142,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1733"
+	      SID		      "1784"
 	      Ports		      [2, 1]
 	      Position		      [600, 52, 605, 128]
 	      ShowName		      off
@@ -3596,7 +4152,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux1"
-	      SID		      "1734"
+	      SID		      "1785"
 	      Ports		      [2, 1]
 	      Position		      [600, 350, 605, 425]
 	      ShowName		      off
@@ -3606,7 +4162,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector1"
-	      SID		      "1735"
+	      SID		      "1786"
 	      Ports		      [1, 1]
 	      Position		      [435, 42, 460, 68]
 	      NamePlacement	      "alternate"
@@ -3619,7 +4175,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector2"
-	      SID		      "1736"
+	      SID		      "1787"
 	      Ports		      [1, 1]
 	      Position		      [540, 262, 565, 288]
 	      NamePlacement	      "alternate"
@@ -3632,7 +4188,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector3"
-	      SID		      "1737"
+	      SID		      "1788"
 	      Ports		      [1, 1]
 	      Position		      [445, 347, 470, 373]
 	      NamePlacement	      "alternate"
@@ -3645,7 +4201,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector4"
-	      SID		      "1738"
+	      SID		      "1789"
 	      Ports		      [1, 1]
 	      Position		      [540, 317, 565, 343]
 	      NamePlacement	      "alternate"
@@ -3658,7 +4214,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector5"
-	      SID		      "1739"
+	      SID		      "1790"
 	      Ports		      [1, 1]
 	      Position		      [680, 187, 705, 213]
 	      NamePlacement	      "alternate"
@@ -3671,7 +4227,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector6"
-	      SID		      "1740"
+	      SID		      "1791"
 	      Ports		      [1, 1]
 	      Position		      [695, 262, 720, 288]
 	      NamePlacement	      "alternate"
@@ -3684,7 +4240,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "1741"
+	      SID		      "1792"
 	      Ports		      [2, 1]
 	      Position		      [95, 150, 115, 170]
 	      ShowName		      off
@@ -3697,7 +4253,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum1"
-	      SID		      "1742"
+	      SID		      "1793"
 	      Ports		      [2, 1]
 	      Position		      [165, 380, 185, 400]
 	      ShowName		      off
@@ -3710,14 +4266,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Pos"
-	      SID		      "1743"
+	      SID		      "1794"
 	      Position		      [385, 153, 415, 167]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Vel"
-	      SID		      "1744"
+	      SID		      "1795"
 	      Position		      [420, 98, 450, 112]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3725,22 +4281,135 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Acc"
-	      SID		      "1745"
+	      SID		      "1796"
 	      Position		      [830, 268, 860, 282]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Selector6"
+	      SrcBlock		      "Sum"
 	      SrcPort		      1
-	      DstBlock		      "Acc"
+	      DstBlock		      "Gain"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Selector4"
+	      SrcBlock		      "Gain"
 	      SrcPort		      1
-	      Points		      [10, 0; 0, 75]
-	      DstBlock		      "Mux1"
+	      Points		      [5, 0]
+	      Branch {
+		Points			[15, 0]
+		Branch {
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, -50; 90, 0; 0, -5]
+		  Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Vel"
+		    DstPort		    1
+		  }
+		}
+	      }
+	      Branch {
+		Points			[0, 230]
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      Branch {
+		DstBlock		"Pos"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 60; -245, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector1"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Kalman Filter"
+	      SrcPort		      2
+	      Points		      [75, 0]
+	      Branch {
+		Points			[5, 0]
+		Branch {
+		  Points		  [0, 35]
+		  DstBlock		  "Selector4"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [10, 0]
+		  DstBlock		  "Selector2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, -95; 115, 0]
+		Branch {
+		  DstBlock		  "Selector5"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 75]
+		  DstBlock		  "Selector6"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		DstBlock		"Integrator1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Selector3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Integrator1"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 60; -245, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Selector2"
+	      SrcPort		      1
+	      Points		      [0, -165]
+	      DstBlock		      "Mux"
 	      DstPort		      2
 	    }
 	    Line {
@@ -3751,129 +4420,16 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Selector2"
+	      SrcBlock		      "Selector4"
 	      SrcPort		      1
-	      Points		      [0, -165]
-	      DstBlock		      "Mux"
+	      Points		      [10, 0; 0, 75]
+	      DstBlock		      "Mux1"
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "Integrator1"
+	      SrcBlock		      "Selector6"
 	      SrcPort		      1
-	      Points		      [45, 0; 0, 60; -245, 0]
-	      DstBlock		      "Sum1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Gain1"
-	      SrcPort		      1
-	      Points		      [35, 0]
-	      Branch {
-		Points			[0, -30]
-		DstBlock		"Selector3"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Integrator1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum1"
-	      SrcPort		      1
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Kalman Filter"
-	      SrcPort		      2
-	      Points		      [75, 0]
-	      Branch {
-		Points			[0, -95; 115, 0]
-		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Selector6"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "Selector5"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[5, 0]
-		Branch {
-		  Points		  [10, 0]
-		  DstBlock		  "Selector2"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 35]
-		  DstBlock		  "Selector4"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Selector1"
-	      SrcPort		      1
-	      Points		      [120, 0]
-	      DstBlock		      "Mux"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "In1"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Integrator"
-	      SrcPort		      1
-	      Points		      [45, 0]
-	      Branch {
-		Points			[0, 60; -245, 0]
-		DstBlock		"Sum"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Pos"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Gain"
-	      SrcPort		      1
-	      Points		      [5, 0]
-	      Branch {
-		Points			[0, 230]
-		DstBlock		"Sum1"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[15, 0]
-		Branch {
-		  Points		  [0, -50; 90, 0; 0, -5]
-		  Branch {
-		    DstBlock		    "Vel"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [0, -50]
-		    DstBlock		    "Selector1"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  DstBlock		  "Integrator"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum"
-	      SrcPort		      1
-	      DstBlock		      "Gain"
+	      DstBlock		      "Acc"
 	      DstPort		      1
 	    }
 	  }
@@ -3881,7 +4437,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Filter7"
-	  SID			  "1406"
+	  SID			  "1797"
 	  Ports			  [1, 3]
 	  Position		  [785, 309, 850, 371]
 	  BackgroundColor	  "cyan"
@@ -3924,14 +4480,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "1407"
+	      SID		      "1798"
 	      Position		      [20, 268, 50, 282]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Kalman Filter"
-	      SID		      "1412"
+	      SID		      "1799"
 	      Ports		      [1, 1]
 	      Position		      [325, 234, 440, 316]
 	      LibraryVersion	      "1.790"
@@ -3969,7 +4525,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector1"
-	      SID		      "1579"
+	      SID		      "1800"
 	      Ports		      [1, 1]
 	      Position		      [695, 317, 720, 343]
 	      NamePlacement	      "alternate"
@@ -3982,7 +4538,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector5"
-	      SID		      "1419"
+	      SID		      "1801"
 	      Ports		      [1, 1]
 	      Position		      [680, 187, 705, 213]
 	      NamePlacement	      "alternate"
@@ -3995,7 +4551,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector6"
-	      SID		      "1420"
+	      SID		      "1802"
 	      Ports		      [1, 1]
 	      Position		      [695, 262, 720, 288]
 	      NamePlacement	      "alternate"
@@ -4008,14 +4564,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Vel"
-	      SID		      "1424"
+	      SID		      "1803"
 	      Position		      [830, 193, 860, 207]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Acc"
-	      SID		      "1425"
+	      SID		      "1804"
 	      Position		      [830, 268, 860, 282]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4023,43 +4579,15 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Psi"
-	      SID		      "1580"
+	      SID		      "1805"
 	      Position		      [830, 323, 860, 337]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Selector6"
+	      SrcBlock		      "Selector1"
 	      SrcPort		      1
-	      DstBlock		      "Acc"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Kalman Filter"
-	      SrcPort		      1
-	      Points		      [0, 20; 65, 0]
-	      Branch {
-		Points			[0, -95; 115, 0]
-		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Selector6"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "Selector5"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[5, 0; 0, 35]
-		DstBlock		"Selector1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "In1"
-	      SrcPort		      1
-	      DstBlock		      "Kalman Filter"
+	      DstBlock		      "Psi"
 	      DstPort		      1
 	    }
 	    Line {
@@ -4069,9 +4597,37 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Selector1"
+	      SrcBlock		      "In1"
 	      SrcPort		      1
-	      DstBlock		      "Psi"
+	      DstBlock		      "Kalman Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Kalman Filter"
+	      SrcPort		      1
+	      Points		      [0, 20; 65, 0]
+	      Branch {
+		Points			[5, 0; 0, 35]
+		DstBlock		"Selector1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -95; 115, 0]
+		Branch {
+		  DstBlock		  "Selector5"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 75]
+		  DstBlock		  "Selector6"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Selector6"
+	      SrcPort		      1
+	      DstBlock		      "Acc"
 	      DstPort		      1
 	    }
 	  }
@@ -4079,7 +4635,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Filter8"
-	  SID			  "1481"
+	  SID			  "1806"
 	  Ports			  [1, 3]
 	  Position		  [720, 454, 785, 516]
 	  BackgroundColor	  "cyan"
@@ -4121,14 +4677,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "1482"
+	      SID		      "1807"
 	      Position		      [30, 153, 60, 167]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain"
-	      SID		      "1483"
+	      SID		      "1808"
 	      Position		      [150, 139, 200, 181]
 	      ShowName		      off
 	      Gain		      "15"
@@ -4139,7 +4695,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Gain1"
-	      SID		      "1484"
+	      SID		      "1809"
 	      Position		      [220, 369, 270, 411]
 	      ShowName		      off
 	      Gain		      "20"
@@ -4150,7 +4706,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator"
-	      SID		      "1485"
+	      SID		      "1810"
 	      Ports		      [1, 1]
 	      Position		      [270, 145, 300, 175]
 	      ShowName		      off
@@ -4158,7 +4714,7 @@ Model {
 	    Block {
 	      BlockType		      Integrator
 	      Name		      "Integrator1"
-	      SID		      "1486"
+	      SID		      "1811"
 	      Ports		      [1, 1]
 	      Position		      [340, 375, 370, 405]
 	      ShowName		      off
@@ -4166,7 +4722,7 @@ Model {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Kalman Filter"
-	      SID		      "1487"
+	      SID		      "1812"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
 	      LibraryVersion	      "1.790"
@@ -4203,7 +4759,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1488"
+	      SID		      "1813"
 	      Ports		      [2, 1]
 	      Position		      [600, 52, 605, 128]
 	      ShowName		      off
@@ -4213,7 +4769,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux1"
-	      SID		      "1489"
+	      SID		      "1814"
 	      Ports		      [2, 1]
 	      Position		      [600, 350, 605, 425]
 	      ShowName		      off
@@ -4223,7 +4779,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector1"
-	      SID		      "1490"
+	      SID		      "1815"
 	      Ports		      [1, 1]
 	      Position		      [435, 42, 460, 68]
 	      NamePlacement	      "alternate"
@@ -4236,7 +4792,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector2"
-	      SID		      "1491"
+	      SID		      "1816"
 	      Ports		      [1, 1]
 	      Position		      [540, 262, 565, 288]
 	      NamePlacement	      "alternate"
@@ -4249,7 +4805,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector3"
-	      SID		      "1492"
+	      SID		      "1817"
 	      Ports		      [1, 1]
 	      Position		      [445, 347, 470, 373]
 	      NamePlacement	      "alternate"
@@ -4262,7 +4818,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector4"
-	      SID		      "1493"
+	      SID		      "1818"
 	      Ports		      [1, 1]
 	      Position		      [540, 317, 565, 343]
 	      NamePlacement	      "alternate"
@@ -4275,7 +4831,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector5"
-	      SID		      "1494"
+	      SID		      "1819"
 	      Ports		      [1, 1]
 	      Position		      [680, 187, 705, 213]
 	      NamePlacement	      "alternate"
@@ -4288,7 +4844,7 @@ Model {
 	    Block {
 	      BlockType		      Selector
 	      Name		      "Selector6"
-	      SID		      "1495"
+	      SID		      "1820"
 	      Ports		      [1, 1]
 	      Position		      [695, 262, 720, 288]
 	      NamePlacement	      "alternate"
@@ -4301,7 +4857,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "1496"
+	      SID		      "1821"
 	      Ports		      [2, 1]
 	      Position		      [95, 150, 115, 170]
 	      ShowName		      off
@@ -4314,7 +4870,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum1"
-	      SID		      "1497"
+	      SID		      "1822"
 	      Ports		      [2, 1]
 	      Position		      [165, 380, 185, 400]
 	      ShowName		      off
@@ -4327,14 +4883,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Pos"
-	      SID		      "1498"
+	      SID		      "1823"
 	      Position		      [385, 153, 415, 167]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Vel"
-	      SID		      "1499"
+	      SID		      "1824"
 	      Position		      [420, 98, 450, 112]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4342,142 +4898,15 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Acc"
-	      SID		      "1500"
+	      SID		      "1825"
 	      Position		      [830, 268, 860, 282]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Sum"
+	      SrcBlock		      "Selector6"
 	      SrcPort		      1
-	      DstBlock		      "Gain"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain"
-	      SrcPort		      1
-	      Points		      [5, 0]
-	      Branch {
-		Points			[15, 0]
-		Branch {
-		  DstBlock		  "Integrator"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, -50; 90, 0; 0, -5]
-		  Branch {
-		    Points		    [0, -50]
-		    DstBlock		    "Selector1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Vel"
-		    DstPort		    1
-		  }
-		}
-	      }
-	      Branch {
-		Points			[0, 230]
-		DstBlock		"Sum1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Integrator"
-	      SrcPort		      1
-	      Points		      [45, 0]
-	      Branch {
-		DstBlock		"Pos"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 60; -245, 0]
-		DstBlock		"Sum"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "In1"
-	      SrcPort		      1
-	      DstBlock		      "Sum"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Selector1"
-	      SrcPort		      1
-	      Points		      [120, 0]
-	      DstBlock		      "Mux"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Kalman Filter"
-	      SrcPort		      2
-	      Points		      [75, 0]
-	      Branch {
-		Points			[5, 0]
-		Branch {
-		  Points		  [0, 35]
-		  DstBlock		  "Selector4"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [10, 0]
-		  DstBlock		  "Selector2"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[0, -95; 115, 0]
-		Branch {
-		  DstBlock		  "Selector5"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Selector6"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum1"
-	      SrcPort		      1
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain1"
-	      SrcPort		      1
-	      Points		      [35, 0]
-	      Branch {
-		DstBlock		"Integrator1"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, -30]
-		DstBlock		"Selector3"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Integrator1"
-	      SrcPort		      1
-	      Points		      [45, 0; 0, 60; -245, 0]
-	      DstBlock		      "Sum1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Selector2"
-	      SrcPort		      1
-	      Points		      [0, -165]
-	      DstBlock		      "Mux"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Selector3"
-	      SrcPort		      1
-	      Points		      [20, 0; 0, 10]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Acc"
 	      DstPort		      1
 	    }
 	    Line {
@@ -4488,9 +4917,136 @@ Model {
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "Selector6"
+	      SrcBlock		      "Selector3"
 	      SrcPort		      1
-	      DstBlock		      "Acc"
+	      Points		      [20, 0; 0, 10]
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector2"
+	      SrcPort		      1
+	      Points		      [0, -165]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Integrator1"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 60; -245, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[0, -30]
+		DstBlock		"Selector3"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Integrator1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Kalman Filter"
+	      SrcPort		      2
+	      Points		      [75, 0]
+	      Branch {
+		Points			[0, -95; 115, 0]
+		Branch {
+		  Points		  [0, 75]
+		  DstBlock		  "Selector6"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Selector5"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[5, 0]
+		Branch {
+		  Points		  [10, 0]
+		  DstBlock		  "Selector2"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 35]
+		  DstBlock		  "Selector4"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Selector1"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integrator"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      Branch {
+		Points			[0, 60; -245, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Pos"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      Points		      [5, 0]
+	      Branch {
+		Points			[0, 230]
+		DstBlock		"Sum1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[15, 0]
+		Branch {
+		  Points		  [0, -50; 90, 0; 0, -5]
+		  Branch {
+		    DstBlock		    "Vel"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "Selector1"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
 	      DstPort		      1
 	    }
 	  }
@@ -4498,7 +5054,7 @@ Model {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto"
-	  SID			  "1606"
+	  SID			  "1826"
 	  Position		  [850, 135, 890, 165]
 	  GotoTag		  "Psi_raw"
 	  TagVisibility		  "global"
@@ -4506,7 +5062,7 @@ Model {
 	Block {
 	  BlockType		  M-S-Function
 	  Name			  "Logic to fix signal loss \nand object local axis flip1"
-	  SID			  "1746"
+	  SID			  "1827"
 	  Ports			  [1, 1]
 	  Position		  [355, 542, 515, 618]
 	  BackgroundColor	  "cyan"
@@ -4515,7 +5071,7 @@ Model {
 	Block {
 	  BlockType		  M-S-Function
 	  Name			  "Logic to fix signal loss \nand object local axis flip7"
-	  SID			  "1426"
+	  SID			  "1828"
 	  Ports			  [1, 1]
 	  Position		  [355, 237, 515, 313]
 	  BackgroundColor	  "cyan"
@@ -4524,7 +5080,7 @@ Model {
 	Block {
 	  BlockType		  M-S-Function
 	  Name			  "Logic to fix signal loss \nand object local axis flip8"
-	  SID			  "1501"
+	  SID			  "1829"
 	  Ports			  [1, 1]
 	  Position		  [355, 387, 515, 463]
 	  BackgroundColor	  "cyan"
@@ -4533,7 +5089,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "1578"
+	  SID			  "1830"
 	  Ports			  [2, 1]
 	  Position		  [750, 321, 755, 359]
 	  ShowName		  off
@@ -4543,7 +5099,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux1"
-	  SID			  "1582"
+	  SID			  "1831"
 	  Ports			  [2, 1]
 	  Position		  [980, 266, 985, 304]
 	  ShowName		  off
@@ -4560,7 +5116,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux19"
-	  SID			  "1427"
+	  SID			  "1832"
 	  Ports			  [2, 1]
 	  Position		  [315, 226, 325, 324]
 	  ShowName		  off
@@ -4570,7 +5126,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux2"
-	  SID			  "1747"
+	  SID			  "1833"
 	  Ports			  [2, 1]
 	  Position		  [315, 531, 325, 629]
 	  ShowName		  off
@@ -4580,7 +5136,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux20"
-	  SID			  "1428"
+	  SID			  "1834"
 	  Ports			  [3, 1]
 	  Position		  [655, 227, 665, 273]
 	  ShowName		  off
@@ -4597,7 +5153,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux21"
-	  SID			  "1429"
+	  SID			  "1835"
 	  Ports			  [3, 1]
 	  Position		  [625, 270, 635, 320]
 	  ShowName		  off
@@ -4614,7 +5170,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux22"
-	  SID			  "1502"
+	  SID			  "1836"
 	  Ports			  [2, 1]
 	  Position		  [315, 376, 325, 474]
 	  ShowName		  off
@@ -4624,7 +5180,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux23"
-	  SID			  "1503"
+	  SID			  "1837"
 	  Ports			  [3, 1]
 	  Position		  [655, 377, 665, 423]
 	  ShowName		  off
@@ -4641,7 +5197,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux24"
-	  SID			  "1504"
+	  SID			  "1838"
 	  Ports			  [3, 1]
 	  Position		  [625, 420, 635, 470]
 	  ShowName		  off
@@ -4658,7 +5214,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux3"
-	  SID			  "1748"
+	  SID			  "1839"
 	  Ports			  [3, 1]
 	  Position		  [655, 532, 665, 578]
 	  ShowName		  off
@@ -4675,7 +5231,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux4"
-	  SID			  "1749"
+	  SID			  "1840"
 	  Ports			  [3, 1]
 	  Position		  [625, 575, 635, 625]
 	  ShowName		  off
@@ -4692,7 +5248,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Raw Quad Pose from Vicon"
-	  SID			  "675"
+	  SID			  "1841"
 	  Ports			  [0, 6]
 	  Position		  [50, 73, 230, 632]
 	  BackgroundColor	  "orange"
@@ -4724,13 +5280,13 @@ Model {
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
-	      SID		      "1431"
+	      SID		      "1842"
 	      Position		      [40, 275, 70, 305]
 	    }
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "677"
+	      SID		      "1843"
 	      Ports		      [1, 3]
 	      Position		      [205, 21, 230, 559]
 	      ShowName		      off
@@ -4740,16 +5296,16 @@ Model {
 	    Block {
 	      BlockType		      MATLABFcn
 	      Name		      "Interpreted MATLAB\nFunction"
-	      SID		      "678"
+	      SID		      "1844"
 	      Ports		      [1, 1]
 	      Position		      [100, 275, 170, 305]
 	      ShowName		      off
-	      MATLABFcn		      "WKboxrecord"
+	      MATLABFcn		      "WK"
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Process Vicon Raw Data1"
-	      SID		      "1684"
+	      SID		      "1845"
 	      Ports		      [1, 2]
 	      Position		      [445, 453, 560, 517]
 	      MinAlgLoopOccurrences   off
@@ -4777,14 +5333,14 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "Vicon Raw"
-		  SID			  "1685"
+		  SID			  "1846"
 		  Position		  [25, 183, 55, 197]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Sum
 		  Name			  "Add1"
-		  SID			  "1686"
+		  SID			  "1847"
 		  Ports			  [2, 1]
 		  Position		  [205, 205, 230, 240]
 		  ShowName		  off
@@ -4796,7 +5352,7 @@ Model {
 		Block {
 		  BlockType		  Constant
 		  Name			  "Constant1"
-		  SID			  "1687"
+		  SID			  "1848"
 		  Position		  [135, 220, 175, 240]
 		  ShowName		  off
 		  Value			  "pi"
@@ -4805,7 +5361,7 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  "Demux"
-		  SID			  "1688"
+		  SID			  "1849"
 		  Ports			  [1, 6]
 		  Position		  [80, 40, 90, 340]
 		  ShowName		  off
@@ -4833,7 +5389,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Flip_pi1"
-		  SID			  "1689"
+		  SID			  "1850"
 		  Ports			  [1, 1]
 		  Position		  [360, 208, 425, 242]
 		  BackgroundColor	  "cyan"
@@ -4875,7 +5431,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1690"
+		    SID			    "1851"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -4883,7 +5439,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1691"
+		    SID			    "1852"
 		    Ports		    [2, 1]
 		    Position		    [360, 41, 380, 94]
 		    ShowName		    off
@@ -4895,7 +5451,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1692"
+		    SID			    "1853"
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
@@ -4919,7 +5475,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1693"
+		    SID			    "1854"
 		    Position		    [280, 43, 320, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -4927,7 +5483,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1694"
+		    SID			    "1855"
 		    Ports		    [2]
 		    Position		    [580, 185, 620, 225]
 		    ShowName		    off
@@ -4935,7 +5491,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_0_to_2pi"
-		    SID			    "1695"
+		    SID			    "1856"
 		    Ports		    [1, 1]
 		    Position		    [140, 130, 210, 170]
 		    BackgroundColor	    "cyan"
@@ -4977,7 +5533,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1696"
+		    SID			    "1857"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -4985,7 +5541,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1697"
+		    SID			    "1858"
 		    Ports		    [2, 1]
 		    Position		    [260, 41, 280, 94]
 		    ShowName		    off
@@ -4996,7 +5552,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1698"
+		    SID			    "1859"
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
@@ -5020,7 +5576,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1699"
+		    SID			    "1860"
 		    Position		    [180, 43, 220, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -5028,7 +5584,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1700"
+		    SID			    "1861"
 		    Ports		    [2]
 		    Position		    [470, 205, 510, 245]
 		    ShowName		    off
@@ -5036,7 +5592,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_2pi"
-		    SID			    "1701"
+		    SID			    "1862"
 		    Ports		    [1, 1]
 		    Position		    [115, 130, 185, 170]
 		    BackgroundColor	    "cyan"
@@ -5078,7 +5634,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1702"
+		    SID			    "1863"
 		    Position		    [45, 173, 75, 187]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -5086,7 +5642,7 @@ Model {
 		    Block {
 		    BlockType		    Bias
 		    Name		    "Bias"
-		    SID			    "1703"
+		    SID			    "1864"
 		    Position		    [240, 165, 280, 195]
 		    ShowName		    off
 		    Bias		    "-2*pi"
@@ -5095,7 +5651,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1704"
+		    SID			    "1865"
 		    Position		    [50, 217, 100, 243]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -5103,7 +5659,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1705"
+		    SID			    "1866"
 		    Ports		    [2]
 		    Position		    [385, 15, 425, 55]
 		    ShowName		    off
@@ -5111,7 +5667,7 @@ Model {
 		    Block {
 		    BlockType		    Math
 		    Name		    "Modulo"
-		    SID			    "1706"
+		    SID			    "1867"
 		    Ports		    [2, 1]
 		    Position		    [145, 156, 175, 254]
 		    ShowName		    off
@@ -5120,14 +5676,14 @@ Model {
 		    Block {
 		    BlockType		    Signum
 		    Name		    "Sign1"
-		    SID			    "1707"
+		    SID			    "1868"
 		    Position		    [145, 120, 175, 150]
 		    ShowName		    off
 		    }
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1708"
+		    SID			    "1869"
 		    Position		    [305, 67, 335, 203]
 		    ShowName		    off
 		    InputSameDT		    off
@@ -5136,49 +5692,30 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1709"
+		    SID			    "1870"
 		    Position		    [505, 128, 535, 142]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Angle"
 		    SrcPort		    1
-		    Points		    [15, 0]
+		    Points		    [25, 0]
 		    Branch {
-		    Points		    [0, -90]
+		    DstBlock		    "Modulo"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -45]
+		    Branch {
+		    DstBlock		    "Sign1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -110]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Angle_Flip"
 		    DstPort		    1
 		    }
-		    }
-		    Line {
-		    SrcBlock		    "Bias"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Line {
-		    SrcBlock		    "Sign1"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    Line {
-		    SrcBlock		    "Modulo"
-		    SrcPort		    1
-		    Points		    [40, 0; 0, -25]
-		    Branch {
-		    Points		    [0, -90]
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    Branch {
-		    DstBlock		    "Bias"
-		    DstPort		    1
 		    }
 		    }
 		    Line {
@@ -5188,24 +5725,43 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Modulo"
 		    SrcPort		    1
-		    Points		    [25, 0]
+		    Points		    [40, 0; 0, -25]
 		    Branch {
-		    Points		    [0, -45]
+		    DstBlock		    "Bias"
+		    DstPort		    1
+		    }
 		    Branch {
-		    Points		    [0, -110]
+		    Points		    [0, -90]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sign1"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Bias"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -90]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    1
-		    }
-		    Branch {
-		    DstBlock		    "Sign1"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Modulo"
-		    DstPort		    1
+		    DstPort		    2
 		    }
 		    }
 		    }
@@ -5213,7 +5769,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1710"
+		    SID			    "1871"
 		    Position		    [405, 46, 440, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -5223,49 +5779,31 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1711"
+		    SID			    "1872"
 		    Position		    [620, 103, 650, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Flip_2pi"
 		    SrcPort		    1
-		    Points		    [10, 0]
+		    Points		    [45, 0]
 		    Branch {
-		    DstBlock		    "Data Type\nDuplicate"
+		    Points		    [0, -40]
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Angle"
-		    SrcPort		    1
-		    Points		    [15, 0]
-		    Branch {
-		    Points		    [0, 85]
-		    DstBlock		    "Data Type\nDuplicate"
+		    Points		    [0, -30]
+		    DstBlock		    "Add"
 		    DstPort		    2
 		    }
+		    }
 		    Branch {
-		    DstBlock		    "Flip_2pi"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Add"
-		    SrcPort		    1
 		    DstBlock		    "Switch"
-		    DstPort		    1
+		    DstPort		    3
 		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "Add"
-		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "Compare\nTo Constant1"
@@ -5274,24 +5812,42 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Flip_2pi"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [45, 0]
-		    Branch {
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
+		    Line {
+		    SrcBlock		    "Add"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Angle"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Flip_2pi"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 85]
+		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    1
 		    }
 		    }
 		    }
@@ -5299,7 +5855,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1712"
+		    SID			    "1873"
 		    Position		    [505, 46, 540, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -5309,36 +5865,45 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1713"
+		    SID			    "1874"
 		    Position		    [700, 103, 730, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Angle"
 		    SrcPort		    1
-		    Points		    [15, 0]
+		    Points		    [30, 0]
 		    Branch {
-		    Points		    [0, 85]
+		    DstBlock		    "Flip_0_to_2pi"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
 		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Flip_0_to_2pi"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -40]
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Add"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
+		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    1
+		    DstPort		    2
+		    }
+		    }
 		    }
 		    Line {
 		    SrcBlock		    "Compare\nTo Constant1"
@@ -5347,37 +5912,28 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Flip_0_to_2pi"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [45, 0]
-		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
-		    }
-		    Branch {
+		    Line {
+		    SrcBlock		    "Add"
+		    SrcPort		    1
 		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
+		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Switch"
 		    SrcPort		    1
-		    Points		    [30, 0]
+		    Points		    [15, 0]
 		    Branch {
-		    Points		    [0, 65]
-		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Flip_0_to_2pi"
+		    Points		    [0, 85]
+		    DstBlock		    "Data Type\nDuplicate"
 		    DstPort		    1
 		    }
 		    }
@@ -5386,7 +5942,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain1"
-		  SID			  "1714"
+		  SID			  "1875"
 		  Position		  [270, 48, 335, 82]
 		  ShowName		  off
 		  Gain			  "0.001"
@@ -5397,7 +5953,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain3"
-		  SID			  "1715"
+		  SID			  "1876"
 		  Position		  [270, 208, 310, 242]
 		  ShowName		  off
 		  Gain			  "-1"
@@ -5408,7 +5964,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain6"
-		  SID			  "1716"
+		  SID			  "1877"
 		  Position		  [270, 98, 335, 132]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -5419,7 +5975,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain7"
-		  SID			  "1717"
+		  SID			  "1878"
 		  Position		  [270, 148, 335, 182]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -5430,7 +5986,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate1"
-		  SID			  "1718"
+		  SID			  "1879"
 		  Ports			  [3, 1]
 		  Position		  [565, 192, 630, 338]
 		  DropShadow		  on
@@ -5441,7 +5997,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate13"
-		  SID			  "1719"
+		  SID			  "1880"
 		  Ports			  [3, 1]
 		  Position		  [465, 41, 530, 189]
 		  DropShadow		  on
@@ -5452,86 +6008,41 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Position"
-		  SID			  "1720"
+		  SID			  "1881"
 		  Position		  [655, 108, 685, 122]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "Attitude"
-		  SID			  "1721"
+		  SID			  "1882"
 		  Position		  [655, 258, 685, 272]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "Constant1"
+		  SrcBlock		  "Matrix\nConcatenate1"
 		  SrcPort		  1
-		  DstBlock		  "Add1"
-		  DstPort		  2
+		  DstBlock		  "Attitude"
+		  DstPort		  1
 		}
 		Line {
-		  Name			  "yaw"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  6
+		  SrcBlock		  "Vicon Raw"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenate13"
+		  SrcPort		  1
+		  DstBlock		  "Position"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Flip_pi1"
+		  SrcPort		  1
+		  Points		  [120, 0]
 		  DstBlock		  "Matrix\nConcatenate1"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  2
-		  DstBlock		  "Gain6"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  3
-		  DstBlock		  "Gain7"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "roll"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  4
-		  DstBlock		  "Add1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain6"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Gain7"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Add1"
-		  SrcPort		  1
-		  DstBlock		  "Gain3"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain3"
-		  SrcPort		  1
-		  DstBlock		  "Flip_pi1"
 		  DstPort		  1
 		}
 		Line {
@@ -5543,48 +6054,93 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Flip_pi1"
+		  SrcBlock		  "Gain3"
 		  SrcPort		  1
-		  Points		  [120, 0]
+		  DstBlock		  "Flip_pi1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Add1"
+		  SrcPort		  1
+		  DstBlock		  "Gain3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain7"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Gain6"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "roll"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  4
+		  DstBlock		  "Add1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  3
+		  DstBlock		  "Gain7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Gain6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "yaw"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
-		  DstPort		  1
+		  DstPort		  3
 		}
 		Line {
-		  SrcBlock		  "Matrix\nConcatenate13"
+		  SrcBlock		  "Constant1"
 		  SrcPort		  1
-		  DstBlock		  "Position"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Vicon Raw"
-		  SrcPort		  1
-		  DstBlock		  "Demux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Matrix\nConcatenate1"
-		  SrcPort		  1
-		  DstBlock		  "Attitude"
-		  DstPort		  1
+		  DstBlock		  "Add1"
+		  DstPort		  2
 		}
 		Annotation {
-		  Name			  "X"
-		  Position		  [99, 27]
+		  Name			  "Z"
+		  Position		  [99, 146]
 		}
 		Annotation {
 		  Name			  "Y"
 		  Position		  [102, 85]
 		}
 		Annotation {
-		  Name			  "Z"
-		  Position		  [99, 146]
+		  Name			  "X"
+		  Position		  [99, 27]
 		}
 	      }
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Process Vicon Raw Data6"
-	      SID		      "1364"
+	      SID		      "1883"
 	      Ports		      [1, 2]
 	      Position		      [445, 258, 560, 322]
 	      MinAlgLoopOccurrences   off
@@ -5612,14 +6168,14 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "Vicon Raw"
-		  SID			  "1365"
+		  SID			  "1884"
 		  Position		  [25, 183, 55, 197]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Sum
 		  Name			  "Add1"
-		  SID			  "1366"
+		  SID			  "1885"
 		  Ports			  [2, 1]
 		  Position		  [205, 205, 230, 240]
 		  ShowName		  off
@@ -5631,7 +6187,7 @@ Model {
 		Block {
 		  BlockType		  Constant
 		  Name			  "Constant1"
-		  SID			  "1367"
+		  SID			  "1886"
 		  Position		  [135, 220, 175, 240]
 		  ShowName		  off
 		  Value			  "pi"
@@ -5640,7 +6196,7 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  "Demux"
-		  SID			  "1368"
+		  SID			  "1887"
 		  Ports			  [1, 6]
 		  Position		  [80, 40, 90, 340]
 		  ShowName		  off
@@ -5668,7 +6224,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Flip_pi1"
-		  SID			  "1369"
+		  SID			  "1888"
 		  Ports			  [1, 1]
 		  Position		  [360, 208, 425, 242]
 		  BackgroundColor	  "cyan"
@@ -5710,7 +6266,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1370"
+		    SID			    "1889"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -5718,7 +6274,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1371"
+		    SID			    "1890"
 		    Ports		    [2, 1]
 		    Position		    [360, 41, 380, 94]
 		    ShowName		    off
@@ -5730,7 +6286,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1372"
+		    SID			    "1891"
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
@@ -5754,7 +6310,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1373"
+		    SID			    "1892"
 		    Position		    [280, 43, 320, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -5762,7 +6318,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1374"
+		    SID			    "1893"
 		    Ports		    [2]
 		    Position		    [580, 185, 620, 225]
 		    ShowName		    off
@@ -5770,7 +6326,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_0_to_2pi"
-		    SID			    "1375"
+		    SID			    "1894"
 		    Ports		    [1, 1]
 		    Position		    [140, 130, 210, 170]
 		    BackgroundColor	    "cyan"
@@ -5812,7 +6368,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1376"
+		    SID			    "1895"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -5820,7 +6376,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1377"
+		    SID			    "1896"
 		    Ports		    [2, 1]
 		    Position		    [260, 41, 280, 94]
 		    ShowName		    off
@@ -5831,7 +6387,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1378"
+		    SID			    "1897"
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
@@ -5855,7 +6411,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1379"
+		    SID			    "1898"
 		    Position		    [180, 43, 220, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -5863,7 +6419,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1380"
+		    SID			    "1899"
 		    Ports		    [2]
 		    Position		    [470, 205, 510, 245]
 		    ShowName		    off
@@ -5871,7 +6427,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_2pi"
-		    SID			    "1381"
+		    SID			    "1900"
 		    Ports		    [1, 1]
 		    Position		    [115, 130, 185, 170]
 		    BackgroundColor	    "cyan"
@@ -5913,7 +6469,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1382"
+		    SID			    "1901"
 		    Position		    [45, 173, 75, 187]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -5921,7 +6477,7 @@ Model {
 		    Block {
 		    BlockType		    Bias
 		    Name		    "Bias"
-		    SID			    "1383"
+		    SID			    "1902"
 		    Position		    [240, 165, 280, 195]
 		    ShowName		    off
 		    Bias		    "-2*pi"
@@ -5930,7 +6486,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1384"
+		    SID			    "1903"
 		    Position		    [50, 217, 100, 243]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -5938,7 +6494,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1385"
+		    SID			    "1904"
 		    Ports		    [2]
 		    Position		    [385, 15, 425, 55]
 		    ShowName		    off
@@ -5946,7 +6502,7 @@ Model {
 		    Block {
 		    BlockType		    Math
 		    Name		    "Modulo"
-		    SID			    "1386"
+		    SID			    "1905"
 		    Ports		    [2, 1]
 		    Position		    [145, 156, 175, 254]
 		    ShowName		    off
@@ -5955,14 +6511,14 @@ Model {
 		    Block {
 		    BlockType		    Signum
 		    Name		    "Sign1"
-		    SID			    "1387"
+		    SID			    "1906"
 		    Position		    [145, 120, 175, 150]
 		    ShowName		    off
 		    }
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1388"
+		    SID			    "1907"
 		    Position		    [305, 67, 335, 203]
 		    ShowName		    off
 		    InputSameDT		    off
@@ -5971,49 +6527,30 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1389"
+		    SID			    "1908"
 		    Position		    [505, 128, 535, 142]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Angle"
 		    SrcPort		    1
-		    Points		    [15, 0]
+		    Points		    [25, 0]
 		    Branch {
-		    Points		    [0, -90]
+		    DstBlock		    "Modulo"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -45]
+		    Branch {
+		    DstBlock		    "Sign1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -110]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Angle_Flip"
 		    DstPort		    1
 		    }
-		    }
-		    Line {
-		    SrcBlock		    "Bias"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Line {
-		    SrcBlock		    "Sign1"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    Line {
-		    SrcBlock		    "Modulo"
-		    SrcPort		    1
-		    Points		    [40, 0; 0, -25]
-		    Branch {
-		    Points		    [0, -90]
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    Branch {
-		    DstBlock		    "Bias"
-		    DstPort		    1
 		    }
 		    }
 		    Line {
@@ -6023,24 +6560,43 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Modulo"
 		    SrcPort		    1
-		    Points		    [25, 0]
+		    Points		    [40, 0; 0, -25]
 		    Branch {
-		    Points		    [0, -45]
+		    DstBlock		    "Bias"
+		    DstPort		    1
+		    }
 		    Branch {
-		    Points		    [0, -110]
+		    Points		    [0, -90]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Sign1"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Bias"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -90]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    1
-		    }
-		    Branch {
-		    DstBlock		    "Sign1"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Modulo"
-		    DstPort		    1
+		    DstPort		    2
 		    }
 		    }
 		    }
@@ -6048,7 +6604,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1390"
+		    SID			    "1909"
 		    Position		    [405, 46, 440, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -6058,49 +6614,31 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1391"
+		    SID			    "1910"
 		    Position		    [620, 103, 650, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Flip_2pi"
 		    SrcPort		    1
-		    Points		    [10, 0]
+		    Points		    [45, 0]
 		    Branch {
-		    DstBlock		    "Data Type\nDuplicate"
+		    Points		    [0, -40]
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Angle"
-		    SrcPort		    1
-		    Points		    [15, 0]
-		    Branch {
-		    Points		    [0, 85]
-		    DstBlock		    "Data Type\nDuplicate"
+		    Points		    [0, -30]
+		    DstBlock		    "Add"
 		    DstPort		    2
 		    }
+		    }
 		    Branch {
-		    DstBlock		    "Flip_2pi"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Add"
-		    SrcPort		    1
 		    DstBlock		    "Switch"
-		    DstPort		    1
+		    DstPort		    3
 		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "Add"
-		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "Compare\nTo Constant1"
@@ -6109,24 +6647,42 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Flip_2pi"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [45, 0]
-		    Branch {
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
+		    Line {
+		    SrcBlock		    "Add"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Angle"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "Flip_2pi"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 85]
+		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Switch"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    1
 		    }
 		    }
 		    }
@@ -6134,7 +6690,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1392"
+		    SID			    "1911"
 		    Position		    [505, 46, 540, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -6144,36 +6700,45 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1393"
+		    SID			    "1912"
 		    Position		    [700, 103, 730, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Angle"
 		    SrcPort		    1
-		    Points		    [15, 0]
+		    Points		    [30, 0]
 		    Branch {
-		    Points		    [0, 85]
+		    DstBlock		    "Flip_0_to_2pi"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 65]
 		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Flip_0_to_2pi"
+		    SrcPort		    1
+		    Points		    [45, 0]
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -40]
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Add"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
+		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    1
+		    DstPort		    2
+		    }
+		    }
 		    }
 		    Line {
 		    SrcBlock		    "Compare\nTo Constant1"
@@ -6182,37 +6747,28 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Flip_0_to_2pi"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [45, 0]
-		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    Points		    [0, -30]
 		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
-		    }
-		    Branch {
+		    Line {
+		    SrcBlock		    "Add"
+		    SrcPort		    1
 		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
+		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Switch"
 		    SrcPort		    1
-		    Points		    [30, 0]
+		    Points		    [15, 0]
 		    Branch {
-		    Points		    [0, 65]
-		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
 		    }
 		    Branch {
-		    DstBlock		    "Flip_0_to_2pi"
+		    Points		    [0, 85]
+		    DstBlock		    "Data Type\nDuplicate"
 		    DstPort		    1
 		    }
 		    }
@@ -6221,7 +6777,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain1"
-		  SID			  "1394"
+		  SID			  "1913"
 		  Position		  [270, 48, 335, 82]
 		  ShowName		  off
 		  Gain			  "0.001"
@@ -6232,7 +6788,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain3"
-		  SID			  "1395"
+		  SID			  "1914"
 		  Position		  [270, 208, 310, 242]
 		  ShowName		  off
 		  Gain			  "-1"
@@ -6243,7 +6799,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain6"
-		  SID			  "1396"
+		  SID			  "1915"
 		  Position		  [270, 98, 335, 132]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -6254,7 +6810,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain7"
-		  SID			  "1397"
+		  SID			  "1916"
 		  Position		  [270, 148, 335, 182]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -6265,7 +6821,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate1"
-		  SID			  "1398"
+		  SID			  "1917"
 		  Ports			  [3, 1]
 		  Position		  [565, 192, 630, 338]
 		  DropShadow		  on
@@ -6276,7 +6832,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate13"
-		  SID			  "1399"
+		  SID			  "1918"
 		  Ports			  [3, 1]
 		  Position		  [465, 41, 530, 189]
 		  DropShadow		  on
@@ -6287,86 +6843,41 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Position"
-		  SID			  "1400"
+		  SID			  "1919"
 		  Position		  [655, 108, 685, 122]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "Attitude"
-		  SID			  "1401"
+		  SID			  "1920"
 		  Position		  [655, 258, 685, 272]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "Constant1"
+		  SrcBlock		  "Matrix\nConcatenate1"
 		  SrcPort		  1
-		  DstBlock		  "Add1"
-		  DstPort		  2
+		  DstBlock		  "Attitude"
+		  DstPort		  1
 		}
 		Line {
-		  Name			  "yaw"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  6
+		  SrcBlock		  "Vicon Raw"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenate13"
+		  SrcPort		  1
+		  DstBlock		  "Position"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Flip_pi1"
+		  SrcPort		  1
+		  Points		  [120, 0]
 		  DstBlock		  "Matrix\nConcatenate1"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  2
-		  DstBlock		  "Gain6"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  3
-		  DstBlock		  "Gain7"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "roll"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  4
-		  DstBlock		  "Add1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain6"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Gain7"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Add1"
-		  SrcPort		  1
-		  DstBlock		  "Gain3"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain3"
-		  SrcPort		  1
-		  DstBlock		  "Flip_pi1"
 		  DstPort		  1
 		}
 		Line {
@@ -6378,48 +6889,93 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Flip_pi1"
+		  SrcBlock		  "Gain3"
 		  SrcPort		  1
-		  Points		  [120, 0]
+		  DstBlock		  "Flip_pi1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Add1"
+		  SrcPort		  1
+		  DstBlock		  "Gain3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain7"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Gain6"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "roll"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  4
+		  DstBlock		  "Add1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  3
+		  DstBlock		  "Gain7"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Gain6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "yaw"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
-		  DstPort		  1
+		  DstPort		  3
 		}
 		Line {
-		  SrcBlock		  "Matrix\nConcatenate13"
+		  SrcBlock		  "Constant1"
 		  SrcPort		  1
-		  DstBlock		  "Position"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Vicon Raw"
-		  SrcPort		  1
-		  DstBlock		  "Demux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Matrix\nConcatenate1"
-		  SrcPort		  1
-		  DstBlock		  "Attitude"
-		  DstPort		  1
+		  DstBlock		  "Add1"
+		  DstPort		  2
 		}
 		Annotation {
-		  Name			  "X"
-		  Position		  [99, 27]
+		  Name			  "Z"
+		  Position		  [99, 146]
 		}
 		Annotation {
 		  Name			  "Y"
 		  Position		  [102, 85]
 		}
 		Annotation {
-		  Name			  "Z"
-		  Position		  [99, 146]
+		  Name			  "X"
+		  Position		  [99, 27]
 		}
 	      }
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "Process Vicon Raw Data7"
-	      SID		      "1439"
+	      SID		      "1921"
 	      Ports		      [1, 2]
 	      Position		      [445, 353, 560, 417]
 	      MinAlgLoopOccurrences   off
@@ -6447,14 +7003,14 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "Vicon Raw"
-		  SID			  "1440"
+		  SID			  "1922"
 		  Position		  [25, 183, 55, 197]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Sum
 		  Name			  "Add1"
-		  SID			  "1441"
+		  SID			  "1923"
 		  Ports			  [2, 1]
 		  Position		  [205, 205, 230, 240]
 		  ShowName		  off
@@ -6466,7 +7022,7 @@ Model {
 		Block {
 		  BlockType		  Constant
 		  Name			  "Constant1"
-		  SID			  "1442"
+		  SID			  "1924"
 		  Position		  [135, 220, 175, 240]
 		  ShowName		  off
 		  Value			  "pi"
@@ -6475,7 +7031,7 @@ Model {
 		Block {
 		  BlockType		  Demux
 		  Name			  "Demux"
-		  SID			  "1443"
+		  SID			  "1925"
 		  Ports			  [1, 6]
 		  Position		  [80, 40, 90, 340]
 		  ShowName		  off
@@ -6503,7 +7059,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "Flip_pi1"
-		  SID			  "1444"
+		  SID			  "1926"
 		  Ports			  [1, 1]
 		  Position		  [360, 208, 425, 242]
 		  BackgroundColor	  "cyan"
@@ -6545,7 +7101,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1445"
+		    SID			    "1927"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -6553,7 +7109,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1446"
+		    SID			    "1928"
 		    Ports		    [2, 1]
 		    Position		    [360, 41, 380, 94]
 		    ShowName		    off
@@ -6565,7 +7121,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1447"
+		    SID			    "1929"
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
@@ -6589,7 +7145,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1448"
+		    SID			    "1930"
 		    Position		    [280, 43, 320, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -6597,7 +7153,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1449"
+		    SID			    "1931"
 		    Ports		    [2]
 		    Position		    [580, 185, 620, 225]
 		    ShowName		    off
@@ -6605,7 +7161,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_0_to_2pi"
-		    SID			    "1450"
+		    SID			    "1932"
 		    Ports		    [1, 1]
 		    Position		    [140, 130, 210, 170]
 		    BackgroundColor	    "cyan"
@@ -6647,7 +7203,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1451"
+		    SID			    "1933"
 		    Position		    [40, 143, 70, 157]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -6655,7 +7211,7 @@ Model {
 		    Block {
 		    BlockType		    Sum
 		    Name		    "Add"
-		    SID			    "1452"
+		    SID			    "1934"
 		    Ports		    [2, 1]
 		    Position		    [260, 41, 280, 94]
 		    ShowName		    off
@@ -6666,7 +7222,7 @@ Model {
 		    Block {
 		    BlockType		    Reference
 		    Name		    "Compare\nTo Constant1"
-		    SID			    "1453"
+		    SID			    "1935"
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
@@ -6690,7 +7246,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1454"
+		    SID			    "1936"
 		    Position		    [180, 43, 220, 67]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -6698,7 +7254,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1455"
+		    SID			    "1937"
 		    Ports		    [2]
 		    Position		    [470, 205, 510, 245]
 		    ShowName		    off
@@ -6706,7 +7262,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Flip_2pi"
-		    SID			    "1456"
+		    SID			    "1938"
 		    Ports		    [1, 1]
 		    Position		    [115, 130, 185, 170]
 		    BackgroundColor	    "cyan"
@@ -6748,7 +7304,7 @@ Model {
 		    Block {
 		    BlockType		    Inport
 		    Name		    "Angle"
-		    SID			    "1457"
+		    SID			    "1939"
 		    Position		    [45, 173, 75, 187]
 		    BackgroundColor	    "cyan"
 		    IconDisplay		    "Port number"
@@ -6756,7 +7312,7 @@ Model {
 		    Block {
 		    BlockType		    Bias
 		    Name		    "Bias"
-		    SID			    "1458"
+		    SID			    "1940"
 		    Position		    [240, 165, 280, 195]
 		    ShowName		    off
 		    Bias		    "-2*pi"
@@ -6765,7 +7321,7 @@ Model {
 		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
-		    SID			    "1459"
+		    SID			    "1941"
 		    Position		    [50, 217, 100, 243]
 		    ShowName		    off
 		    Value		    "2*pi"
@@ -6773,7 +7329,7 @@ Model {
 		    Block {
 		    BlockType		    DataTypeDuplicate
 		    Name		    "Data Type\nDuplicate"
-		    SID			    "1460"
+		    SID			    "1942"
 		    Ports		    [2]
 		    Position		    [385, 15, 425, 55]
 		    ShowName		    off
@@ -6781,7 +7337,7 @@ Model {
 		    Block {
 		    BlockType		    Math
 		    Name		    "Modulo"
-		    SID			    "1461"
+		    SID			    "1943"
 		    Ports		    [2, 1]
 		    Position		    [145, 156, 175, 254]
 		    ShowName		    off
@@ -6790,14 +7346,14 @@ Model {
 		    Block {
 		    BlockType		    Signum
 		    Name		    "Sign1"
-		    SID			    "1462"
+		    SID			    "1944"
 		    Position		    [145, 120, 175, 150]
 		    ShowName		    off
 		    }
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1463"
+		    SID			    "1945"
 		    Position		    [305, 67, 335, 203]
 		    ShowName		    off
 		    InputSameDT		    off
@@ -6806,30 +7362,49 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1464"
+		    SID			    "1946"
 		    Position		    [505, 128, 535, 142]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Switch"
 		    SrcPort		    1
-		    Points		    [25, 0]
+		    Points		    [15, 0]
 		    Branch {
-		    DstBlock		    "Modulo"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -45]
-		    Branch {
-		    DstBlock		    "Sign1"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -110]
+		    Points		    [0, -90]
 		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Angle_Flip"
 		    DstPort		    1
 		    }
+		    }
+		    Line {
+		    SrcBlock		    "Bias"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    Line {
+		    SrcBlock		    "Sign1"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Modulo"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -25]
+		    Branch {
+		    Points		    [0, -90]
+		    DstBlock		    "Switch"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Bias"
+		    DstPort		    1
 		    }
 		    }
 		    Line {
@@ -6839,43 +7414,24 @@ Model {
 		    DstPort		    2
 		    }
 		    Line {
-		    SrcBlock		    "Modulo"
+		    SrcBlock		    "Angle"
 		    SrcPort		    1
-		    Points		    [40, 0; 0, -25]
+		    Points		    [25, 0]
 		    Branch {
-		    DstBlock		    "Bias"
-		    DstPort		    1
-		    }
+		    Points		    [0, -45]
 		    Branch {
-		    Points		    [0, -90]
-		    DstBlock		    "Switch"
-		    DstPort		    1
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Sign1"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    Line {
-		    SrcBlock		    "Bias"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Line {
-		    SrcBlock		    "Switch"
-		    SrcPort		    1
-		    Points		    [15, 0]
-		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -90]
+		    Points		    [0, -110]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Sign1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Modulo"
+		    DstPort		    1
 		    }
 		    }
 		    }
@@ -6883,7 +7439,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1465"
+		    SID			    "1947"
 		    Position		    [405, 46, 440, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -6893,43 +7449,37 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1466"
+		    SID			    "1948"
 		    Position		    [620, 103, 650, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Flip_2pi"
+		    SrcBlock		    "Switch"
 		    SrcPort		    1
-		    Points		    [45, 0]
+		    Points		    [10, 0]
 		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
+		    DstBlock		    "Data Type\nDuplicate"
 		    DstPort		    1
 		    }
 		    Branch {
-		    Points		    [0, -30]
-		    DstBlock		    "Add"
-		    DstPort		    2
+		    DstBlock		    "Angle_Flip"
+		    DstPort		    1
 		    }
+		    }
+		    Line {
+		    SrcBlock		    "Angle"
+		    SrcPort		    1
+		    Points		    [15, 0]
+		    Branch {
+		    Points		    [0, 85]
+		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
 		    }
 		    Branch {
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Compare\nTo Constant1"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "Add"
+		    DstBlock		    "Flip_2pi"
 		    DstPort		    1
+		    }
 		    }
 		    Line {
 		    SrcBlock		    "Add"
@@ -6938,30 +7488,36 @@ Model {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [15, 0]
-		    Branch {
-		    DstBlock		    "Flip_2pi"
+		    DstBlock		    "Add"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, 85]
-		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
-		    }
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Compare\nTo Constant1"
 		    SrcPort		    1
-		    Points		    [10, 0]
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Flip_2pi"
+		    SrcPort		    1
+		    Points		    [45, 0]
 		    Branch {
-		    DstBlock		    "Angle_Flip"
-		    DstPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    3
 		    }
 		    Branch {
-		    DstBlock		    "Data Type\nDuplicate"
+		    Points		    [0, -40]
+		    Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "Add"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
+		    }
 		    }
 		    }
 		    }
@@ -6969,7 +7525,7 @@ Model {
 		    Block {
 		    BlockType		    Switch
 		    Name		    "Switch"
-		    SID			    "1467"
+		    SID			    "1949"
 		    Position		    [505, 46, 540, 174]
 		    ShowName		    off
 		    Criteria		    "u2 ~= 0"
@@ -6979,57 +7535,24 @@ Model {
 		    Block {
 		    BlockType		    Outport
 		    Name		    "Angle_Flip"
-		    SID			    "1468"
+		    SID			    "1950"
 		    Position		    [700, 103, 730, 117]
 		    BackgroundColor	    "magenta"
 		    IconDisplay		    "Port number"
 		    }
 		    Line {
-		    SrcBlock		    "Angle"
+		    SrcBlock		    "Switch"
 		    SrcPort		    1
-		    Points		    [30, 0]
+		    Points		    [15, 0]
 		    Branch {
-		    DstBlock		    "Flip_0_to_2pi"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, 65]
+		    Points		    [0, 85]
 		    DstBlock		    "Data Type\nDuplicate"
-		    DstPort		    2
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Flip_0_to_2pi"
-		    SrcPort		    1
-		    Points		    [45, 0]
-		    Branch {
-		    DstBlock		    "Switch"
-		    DstPort		    3
-		    }
-		    Branch {
-		    Points		    [0, -40]
-		    Branch {
-		    DstBlock		    "Compare\nTo Constant1"
 		    DstPort		    1
 		    }
 		    Branch {
-		    Points		    [0, -30]
-		    DstBlock		    "Add"
-		    DstPort		    2
-		    }
-		    }
-		    }
-		    Line {
-		    SrcBlock		    "Compare\nTo Constant1"
-		    SrcPort		    1
-		    DstBlock		    "Switch"
-		    DstPort		    2
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "Add"
+		    DstBlock		    "Angle_Flip"
 		    DstPort		    1
+		    }
 		    }
 		    Line {
 		    SrcBlock		    "Add"
@@ -7038,16 +7561,49 @@ Model {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Switch"
+		    SrcBlock		    "Constant"
 		    SrcPort		    1
-		    Points		    [15, 0]
-		    Branch {
-		    DstBlock		    "Angle_Flip"
+		    DstBlock		    "Add"
 		    DstPort		    1
 		    }
+		    Line {
+		    SrcBlock		    "Compare\nTo Constant1"
+		    SrcPort		    1
+		    DstBlock		    "Switch"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Flip_0_to_2pi"
+		    SrcPort		    1
+		    Points		    [45, 0]
 		    Branch {
-		    Points		    [0, 85]
+		    Points		    [0, -40]
+		    Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "Add"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Compare\nTo Constant1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Switch"
+		    DstPort		    3
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "Angle"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    Branch {
+		    Points		    [0, 65]
 		    DstBlock		    "Data Type\nDuplicate"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "Flip_0_to_2pi"
 		    DstPort		    1
 		    }
 		    }
@@ -7056,7 +7612,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain1"
-		  SID			  "1469"
+		  SID			  "1951"
 		  Position		  [270, 48, 335, 82]
 		  ShowName		  off
 		  Gain			  "0.001"
@@ -7067,7 +7623,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain3"
-		  SID			  "1470"
+		  SID			  "1952"
 		  Position		  [270, 208, 310, 242]
 		  ShowName		  off
 		  Gain			  "-1"
@@ -7078,7 +7634,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain6"
-		  SID			  "1471"
+		  SID			  "1953"
 		  Position		  [270, 98, 335, 132]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -7089,7 +7645,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "Gain7"
-		  SID			  "1472"
+		  SID			  "1954"
 		  Position		  [270, 148, 335, 182]
 		  ShowName		  off
 		  Gain			  "-0.001"
@@ -7100,7 +7656,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate1"
-		  SID			  "1473"
+		  SID			  "1955"
 		  Ports			  [3, 1]
 		  Position		  [565, 192, 630, 338]
 		  DropShadow		  on
@@ -7111,7 +7667,7 @@ Model {
 		Block {
 		  BlockType		  Concatenate
 		  Name			  "Matrix\nConcatenate13"
-		  SID			  "1474"
+		  SID			  "1956"
 		  Ports			  [3, 1]
 		  Position		  [465, 41, 530, 189]
 		  DropShadow		  on
@@ -7122,41 +7678,86 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Position"
-		  SID			  "1475"
+		  SID			  "1957"
 		  Position		  [655, 108, 685, 122]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "Attitude"
-		  SID			  "1476"
+		  SID			  "1958"
 		  Position		  [655, 258, 685, 272]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
-		  SrcBlock		  "Matrix\nConcatenate1"
+		  SrcBlock		  "Constant1"
 		  SrcPort		  1
-		  DstBlock		  "Attitude"
-		  DstPort		  1
+		  DstBlock		  "Add1"
+		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Vicon Raw"
-		  SrcPort		  1
-		  DstBlock		  "Demux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Matrix\nConcatenate13"
-		  SrcPort		  1
-		  DstBlock		  "Position"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Flip_pi1"
-		  SrcPort		  1
-		  Points		  [120, 0]
+		  Name			  "yaw"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  6
 		  DstBlock		  "Matrix\nConcatenate1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Gain6"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Demux"
+		  SrcPort		  3
+		  DstBlock		  "Gain7"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "roll"
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  4
+		  DstBlock		  "Add1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain6"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gain7"
+		  SrcPort		  1
+		  DstBlock		  "Matrix\nConcatenate13"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Add1"
+		  SrcPort		  1
+		  DstBlock		  "Gain3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain3"
+		  SrcPort		  1
+		  DstBlock		  "Flip_pi1"
 		  DstPort		  1
 		}
 		Line {
@@ -7168,100 +7769,55 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Gain3"
+		  SrcBlock		  "Flip_pi1"
 		  SrcPort		  1
-		  DstBlock		  "Flip_pi1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Add1"
-		  SrcPort		  1
-		  DstBlock		  "Gain3"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain7"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Gain6"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  2
-		}
-		Line {
-		  Name			  "roll"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  4
-		  DstBlock		  "Add1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  3
-		  DstBlock		  "Gain7"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  2
-		  DstBlock		  "Gain6"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "Matrix\nConcatenate13"
-		  DstPort		  1
-		}
-		Line {
-		  Name			  "yaw"
-		  Labels		  [0, 0]
-		  SrcBlock		  "Demux"
-		  SrcPort		  6
+		  Points		  [120, 0]
 		  DstBlock		  "Matrix\nConcatenate1"
-		  DstPort		  3
+		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Constant1"
+		  SrcBlock		  "Matrix\nConcatenate13"
 		  SrcPort		  1
-		  DstBlock		  "Add1"
-		  DstPort		  2
+		  DstBlock		  "Position"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Vicon Raw"
+		  SrcPort		  1
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Matrix\nConcatenate1"
+		  SrcPort		  1
+		  DstBlock		  "Attitude"
+		  DstPort		  1
 		}
 		Annotation {
-		  Name			  "Z"
-		  Position		  [99, 146]
+		  Name			  "X"
+		  Position		  [99, 27]
 		}
 		Annotation {
 		  Name			  "Y"
 		  Position		  [102, 85]
 		}
 		Annotation {
-		  Name			  "X"
-		  Position		  [99, 27]
+		  Name			  "Z"
+		  Position		  [99, 146]
 		}
 	      }
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Position_Vicon_x400"
-	      SID		      "1402"
+	      SID		      "1959"
 	      Position		      [625, 268, 655, 282]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Attitude_Vicon_x400"
-	      SID		      "1403"
+	      SID		      "1960"
 	      Position		      [625, 298, 655, 312]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7269,7 +7825,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Position_Vicon_basket"
-	      SID		      "1477"
+	      SID		      "1961"
 	      Position		      [625, 363, 655, 377]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -7277,7 +7833,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Attitude_Vicon_basket"
-	      SID		      "1478"
+	      SID		      "1962"
 	      Position		      [625, 393, 655, 407]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -7285,7 +7841,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Position_Vicon_brush"
-	      SID		      "1722"
+	      SID		      "1963"
 	      Position		      [625, 463, 655, 477]
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -7293,53 +7849,28 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Attitude_Vicon_brush"
-	      SID		      "1723"
+	      SID		      "1964"
 	      Position		      [625, 493, 655, 507]
 	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      Labels		      [0, 0]
-	      SrcBlock		      "Interpreted MATLAB\nFunction"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Process Vicon Raw Data6"
-	      SrcPort		      2
-	      DstBlock		      "Attitude_Vicon_x400"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Process Vicon Raw Data6"
-	      SrcPort		      1
-	      DstBlock		      "Position_Vicon_x400"
-	      DstPort		      1
-	    }
-	    Line {
 	      SrcBlock		      "Demux"
-	      SrcPort		      1
-	      Points		      [50, 0; 0, 180]
-	      DstBlock		      "Process Vicon Raw Data6"
+	      SrcPort		      3
+	      Points		      [0, 15]
+	      DstBlock		      "Process Vicon Raw Data1"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Constant"
+	      SrcBlock		      "Process Vicon Raw Data1"
 	      SrcPort		      1
-	      DstBlock		      "Interpreted MATLAB\nFunction"
+	      DstBlock		      "Position_Vicon_brush"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Process Vicon Raw Data7"
+	      SrcBlock		      "Process Vicon Raw Data1"
 	      SrcPort		      2
-	      DstBlock		      "Attitude_Vicon_basket"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Process Vicon Raw Data7"
-	      SrcPort		      1
-	      DstBlock		      "Position_Vicon_basket"
+	      DstBlock		      "Attitude_Vicon_brush"
 	      DstPort		      1
 	    }
 	    Line {
@@ -7350,22 +7881,47 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Process Vicon Raw Data1"
-	      SrcPort		      2
-	      DstBlock		      "Attitude_Vicon_brush"
+	      SrcBlock		      "Process Vicon Raw Data7"
+	      SrcPort		      1
+	      DstBlock		      "Position_Vicon_basket"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Process Vicon Raw Data1"
+	      SrcBlock		      "Process Vicon Raw Data7"
+	      SrcPort		      2
+	      DstBlock		      "Attitude_Vicon_basket"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
 	      SrcPort		      1
-	      DstBlock		      "Position_Vicon_brush"
+	      DstBlock		      "Interpreted MATLAB\nFunction"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Demux"
-	      SrcPort		      3
-	      Points		      [0, 15]
-	      DstBlock		      "Process Vicon Raw Data1"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, 180]
+	      DstBlock		      "Process Vicon Raw Data6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Process Vicon Raw Data6"
+	      SrcPort		      1
+	      DstBlock		      "Position_Vicon_x400"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Process Vicon Raw Data6"
+	      SrcPort		      2
+	      DstBlock		      "Attitude_Vicon_x400"
+	      DstPort		      1
+	    }
+	    Line {
+	      Labels		      [0, 0]
+	      SrcBlock		      "Interpreted MATLAB\nFunction"
+	      SrcPort		      1
+	      DstBlock		      "Demux"
 	      DstPort		      1
 	    }
 	  }
@@ -7373,7 +7929,7 @@ Model {
 	Block {
 	  BlockType		  Selector
 	  Name			  "Selector1"
-	  SID			  "1581"
+	  SID			  "1965"
 	  Ports			  [1, 1]
 	  Position		  [920, 272, 945, 298]
 	  NamePlacement		  "alternate"
@@ -7386,7 +7942,7 @@ Model {
 	Block {
 	  BlockType		  Selector
 	  Name			  "Selector2"
-	  SID			  "1577"
+	  SID			  "1966"
 	  Ports			  [1, 1]
 	  Position		  [700, 337, 725, 363]
 	  NamePlacement		  "alternate"
@@ -7399,15 +7955,15 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "WK_400"
-	  SID			  "1430"
+	  SID			  "1967"
 	  Position		  [1125, 298, 1155, 312]
 	  BackgroundColor	  "[0.709804, 0.549020, 0.670588]"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "basket"
-	  SID			  "1505"
+	  Name			  "MB platform"
+	  SID			  "1968"
 	  Position		  [920, 448, 950, 462]
 	  BackgroundColor	  "[0.709804, 0.549020, 0.670588]"
 	  Port			  "2"
@@ -7416,336 +7972,60 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "brush"
-	  SID			  "1750"
+	  SID			  "1969"
 	  Position		  [920, 603, 950, 617]
 	  BackgroundColor	  "[0.709804, 0.549020, 0.670588]"
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Mux19"
-	  SrcPort		  1
-	  DstBlock		  "Logic to fix signal loss \nand object local axis flip7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip7"
-	  SrcPort		  1
-	  DstBlock		  "Demux7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux7"
-	  SrcPort		  3
-	  DstBlock		  "Mux20"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Demux7"
-	  SrcPort		  4
-	  DstBlock		  "Mux21"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux7"
-	  SrcPort		  5
-	  DstBlock		  "Mux21"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Demux7"
+	  SrcBlock		  "Raw Quad Pose from Vicon"
 	  SrcPort		  6
-	  DstBlock		  "Mux21"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Bus\nCreator7"
-	  SrcPort		  1
-	  DstBlock		  "WK_400"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux7"
-	  SrcPort		  1
-	  DstBlock		  "Mux20"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux7"
-	  SrcPort		  2
-	  DstBlock		  "Mux20"
+	  Points		  [25, 0; 0, 15]
+	  DstBlock		  "Mux2"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Raw Quad Pose from Vicon"
+	  SrcPort		  5
+	  Points		  [50, 0; 0, 60]
+	  DstBlock		  "Mux2"
+	  DstPort		  1
 	}
 	Line {
 	  Name			  "Position"
-	  SrcBlock		  "Mux20"
-	  SrcPort		  1
-	  Points		  [15, 0; 0, -5; 15, 0]
-	  Branch {
-	    Labels		    [1, 0]
-	    Points		    [350, 0]
-	    DstBlock		    "Bus\nCreator7"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 85]
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux22"
-	  SrcPort		  1
-	  DstBlock		  "Logic to fix signal loss \nand object local axis flip8"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip8"
-	  SrcPort		  1
-	  DstBlock		  "Demux8"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  3
-	  DstBlock		  "Mux23"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  4
-	  DstBlock		  "Mux24"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  5
-	  DstBlock		  "Mux24"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  6
-	  DstBlock		  "Mux24"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Velocity"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter8"
-	  SrcPort		  2
-	  Points		  [45, 0; 0, -15]
-	  DstBlock		  "Bus\nCreator8"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Acceleration"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter8"
-	  SrcPort		  3
-	  DstBlock		  "Bus\nCreator8"
-	  DstPort		  4
-	}
-	Line {
-	  Name			  "Attitude"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Mux24"
-	  SrcPort		  1
-	  Points		  [205, 0]
-	  DstBlock		  "Bus\nCreator8"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Bus\nCreator8"
-	  SrcPort		  1
-	  DstBlock		  "basket"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  1
-	  DstBlock		  "Mux23"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux8"
-	  SrcPort		  2
-	  DstBlock		  "Mux23"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "Position"
-	  SrcBlock		  "Mux23"
+	  SrcBlock		  "Mux3"
 	  SrcPort		  1
 	  Points		  [15, 0]
 	  Branch {
 	    Points		    [0, 85]
-	    DstBlock		    "Filter8"
+	    DstBlock		    "Filter1"
 	    DstPort		    1
 	  }
 	  Branch {
 	    Labels		    [2, 0]
 	    Points		    [0, -5; 160, 0]
-	    DstBlock		    "Bus\nCreator8"
+	    DstBlock		    "Bus\nCreator1"
 	    DstPort		    1
 	  }
-	}
-	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  1
-	  Points		  [55, 0; 0, 135]
-	  DstBlock		  "Mux19"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  2
-	  Points		  [35, 0; 0, 90]
-	  DstBlock		  "Mux19"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  3
-	  Points		  [45, 0; 0, 95]
-	  DstBlock		  "Mux22"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  4
-	  Points		  [45, 0; 0, 50]
-	  DstBlock		  "Mux22"
-	  DstPort		  2
-	}
-	Line {
-	  Name			  "Attitude_1"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Mux21"
-	  SrcPort		  1
-	  Points		  [10, 0]
-	  Branch {
-	    Points		    [0, 55]
-	    DstBlock		    "Selector2"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -10]
-	    DstBlock		    "Selector1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  Name			  "Velocity"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter7"
-	  SrcPort		  1
-	  DstBlock		  "Bus\nCreator7"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Acceleration"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter7"
-	  SrcPort		  2
-	  Points		  [195, 0]
-	  DstBlock		  "Bus\nCreator7"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Selector2"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    DstBlock		    "Mux"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -200]
-	    DstBlock		    "Goto"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "Filter7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Filter7"
-	  SrcPort		  3
-	  Points		  [110, 0]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Selector1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -10]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "Attitude"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  DstBlock		  "Bus\nCreator7"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Mux2"
-	  SrcPort		  1
-	  DstBlock		  "Logic to fix signal loss \nand object local axis flip1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip1"
-	  SrcPort		  1
-	  DstBlock		  "Demux1"
-	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Demux1"
-	  SrcPort		  3
+	  SrcPort		  2
 	  DstBlock		  "Mux3"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  4
-	  DstBlock		  "Mux4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  5
-	  DstBlock		  "Mux4"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Demux1"
-	  SrcPort		  6
-	  DstBlock		  "Mux4"
-	  DstPort		  3
+	  SrcPort		  1
+	  DstBlock		  "Mux3"
+	  DstPort		  1
 	}
 	Line {
-	  Name			  "Velocity"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter1"
-	  SrcPort		  2
-	  Points		  [45, 0; 0, -15]
-	  DstBlock		  "Bus\nCreator1"
-	  DstPort		  3
-	}
-	Line {
-	  Name			  "Acceleration"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Filter1"
-	  SrcPort		  3
-	  DstBlock		  "Bus\nCreator1"
-	  DstPort		  4
+	  SrcBlock		  "Bus\nCreator1"
+	  SrcPort		  1
+	  DstBlock		  "brush"
+	  DstPort		  1
 	}
 	Line {
 	  Name			  "Attitude"
@@ -7757,53 +8037,329 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Bus\nCreator1"
-	  SrcPort		  1
-	  DstBlock		  "brush"
-	  DstPort		  1
+	  Name			  "Acceleration"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter1"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator1"
+	  DstPort		  4
 	}
 	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  1
-	  DstBlock		  "Mux3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
+	  Name			  "Velocity"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter1"
 	  SrcPort		  2
-	  DstBlock		  "Mux3"
+	  Points		  [45, 0; 0, -15]
+	  DstBlock		  "Bus\nCreator1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  6
+	  DstBlock		  "Mux4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  5
+	  DstBlock		  "Mux4"
 	  DstPort		  2
 	}
 	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  4
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  DstBlock		  "Mux3"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip1"
+	  SrcPort		  1
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "Logic to fix signal loss \nand object local axis flip1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Attitude"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator7"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Selector1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Filter7"
+	  SrcPort		  3
+	  Points		  [110, 0]
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Filter7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Selector2"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, -200]
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "Acceleration"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter7"
+	  SrcPort		  2
+	  Points		  [195, 0]
+	  DstBlock		  "Bus\nCreator7"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter7"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator7"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "Attitude_1"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Mux21"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [0, -10]
+	    DstBlock		    "Selector1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
+	    DstBlock		    "Selector2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Raw Quad Pose from Vicon"
+	  SrcPort		  4
+	  Points		  [45, 0; 0, 50]
+	  DstBlock		  "Mux22"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Raw Quad Pose from Vicon"
+	  SrcPort		  3
+	  Points		  [45, 0; 0, 95]
+	  DstBlock		  "Mux22"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Raw Quad Pose from Vicon"
+	  SrcPort		  2
+	  Points		  [35, 0; 0, 90]
+	  DstBlock		  "Mux19"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Raw Quad Pose from Vicon"
+	  SrcPort		  1
+	  Points		  [55, 0; 0, 135]
+	  DstBlock		  "Mux19"
+	  DstPort		  1
+	}
+	Line {
 	  Name			  "Position"
-	  SrcBlock		  "Mux3"
+	  SrcBlock		  "Mux23"
 	  SrcPort		  1
 	  Points		  [15, 0]
 	  Branch {
 	    Labels		    [2, 0]
 	    Points		    [0, -5; 160, 0]
-	    DstBlock		    "Bus\nCreator1"
+	    DstBlock		    "Bus\nCreator8"
 	    DstPort		    1
 	  }
 	  Branch {
 	    Points		    [0, 85]
-	    DstBlock		    "Filter1"
+	    DstBlock		    "Filter8"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  5
-	  Points		  [50, 0; 0, 60]
-	  DstBlock		  "Mux2"
+	  SrcBlock		  "Demux8"
+	  SrcPort		  2
+	  DstBlock		  "Mux23"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux8"
+	  SrcPort		  1
+	  DstBlock		  "Mux23"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Raw Quad Pose from Vicon"
-	  SrcPort		  6
-	  Points		  [25, 0; 0, 15]
-	  DstBlock		  "Mux2"
+	  SrcBlock		  "Bus\nCreator8"
+	  SrcPort		  1
+	  DstBlock		  "MB platform"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Attitude"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Mux24"
+	  SrcPort		  1
+	  Points		  [205, 0]
+	  DstBlock		  "Bus\nCreator8"
 	  DstPort		  2
+	}
+	Line {
+	  Name			  "Acceleration"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter8"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator8"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Filter8"
+	  SrcPort		  2
+	  Points		  [45, 0; 0, -15]
+	  DstBlock		  "Bus\nCreator8"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux8"
+	  SrcPort		  6
+	  DstBlock		  "Mux24"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux8"
+	  SrcPort		  5
+	  DstBlock		  "Mux24"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux8"
+	  SrcPort		  4
+	  DstBlock		  "Mux24"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux8"
+	  SrcPort		  3
+	  DstBlock		  "Mux23"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip8"
+	  SrcPort		  1
+	  DstBlock		  "Demux8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux22"
+	  SrcPort		  1
+	  DstBlock		  "Logic to fix signal loss \nand object local axis flip8"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Position"
+	  SrcBlock		  "Mux20"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -5; 15, 0]
+	  Branch {
+	    Points		    [0, 85]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [350, 0]
+	    DstBlock		    "Bus\nCreator7"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  2
+	  DstBlock		  "Mux20"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  1
+	  DstBlock		  "Mux20"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bus\nCreator7"
+	  SrcPort		  1
+	  DstBlock		  "WK_400"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  6
+	  DstBlock		  "Mux21"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  5
+	  DstBlock		  "Mux21"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  4
+	  DstBlock		  "Mux21"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux7"
+	  SrcPort		  3
+	  DstBlock		  "Mux20"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip7"
+	  SrcPort		  1
+	  DstBlock		  "Demux7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux19"
+	  SrcPort		  1
+	  DstBlock		  "Logic to fix signal loss \nand object local axis flip7"
+	  DstPort		  1
 	}
 	Annotation {
 	  Name			  "Process Vicon Raw Data to take care of signal loss and object local axis flip"
@@ -7839,14 +8395,14 @@ Model {
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      Points		      [200, 0]
+      Points		      [180, 0]
       DstBlock		      "Planning"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Planning"
       SrcPort		      1
-      Points		      [10, 0; 0, 40]
+      Points		      [-20, 0; 0, 45]
       DstBlock		      "MAVLink Serial"
       DstPort		      1
     }
@@ -7875,46 +8431,46 @@ Model {
     Line {
       SrcBlock		      "Vicon_Data"
       SrcPort		      1
+      Points		      [0, 5]
       DstBlock		      "Rate Transition"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Vicon_Data"
       SrcPort		      2
-      Points		      [0, 15]
+      Points		      [0, 20]
       DstBlock		      "Rate Transition1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Rate Transition"
       SrcPort		      1
-      Points		      [105, 0]
+      Points		      [85, 0]
       DstBlock		      "Planning"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Rate Transition1"
       SrcPort		      1
+      Points		      [85, 0]
       DstBlock		      "Planning"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Vicon_Data"
       SrcPort		      3
-      Points		      [0, -5]
       DstBlock		      "Rate Transition2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Rate Transition2"
       SrcPort		      1
-      Points		      [25, 0; 0, 5]
       DstBlock		      "Planning"
       DstPort		      3
     }
     Annotation {
       Name		      "Initialization\n(Connect to Vicon)"
-      Position		      [653, 56]
+      Position		      [648, 51]
       ForegroundColor	      "[0.000000, 0.000000, 0.500000]"
       DropShadow	      on
       ClickFcn		      "Initialization_Simulink_Vicon"
@@ -7947,10 +8503,10 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "WK_MaoBi_Record_using_box"
+    name		    "Wanchao_shuttlecock"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    43
+    firstTarget		    53
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [0 0 0 0]
@@ -8076,21 +8632,24 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [6.828 1.241 1160.69 608.897]
-    viewLimits		    [0 1305.787 0 672.11]
-    zoomFactor		    1.161
+    windowPosition	    [0 29.793 1191.724 585.931]
+    viewLimits		    [0 1297.244 0 624.005]
+    zoomFactor		    1.122
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.611111111111111]
     treeNode		    [0 12 0 0]
-    firstTransition	    22
+    firstTransition	    23
     viewObj		    9
+    visible		    1
     machine		    1
     subviewS {
-      zoomFactor	      0.935
+      x1		      52.926
+      zoomFactor	      0.908
     }
-    ssIdHighWaterMark	    204
+    ssIdHighWaterMark	    236
     decomposition	    CLUSTER_CHART
-    firstData		    28
+    firstEvent		    37
+    firstData		    38
     chartFileNumber	    3
     disableImplicitCasting  1
     supportVariableSizing   0
@@ -8101,8 +8660,8 @@ Stateflow {
     position		    [115.1071 500.7115 708.2439 101.9513]
     fontSize		    8
     chart		    9
-    treeNode		    [9 13 17 0]
-    firstTransition	    24
+    treeNode		    [9 13 15 0]
+    firstTransition	    25
     subviewer		    9
     ssIdNumber		    9
     type		    OR_STATE
@@ -8111,11 +8670,11 @@ Stateflow {
   state {
     id			    11
     labelString		    "TakeOff\ndu:HoverThrottle = (H0 - HoverThrottle)*3*DeltaT + HoverThrottle ;"
-    position		    [139.6044 71.7786 482.762 55.1104]
+    position		    [139.6044 72.2473 397.6058 54.6416]
     fontSize		    12
     arrowSize		    12.592
     chart		    9
-    treeNode		    [12 0 0 15]
+    treeNode		    [12 0 0 16]
     subviewer		    9
     ssIdNumber		    7
     type		    OR_STATE
@@ -8124,11 +8683,11 @@ Stateflow {
   state {
     id			    12
     labelString		    "Airborne"
-    position		    [97.2183 13.325 636.0771 305.567]
+    position		    [62.238 9.8576 880.2089 432.8603]
     fontSize		    12
     chart		    9
-    treeNode		    [9 11 0 17]
-    firstTransition	    23
+    treeNode		    [9 11 0 15]
+    firstTransition	    24
     subviewer		    9
     ssIdNumber		    8
     type		    OR_STATE
@@ -8138,7 +8697,7 @@ Stateflow {
     id			    13
     labelString		    "Descending\nen:PosDesired = Pos;\ndu:PosDesired[2] = (PerchPos[2]- PosDesired[2])*1*DeltaT + Pos"
     "Desired[2] ;"
-    position		    [256.5263 507.3899 432.1659 43.9117]
+    position		    [279.8016 508.4117 432.1659 43.9117]
     fontSize		    7.84
     arrowSize		    7.053
     chart		    9
@@ -8163,79 +8722,89 @@ Stateflow {
   }
   state {
     id			    15
-    labelString		    "FollowBrush\ndu:\nPosDesired[0] = Brush[0];PosDesired[1] =Brush[1] - 2.4;PosDesired[2] = Brush[2"
-    "] + 0.6;"
-    position		    [167.6378 174.9606 514.4846 67.7241]
+    labelString		    "[y1,y2,y3,y4] = traj(u)"
+    position		    [1010.8321 131.93 144.8711 52.8694]
     fontSize		    12
-    arrowSize		    12.592
     chart		    9
-    treeNode		    [12 0 11 0]
+    treeNode		    [9 0 12 10]
+    superState		    SUBCHART
     subviewer		    9
-    ssIdNumber		    180
-    type		    OR_STATE
+    ssIdNumber		    206
+    type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
+    firstData		    32
+    simulink {
+      isSimulinkFcn	      1
+      blockName		      "traj"
+    }
   }
   state {
     id			    16
-    labelString		    "OverBasket\nen:\nPosDesired[0] = PerchPos [0];PosDesired[1] = PerchPos [1];\nPosDesired[2] = Per"
-    "chPos [2] - 1;"
-    position		    [835.2692 129.0824 374.5649 76.3249]
+    labelString		    "Initialization\ndu:PosDesired[0]=0; PosDesired[1]=0;PosDesired[2]=-1.2;"
+    position		    [90.9666 152.1378 463.8042 51.5629]
     fontSize		    12
-    arrowSize		    12.592
     chart		    9
-    treeNode		    [17 0 0 18]
-    isGrouped		    1
+    treeNode		    [12 0 11 20]
     subviewer		    9
-    ssIdNumber		    200
+    ssIdNumber		    203
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    17
-    labelString		    "Return"
-    position		    [763.0397 75.3225 498.0415 356.07]
+    labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]=-1.2;"
+    position		    [115.6479 251.7511 401.8067 41.3576]
     fontSize		    12
+    arrowSize		    12.592
     chart		    9
-    treeNode		    [9 16 12 10]
-    firstTransition	    26
-    superState		    GROUPED
+    treeNode		    [12 0 20 18]
     subviewer		    9
-    ssIdNumber		    196
+    ssIdNumber		    212
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    18
-    labelString		    "Descending1\ndu:PosDesired[2] = (PerchPos[2]- PosDesired[2])*1*DeltaT + PosDesired[2] ;"
-    position		    [788.4897 252.2948 461.4119 74.4327]
+    labelString		    "Prelanding\nen:PosDesired[0] = PerchPos[0]; PosDesired[1] = PerchPos[1];PosDesired[2] = PerchPos"
+    "[2]-0.5 ;"
+    position		    [93.7252 326.4138 581.7703 47.135]
     fontSize		    12
-    arrowSize		    7.053
     chart		    9
-    treeNode		    [17 0 16 19]
-    isGrouped		    1
+    treeNode		    [12 0 17 19]
     subviewer		    9
-    ssIdNumber		    197
+    ssIdNumber		    216
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   state {
     id			    19
-    labelString		    "CutThrottle1\ndu:HoverThrottle = (0 - HoverThrottle)*3*DeltaT + HoverThrottle ;"
-    position		    [818.2054 356.6313 390.0499 51.2691]
+    labelString		    "Descent\nen:PosDesired[2] = PerchPos[2]-0.15;"
+    position		    [96.0527 403.5629 524.7742 36.9165]
     fontSize		    12
-    arrowSize		    7.053
     chart		    9
-    treeNode		    [17 0 18 0]
-    isGrouped		    1
+    treeNode		    [12 0 18 0]
+    superState		    GROUPED
     subviewer		    9
-    ssIdNumber		    198
+    ssIdNumber		    225
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    20
+    labelString		    "Estimation"
+    position		    [582.049 220.7358 101.0206 67.3471]
+    fontSize		    12
+    chart		    9
+    treeNode		    [12 0 16 17]
+    subviewer		    9
+    ssIdNumber		    235
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
   transition {
-    id			    20
+    id			    21
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [26.876 549.711 76.288 12.261]
+    labelPosition	    [26.876 549.711 73.754 11.854]
     fontSize		    8
     src {
       intersection	      [0 0 0 0 20.5837 568.4057 0 0]
@@ -8246,7 +8815,7 @@ Stateflow {
     }
     midPoint		    [65.6394 568.6393]
     chart		    9
-    linkNode		    [9 21 0]
+    linkNode		    [9 22 0]
     dataLimits		    [20.584 115.107 566.364 571.164]
     subviewer		    9
     drawStyle		    SMART
@@ -8254,34 +8823,36 @@ Stateflow {
     ssIdNumber		    16
   }
   transition {
-    id			    21
+    id			    22
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [525.893 414.804 82.765 17.31]
+    labelPosition	    [617.345 477.909 80.016 16.735]
     fontSize		    14
     src {
       id		      12
-      intersection	      [3 0 1 0.1729 623.3074 318.892 0 -153.9768]
+      intersection	      [3 0 1 0.2597 713.879 442.7179 0 -244.65]
     }
     dst {
       id		      10
-      intersection	      [1 0 -1 0.7175 623.3074 500.7115 0 154.0784]
+      intersection	      [1 0 -1 0.8234 698.243 500.7115 0 229.0139]
     }
-    midPoint		    [623.3074 409.4936]
+    midPoint		    [705.5515 468.6923]
     chart		    9
-    linkNode		    [9 22 20]
-    dataLimits		    [620.907 625.707 318.892 500.712]
+    linkNode		    [9 23 21]
+    dataLimits		    [695.843 713.879 442.718 500.712]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
+      mode		      MIRROR_SLIDE
+      sticky		      DST_STICK
     }
     executionOrder	    1
     ssIdNumber		    18
   }
   transition {
-    id			    22
+    id			    23
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [344.656 413.012 78.447 17.31]
+    labelPosition	    [348.67 449.762 75.841 16.735]
     fontSize		    14
     src {
       id		      10
@@ -8289,35 +8860,37 @@ Stateflow {
     }
     dst {
       id		      12
-      intersection	      [3 0 1 0.4685 435.3042 318.892 0 43.3643]
+      intersection	      [3 0 1 0.5762 435.3042 442.7179 0 43.3643]
     }
-    midPoint		    [435.3042 410.1099]
+    midPoint		    [435.3042 474.7147]
     chart		    9
-    linkNode		    [9 0 21]
-    dataLimits		    [432.904 437.704 318.892 500.711]
+    linkNode		    [9 0 22]
+    dataLimits		    [432.904 437.704 442.718 500.712]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    17
   }
   transition {
-    id			    23
-    labelString		    "{PosDesired = Pos;  PosDesired[2] = -1.2;}"
-    labelPosition	    [406.832 42.905 181.363 12.983]
+    id			    24
+    labelString		    "{PosDesired = Pos;  PosDesired[2] =-1.2;}"
+    labelPosition	    [224.247 41.812 172.556 12.551]
     fontSize		    9.327
     arrowSize		    12.592
     src {
-      intersection	      [0 0 1 0.7893 398.4837 30.1241 0 9.7687]
+      intersection	      [0 0 1 0.7893 352.8229 30.5928 0 9.7687]
     }
     dst {
       id		      11
-      intersection	      [1 0 -1 0.5362 398.4614 71.7786 0 15.6763]
+      intersection	      [1 0 -1 0.5362 352.8006 72.2473 0 15.6763]
     }
-    midPoint		    [398.4718 45.1505]
+    midPoint		    [352.8229 45.2743]
     chart		    9
-    linkNode		    [12 0 0]
-    dataLimits		    [394.684 402.239 30.124 71.779]
+    linkNode		    [12 0 28]
+    dataLimits		    [349.023 356.578 30.593 72.247]
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -8328,21 +8901,21 @@ Stateflow {
     ssIdNumber		    13
   }
   transition {
-    id			    24
-    labelPosition	    [204.991 518.537 6.477 12.261]
+    id			    25
+    labelPosition	    [228.851 519.558 6.262 11.854]
     fontSize		    7.84
     arrowSize		    7.053
     src {
-      intersection	      [0 1 0 0 185.155 530.0144 0 0]
+      intersection	      [0 1 0 0 208.4303 531.0362 0 0]
     }
     dst {
       id		      13
-      intersection	      [4 -1 0 0.4848 256.5263 530.0132 0 0]
+      intersection	      [4 -1 0 0.4848 279.8016 531.0351 0 0]
     }
-    midPoint		    [218.0641 530.0144]
+    midPoint		    [241.9112 531.0356]
     chart		    9
-    linkNode		    [10 0 25]
-    dataLimits		    [185.155 256.526 527.897 532.129]
+    linkNode		    [10 0 26]
+    dataLimits		    [208.43 279.802 528.919 533.151]
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -8352,23 +8925,23 @@ Stateflow {
     ssIdNumber		    84
   }
   transition {
-    id			    25
+    id			    26
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [710.573 519.693 109.394 12.261]
+    labelPosition	    [705.318 542.615 105.76 11.854]
     fontSize		    7.84
     arrowSize		    7.053
     src {
       id		      13
-      intersection	      [2 1 0 0.4852 688.6922 528.6959 0 -207.9219]
+      intersection	      [3 0 1 0.0354 696.6513 552.3234 0 -193.2753]
     }
     dst {
       id		      14
       intersection	      [1 0 -1 0.9359 724.4143 559.3112 0 221.0383]
     }
-    midPoint		    [714.1866 536.4346]
+    midPoint		    [711.4375 551.9781]
     chart		    9
-    linkNode		    [10 24 0]
-    dataLimits		    [688.692 726.53 528.696 559.311]
+    linkNode		    [10 25 0]
+    dataLimits		    [696.651 726.53 549.662 559.311]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8380,63 +8953,259 @@ Stateflow {
     ssIdNumber		    85
   }
   transition {
-    id			    26
-    labelString		    "after(5,sec)"
-    labelPosition	    [1049.001 213.296 58.295 14.425]
+    id			    27
+    labelString		    "[RC[5] > 0]"
+    labelPosition	    [218.042 211.826 61.925 16.038]
     fontSize		    12
-    arrowSize		    7.053
+    arrowSize		    12.592
     src {
       id		      16
-      intersection	      [3 -0 1 0.4255 1050.4509 205.4073 0 -52.035]
+      intersection	      [3 0 1 0.7841 191.1072 203.7007 0 122.7984]
+    }
+    dst {
+      id		      17
+      intersection	      [1 -0 -1 0.1878 191.1072 251.7511 0 -122.7984]
+    }
+    midPoint		    [191.1024 222.0641]
+    chart		    9
+    linkNode		    [12 31 29]
+    dataLimits		    [187.325 194.88 203.701 251.751]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    187
+  }
+  transition {
+    id			    28
+    labelString		    "after(3,sec)"
+    labelPosition	    [337.211 133.074 64.708 16.038]
+    fontSize		    12
+    src {
+      id		      11
+      intersection	      [3 0 1 0.5119 333.6753 126.8889 0 6.3063]
+    }
+    dst {
+      id		      16
+      intersection	      [1 -0 -1 0.5233 333.6753 152.1378 0 -6.3063]
+    }
+    midPoint		    [333.6905 135.8015]
+    chart		    9
+    linkNode		    [12 24 31]
+    dataLimits		    [331.291 336.09 126.889 152.138]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    213
+  }
+  transition {
+    id			    29
+    labelString		    "after (3, sec)"
+    labelPosition	    [354.807 300.377 71.666 16.038]
+    fontSize		    12
+    src {
+      id		      17
+      intersection	      [3 -0 1 0.4065 354.1202 293.1087 0 -38.2554]
     }
     dst {
       id		      18
-      intersection	      [1 0 -1 0.5677 1050.4509 252.2948 0 52.035]
+      intersection	      [1 0 -1 0.4476 354.1202 326.4138 0 37.5742]
     }
-    midPoint		    [1050.4509 226.114]
+    midPoint		    [354.1254 306.2246]
     chart		    9
-    linkNode		    [17 0 27]
-    isGrouped		    1
-    dataLimits		    [1048.335 1052.567 205.407 252.295]
+    linkNode		    [12 27 30]
+    dataLimits		    [351.72 356.52 293.109 326.414]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    218
+  }
+  transition {
+    id			    30
+    labelString		    "[PerchError < 0.01]"
+    labelPosition	    [409.873 382.851 107.847 16.038]
+    fontSize		    12
+    src {
+      id		      18
+      intersection	      [3 0 1 0.456 410.235 373.5488 0 -32.1881]
+    }
+    dst {
+      id		      19
+      intersection	      [1 -0 -1 0.5987 410.235 403.5629 0 32.1881]
+    }
+    midPoint		    [410.2132 384.9476]
+    chart		    9
+    linkNode		    [12 29 0]
+    dataLimits		    [407.835 412.635 373.549 403.563]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     executionOrder	    1
-    ssIdNumber		    201
+    ssIdNumber		    231
   }
   transition {
-    id			    27
-    labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [1024.983 334.724 133.144 13.704]
-    fontSize		    10
-    arrowSize		    7.053
+    id			    31
+    labelString		    "trigger[(abs(brush[0])<1)&&(brush[1]<2.4)&&(brush[2]<-1)]"
+    labelPosition	    [596.641 174.638 324.933 16.038]
+    fontSize		    12
     src {
-      id		      18
-      intersection	      [3 0 1 0.1242 1192.5976 326.7275 0 -207.9219]
+      id		      16
+      intersection	      [2 1 0 0.5512 554.7708 180.5598 0 -23.1409]
     }
     dst {
-      id		      19
-      intersection	      [2 1 0 0.429 1208.2553 378.6258 0 221.0384]
+      id		      20
+      intersection	      [1 0 -1 0.3069 613.0519 220.7358 0 31.0029]
     }
-    midPoint		    [1212.0025 349.605]
+    midPoint		    [594.2583 188.4808]
     chart		    9
-    linkNode		    [17 26 0]
-    isGrouped		    1
-    dataLimits		    [1192.598 1220.424 326.727 380.742]
+    linkNode		    [12 28 27]
+    dataLimits		    [554.771 615.452 180.56 220.736]
     stampAngle		    NaN
     subviewer		    9
+    drawStyle		    SMART
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    199
+    ssIdNumber		    236
   }
   data {
-    id			    28
+    id			    32
+    ssIdNumber		    205
+    name		    "u"
+    linkNode		    [15 0 33]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    33
+    ssIdNumber		    204
+    name		    "y1"
+    linkNode		    [15 32 34]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+	isDynamic		1
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    34
+    ssIdNumber		    208
+    name		    "y2"
+    linkNode		    [15 33 35]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+	isDynamic		1
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    35
+    ssIdNumber		    209
+    name		    "y3"
+    linkNode		    [15 34 36]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+	isDynamic		1
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    36
+    ssIdNumber		    210
+    name		    "y4"
+    linkNode		    [15 35 0]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+	isDynamic		1
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  event {
+    id			    37
+    ssIdNumber		    234
+    name		    "trigger"
+    linkNode		    [9 0 0]
+    scope		    LOCAL_EVENT
+    trigger		    EITHER_EDGE_EVENT
+    machine		    1
+  }
+  data {
+    id			    38
     ssIdNumber		    28
     name		    "PosDesired"
-    linkNode		    [9 0 29]
+    linkNode		    [9 0 39]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8453,10 +9222,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    29
+    id			    39
     ssIdNumber		    29
     name		    "HoverThrottle"
-    linkNode		    [9 28 30]
+    linkNode		    [9 38 40]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8473,10 +9242,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    30
+    id			    40
     ssIdNumber		    30
     name		    "Mode"
-    linkNode		    [9 29 31]
+    linkNode		    [9 39 41]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8493,10 +9262,10 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    31
+    id			    41
     ssIdNumber		    31
     name		    "RC"
-    linkNode		    [9 30 32]
+    linkNode		    [9 40 42]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8514,10 +9283,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    32
+    id			    42
     ssIdNumber		    32
     name		    "Pos"
-    linkNode		    [9 31 33]
+    linkNode		    [9 41 43]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8535,10 +9304,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    33
+    id			    43
     ssIdNumber		    35
     name		    "PerchPos"
-    linkNode		    [9 32 34]
+    linkNode		    [9 42 44]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8556,10 +9325,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    34
+    id			    44
     ssIdNumber		    47
     name		    "DeltaT"
-    linkNode		    [9 33 35]
+    linkNode		    [9 43 45]
     scope		    PARAMETER_DATA
     machine		    1
     props {
@@ -8577,10 +9346,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    35
+    id			    45
     ssIdNumber		    48
     name		    "H0"
-    linkNode		    [9 34 36]
+    linkNode		    [9 44 46]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 1
     machine		    1
@@ -8599,10 +9368,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    36
+    id			    46
     ssIdNumber		    49
     name		    "Kl"
-    linkNode		    [9 35 37]
+    linkNode		    [9 45 47]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 2
     machine		    1
@@ -8621,10 +9390,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    37
+    id			    47
     ssIdNumber		    94
     name		    "VelCmd"
-    linkNode		    [9 36 38]
+    linkNode		    [9 46 48]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -8641,10 +9410,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    38
+    id			    48
     ssIdNumber		    119
     name		    "PWM"
-    linkNode		    [9 37 39]
+    linkNode		    [9 47 49]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -8658,10 +9427,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    39
+    id			    49
     ssIdNumber		    135
     name		    "PerchError"
-    linkNode		    [9 38 40]
+    linkNode		    [9 48 50]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8679,10 +9448,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    40
+    id			    50
     ssIdNumber		    183
     name		    "PI"
-    linkNode		    [9 39 41]
+    linkNode		    [9 49 51]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 3
     machine		    1
@@ -8701,10 +9470,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    41
+    id			    51
     ssIdNumber		    190
     name		    "Brush"
-    linkNode		    [9 40 0]
+    linkNode		    [9 50 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -8722,22 +9491,22 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   instance {
-    id			    42
+    id			    52
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    43
+    id			    53
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 44]
+    linkNode		    [1 0 54]
   }
   target {
-    id			    44
+    id			    54
     name		    "rtw"
     machine		    1
-    linkNode		    [1 43 0]
+    linkNode		    [1 53 0]
   }
 }
