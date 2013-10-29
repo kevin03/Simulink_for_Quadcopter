@@ -8,7 +8,7 @@ dt=0.02;
 j=1;
 Xe=zeros(6,100,10);
 kd=zeros(10,100);
-k=15;
+k=10;
 
 tic;
 for i=1:4:37
@@ -29,4 +29,4 @@ te=(1:nt+1)*dt;
 % figure;
 % plot(t,v,'r',te,Xe(4:6,:),'b');
 % figure;
-% plot(te,kd);
+% plot(kd);
