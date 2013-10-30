@@ -1,12 +1,12 @@
 Model {
   Name			  "Wanchao_shuttlecock"
-  Version		  7.8
+  Version		  7.7
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1478"
+    ComputedModelVersion    "1.1502"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,7 +19,6 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
-  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   InitFcn		  "sample_time=0.005;%0.004;%0.0025;%0.02;\nDeltaT = 0.02;\ng = 9.81;\nH0 = g%0.3165;\nKl = 1;\n\nOmega_r ="
   " 1.6;%for Horizontal reference\nZeta_r = 0.7; %for Horizontal reference\nOmega = 1.8;%for Horizontal Control\nZeta ="
@@ -30,11 +29,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Birdman"
+  LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 29 20:48:43 2013"
-  RTWModifiedTimeStamp	  304964338
-  ModelVersionFormat	  "1.%<AutoIncrement:1478>"
+  LastModifiedDate	  "Wed Oct 30 18:10:29 2013"
+  RTWModifiedTimeStamp	  305056663
+  ModelVersionFormat	  "1.%<AutoIncrement:1502>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -42,7 +41,6 @@ Model {
   WideLines		  off
   ShowLineDimensions	  on
   ShowPortDataTypes	  off
-  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -110,13 +108,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      1
-      Version		      "1.11.1"
+      Version		      "1.11.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -150,7 +148,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -182,7 +180,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -201,7 +199,6 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
-	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -238,7 +235,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -293,7 +290,6 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -322,11 +318,10 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
-	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -363,7 +358,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -378,7 +373,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -393,7 +388,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -446,7 +441,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -511,7 +506,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -539,7 +534,9 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
+	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
+	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -549,7 +546,6 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
-	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -904,7 +900,6 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
     }
@@ -954,7 +949,7 @@ Model {
   }
   System {
     Name		    "Wanchao_shuttlecock"
-    Location		    [6, 63, 954, 1071]
+    Location		    [101, 82, 1049, 1034]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -986,45 +981,6 @@ Model {
       TagVisibility	      "global"
     }
     Block {
-      BlockType		      S-Function
-      Name		      "MAVLink Serial"
-      SID		      "54"
-      Ports		      [1, 1]
-      Position		      [420, 107, 740, 363]
-      BackgroundColor	      "cyan"
-      DropShadow	      on
-      FontName		      "Arial Black"
-      FontSize		      11
-      FontWeight	      "bold"
-      FunctionName	      "MAVLink_Interface_MultUAV"
-      Parameters	      "COM_Port,Baud_Rate,MSG_INPUT,MSG_OUTPUT"
-      EnableBusSupport	      off
-      MaskPromptString	      "COM Port|Baud Rate|RC CHANNELS SCALED|Quad No 1|Quad No 2|Quad No 3"
-      MaskStyleString	      "edit,edit,checkbox,checkbox,checkbox,checkbox"
-      MaskVariables	      "COM_Port=@1;Baud_Rate=@2;RC_SCALED=@3;Quad_1=@4;Quad_2=@5;Quad_3=@6;"
-      MaskTunableValueString  "on,on,on,on,on,on"
-      MaskCallbackString      "|||||"
-      MaskEnableString	      "on,on,on,on,on,on"
-      MaskVisibilityString    "on,on,on,on,on,on"
-      MaskToolTipString	      "on,on,on,on,on,on"
-      MaskInitialization      "MSG_ID_NUM_INPUT = [uint8(196) uint8(197) uint8(198)];\nMSG_ID_NAME_INPUT = [Quad_1 Qua"
-      "d_2 Quad_3];\n\nMSG_ID_NUM_OUTPUT = [uint8(34)];\nMSG_ID_NAME_OUTPUT = [RC_SCALED];\n\nidx_input = find(MSG_ID_N"
-      "AME_INPUT);\nMSG_INPUT = MSG_ID_NUM_INPUT(idx_input);\n\nidx_output = find(MSG_ID_NAME_OUTPUT);\nMSG_OUTPUT = MS"
-      "G_ID_NUM_OUTPUT(idx_output);"
-      MaskDisplay	      "% Block image\nimage(imread('10-inch Quad Heat Map.png'));\n\n%Label block\nfprintf('MAVLink "
-      "Serial\\n%s\\n%dbps', COM_Port,  Baud_Rate)\n\n\n%Label input ports\n\nin = 1;\nif (Quad_1 == 1)\n    port_label"
-      "('input', in, 'Quad 1');\n    in = in + 1;\nend\nif (Quad_2 == 1)\n    port_label('input', in, 'Quad 2');\n    i"
-      "n = in + 1;\nend\n\nif (Quad_3 == 1)\n    port_label('input', in, 'Quad 3');\n    in = in + 1;\nend\n\n%Label ou"
-      "tput ports\n\nout = 1;\nif (RC_SCALED == 1)\n    port_label('output', out, 'RC CMD');\n    out = out + 1;\nend\n"
-      MaskIconFrame	      on
-      MaskIconOpaque	      off
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM8'|57600|on|on|off|off"
-      MaskTabNameString	      "Setting,Setting,Output Message,Input Message,Input Message,Input Message"
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "Planning"
       SID		      "1084"
@@ -1040,8 +996,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[2, 63, 1904, 1071]
-	Open			on
+	Location		[2, 82, 1902, 1051]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1230,6 +1186,15 @@ Model {
 	  LibraryVersion	  "1.39"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
 	  SourceType		  ""
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	  Max_RP		  "Max_RP"
 	  Omega			  "Omega"
 	  PID_i			  "1"
@@ -1311,9 +1276,18 @@ Model {
 	      SID		      "1434"
 	      Ports		      [2, 1]
 	      Position		      [475, 87, 505, 123]
-	      LibraryVersion	      "1.256"
+	      LibraryVersion	      "1.236"
 	      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
 	      SourceType	      "Manual Switch"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      sw		      "1"
 	      action		      "0"
 	      varsize		      off
@@ -1517,16 +1491,6 @@ Model {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
 	  TimeRange		  "10"
 	  YMin			  "-0.6"
 	  YMax			  "0.9"
@@ -1548,16 +1512,6 @@ Model {
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  YMin			  "-0.7"
 	  YMax			  "0.9"
@@ -1719,8 +1673,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [101, 73, 1102, 1058]
-	    Open		    on
+	    Location		    [101, 82, 1102, 1051]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1810,6 +1764,15 @@ Model {
 	      LibraryVersion	      "1.39"
 	      SourceBlock	      "X330_Control/PosRefSystem"
 	      SourceType	      ""
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      Omega_r		      "Omega_r"
 	      Zeta_r		      "Zeta_r"
 	      Acc_Max		      "Acc_Max"
@@ -1825,7 +1788,7 @@ Model {
 	      Position		      [580, 299, 610, 331]
 	      ZOrder		      -16
 	      Floating		      off
-	      Location		      [188, 390, 512, 629]
+	      Location		      [969, 56, 1913, 1031]
 	      Open		      off
 	      NumInputPorts	      "1"
 	      List {
@@ -1865,7 +1828,6 @@ Model {
 	      Opaque		      off
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
-	      SFBlockType	      "Chart"
 	      MaskType		      "Stateflow"
 	      MaskDescription	      "Stateflow diagram"
 	      MaskSelfModifiable      on
@@ -2321,6 +2283,15 @@ Model {
 	  LibraryVersion	  "1.41"
 	  SourceBlock		  "X400_Control/Vertical Controller"
 	  SourceType		  ""
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	  Omega_h		  "Omega_h"
 	  Zeta_h		  "Zeta_h"
 	  PID_I_h		  "1"
@@ -2764,7 +2735,6 @@ Model {
 	      Opaque		      off
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
-	      SFBlockType	      "MATLAB Function"
 	      MaskType		      "Stateflow"
 	      MaskDescription	      "Embedded MATLAB block"
 	      MaskSelfModifiable      on
@@ -3585,8 +3555,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Vicon_Data"
-	Location		[606, 63, 1960, 773]
-	Open			on
+	Location		[606, 82, 1960, 792]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3748,9 +3718,18 @@ Model {
 	      SID		      "1783"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -4121,9 +4100,18 @@ Model {
 	      SID		      "1799"
 	      Ports		      [1, 1]
 	      Position		      [325, 234, 440, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -4347,9 +4335,18 @@ Model {
 	      SID		      "1812"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -5068,12 +5065,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -5160,12 +5166,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -5885,12 +5900,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -5977,12 +6001,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -6702,12 +6735,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -6794,12 +6836,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -7959,16 +8010,7 @@ Model {
       DstPort		      4
     }
     Line {
-      SrcBlock		      "Planning"
-      SrcPort		      1
-      Points		      [-20, 0; 0, 45]
-      DstBlock		      "MAVLink Serial"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "MAVLink Serial"
-      SrcPort		      1
-      Points		      [0, 5; 65, 0]
+      Points		      [745, 235; 0, 5; 65, 0]
       Branch {
 	Points			[0, 160]
 	DstBlock		"Goto"
@@ -8055,7 +8097,7 @@ MatData {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Aug  6 2011, 13:17:15
+#    Stateflow Version 7.5 (R2010a) dated Mar  4 2011, 22:36:02
 #
 #
 
@@ -8066,13 +8108,13 @@ Stateflow {
     name		    "Wanchao_shuttlecock"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    65
+    firstTarget		    68
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [0 0 0 0]
       animation		      [0 0 0]
     }
-    sfVersion		    76014001.0002
+    sfVersion		    75014001
   }
   chart {
     id			    2
@@ -8192,20 +8234,21 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [0 29.793 1191.724 585.931]
-    viewLimits		    [0 1296.722 0 623.755]
-    zoomFactor		    1.122
+    windowPosition	    [18.75 30 1191.75 585.75]
+    viewLimits		    [0 1384.993 0 663.096]
+    zoomFactor		    1.206
     chartColor		    [1 1 1]
-    screen		    [1 1 1920 1080 1.611111111111111]
+    screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 21 0 0]
-    firstTransition	    26
+    firstTransition	    25
     viewObj		    9
-    visible		    1
     machine		    1
     subviewS {
-      zoomFactor	      1.122
+      x1		      535.468
+      y1		      147.331
+      zoomFactor	      0.504
     }
-    ssIdHighWaterMark	    273
+    ssIdHighWaterMark	    279
     decomposition	    CLUSTER_CHART
     firstEvent		    43
     firstData		    44
@@ -8220,7 +8263,7 @@ Stateflow {
     fontSize		    8
     chart		    9
     treeNode		    [9 13 15 0]
-    firstTransition	    28
+    firstTransition	    27
     subviewer		    9
     ssIdNumber		    9
     type		    OR_STATE
@@ -8229,7 +8272,7 @@ Stateflow {
   state {
     id			    11
     labelString		    "TakeOff\ndu:HoverThrottle = (H0 - HoverThrottle)*3*DeltaT + HoverThrottle ;"
-    position		    [102.3076 70.7384 397.6058 54.6416]
+    position		    [86.4879 64.5796 397.6058 54.6416]
     fontSize		    12
     arrowSize		    12.592
     chart		    9
@@ -8241,17 +8284,16 @@ Stateflow {
   }
   state {
     id			    12
-    labelString		    "DAQ\nen:i=0;\ndu:PosShtlck[i,:]=Shuttlecock;i++;"
-    position		    [695.7948 161.2198 205.9064 54.5524]
+    labelString		    "DAQ\nen:i=0;\ndu:PosShtlck[i]=Shuttlecock[0];PosShtlck[i+1]=Shuttlecock[1];\nPosShtlck[i+2]=Shut"
+    "tlecock[2];PosShtlck[i+3]=Shuttlecock[3];\nPosShtlck[i+4]=Shuttlecock[4];PosShtlck[i+5]=Shuttlecock[5];i=i+6;"
+    position		    [695.7948 161.2198 391.1251 90.019]
     fontSize		    12
     chart		    9
     treeNode		    [22 0 0 20]
-    isGrouped		    1
     subviewer		    9
     ssIdNumber		    251
-    type		    AND_STATE
+    type		    OR_STATE
     decomposition	    CLUSTER_STATE
-    executionOrder	    1
   }
   state {
     id			    13
@@ -8282,8 +8324,8 @@ Stateflow {
   }
   state {
     id			    15
-    labelString		    "PosEst=TrajEst(Shuttlecock,H)"
-    position		    [1156.0469 104.1138 192.8293 68.4807]
+    labelString		    "[xe,ye,ze]=TrajEst(Shtck,Hz)"
+    position		    [1143.4979 307.4448 192.8293 68.4807]
     fontSize		    12
     chart		    9
     treeNode		    [9 0 21 10]
@@ -8292,19 +8334,21 @@ Stateflow {
     ssIdNumber		    237
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
-    firstData		    40
+    firstData		    38
     eml {
       isEML		      1
-      script		      "function PosEst=TrajEst(Shuttlecock,H)\n\nn=length(Shuttlecock(:,1));\n\nsgn=sign(mean(Shuttlecoc"
-      "k(:,4)));\ndx=sgn*0.01;\nx=Shuttlecock(1,1):dx:sgn;\ny=Shuttlecock(2,1):-0.01:-1.5;\n\ntr_zx=polyval(polyfit(Shu"
-      "ttlecock(:,1),Shuttlecock(:,3),2),x);\ntr_zy=polyval(polyfit(Shuttlecock(:,2),Shuttlecock(:,3),2),y);\n\n[~,kx]="
-      "min(abs(tr_zx-H));\n[~,ky]=min(abs(tr_zy-H));\n\nxe=x(kx);\nye=y(ky);\n\nPosEst=[xe,ye,H-0.1];"
-      editorLayout	      "100 M4x1[1031 316 750 500]"
+      script		      "function [xe,ye,ze]=TrajEst(Shtck,Hz)\n\npx=[0 0 0 0 0];\npy=[0 0 0 0 0];\npz=[0 0 0 0 0];\nvx=[0"
+      " 0 0 0 0];\n\nfor j=1:5\n    px(j)=Shtck(j*6-5);\n    py(j)=Shtck(j*6-4);\n    pz(j)=Shtck(j*6-3);\n    vx(j)=Sh"
+      "tck(j*6-2);\nend\n\nx0=px(1);\ny0=py(1);\nsgn=sign(mean(vx));\ndx=sgn*0.01;\nx=-1:0.02:1;\ny=3:-0.01:-1.5;\n\ntr"
+      "_zx=polyval(polyfit(px,pz,2),x);\ntr_zy=polyval(polyfit(py,pz,2),y);\n\n[~,kx]=min(abs(tr_zx-Hz));\n[~,ky]=min(a"
+      "bs(tr_zy-Hz));\n\nxe=x(kx);\nye=y(ky);\nze=Hz-0.1;"
+      editorLayout	      "100 M4x1[124 274 750 500]"
     }
   }
   state {
     id			    16
-    labelString		    "Initialization\ndu:PosDesired=InitialPos;"
+    labelString		    "Initialization\ndu:PosDesired[0]=InitialPos[0];PosDesired[1]=InitialPos[1];\nPosDesired[2]=Initi"
+    "alPos[2];"
     position		    [84.312 151.2092 351.6042 51.5629]
     fontSize		    12
     chart		    9
@@ -8317,7 +8361,7 @@ Stateflow {
   state {
     id			    17
     labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]=-1.2;"
-    position		    [115.6479 255.8135 269.7976 37.2952]
+    position		    [85.3368 251.8284 269.7976 37.2952]
     fontSize		    12
     arrowSize		    12.592
     chart		    9
@@ -8329,8 +8373,9 @@ Stateflow {
   }
   state {
     id			    18
-    labelString		    "Prelanding\nen:PosDesired=InitialPos ;"
-    position		    [227.0498 319.9139 170.8088 40.1709]
+    labelString		    "Prelanding\nen:PosDesired[0]=InitialPos[0];PosDesired[1]=InitialPos[1];\nPosDesired[2]=InitialPo"
+    "s[2];"
+    position		    [84.5514 319.5516 346.8676 51.9396]
     fontSize		    12
     chart		    9
     treeNode		    [21 0 17 19]
@@ -8342,7 +8387,7 @@ Stateflow {
   state {
     id			    19
     labelString		    "Descent\nen:PosDesired[2] = PerchPos[2]-0.15;"
-    position		    [184.8068 401.2415 277.1604 39.1218]
+    position		    [100.8777 396.5318 277.1604 39.1218]
     fontSize		    12
     chart		    9
     treeNode		    [21 0 18 0]
@@ -8353,17 +8398,16 @@ Stateflow {
   }
   state {
     id			    20
-    labelString		    "Estimation\nen:PosEst=TrajEst(PosShtl,H);\ndu:PosDesired=PosEst;"
-    position		    [693.8621 317.3052 191.3223 61.0794]
+    labelString		    "Estimation\nen:[pxe,pye,pze]=TrajEst(PosShtlck,H);\ndu:PosDesired[0]=pxe;\nPosDesired[1]=pye;\nP"
+    "osDesired[2]=pze;"
+    position		    [678.8529 317.726 225.4919 83.3387]
     fontSize		    12
     chart		    9
     treeNode		    [22 0 12 0]
-    isGrouped		    1
     subviewer		    9
     ssIdNumber		    235
-    type		    AND_STATE
+    type		    OR_STATE
     decomposition	    CLUSTER_STATE
-    executionOrder	    2
   }
   state {
     id			    21
@@ -8372,7 +8416,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [9 11 0 15]
-    firstTransition	    27
+    firstTransition	    26
     subviewer		    9
     ssIdNumber		    8
     type		    OR_STATE
@@ -8380,34 +8424,21 @@ Stateflow {
   }
   state {
     id			    22
-    labelString		    "TrajEst"
-    position		    [566.0297 154.2557 527.959 246.2983]
+    labelString		    "TrajE"
+    position		    [566.0297 154.2557 528.4891 261.8731]
     fontSize		    12
     chart		    9
     treeNode		    [21 12 16 17]
-    firstTransition	    39
-    firstJunction	    23
-    superState		    GROUPED
+    firstTransition	    37
     subviewer		    9
     ssIdNumber		    268
     type		    OR_STATE
-    decomposition	    SET_STATE
-  }
-  junction {
-    id			    23
-    position		    [744.3503 277.7531 7]
-    chart		    9
-    linkNode		    [22 0 0]
-    isGrouped		    1
-    subviewer		    9
-    quantum		    [37 0 38 0]
-    ssIdNumber		    260
-    type		    CONNECTIVE_JUNCTION
+    decomposition	    CLUSTER_STATE
   }
   transition {
-    id			    24
+    id			    23
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [26.876 549.711 73.724 11.849]
+    labelPosition	    [26.876 549.711 75.952 12.64]
     fontSize		    8
     src {
       intersection	      [0 0 0 0 20.5837 568.4057 0 0]
@@ -8418,7 +8449,7 @@ Stateflow {
     }
     midPoint		    [65.6394 568.6393]
     chart		    9
-    linkNode		    [9 25 0]
+    linkNode		    [9 24 0]
     dataLimits		    [20.584 115.107 566.364 571.164]
     subviewer		    9
     drawStyle		    SMART
@@ -8426,9 +8457,9 @@ Stateflow {
     ssIdNumber		    16
   }
   transition {
-    id			    25
+    id			    24
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [617.589 479.86 79.984 16.729]
+    labelPosition	    [606.252 468.747 84.994 18.057]
     fontSize		    14
     src {
       id		      21
@@ -8440,7 +8471,7 @@ Stateflow {
     }
     midPoint		    [698.4876 476.7638]
     chart		    9
-    linkNode		    [9 26 24]
+    linkNode		    [9 25 23]
     dataLimits		    [696.088 700.888 459.548 500.712]
     stampAngle		    NaN
     subviewer		    9
@@ -8451,9 +8482,9 @@ Stateflow {
     ssIdNumber		    18
   }
   transition {
-    id			    26
+    id			    25
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [348.67 466.592 75.81 16.729]
+    labelPosition	    [348.67 466.592 80.473 18.057]
     fontSize		    14
     src {
       id		      10
@@ -8465,7 +8496,7 @@ Stateflow {
     }
     midPoint		    [435.3042 483.4955]
     chart		    9
-    linkNode		    [9 0 25]
+    linkNode		    [9 0 24]
     dataLimits		    [432.904 437.704 459.548 500.712]
     stampAngle		    NaN
     subviewer		    9
@@ -8476,22 +8507,22 @@ Stateflow {
     ssIdNumber		    17
   }
   transition {
-    id			    27
+    id			    26
     labelString		    "{PosDesired = Pos;PosDesired[2] =-1.2;}"
-    labelPosition	    [186.95 40.303 166.922 12.546]
+    labelPosition	    [171.13 34.144 177.222 14.446]
     fontSize		    9.327
     arrowSize		    12.592
     src {
-      intersection	      [0 0 1 0.7893 315.5261 29.0839 0 9.7687]
+      intersection	      [0 0 1 0.7893 299.7064 22.9251 0 9.7687]
     }
     dst {
       id		      11
-      intersection	      [1 0 -1 0.5362 315.5038 70.7384 0 15.6763]
+      intersection	      [1 0 -1 0.5362 299.6841 64.5796 0 15.6763]
     }
-    midPoint		    [315.5142 44.1103]
+    midPoint		    [299.6945 37.9515]
     chart		    9
-    linkNode		    [21 0 31]
-    dataLimits		    [311.726 319.281 29.084 70.738]
+    linkNode		    [21 0 30]
+    dataLimits		    [295.906 303.462 22.925 64.58]
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -8502,8 +8533,8 @@ Stateflow {
     ssIdNumber		    13
   }
   transition {
-    id			    28
-    labelPosition	    [228.851 519.558 6.26 11.849]
+    id			    27
+    labelPosition	    [228.851 519.558 5.425 10.834]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8515,7 +8546,7 @@ Stateflow {
     }
     midPoint		    [241.9112 531.0356]
     chart		    9
-    linkNode		    [10 0 29]
+    linkNode		    [10 0 28]
     dataLimits		    [208.43 279.802 528.919 533.151]
     subviewer		    9
     drawStyle		    SMART
@@ -8526,9 +8557,9 @@ Stateflow {
     ssIdNumber		    84
   }
   transition {
-    id			    29
+    id			    28
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [705.318 542.615 105.717 11.849]
+    labelPosition	    [705.318 542.615 86.803 10.834]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8541,7 +8572,7 @@ Stateflow {
     }
     midPoint		    [711.4375 551.9781]
     chart		    9
-    linkNode		    [10 28 0]
+    linkNode		    [10 27 0]
     dataLimits		    [696.651 726.53 549.662 559.311]
     stampAngle		    NaN
     subviewer		    9
@@ -8554,23 +8585,23 @@ Stateflow {
     ssIdNumber		    85
   }
   transition {
-    id			    30
+    id			    29
     labelString		    "[RC[5] > 0]"
-    labelPosition	    [218.042 215.888 61.9 16.032]
+    labelPosition	    [187.734 211.903 59.677 16.252]
     fontSize		    12
     arrowSize		    12.592
     src {
       id		      16
-      intersection	      [3 0 1 0.6963 191.1072 202.7721 0 122.7984]
+      intersection	      [3 0 1 0.7825 160.7992 202.7721 0 122.7984]
     }
     dst {
       id		      17
-      intersection	      [1 0 -1 0.2797 191.1072 255.8135 0 -122.7984]
+      intersection	      [1 0 -1 0.2797 160.7992 251.8284 0 -122.7984]
     }
-    midPoint		    [191.1072 223.7396]
+    midPoint		    [160.7992 221.6603]
     chart		    9
-    linkNode		    [21 34 35]
-    dataLimits		    [187.33 194.885 202.772 255.814]
+    linkNode		    [21 33 34]
+    dataLimits		    [157.022 164.577 202.772 251.828]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8578,93 +8609,95 @@ Stateflow {
     ssIdNumber		    187
   }
   transition {
-    id			    31
+    id			    30
     labelString		    "after(3,sec)"
-    labelPosition	    [293.262 132.799 64.682 16.032]
+    labelPosition	    [277.458 129.574 60.581 16.252]
     fontSize		    12
     src {
       id		      11
-      intersection	      [3 0 1 0.5286 289.7389 125.38 0 6.3063]
+      intersection	      [3 0 1 0.5286 273.9346 119.2212 0 6.3063]
     }
     dst {
       id		      16
-      intersection	      [1 0 -1 0.5843 289.7389 151.2092 0 -6.3063]
+      intersection	      [1 0 -1 0.5393 273.9346 151.2092 0 -6.3063]
     }
-    midPoint		    [289.7389 134.5954]
+    midPoint		    [273.9346 131.6499]
     chart		    9
-    linkNode		    [21 27 34]
-    dataLimits		    [287.339 292.139 125.38 151.209]
+    linkNode		    [21 26 33]
+    dataLimits		    [271.535 276.335 119.221 151.209]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    213
+  }
+  transition {
+    id			    31
+    labelString		    "after(3, sec)"
+    labelPosition	    [324.496 289.731 64.198 16.252]
+    fontSize		    12
+    src {
+      id		      17
+      intersection	      [3 0 1 0.1161 323.8109 289.1236 0 -38.2554]
+    }
+    dst {
+      id		      18
+      intersection	      [1 0 -1 0.6898 323.8109 319.5516 0 37.5742]
+    }
+    midPoint		    [323.8109 300.7384]
+    chart		    9
+    linkNode		    [21 34 32]
+    dataLimits		    [321.411 326.211 289.124 319.552]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
     slide {
     }
     executionOrder	    1
-    ssIdNumber		    213
-  }
-  transition {
-    id			    32
-    labelString		    "after(3, sec)"
-    labelPosition	    [354.806 293.918 68.16 16.032]
-    fontSize		    12
-    src {
-      id		      17
-      intersection	      [3 0 1 0.1161 354.1202 293.1087 0 -38.2554]
-    }
-    dst {
-      id		      18
-      intersection	      [1 0 -1 0.7439 354.1202 319.9139 0 37.5742]
-    }
-    midPoint		    [354.1202 302.8333]
-    chart		    9
-    linkNode		    [21 35 33]
-    dataLimits		    [351.72 356.52 293.109 319.914]
-    stampAngle		    NaN
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    1
     ssIdNumber		    218
   }
   transition {
-    id			    33
+    id			    32
     labelString		    "[PerchError < 0.01]"
-    labelPosition	    [345.042 374.488 107.804 16.032]
+    labelPosition	    [261.123 379.4 102.174 16.252]
     fontSize		    12
     src {
       id		      18
-      intersection	      [3 -0 1 0.3072 345.3826 360.0848 0 -32.9284]
+      intersection	      [3 0 1 0.49 261.4644 371.4912 0 -32.9284]
     }
     dst {
       id		      19
-      intersection	      [1 0 -1 0.5794 345.3826 401.2415 0 32.9284]
+      intersection	      [1 0 -1 0.5794 261.4644 396.5318 0 32.9284]
     }
-    midPoint		    [345.3826 377.2972]
+    midPoint		    [261.4644 380.2951]
     chart		    9
-    linkNode		    [21 32 0]
-    dataLimits		    [342.983 347.783 360.085 401.241]
+    linkNode		    [21 31 0]
+    dataLimits		    [259.064 263.864 371.491 396.532]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    231
   }
   transition {
-    id			    34
+    id			    33
     labelString		    "[(abs(Shuttlecock[0])<1)&(Shuttlecock[1]<2.8)&(Shuttlecock[2]<H)]"
-    labelPosition	    [433.526 132.891 370.706 16.032]
+    labelPosition	    [433.831 132.858 353.54 16.252]
     fontSize		    12
     src {
       id		      16
-      intersection	      [2 1 -0 0.6512 435.9162 184.7871 0 14.6392]
+      intersection	      [2 1 -0 0.6512 435.9162 184.787 0 14.7744]
     }
     dst {
       id		      22
-      intersection	      [4 -1 0 0.8575 566.0297 189.3649 0 -14.6392]
+      intersection	      [4 -1 0 0.8658 566.0297 189.4002 0 -14.7744]
     }
-    midPoint		    [499.5388 188.4315]
+    midPoint		    [499.5399 187.2439]
     chart		    9
-    linkNode		    [21 31 30]
-    dataLimits		    [435.916 566.03 184.787 194.03]
+    linkNode		    [21 30 29]
+    dataLimits		    [435.916 566.03 184.787 191.8]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8674,23 +8707,23 @@ Stateflow {
     ssIdNumber		    236
   }
   transition {
-    id			    35
+    id			    34
     labelString		    "[(RC[5] > 0)]"
-    labelPosition	    [437.614 247.94 70.246 16.032]
+    labelPosition	    [427.245 243.953 66.91 16.252]
     fontSize		    12
     arrowSize		    12.592
     src {
       id		      22
-      intersection	      [4 -1 0 0.5344 566.0297 268.9318 0 5.5293]
+      intersection	      [4 -1 0 0.5773 566.0297 264.9451 0 5.5293]
     }
     dst {
       id		      17
-      intersection	      [2 1 -0 0.3517 385.4455 268.9318 0 -5.5293]
+      intersection	      [2 1 -0 0.3517 355.1344 264.9451 0 -5.5293]
     }
-    midPoint		    [478.5182 268.9318]
+    midPoint		    [462.7037 264.9451]
     chart		    9
-    linkNode		    [21 30 32]
-    dataLimits		    [385.445 566.03 265.154 272.709]
+    linkNode		    [21 29 31]
+    dataLimits		    [355.134 566.03 261.168 268.723]
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -8699,112 +8732,113 @@ Stateflow {
     ssIdNumber		    243
   }
   transition {
-    id			    36
+    id			    35
     labelString		    "[(Shuttlecock[2]-H<-0.4)|(Shuttlecock[5]<0)]{i=0;}"
-    labelPosition	    [809.232 256.005 272.639 16.032]
+    labelPosition	    [805.286 277.467 257.696 16.252]
     fontSize		    12
     src {
-      id		      23
-      intersection	      [0 0.9963 0.0857 -1 751.3245 278.353 0 42.4426]
+      id		      20
+      intersection	      [1 -0 -1 0.5296 798.2739 317.726 0 8.7489]
     }
     dst {
       id		      12
-      intersection	      [3 0 1 0.3778 823.9151 215.7722 0 -42.4426]
+      intersection	      [3 0 1 0.738 798.2739 251.2388 0 -8.7489]
     }
-    midPoint		    [801.3811 262.7417]
+    midPoint		    [798.2739 287.2978]
     chart		    9
-    linkNode		    [22 39 37]
-    isGrouped		    1
-    dataLimits		    [751.325 826.315 215.772 278.575]
+    linkNode		    [22 36 0]
+    dataLimits		    [795.874 800.674 251.239 317.726]
     stampAngle		    -1.6566
     subviewer		    9
     drawStyle		    SMART
     slide {
-      mode		      MIRROR_SLIDE
-      sticky		      SRC_STICK
-      arcL		      -79.5648
       arcClockDir	      COUNTER_CLOCKWISE
     }
     executionOrder	    1
     ssIdNumber		    258
   }
   transition {
-    id			    37
-    labelString		    "[i==5]{PosShtl=PosShtlck;}"
-    labelPosition	    [588.973 232.544 151.621 16.032]
+    id			    36
+    labelString		    "[i==30]"
+    labelPosition	    [692.253 269.58 38.88 16.252]
     fontSize		    12
     src {
       id		      12
-      intersection	      [3 0 1 0.7642 744.3503 215.7722 0 29.8297]
+      intersection	      [3 0 1 0.9021 734.0873 251.2388 0 55.4216]
     }
     dst {
-      id		      23
-      intersection	      [0 0 -1 -1 744.3503 270.7531 0 -29.8297]
+      id		      20
+      intersection	      [1 -0 -1 0.245 734.0873 317.726 0 -55.4216]
     }
-    midPoint		    [744.3503 240.1972]
+    midPoint		    [734.0873 281.6671]
     chart		    9
-    linkNode		    [22 36 38]
-    isGrouped		    1
-    dataLimits		    [741.95 746.75 215.772 270.753]
+    linkNode		    [22 37 35]
+    dataLimits		    [731.687 736.487 251.239 317.726]
     subviewer		    9
     drawStyle		    SMART
     slide {
-      sticky		      DST_STICK
       arcClockDir	      COUNTER_CLOCKWISE
     }
     executionOrder	    1
     ssIdNumber		    255
   }
   transition {
-    id			    38
-    labelPosition	    [746.827 288.946 8.346 16.032]
+    id			    37
+    labelPosition	    [645.632 206.74 8.138 16.252]
     fontSize		    12
     src {
-      id		      23
-      intersection	      [0 0 1 -1 744.3503 284.7531 0 0]
-    }
-    dst {
-      id		      20
-      intersection	      [1 0 -1 0.2639 744.3503 317.3052 0 0]
-    }
-    midPoint		    [744.3503 297.4761]
-    chart		    9
-    linkNode		    [22 37 0]
-    isGrouped		    1
-    dataLimits		    [741.95 746.75 284.753 317.305]
-    subviewer		    9
-    drawStyle		    SMART
-    executionOrder	    2
-    ssIdNumber		    262
-  }
-  transition {
-    id			    39
-    labelPosition	    [645.632 182.898 8.346 16.032]
-    fontSize		    12
-    src {
-      intersection	      [0 1 0 0 633.0014 197.8976 0 0]
+      intersection	      [0 1 0 0 633.0014 221.7396 0 0]
     }
     dst {
       id		      12
-      intersection	      [4 -1 0 0.3277 695.7948 197.8976 0 0]
+      intersection	      [4 -1 0 0.3277 695.7948 221.7396 0 0]
     }
-    midPoint		    [661.5025 197.8976]
+    midPoint		    [661.5025 221.7396]
     chart		    9
     linkNode		    [22 0 36]
-    isGrouped		    1
-    dataLimits		    [633.001 695.795 195.498 200.298]
+    dataLimits		    [633.001 695.795 219.34 224.14]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    273
   }
   data {
-    id			    40
+    id			    38
     ssIdNumber		    238
-    name		    "Shuttlecock"
-    linkNode		    [15 0 41]
+    name		    "Shtck"
+    linkNode		    [15 0 39]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    39
+    ssIdNumber		    239
+    name		    "xe"
+    linkNode		    [15 38 40]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    40
+    ssIdNumber		    264
+    name		    "Hz"
+    linkNode		    [15 39 41]
     scope		    FUNCTION_INPUT_DATA
     machine		    1
     props {
@@ -8818,8 +8852,8 @@ Stateflow {
   }
   data {
     id			    41
-    ssIdNumber		    239
-    name		    "PosEst"
+    ssIdNumber		    275
+    name		    "ye"
     linkNode		    [15 40 42]
     scope		    FUNCTION_OUTPUT_DATA
     machine		    1
@@ -8834,10 +8868,10 @@ Stateflow {
   }
   data {
     id			    42
-    ssIdNumber		    264
-    name		    "H"
+    ssIdNumber		    276
+    name		    "ze"
     linkNode		    [15 41 0]
-    scope		    FUNCTION_INPUT_DATA
+    scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
       type {
@@ -9134,7 +9168,7 @@ Stateflow {
     machine		    1
     props {
       array {
-	size			"-1"
+	size			"6"
       }
       type {
 	method			SF_INHERITED_TYPE
@@ -9191,8 +9225,13 @@ Stateflow {
     scope		    LOCAL_DATA
     machine		    1
     props {
+      array {
+	size			"30"
+      }
       type {
 	primitive		SF_DOUBLE_TYPE
+	expression		"<data type expression>"
+	enumType		"<class name>"
 	isSigned		1
 	wordLength		"16"
       }
@@ -9207,6 +9246,9 @@ Stateflow {
     scope		    OUTPUT_DATA
     machine		    1
     props {
+      array {
+	size			"3"
+      }
       type {
 	primitive		SF_DOUBLE_TYPE
 	isSigned		1
@@ -9224,6 +9266,9 @@ Stateflow {
     scope		    LOCAL_DATA
     machine		    1
     props {
+      array {
+	size			"30"
+      }
       type {
 	primitive		SF_DOUBLE_TYPE
 	isSigned		1
@@ -9237,7 +9282,7 @@ Stateflow {
     ssIdNumber		    265
     name		    "H"
     description		    "Target Height"
-    linkNode		    [9 62 0]
+    linkNode		    [9 62 64]
     scope		    CONSTANT_DATA
     machine		    1
     props {
@@ -9250,23 +9295,71 @@ Stateflow {
     }
     dataType		    "double"
   }
-  instance {
+  data {
     id			    64
+    ssIdNumber		    277
+    name		    "pxe"
+    linkNode		    [9 63 65]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    65
+    ssIdNumber		    278
+    name		    "pye"
+    linkNode		    [9 64 66]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    66
+    ssIdNumber		    279
+    name		    "pze"
+    linkNode		    [9 65 0]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  instance {
+    id			    67
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    65
+    id			    68
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 66]
+    linkNode		    [1 0 69]
   }
   target {
-    id			    66
+    id			    69
     name		    "rtw"
     machine		    1
-    linkNode		    [1 65 0]
+    linkNode		    [1 68 0]
   }
 }
