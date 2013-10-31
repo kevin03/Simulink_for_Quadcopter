@@ -1,7 +1,7 @@
 %made by Huynh Minh Quan, Nanyang Technological University
 %in according to the paper 
 
-T = 0.34; %the time given to perform the task, 5s
+T = 0.6; %the time given to perform the task, 5s
 h = 0.02; % the time interval between the steps, 0.1s
 K = T/h + 1;% number of time steps
 N = 1;% number of UAVs
@@ -14,7 +14,7 @@ v1 = zeros(1,3*N)';%initial velocities
 vK = -1.6*[0.685 0 0.7285]';%final velocities
 
 a1 = zeros(1,3*N)';%initial acc
-aK = -g*[0.9402 0 0]';%final acc
+aK = -g*[0.685 0 0.7285]';%final acc
 
 
 Aeq = zeros(12*N,3*N*K); %12*N equalities constraints for a1,aK,vK and pK,p1 and v1 are within the equations
@@ -62,6 +62,9 @@ cvx_begin quiet
     minimize(x'*E*x + q'*x);
     subject to
     Aeq*x == beq;
+     for i = 1:N*K;
+         x(3*(i-1)+1:3*i)'*x(3*(i-1)+1:3*i) + 2*g*x(3*i) + g^2 <= 4*g^2;
+     end;
 cvx_end
 t = toc
 
