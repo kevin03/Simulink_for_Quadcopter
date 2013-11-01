@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1532"
+    ComputedModelVersion    "1.1536"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,11 +33,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "wee kiat"
+  LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 31 00:19:52 2013"
-  RTWModifiedTimeStamp	  305077936
-  ModelVersionFormat	  "1.%<AutoIncrement:1532>"
+  LastModifiedDate	  "Thu Oct 31 17:39:10 2013"
+  RTWModifiedTimeStamp	  305141947
+  ModelVersionFormat	  "1.%<AutoIncrement:1536>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -963,7 +963,7 @@ Model {
   System {
     Name		    "Servomotor_test"
     Location		    [0, 82, 956, 1034]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -974,9 +974,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "96"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2084"
+    SIDHighWatermark	    "2085"
     Block {
       BlockType		      From
       Name		      "From"
@@ -1029,7 +1029,7 @@ Model {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM8'|57600|on|on|off|off"
+      MaskValueString	      "'COM6'|57600|on|on|off|off"
       MaskTabNameString	      "Setting,Setting,Output Message,Input Message,Input Message,Input Message"
     }
     Block {
@@ -1049,7 +1049,7 @@ Model {
       System {
 	Name			"Planning"
 	Location		[0, 82, 944, 1034]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1060,7 +1060,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"112"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vicon"
@@ -2236,7 +2236,7 @@ Model {
 	  System {
 	    Name		    "Mixer"
 	    Location		    [608, 82, 1377, 752]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2275,7 +2275,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "PWM"
 	      SID		      "1437"
-	      Position		      [55, 168, 85, 182]
+	      Position		      [70, 348, 100, 362]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
@@ -2308,7 +2308,7 @@ Model {
 	      RTWMemSecDataInternal   "Inherit from model"
 	      RTWMemSecDataParameters "Inherit from model"
 	      GeneratePreprocessorConditionals off
-	      sw		      "1"
+	      sw		      "0"
 	      action		      "0"
 	      varsize		      off
 	    }
@@ -2404,16 +2404,17 @@ Model {
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "PWM"
-	      SrcPort		      1
-	      DstBlock		      "Mux1"
-	      DstPort		      4
-	    }
-	    Line {
 	      SrcBlock		      "Gain"
 	      SrcPort		      1
 	      DstBlock		      "Mux1"
 	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Manual Switch"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 150; -375, 0; 0, -80]
+	      DstBlock		      "Mux1"
+	      DstPort		      4
 	    }
 	    Line {
 	      SrcBlock		      "[-1, 1]"
@@ -2607,7 +2608,7 @@ Model {
 	  System {
 	    Name		    "Trajectory Logic"
 	    Location		    [0, 82, 1900, 1051]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2696,7 +2697,7 @@ Model {
 	      BackgroundColor	      "orange"
 	      LibraryVersion	      "1.40"
 	      SourceBlock	      "X330_Control/PosRefSystem"
-	      SourceType	      ""
+	      SourceType	      "Unknown"
 	      ShowPortLabels	      "FromPortIcon"
 	      SystemSampleTime	      "-1"
 	      FunctionWithSeparateData off
@@ -9005,8 +9006,8 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [0 30 1440 723]
-    viewLimits		    [32.697 1778.322 742.517 1601.267]
+    windowPosition	    [18.75 30 1440 723]
+    viewLimits		    [0 1745.625 925.329 1784.079]
     zoomFactor		    1.25
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
@@ -9015,7 +9016,7 @@ Stateflow {
     viewObj		    9
     machine		    1
     subviewS {
-      x1		      32.697
+      y1		      925.329
       zoomFactor	      1.25
     }
     ssIdHighWaterMark	    963
@@ -9129,12 +9130,10 @@ Stateflow {
     midPoint		    [638.0095 1367.3519]
     chart		    9
     linkNode		    [9 17 15]
-    dataLimits		    [635.61 640.41 1276.892 1458.44]
+    dataLimits		    [635.61 640.409 1276.892 1458.44]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    2
     ssIdNumber		    18
   }
@@ -9154,12 +9153,10 @@ Stateflow {
     midPoint		    [576.1345 1367.9799]
     chart		    9
     linkNode		    [9 22 16]
-    dataLimits		    [573.735 578.535 1276.892 1458.44]
+    dataLimits		    [573.735 578.534 1276.892 1458.44]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    17
   }
@@ -9181,7 +9178,7 @@ Stateflow {
     chart		    9
     linkNode		    [10 19 0]
     isGrouped		    1
-    dataLimits		    [838.036 905.912 1530.146 1547.477]
+    dataLimits		    [838.037 905.912 1530.146 1547.477]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -9208,7 +9205,7 @@ Stateflow {
     chart		    9
     linkNode		    [10 0 18]
     isGrouped		    1
-    dataLimits		    [356.28 427.652 1506.742 1510.973]
+    dataLimits		    [356.28 427.652 1506.742 1510.974]
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -9233,12 +9230,10 @@ Stateflow {
     midPoint		    [755.7461 1231.8915]
     chart		    9
     linkNode		    [9 21 22]
-    dataLimits		    [668.947 843.478 1229.492 1234.292]
+    dataLimits		    [668.947 843.478 1229.491 1234.292]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    951
   }
@@ -9258,7 +9253,7 @@ Stateflow {
     midPoint		    [749.415 1123.1058]
     chart		    9
     linkNode		    [9 0 20]
-    dataLimits		    [610.297 905.197 1123.106 1201.892]
+    dataLimits		    [610.297 905.197 1123.046 1201.892]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -9289,8 +9284,6 @@ Stateflow {
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    2
     ssIdNumber		    953
   }
