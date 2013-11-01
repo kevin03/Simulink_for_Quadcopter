@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.744"
+    ComputedModelVersion    "1.745"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -27,9 +27,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 01 15:37:06 2013"
-  RTWModifiedTimeStamp	  305219338
-  ModelVersionFormat	  "1.%<AutoIncrement:744>"
+  LastModifiedDate	  "Fri Nov 01 19:06:13 2013"
+  RTWModifiedTimeStamp	  305229171
+  ModelVersionFormat	  "1.%<AutoIncrement:745>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -949,7 +949,7 @@ Model {
   }
   System {
     Name		    "JX_Kinect1"
-    Location		    [0, 50, 1904, 1048]
+    Location		    [0, 82, 1900, 1051]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -963,7 +963,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3636"
+    SIDHighWatermark	    "3646"
     Block {
       BlockType		      Display
       Name		      "0: Manual\n1: Stabilized\n2: Semi-autonomous"
@@ -1038,8 +1038,8 @@ Model {
       MaskIconUnits	      "autoscale"
       System {
 	Name			"Kinect Roll Pitch Trigger"
-	Location		[2, 74, 1901, 1002]
-	Open			on
+	Location		[2, 82, 1885, 1010]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1050,7 +1050,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"243"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Sum
 	  Name			  "Add"
@@ -1080,26 +1080,6 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Back"
-	  SID			  "3442"
-	  Ports			  [1]
-	  Position		  [1840, 1205, 1930, 1235]
-	  BackgroundColor	  "orange"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Down"
-	  SID			  "3439"
-	  Ports			  [1]
-	  Position		  [1740, 1165, 1830, 1195]
-	  BackgroundColor	  "blue"
-	  Decimation		  "1"
-	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -1614,702 +1594,6 @@ Model {
 	  Position		  [260, 1249, 360, 1281]
 	  FontName		  "Arial"
 	  GotoTag		  "SDK"
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Front"
-	  SID			  "3440"
-	  Ports			  [1]
-	  Position		  [1835, 895, 1925, 925]
-	  BackgroundColor	  "orange"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Front or Center or Back"
-	  SID			  "3373"
-	  Ports			  [2, 3]
-	  Position		  [1185, 1232, 1410, 1398]
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Front or Center or Back"
-	    Location		    [2, 82, 1902, 1027]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "120"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Z: LH"
-	      SID		      "3374"
-	      Position		      [50, 208, 80, 222]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Z: LSh"
-	      SID		      "3375"
-	      Position		      [50, 248, 80, 262]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain"
-	      SID		      "3631"
-	      Position		      [1110, 62, 1175, 108]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain1"
-	      SID		      "3633"
-	      Position		      [1110, 317, 1175, 363]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain2"
-	      SID		      "3635"
-	      Position		      [1190, 462, 1255, 508]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If Back"
-	      SID		      "3451"
-	      Ports		      [1, 3, 0, 0, 0, 0, 0, 1]
-	      Position		      [580, 486, 705, 594]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If Back"
-		Location		[342, 471, 840, 771]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "In1"
-		  SID			  "3452"
-		  Position		  [75, 78, 105, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3453"
-		  Position		  [170, 15, 229, 43]
-		  ActionType		  "else"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3621"
-		  Position		  [75, 140, 105, 170]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3623"
-		  Position		  [75, 225, 105, 255]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Out1"
-		  SID			  "3454"
-		  Position		  [325, 78, 355, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3622"
-		  Position		  [325, 148, 355, 162]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3624"
-		  Position		  [325, 233, 355, 247]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "In1"
-		  SrcPort		  1
-		  DstBlock		  "Out1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If Center"
-	      SID		      "3447"
-	      Ports		      [1, 3, 0, 0, 0, 0, 0, 1]
-	      Position		      [665, 309, 735, 381]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If Center"
-		Location		[342, 471, 840, 771]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "In1"
-		  SID			  "3448"
-		  Position		  [75, 78, 105, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3449"
-		  Position		  [170, 15, 229, 43]
-		  ActionType		  "elseif"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3617"
-		  Position		  [75, 140, 105, 170]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3619"
-		  Position		  [75, 245, 105, 275]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Out1"
-		  SID			  "3450"
-		  Position		  [325, 78, 355, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3618"
-		  Position		  [325, 148, 355, 162]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3620"
-		  Position		  [325, 253, 355, 267]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "In1"
-		  SrcPort		  1
-		  DstBlock		  "Out1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      If
-	      Name		      "If Front or Center or Back"
-	      SID		      "3428"
-	      Ports		      [1, 3]
-	      Position		      [320, 189, 505, 281]
-	      IfExpression	      "u1 > 0.45"
-	      ElseIfExpressions	      "u1 >= 0.26"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If front"
-	      SID		      "3443"
-	      Ports		      [1, 3, 0, 0, 0, 0, 0, 1]
-	      Position		      [665, 50, 765, 130]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If front"
-		Location		[342, 471, 840, 771]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "In1"
-		  SID			  "3444"
-		  Position		  [75, 78, 105, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3445"
-		  Position		  [170, 15, 229, 43]
-		  ActionType		  "then"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3609"
-		  Position		  [75, 155, 105, 185]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3611"
-		  Position		  [75, 250, 105, 280]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Out1"
-		  SID			  "3446"
-		  Position		  [325, 78, 355, 92]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3610"
-		  Position		  [325, 163, 355, 177]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3612"
-		  Position		  [325, 258, 355, 272]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "In1"
-		  SrcPort		  1
-		  DstBlock		  "Out1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge"
-	      SID		      "3625"
-	      Ports		      [2, 1]
-	      Position		      [1005, 65, 1045, 105]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge1"
-	      SID		      "3626"
-	      Ports		      [2, 1]
-	      Position		      [1015, 320, 1055, 360]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge2"
-	      SID		      "3627"
-	      Ports		      [2, 1]
-	      Position		      [1105, 465, 1145, 505]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge3"
-	      SID		      "3628"
-	      Ports		      [2, 1]
-	      Position		      [910, 55, 950, 95]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge4"
-	      SID		      "3629"
-	      Ports		      [2, 1]
-	      Position		      [870, 310, 910, 350]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge5"
-	      SID		      "3630"
-	      Ports		      [2, 1]
-	      Position		      [1020, 475, 1060, 515]
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation"
-	      SID		      "3632"
-	      Ports		      [1, 1]
-	      Position		      [1205, 70, 1235, 100]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation1"
-	      SID		      "3634"
-	      Ports		      [1, 1]
-	      Position		      [1205, 325, 1235, 355]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation2"
-	      SID		      "3636"
-	      Ports		      [1, 1]
-	      Position		      [1285, 470, 1315, 500]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Subtract"
-	      SID		      "3425"
-	      Ports		      [2, 1]
-	      Position		      [165, 195, 200, 275]
-	      Inputs		      "-+"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Front"
-	      SID		      "3420"
-	      Position		      [1280, 78, 1310, 92]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Center"
-	      SID		      "3421"
-	      Position		      [1280, 333, 1310, 347]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Down"
-	      SID		      "3424"
-	      Position		      [1365, 478, 1395, 492]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Z: LH"
-	      SrcPort		      1
-	      DstBlock		      "Subtract"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Z: LSh"
-	      SrcPort		      1
-	      DstBlock		      "Subtract"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Subtract"
-	      SrcPort		      1
-	      Points		      [55, 0]
-	      Branch {
-		Points			[0, -145]
-		DstBlock		"If front"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[20, 0]
-		Branch {
-		  Points		  [0, 115]
-		  DstBlock		  "If Center"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [10, 0]
-		  Branch {
-		    Labels		    [1, 0]
-		    DstBlock		    "If Front or Center or Back"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [0, 305]
-		    DstBlock		    "If Back"
-		    DstPort		    1
-		  }
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "If Front or Center or Back"
-	      SrcPort		      1
-	      Points		      [15, 0; 0, -168]
-	      DstBlock		      "If front"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "If Front or Center or Back"
-	      SrcPort		      2
-	      Points		      [85, 0; 0, 57]
-	      DstBlock		      "If Center"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "If Front or Center or Back"
-	      SrcPort		      3
-	      Points		      [130, 0]
-	      DstBlock		      "If Back"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "Merge3"
-	      SrcPort		      1
-	      DstBlock		      "Merge"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge4"
-	      SrcPort		      1
-	      DstBlock		      "Merge1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If front"
-	      SrcPort		      1
-	      DstBlock		      "Merge3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Center"
-	      SrcPort		      1
-	      DstBlock		      "Merge4"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge5"
-	      SrcPort		      1
-	      DstBlock		      "Merge2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Back"
-	      SrcPort		      1
-	      DstBlock		      "Merge5"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If front"
-	      SrcPort		      2
-	      Points		      [80, 0; 0, 250]
-	      DstBlock		      "Merge4"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If front"
-	      SrcPort		      3
-	      Points		      [140, 0; 0, 370]
-	      DstBlock		      "Merge5"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Center"
-	      SrcPort		      2
-	      Points		      [70, 0; 0, -260]
-	      DstBlock		      "Merge3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Back"
-	      SrcPort		      2
-	      Points		      [240, 0; 0, -445]
-	      DstBlock		      "Merge"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Center"
-	      SrcPort		      3
-	      Points		      [275, 0; 0, 100; 75, 0]
-	      DstBlock		      "Merge2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Back"
-	      SrcPort		      3
-	      Points		      [280, 0; 0, -225]
-	      DstBlock		      "Merge1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Merge"
-	      SrcPort		      1
-	      DstBlock		      "Gain"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain"
-	      SrcPort		      1
-	      DstBlock		      "Saturation"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation"
-	      SrcPort		      1
-	      DstBlock		      "Front"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge1"
-	      SrcPort		      1
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain1"
-	      SrcPort		      1
-	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation1"
-	      SrcPort		      1
-	      DstBlock		      "Center"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain2"
-	      SrcPort		      1
-	      DstBlock		      "Saturation2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation2"
-	      SrcPort		      1
-	      DstBlock		      "Down"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge2"
-	      SrcPort		      1
-	      DstBlock		      "Gain2"
-	      DstPort		      1
-	    }
-	  }
 	}
 	Block {
 	  BlockType		  Goto
@@ -3629,1268 +2913,6 @@ Model {
 	  }
 	}
 	Block {
-	  BlockType		  Display
-	  Name			  "Left"
-	  SID			  "3429"
-	  Ports			  [1]
-	  Position		  [1620, 1055, 1710, 1085]
-	  BackgroundColor	  "green"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Left or Center or Right"
-	  SID			  "3261"
-	  Ports			  [2, 3]
-	  Position		  [1185, 805, 1405, 1035]
-	  BackgroundColor	  "cyan"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Left or Center or Right"
-	    Location		    [2, 82, 1902, 1027]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "X: LH"
-	      SID		      "3262"
-	      Position		      [75, 373, 105, 387]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "X: LSh"
-	      SID		      "3263"
-	      Position		      [50, 413, 80, 427]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain"
-	      SID		      "3481"
-	      Position		      [1385, 359, 1455, 431]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain1"
-	      SID		      "3490"
-	      Position		      [850, 46, 905, 94]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain2"
-	      SID		      "3491"
-	      Position		      [850, 721, 905, 769]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If Action\nSubsystem"
-	      SID		      "3204"
-	      Ports		      [2, 4, 0, 0, 0, 0, 0, 1]
-	      Position		      [555, 308, 635, 377]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If Action\nSubsystem"
-		Location		[2, 82, 1885, 1027]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"112"
-		Block {
-		  BlockType		  Inport
-		  Name			  "x:LH"
-		  SID			  "3205"
-		  Position		  [45, 218, 75, 232]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "x:LSh"
-		  SID			  "3251"
-		  Position		  [45, 253, 75, 267]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3206"
-		  Position		  [280, 30, 339, 58]
-		  InitializeStates	  "reset"
-		  ActionType		  "then"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Buffer"
-		  SID			  "3210"
-		  Position		  [325, 280, 355, 310]
-		  Value			  "0.14"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3572"
-		  Position		  [520, 760, 550, 790]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3576"
-		  Position		  [520, 820, 550, 850]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant2"
-		  SID			  "3535"
-		  Position		  [600, 120, 630, 150]
-		  Value			  "5"
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "Else Center"
-		  SID			  "3225"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [635, 677, 705, 713]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "Else Center"
-		    Location		    [1093, 501, 1591, 801]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3226"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3227"
-		    Position		    [170, 15, 229, 43]
-		    InitializeStates	    "reset"
-		    ActionType		    "else"
-		    }
-		    Block {
-		    BlockType		    Abs
-		    Name		    "Abs"
-		    SID			    "3229"
-		    Position		    [185, 70, 215, 100]
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    Constant
-		    Name		    "Constant"
-		    SID			    "3510"
-		    Position		    [75, 210, 105, 240]
-		    Value		    "0"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3228"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "0"
-		    SID			    "3513"
-		    Position		    [325, 218, 355, 232]
-		    Port		    "2"
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Abs"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Abs"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "0"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If"
-		  SID			  "3211"
-		  Ports			  [1, 2]
-		  Position		  [480, 236, 580, 274]
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "If Left"
-		  SID			  "3212"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [720, 210, 805, 265]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "If Left"
-		    Location		    [287, 485, 785, 785]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3213"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3214"
-		    Position		    [170, 15, 229, 43]
-		    InitializeStates	    "reset"
-		    ActionType		    "then"
-		    }
-		    Block {
-		    BlockType		    Constant
-		    Name		    "Constant"
-		    SID			    "3566"
-		    Position		    [75, 205, 105, 235]
-		    Value		    "0"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3215"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "0"
-		    SID			    "3567"
-		    Position		    [325, 213, 355, 227]
-		    Port		    "2"
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "0"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge1"
-		  SID			  "3537"
-		  Ports			  [2, 1]
-		  Position		  [1230, 655, 1270, 695]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge2"
-		  SID			  "3541"
-		  Ports			  [2, 1]
-		  Position		  [1335, 205, 1375, 245]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract1"
-		  SID			  "3252"
-		  Ports			  [2, 1]
-		  Position		  [175, 227, 205, 258]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract2"
-		  SID			  "3209"
-		  Ports			  [2, 1]
-		  Position		  [385, 237, 415, 268]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Left"
-		  SID			  "3207"
-		  Position		  [1590, 218, 1620, 232]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Center"
-		  SID			  "3231"
-		  Position		  [1590, 723, 1620, 737]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3573"
-		  Position		  [770, 768, 800, 782]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3577"
-		  Position		  [770, 828, 800, 842]
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "Buffer"
-		  SrcPort		  1
-		  Points		  [5, 0; 0, -35]
-		  DstBlock		  "Subtract2"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract2"
-		  SrcPort		  1
-		  Points		  [20, 0]
-		  Branch {
-		    Points		    [0, 440]
-		    DstBlock		    "Else Center"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [15, 0]
-		    Branch {
-		    DstBlock		    "If"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -15]
-		    DstBlock		    "If Left"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Line {
-		  SrcBlock		  "x:LH"
-		  SrcPort		  1
-		  Points		  [40, 0; 0, 10]
-		  DstBlock		  "Subtract1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "x:LSh"
-		  SrcPort		  1
-		  Points		  [40, 0; 0, -10]
-		  DstBlock		  "Subtract1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract1"
-		  SrcPort		  1
-		  DstBlock		  "Subtract2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Merge2"
-		  SrcPort		  1
-		  DstBlock		  "Left"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Merge1"
-		  SrcPort		  1
-		  Points		  [225, 0; 0, 55]
-		  DstBlock		  "Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Center"
-		  SrcPort		  1
-		  DstBlock		  "Merge1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "If Left"
-		  SrcPort		  1
-		  Points		  [0, -10]
-		  DstBlock		  "Merge2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  1
-		  Points		  [125, 0; 0, -52]
-		  DstBlock		  "If Left"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  2
-		  Points		  [85, 0]
-		  DstBlock		  "Else Center"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "If Left"
-		  SrcPort		  2
-		  Points		  [200, 0; 0, 415]
-		  DstBlock		  "Merge1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Center"
-		  SrcPort		  2
-		  Points		  [500, 0; 0, -470]
-		  DstBlock		  "Merge2"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If Action\nSubsystem1"
-	      SID		      "3233"
-	      Ports		      [2, 4, 0, 0, 0, 0, 0, 1]
-	      Position		      [520, 447, 630, 548]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If Action\nSubsystem1"
-		Location		[2, 82, 1902, 1027]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "x: LH"
-		  SID			  "3234"
-		  Position		  [30, 313, 60, 327]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "x: LSh"
-		  SID			  "3250"
-		  Position		  [30, 223, 60, 237]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3235"
-		  Position		  [150, 20, 209, 48]
-		  InitializeStates	  "reset"
-		  ActionType		  "else"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Buffer"
-		  SID			  "3236"
-		  Position		  [180, 440, 210, 470]
-		  Value			  "0.14"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3570"
-		  Position		  [530, 560, 560, 590]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3574"
-		  Position		  [530, 650, 560, 680]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "Else Hover"
-		  SID			  "3237"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [545, 337, 615, 373]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "Else Hover"
-		    Location		    [342, 471, 840, 771]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3238"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3239"
-		    Position		    [170, 15, 229, 43]
-		    InitializeStates	    "reset"
-		    ActionType		    "else"
-		    }
-		    Block {
-		    BlockType		    Abs
-		    Name		    "Abs"
-		    SID			    "3240"
-		    Position		    [185, 70, 215, 100]
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
-		    BlockType		    Constant
-		    Name		    "Constant"
-		    SID			    "3544"
-		    Position		    [75, 160, 105, 190]
-		    Value		    "0"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3241"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "0"
-		    SID			    "3545"
-		    Position		    [325, 168, 355, 182]
-		    Port		    "2"
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Abs"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Abs"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "0"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If"
-		  SID			  "3242"
-		  Ports			  [1, 2]
-		  Position		  [370, 261, 470, 299]
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "If Right"
-		  SID			  "3243"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [570, 232, 640, 268]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "If Right"
-		    Location		    [342, 471, 840, 771]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3244"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3245"
-		    Position		    [170, 15, 229, 43]
-		    InitializeStates	    "reset"
-		    ActionType		    "then"
-		    }
-		    Block {
-		    BlockType		    Constant
-		    Name		    "Constant"
-		    SID			    "3542"
-		    Position		    [75, 150, 105, 180]
-		    Value		    "0"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3246"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "0"
-		    SID			    "3543"
-		    Position		    [325, 158, 355, 172]
-		    Port		    "2"
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Constant"
-		    SrcPort		    1
-		    DstBlock		    "0"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge"
-		  SID			  "3546"
-		  Ports			  [2, 1]
-		  Position		  [775, 230, 815, 270]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge1"
-		  SID			  "3547"
-		  Ports			  [2, 1]
-		  Position		  [805, 335, 845, 375]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract1"
-		  SID			  "3254"
-		  Ports			  [2, 1]
-		  Position		  [150, 252, 180, 283]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract2"
-		  SID			  "3247"
-		  Ports			  [2, 1]
-		  Position		  [275, 262, 305, 293]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Center"
-		  SID			  "3249"
-		  Position		  [930, 348, 960, 362]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Right"
-		  SID			  "3248"
-		  Position		  [900, 243, 930, 257]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3571"
-		  Position		  [780, 568, 810, 582]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3575"
-		  Position		  [780, 658, 810, 672]
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "Buffer"
-		  SrcPort		  1
-		  Points		  [0, -170]
-		  DstBlock		  "Subtract2"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract2"
-		  SrcPort		  1
-		  Points		  [20, 0]
-		  Branch {
-		    Points		    [10, 0]
-		    Branch {
-		    DstBlock		    "If"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -30]
-		    DstBlock		    "If Right"
-		    DstPort		    1
-		    }
-		  }
-		  Branch {
-		    Points		    [0, 75]
-		    DstBlock		    "Else Hover"
-		    DstPort		    1
-		  }
-		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  1
-		  Points		  [40, 0; 0, -53]
-		  DstBlock		  "If Right"
-		  DstPort		  ifaction
-		}
-		Line {
-		  Labels		  [1, 0]
-		  SrcBlock		  "If"
-		  SrcPort		  2
-		  Points		  [40, 0; 0, 30; 65, 0]
-		  DstBlock		  "Else Hover"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "x: LSh"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, 30]
-		  DstBlock		  "Subtract1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "x: LH"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, -45]
-		  DstBlock		  "Subtract1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract1"
-		  SrcPort		  1
-		  DstBlock		  "Subtract2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "If Right"
-		  SrcPort		  1
-		  DstBlock		  "Merge"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Merge1"
-		  SrcPort		  1
-		  DstBlock		  "Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Hover"
-		  SrcPort		  1
-		  DstBlock		  "Merge1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Hover"
-		  SrcPort		  2
-		  Points		  [80, 0; 0, -110; 60, 0]
-		  DstBlock		  "Merge"
-		  DstPort		  2
-		}
-		Line {
-		  Labels		  [2, 0]
-		  SrcBlock		  "If Right"
-		  SrcPort		  2
-		  Points		  [75, 0; 0, 105]
-		  DstBlock		  "Merge1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Merge"
-		  SrcPort		  1
-		  DstBlock		  "Right"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      If
-	      Name		      "If Left or Right"
-	      SID		      "3198"
-	      Ports		      [2, 2]
-	      Position		      [240, 359, 350, 441]
-	      NumInputs		      "2"
-	      IfExpression	      "u1 >= u2"
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge"
-	      SID		      "3550"
-	      Ports		      [2, 1]
-	      Position		      [775, 50, 815, 90]
-	      InitialOutput	      "[0]"
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge1"
-	      SID		      "3555"
-	      Ports		      [2, 1]
-	      Position		      [995, 325, 1035, 365]
-	      InitialOutput	      "[0]"
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge2"
-	      SID		      "3556"
-	      Ports		      [2, 1]
-	      Position		      [995, 430, 1035, 470]
-	      InitialOutput	      "[0]"
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge3"
-	      SID		      "3557"
-	      Ports		      [2, 1]
-	      Position		      [775, 725, 815, 765]
-	      InitialOutput	      "[0]"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation"
-	      SID		      "3480"
-	      Ports		      [1, 1]
-	      Position		      [1535, 380, 1565, 410]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation1"
-	      SID		      "3489"
-	      Ports		      [1, 1]
-	      Position		      [960, 55, 990, 85]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation2"
-	      SID		      "3492"
-	      Ports		      [1, 1]
-	      Position		      [960, 730, 990, 760]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum of\nElements"
-	      SID		      "3483"
-	      Ports		      [2, 1]
-	      Position		      [1300, 383, 1330, 417]
-	      Inputs		      "+|+"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Left"
-	      SID		      "3264"
-	      Position		      [1055, 63, 1085, 77]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "X Center"
-	      SID		      "3484"
-	      Position		      [1610, 388, 1640, 402]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Right"
-	      SID		      "3268"
-	      Position		      [1055, 738, 1085, 752]
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "X: LH"
-	      SrcPort		      1
-	      Points		      [15, 0]
-	      Branch {
-		Points			[20, 0]
-		Branch {
-		  Points		  [0, -50]
-		  DstBlock		  "If Action\nSubsystem"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "If Left or Right"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[0, 95]
-		DstBlock		"If Action\nSubsystem1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "X: LSh"
-	      SrcPort		      1
-	      Points		      [15, 0]
-	      Branch {
-		Points			[60, 0]
-		Branch {
-		  Points		  [0, -55]
-		  DstBlock		  "If Action\nSubsystem"
-		  DstPort		  2
-		}
-		Branch {
-		  DstBlock		  "If Left or Right"
-		  DstPort		  2
-		}
-	      }
-	      Branch {
-		Points			[0, 105]
-		DstBlock		"If Action\nSubsystem1"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum of\nElements"
-	      SrcPort		      1
-	      DstBlock		      "Gain"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain"
-	      SrcPort		      1
-	      DstBlock		      "Saturation"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation"
-	      SrcPort		      1
-	      DstBlock		      "X Center"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain1"
-	      SrcPort		      1
-	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain2"
-	      SrcPort		      1
-	      DstBlock		      "Saturation2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation2"
-	      SrcPort		      1
-	      DstBlock		      "Right"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Left or Right"
-	      SrcPort		      2
-	      Points		      [220, 0]
-	      DstBlock		      "If Action\nSubsystem1"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "If Left or Right"
-	      SrcPort		      1
-	      Points		      [180, 0; 0, -93]
-	      DstBlock		      "If Action\nSubsystem"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "Merge1"
-	      SrcPort		      1
-	      Points		      [120, 0; 0, 40]
-	      DstBlock		      "Sum of\nElements"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge2"
-	      SrcPort		      1
-	      Points		      [120, 0; 0, -40]
-	      DstBlock		      "Sum of\nElements"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem1"
-	      SrcPort		      1
-	      DstBlock		      "Merge2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Merge3"
-	      SrcPort		      1
-	      DstBlock		      "Gain2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem1"
-	      SrcPort		      2
-	      Points		      [15, 0; 0, 270]
-	      DstBlock		      "Merge3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem"
-	      SrcPort		      2
-	      DstBlock		      "Merge1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem"
-	      SrcPort		      1
-	      Points		      [30, 0; 0, -260]
-	      DstBlock		      "Merge"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem"
-	      SrcPort		      3
-	      Points		      [120, 0]
-	      DstBlock		      "Merge3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem1"
-	      SrcPort		      3
-	      Points		      [70, 0; 0, -430]
-	      DstBlock		      "Merge"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem"
-	      SrcPort		      4
-	      Points		      [340, 0]
-	      DstBlock		      "Merge2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Action\nSubsystem1"
-	      SrcPort		      4
-	      Points		      [340, 0; 0, -180]
-	      DstBlock		      "Merge1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Merge"
-	      SrcPort		      1
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation1"
-	      SrcPort		      1
-	      DstBlock		      "Left"
-	      DstPort		      1
-	    }
-	    Annotation {
-	      Position		      [604, 325]
-	    }
-	    Annotation {
-	      Position		      [597, 332]
-	    }
-	  }
-	}
-	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "2804"
@@ -6098,16 +4120,6 @@ Model {
 	  OutDataTypeStr	  "boolean"
 	}
 	Block {
-	  BlockType		  Display
-	  Name			  "Right"
-	  SID			  "3433"
-	  Ports			  [1]
-	  Position		  [1845, 1055, 1935, 1085]
-	  BackgroundColor	  "green"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
 	  BlockType		  Scope
 	  Name			  "Roll"
 	  SID			  "2871"
@@ -6262,53 +4274,11 @@ Model {
 	  OutputSizes		  "1,1,1"
 	}
 	Block {
-	  BlockType		  Sum
-	  Name			  "Subtract"
-	  SID			  "2880"
-	  Ports			  [2, 1]
-	  Position		  [1665, 172, 1695, 203]
-	  Inputs		  "+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Subtract1"
-	  SID			  "2881"
-	  Ports			  [2, 1]
-	  Position		  [1665, 377, 1695, 408]
-	  Inputs		  "+-"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Top"
-	  SID			  "3434"
-	  Ports			  [1]
-	  Position		  [1730, 940, 1820, 970]
-	  BackgroundColor	  "blue"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Tracking Status \n(1: Tracking, 0: Not Tracking)"
-	  SID			  "2882"
-	  Ports			  [1]
-	  Position		  [1505, 35, 1595, 65]
-	  FontName		  "Arial"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
 	  BlockType		  SubSystem
-	  Name			  "Up or Center or Down"
-	  SID			  "3321"
-	  Ports			  [2, 3]
-	  Position		  [1180, 1051, 1405, 1219]
+	  Name			  "Subsystem"
+	  SID			  "3639"
+	  Ports			  [6, 1]
+	  Position		  [1305, 1074, 1345, 1136]
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -6317,9 +4287,9 @@ Model {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  System {
-	    Name		    "Up or Center or Down"
-	    Location		    [2, 82, 1902, 1027]
-	    Open		    off
+	    Name		    "Subsystem"
+	    Location		    [924, 371, 1934, 1016]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -6333,56 +4303,87 @@ Model {
 	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Y: LH"
-	      SID		      "3322"
-	      Position		      [25, 218, 55, 232]
+	      Name		      "In1"
+	      SID		      "3640"
+	      Position		      [30, 78, 60, 92]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Y: LSh"
-	      SID		      "3323"
-	      Position		      [25, 258, 55, 272]
+	      Name		      "In2"
+	      SID		      "3641"
+	      Position		      [30, 193, 60, 207]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain"
-	      SID		      "3486"
-	      Position		      [1150, 207, 1215, 253]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      Inport
+	      Name		      "In3"
+	      SID		      "3642"
+	      Position		      [25, 308, 55, 322]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain1"
-	      SID		      "3591"
-	      Position		      [790, 51, 845, 99]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      Inport
+	      Name		      "In4"
+	      SID		      "3644"
+	      Position		      [25, 393, 55, 407]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Gain
-	      Name		      "Gain2"
-	      SID		      "3593"
-	      Position		      [800, 311, 855, 359]
-	      Gain		      "1000"
-	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
+	      BlockType		      Inport
+	      Name		      "In5"
+	      SID		      "3645"
+	      Position		      [30, 488, 60, 502]
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In6"
+	      SID		      "3646"
+	      Position		      [30, 573, 60, 587]
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Back"
+	      SID		      "3442"
+	      Ports		      [1]
+	      Position		      [545, 575, 635, 605]
+	      BackgroundColor	      "orange"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Down"
+	      SID		      "3439"
+	      Ports		      [1]
+	      Position		      [535, 395, 625, 425]
+	      BackgroundColor	      "blue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Front"
+	      SID		      "3440"
+	      Ports		      [1]
+	      Position		      [545, 465, 635, 495]
+	      BackgroundColor	      "orange"
+	      Decimation	      "1"
+	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      SubSystem
-	      Name		      "If Down or Center"
-	      SID		      "3343"
-	      Ports		      [2, 4, 0, 0, 0, 0, 0, 1]
-	      Position		      [495, 289, 600, 386]
-	      TreatAsAtomicUnit	      on
+	      Name		      "Front or Center or Back"
+	      SID		      "3373"
+	      Ports		      [2, 3]
+	      Position		      [95, 452, 320, 618]
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
 	      RTWSystemCode	      "Auto"
@@ -6391,7 +4392,1998 @@ Model {
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
 	      System {
-		Name			"If Down or Center"
+		Name			"Front or Center or Back"
+		Location		[2, 82, 1902, 1027]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"120"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Z: LH"
+		  SID			  "3374"
+		  Position		  [50, 208, 80, 222]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Z: LSh"
+		  SID			  "3375"
+		  Position		  [50, 248, 80, 262]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  SID			  "3631"
+		  Position		  [1110, 62, 1175, 108]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  SID			  "3633"
+		  Position		  [1110, 317, 1175, 363]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain2"
+		  SID			  "3635"
+		  Position		  [1190, 462, 1255, 508]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Back"
+		  SID			  "3451"
+		  Ports			  [1, 3, 0, 0, 0, 0, 0, 1]
+		  Position		  [580, 486, 705, 594]
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Back"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3452"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3453"
+		    Position		    [170, 15, 229, 43]
+		    ActionType		    "else"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3621"
+		    Position		    [75, 140, 105, 170]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3623"
+		    Position		    [75, 225, 105, 255]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3454"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3622"
+		    Position		    [325, 148, 355, 162]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3624"
+		    Position		    [325, 233, 355, 247]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Center"
+		  SID			  "3447"
+		  Ports			  [1, 3, 0, 0, 0, 0, 0, 1]
+		  Position		  [665, 309, 735, 381]
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Center"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3448"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3449"
+		    Position		    [170, 15, 229, 43]
+		    ActionType		    "elseif"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3617"
+		    Position		    [75, 140, 105, 170]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3619"
+		    Position		    [75, 245, 105, 275]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3450"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3618"
+		    Position		    [325, 148, 355, 162]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3620"
+		    Position		    [325, 253, 355, 267]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  If
+		  Name			  "If Front or Center or Back"
+		  SID			  "3428"
+		  Ports			  [1, 3]
+		  Position		  [320, 189, 505, 281]
+		  IfExpression		  "u1 > 0.45"
+		  ElseIfExpressions	  "u1 >= 0.26"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If front"
+		  SID			  "3443"
+		  Ports			  [1, 3, 0, 0, 0, 0, 0, 1]
+		  Position		  [665, 50, 765, 130]
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If front"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3444"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3445"
+		    Position		    [170, 15, 229, 43]
+		    ActionType		    "then"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3609"
+		    Position		    [75, 155, 105, 185]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3611"
+		    Position		    [75, 250, 105, 280]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3446"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3610"
+		    Position		    [325, 163, 355, 177]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3612"
+		    Position		    [325, 258, 355, 272]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "3625"
+		  Ports			  [2, 1]
+		  Position		  [1005, 65, 1045, 105]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge1"
+		  SID			  "3626"
+		  Ports			  [2, 1]
+		  Position		  [1015, 320, 1055, 360]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge2"
+		  SID			  "3627"
+		  Ports			  [2, 1]
+		  Position		  [1105, 465, 1145, 505]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge3"
+		  SID			  "3628"
+		  Ports			  [2, 1]
+		  Position		  [910, 55, 950, 95]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge4"
+		  SID			  "3629"
+		  Ports			  [2, 1]
+		  Position		  [870, 310, 910, 350]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge5"
+		  SID			  "3630"
+		  Ports			  [2, 1]
+		  Position		  [1020, 475, 1060, 515]
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation"
+		  SID			  "3632"
+		  Ports			  [1, 1]
+		  Position		  [1205, 70, 1235, 100]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation1"
+		  SID			  "3634"
+		  Ports			  [1, 1]
+		  Position		  [1205, 325, 1235, 355]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation2"
+		  SID			  "3636"
+		  Ports			  [1, 1]
+		  Position		  [1285, 470, 1315, 500]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Subtract"
+		  SID			  "3425"
+		  Ports			  [2, 1]
+		  Position		  [165, 195, 200, 275]
+		  Inputs		  "-+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Front"
+		  SID			  "3420"
+		  Position		  [1280, 78, 1310, 92]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Center"
+		  SID			  "3421"
+		  Position		  [1280, 333, 1310, 347]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Down"
+		  SID			  "3424"
+		  Position		  [1365, 478, 1395, 492]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Z: LH"
+		  SrcPort		  1
+		  DstBlock		  "Subtract"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Z: LSh"
+		  SrcPort		  1
+		  DstBlock		  "Subtract"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Subtract"
+		  SrcPort		  1
+		  Points		  [55, 0]
+		  Branch {
+		    Points		    [0, -145]
+		    DstBlock		    "If front"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, 115]
+		    DstBlock		    "If Center"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [10, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "If Front or Center or Back"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 305]
+		    DstBlock		    "If Back"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		}
+		Line {
+		  SrcBlock		  "If Front or Center or Back"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -168]
+		  DstBlock		  "If front"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "If Front or Center or Back"
+		  SrcPort		  2
+		  Points		  [85, 0; 0, 57]
+		  DstBlock		  "If Center"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "If Front or Center or Back"
+		  SrcPort		  3
+		  Points		  [130, 0]
+		  DstBlock		  "If Back"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "Merge3"
+		  SrcPort		  1
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge4"
+		  SrcPort		  1
+		  DstBlock		  "Merge1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If front"
+		  SrcPort		  1
+		  DstBlock		  "Merge3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Center"
+		  SrcPort		  1
+		  DstBlock		  "Merge4"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge5"
+		  SrcPort		  1
+		  DstBlock		  "Merge2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Back"
+		  SrcPort		  1
+		  DstBlock		  "Merge5"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If front"
+		  SrcPort		  2
+		  Points		  [80, 0; 0, 250]
+		  DstBlock		  "Merge4"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If front"
+		  SrcPort		  3
+		  Points		  [140, 0; 0, 370]
+		  DstBlock		  "Merge5"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Center"
+		  SrcPort		  2
+		  Points		  [70, 0; 0, -260]
+		  DstBlock		  "Merge3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Back"
+		  SrcPort		  2
+		  Points		  [240, 0; 0, -445]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Center"
+		  SrcPort		  3
+		  Points		  [275, 0; 0, 100; 75, 0]
+		  DstBlock		  "Merge2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Back"
+		  SrcPort		  3
+		  Points		  [280, 0; 0, -225]
+		  DstBlock		  "Merge1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Saturation"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation"
+		  SrcPort		  1
+		  DstBlock		  "Front"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Saturation1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation1"
+		  SrcPort		  1
+		  DstBlock		  "Center"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain2"
+		  SrcPort		  1
+		  DstBlock		  "Saturation2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation2"
+		  SrcPort		  1
+		  DstBlock		  "Down"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge2"
+		  SrcPort		  1
+		  DstBlock		  "Gain2"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Left"
+	      SID		      "3429"
+	      Ports		      [1]
+	      Position		      [535, 50, 625, 80]
+	      BackgroundColor	      "green"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Left or Center or Right"
+	      SID		      "3261"
+	      Ports		      [2, 3]
+	      Position		      [95, 25, 315, 255]
+	      BackgroundColor	      "cyan"
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Left or Center or Right"
+		Location		[2, 82, 1902, 1027]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "X: LH"
+		  SID			  "3262"
+		  Position		  [75, 373, 105, 387]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "X: LSh"
+		  SID			  "3263"
+		  Position		  [50, 413, 80, 427]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  SID			  "3481"
+		  Position		  [1385, 359, 1455, 431]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  SID			  "3490"
+		  Position		  [850, 46, 905, 94]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain2"
+		  SID			  "3491"
+		  Position		  [850, 721, 905, 769]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Action\nSubsystem"
+		  SID			  "3204"
+		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
+		  Position		  [555, 308, 635, 377]
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Action\nSubsystem"
+		    Location		    [2, 82, 1885, 1027]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "112"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x:LH"
+		    SID			    "3205"
+		    Position		    [45, 218, 75, 232]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x:LSh"
+		    SID			    "3251"
+		    Position		    [45, 253, 75, 267]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3206"
+		    Position		    [280, 30, 339, 58]
+		    InitializeStates	    "reset"
+		    ActionType		    "then"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Buffer"
+		    SID			    "3210"
+		    Position		    [325, 280, 355, 310]
+		    Value		    "0.14"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3572"
+		    Position		    [520, 760, 550, 790]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3576"
+		    Position		    [520, 820, 550, 850]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    SID			    "3535"
+		    Position		    [600, 120, 630, 150]
+		    Value		    "5"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Else Center"
+		    SID			    "3225"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [635, 677, 705, 713]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Else Center"
+		    Location		    [1093, 501, 1591, 801]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3226"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3227"
+		    Position		    [170, 15, 229, 43]
+		    InitializeStates	    "reset"
+		    ActionType		    "else"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "3229"
+		    Position		    [185, 70, 215, 100]
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3510"
+		    Position		    [75, 210, 105, 240]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3228"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3513"
+		    Position		    [325, 218, 355, 232]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If"
+		    SID			    "3211"
+		    Ports		    [1, 2]
+		    Position		    [480, 236, 580, 274]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "If Left"
+		    SID			    "3212"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [720, 210, 805, 265]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "If Left"
+		    Location		    [287, 485, 785, 785]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3213"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3214"
+		    Position		    [170, 15, 229, 43]
+		    InitializeStates	    "reset"
+		    ActionType		    "then"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3566"
+		    Position		    [75, 205, 105, 235]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3215"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3567"
+		    Position		    [325, 213, 355, 227]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge1"
+		    SID			    "3537"
+		    Ports		    [2, 1]
+		    Position		    [1230, 655, 1270, 695]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge2"
+		    SID			    "3541"
+		    Ports		    [2, 1]
+		    Position		    [1335, 205, 1375, 245]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract1"
+		    SID			    "3252"
+		    Ports		    [2, 1]
+		    Position		    [175, 227, 205, 258]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract2"
+		    SID			    "3209"
+		    Ports		    [2, 1]
+		    Position		    [385, 237, 415, 268]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Left"
+		    SID			    "3207"
+		    Position		    [1590, 218, 1620, 232]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Center"
+		    SID			    "3231"
+		    Position		    [1590, 723, 1620, 737]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3573"
+		    Position		    [770, 768, 800, 782]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3577"
+		    Position		    [770, 828, 800, 842]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Buffer"
+		    SrcPort		    1
+		    Points		    [5, 0; 0, -35]
+		    DstBlock		    "Subtract2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract2"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, 440]
+		    DstBlock		    "Else Center"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [15, 0]
+		    Branch {
+		    DstBlock		    "If"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -15]
+		    DstBlock		    "If Left"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "x:LH"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, 10]
+		    DstBlock		    "Subtract1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "x:LSh"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -10]
+		    DstBlock		    "Subtract1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract1"
+		    SrcPort		    1
+		    DstBlock		    "Subtract2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge2"
+		    SrcPort		    1
+		    DstBlock		    "Left"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge1"
+		    SrcPort		    1
+		    Points		    [225, 0; 0, 55]
+		    DstBlock		    "Center"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    1
+		    DstBlock		    "Merge1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "If Left"
+		    SrcPort		    1
+		    Points		    [0, -10]
+		    DstBlock		    "Merge2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    1
+		    Points		    [125, 0; 0, -52]
+		    DstBlock		    "If Left"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    2
+		    Points		    [85, 0]
+		    DstBlock		    "Else Center"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "If Left"
+		    SrcPort		    2
+		    Points		    [200, 0; 0, 415]
+		    DstBlock		    "Merge1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    2
+		    Points		    [500, 0; 0, -470]
+		    DstBlock		    "Merge2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "If Action\nSubsystem1"
+		  SID			  "3233"
+		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
+		  Position		  [520, 447, 630, 548]
+		  TreatAsAtomicUnit	  on
+		  MinAlgLoopOccurrences	  off
+		  PropExecContextOutsideSubsystem off
+		  RTWSystemCode		  "Auto"
+		  FunctionWithSeparateData off
+		  Opaque		  off
+		  RequestExecContextInheritance	off
+		  MaskHideContents	  off
+		  System {
+		    Name		    "If Action\nSubsystem1"
+		    Location		    [2, 82, 1902, 1027]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x: LH"
+		    SID			    "3234"
+		    Position		    [30, 313, 60, 327]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "x: LSh"
+		    SID			    "3250"
+		    Position		    [30, 223, 60, 237]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3235"
+		    Position		    [150, 20, 209, 48]
+		    InitializeStates	    "reset"
+		    ActionType		    "else"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Buffer"
+		    SID			    "3236"
+		    Position		    [180, 440, 210, 470]
+		    Value		    "0.14"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3570"
+		    Position		    [530, 560, 560, 590]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3574"
+		    Position		    [530, 650, 560, 680]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Else Hover"
+		    SID			    "3237"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [545, 337, 615, 373]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "Else Hover"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3238"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3239"
+		    Position		    [170, 15, 229, 43]
+		    InitializeStates	    "reset"
+		    ActionType		    "else"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "3240"
+		    Position		    [185, 70, 215, 100]
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3544"
+		    Position		    [75, 160, 105, 190]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3241"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3545"
+		    Position		    [325, 168, 355, 182]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If"
+		    SID			    "3242"
+		    Ports		    [1, 2]
+		    Position		    [370, 261, 470, 299]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "If Right"
+		    SID			    "3243"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [570, 232, 640, 268]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
+		    Name		    "If Right"
+		    Location		    [342, 471, 840, 771]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "3244"
+		    Position		    [75, 78, 105, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3245"
+		    Position		    [170, 15, 229, 43]
+		    InitializeStates	    "reset"
+		    ActionType		    "then"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3542"
+		    Position		    [75, 150, 105, 180]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "3246"
+		    Position		    [325, 78, 355, 92]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3543"
+		    Position		    [325, 158, 355, 172]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    "3546"
+		    Ports		    [2, 1]
+		    Position		    [775, 230, 815, 270]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge1"
+		    SID			    "3547"
+		    Ports		    [2, 1]
+		    Position		    [805, 335, 845, 375]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract1"
+		    SID			    "3254"
+		    Ports		    [2, 1]
+		    Position		    [150, 252, 180, 283]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract2"
+		    SID			    "3247"
+		    Ports		    [2, 1]
+		    Position		    [275, 262, 305, 293]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Center"
+		    SID			    "3249"
+		    Position		    [930, 348, 960, 362]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Right"
+		    SID			    "3248"
+		    Position		    [900, 243, 930, 257]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3571"
+		    Position		    [780, 568, 810, 582]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3575"
+		    Position		    [780, 658, 810, 672]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Buffer"
+		    SrcPort		    1
+		    Points		    [0, -170]
+		    DstBlock		    "Subtract2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract2"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [10, 0]
+		    Branch {
+		    DstBlock		    "If"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -30]
+		    DstBlock		    "If Right"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Else Hover"
+		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -53]
+		    DstBlock		    "If Right"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    Labels		    [1, 0]
+		    SrcBlock		    "If"
+		    SrcPort		    2
+		    Points		    [40, 0; 0, 30; 65, 0]
+		    DstBlock		    "Else Hover"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "x: LSh"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, 30]
+		    DstBlock		    "Subtract1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "x: LH"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, -45]
+		    DstBlock		    "Subtract1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract1"
+		    SrcPort		    1
+		    DstBlock		    "Subtract2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If Right"
+		    SrcPort		    1
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge1"
+		    SrcPort		    1
+		    DstBlock		    "Center"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Hover"
+		    SrcPort		    1
+		    DstBlock		    "Merge1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Hover"
+		    SrcPort		    2
+		    Points		    [80, 0; 0, -110; 60, 0]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    Labels		    [2, 0]
+		    SrcBlock		    "If Right"
+		    SrcPort		    2
+		    Points		    [75, 0; 0, 105]
+		    DstBlock		    "Merge1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Right"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  If
+		  Name			  "If Left or Right"
+		  SID			  "3198"
+		  Ports			  [2, 2]
+		  Position		  [240, 359, 350, 441]
+		  NumInputs		  "2"
+		  IfExpression		  "u1 >= u2"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "3550"
+		  Ports			  [2, 1]
+		  Position		  [775, 50, 815, 90]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge1"
+		  SID			  "3555"
+		  Ports			  [2, 1]
+		  Position		  [995, 325, 1035, 365]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge2"
+		  SID			  "3556"
+		  Ports			  [2, 1]
+		  Position		  [995, 430, 1035, 470]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge3"
+		  SID			  "3557"
+		  Ports			  [2, 1]
+		  Position		  [775, 725, 815, 765]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation"
+		  SID			  "3480"
+		  Ports			  [1, 1]
+		  Position		  [1535, 380, 1565, 410]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation1"
+		  SID			  "3489"
+		  Ports			  [1, 1]
+		  Position		  [960, 55, 990, 85]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation2"
+		  SID			  "3492"
+		  Ports			  [1, 1]
+		  Position		  [960, 730, 990, 760]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum of\nElements"
+		  SID			  "3483"
+		  Ports			  [2, 1]
+		  Position		  [1300, 387, 1330, 423]
+		  Inputs		  "+|+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Left"
+		  SID			  "3264"
+		  Position		  [1055, 63, 1085, 77]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "X Center"
+		  SID			  "3484"
+		  Position		  [1610, 388, 1640, 402]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Right"
+		  SID			  "3268"
+		  Position		  [1055, 738, 1085, 752]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "X: LH"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    Points		    [0, -50]
+		    DstBlock		    "If Action\nSubsystem"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "If Left or Right"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 95]
+		    DstBlock		    "If Action\nSubsystem1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "X: LSh"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    Points		    [60, 0]
+		    Branch {
+		    Points		    [0, -55]
+		    DstBlock		    "If Action\nSubsystem"
+		    DstPort		    2
+		    }
+		    Branch {
+		    DstBlock		    "If Left or Right"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 105]
+		    DstBlock		    "If Action\nSubsystem1"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  SrcBlock		  "Sum of\nElements"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Saturation"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation"
+		  SrcPort		  1
+		  DstBlock		  "X Center"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Saturation1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain2"
+		  SrcPort		  1
+		  DstBlock		  "Saturation2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation2"
+		  SrcPort		  1
+		  DstBlock		  "Right"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Left or Right"
+		  SrcPort		  2
+		  Points		  [220, 0]
+		  DstBlock		  "If Action\nSubsystem1"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "If Left or Right"
+		  SrcPort		  1
+		  Points		  [180, 0; 0, -93]
+		  DstBlock		  "If Action\nSubsystem"
+		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "Merge1"
+		  SrcPort		  1
+		  Points		  [120, 0; 0, 40]
+		  DstBlock		  "Sum of\nElements"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge2"
+		  SrcPort		  1
+		  Points		  [120, 0; 0, -35]
+		  DstBlock		  "Sum of\nElements"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcPort		  1
+		  DstBlock		  "Merge2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Merge3"
+		  SrcPort		  1
+		  DstBlock		  "Gain2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcPort		  2
+		  Points		  [15, 0; 0, 270]
+		  DstBlock		  "Merge3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem"
+		  SrcPort		  2
+		  DstBlock		  "Merge1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -260]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem"
+		  SrcPort		  3
+		  Points		  [120, 0]
+		  DstBlock		  "Merge3"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcPort		  3
+		  Points		  [70, 0; 0, -430]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem"
+		  SrcPort		  4
+		  Points		  [340, 0]
+		  DstBlock		  "Merge2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcPort		  4
+		  Points		  [340, 0; 0, -180]
+		  DstBlock		  "Merge1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation1"
+		  SrcPort		  1
+		  DstBlock		  "Left"
+		  DstPort		  1
+		}
+		Annotation {
+		  Position		  [604, 325]
+		}
+		Annotation {
+		  Position		  [597, 332]
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Right"
+	      SID		      "3433"
+	      Ports		      [1]
+	      Position		      [535, 200, 625, 230]
+	      BackgroundColor	      "green"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Saturate
+	      Name		      "Saturation1"
+	      SID		      "3638"
+	      Ports		      [1, 1]
+	      Position		      [900, 340, 930, 370]
+	      InputPortMap	      "u0"
+	      UpperLimit	      "1"
+	      LowerLimit	      "0"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "3637"
+	      Ports		      [3, 1]
+	      Position		      [840, 345, 860, 365]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "+++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "Top"
+	      SID		      "3434"
+	      Ports		      [1]
+	      Position		      [535, 285, 625, 315]
+	      BackgroundColor	      "blue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Up or Center or Down"
+	      SID		      "3321"
+	      Ports		      [2, 3]
+	      Position		      [90, 271, 315, 439]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Up or Center or Down"
 		Location		[2, 82, 1902, 1027]
 		Open			off
 		ModelBrowserVisibility	off
@@ -6408,52 +6400,54 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "Y: LH"
-		  SID			  "3344"
-		  Position		  [30, 313, 60, 327]
+		  SID			  "3322"
+		  Position		  [25, 218, 55, 232]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
 		  Name			  "Y: LSh"
-		  SID			  "3345"
-		  Position		  [30, 223, 60, 237]
+		  SID			  "3323"
+		  Position		  [25, 258, 55, 272]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3346"
-		  Position		  [155, 20, 214, 48]
-		  ActionType		  "else"
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  SID			  "3486"
+		  Position		  [1150, 207, 1215, 253]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
 		}
 		Block {
-		  BlockType		  Constant
-		  Name			  "Buffer"
-		  SID			  "3347"
-		  Position		  [170, 315, 200, 345]
-		  Value			  "0.14"
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  SID			  "3591"
+		  Position		  [790, 51, 845, 99]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
 		}
 		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3601"
-		  Position		  [395, 530, 425, 560]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3603"
-		  Position		  [395, 615, 425, 645]
-		  Value			  "0"
+		  BlockType		  Gain
+		  Name			  "Gain2"
+		  SID			  "3593"
+		  Position		  [800, 311, 855, 359]
+		  Gain			  "1000"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
 		}
 		Block {
 		  BlockType		  SubSystem
-		  Name			  "Else Center"
-		  SID			  "3348"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [570, 337, 640, 373]
+		  Name			  "If Down or Center"
+		  SID			  "3343"
+		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
+		  Position		  [495, 289, 600, 386]
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
 		  PropExecContextOutsideSubsystem off
@@ -6463,6 +6457,78 @@ Model {
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
 		  System {
+		    Name		    "If Down or Center"
+		    Location		    [2, 82, 1902, 1027]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Y: LH"
+		    SID			    "3344"
+		    Position		    [30, 313, 60, 327]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Y: LSh"
+		    SID			    "3345"
+		    Position		    [30, 223, 60, 237]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3346"
+		    Position		    [155, 20, 214, 48]
+		    ActionType		    "else"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Buffer"
+		    SID			    "3347"
+		    Position		    [170, 315, 200, 345]
+		    Value		    "0.14"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3601"
+		    Position		    [395, 530, 425, 560]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3603"
+		    Position		    [395, 615, 425, 645]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Else Center"
+		    SID			    "3348"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [570, 337, 640, 373]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
 		    Name		    "Else Center"
 		    Location		    [342, 471, 840, 771]
 		    Open		    off
@@ -6538,30 +6604,30 @@ Model {
 		    DstBlock		    "0"
 		    DstPort		    1
 		    }
-		  }
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If"
-		  SID			  "3353"
-		  Ports			  [1, 2]
-		  Position		  [370, 261, 470, 299]
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "If Down"
-		  SID			  "3354"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [570, 232, 640, 268]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
+		    }
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If"
+		    SID			    "3353"
+		    Ports		    [1, 2]
+		    Position		    [370, 261, 470, 299]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "If Down"
+		    SID			    "3354"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [570, 232, 640, 268]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
 		    Name		    "If Down"
 		    Location		    [954, 703, 1452, 1003]
 		    Open		    off
@@ -6624,89 +6690,89 @@ Model {
 		    DstBlock		    "0"
 		    DstPort		    1
 		    }
-		  }
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge"
-		  SID			  "3585"
-		  Ports			  [2, 1]
-		  Position		  [725, 230, 765, 270]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge1"
-		  SID			  "3586"
-		  Ports			  [2, 1]
-		  Position		  [725, 335, 765, 375]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract1"
-		  SID			  "3358"
-		  Ports			  [2, 1]
-		  Position		  [150, 252, 180, 283]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract2"
-		  SID			  "3359"
-		  Ports			  [2, 1]
-		  Position		  [275, 262, 305, 293]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Center"
-		  SID			  "3361"
-		  Position		  [790, 348, 820, 362]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Down"
-		  SID			  "3360"
-		  Position		  [790, 243, 820, 257]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3602"
-		  Position		  [645, 538, 675, 552]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3604"
-		  Position		  [645, 623, 675, 637]
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "Buffer"
-		  SrcPort		  1
-		  Points		  [0, -45]
-		  DstBlock		  "Subtract2"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract2"
-		  SrcPort		  1
-		  Points		  [20, 0]
-		  Branch {
+		    }
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    "3585"
+		    Ports		    [2, 1]
+		    Position		    [725, 230, 765, 270]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge1"
+		    SID			    "3586"
+		    Ports		    [2, 1]
+		    Position		    [725, 335, 765, 375]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract1"
+		    SID			    "3358"
+		    Ports		    [2, 1]
+		    Position		    [150, 252, 180, 283]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract2"
+		    SID			    "3359"
+		    Ports		    [2, 1]
+		    Position		    [275, 262, 305, 293]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Center"
+		    SID			    "3361"
+		    Position		    [790, 348, 820, 362]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Down"
+		    SID			    "3360"
+		    Position		    [790, 243, 820, 257]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3602"
+		    Position		    [645, 538, 675, 552]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3604"
+		    Position		    [645, 623, 675, 637]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Buffer"
+		    SrcPort		    1
+		    Points		    [0, -45]
+		    DstBlock		    "Subtract2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract2"
+		    SrcPort		    1
+		    Points		    [20, 0]
+		    Branch {
 		    Points		    [10, 0]
 		    Branch {
 		    DstBlock		    "If"
@@ -6717,187 +6783,115 @@ Model {
 		    DstBlock		    "If Down"
 		    DstPort		    1
 		    }
-		  }
-		  Branch {
+		    }
+		    Branch {
 		    Points		    [0, 75]
 		    DstBlock		    "Else Center"
 		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    1
+		    Points		    [40, 0; 0, -53]
+		    DstBlock		    "If Down"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    Labels		    [1, 0]
+		    SrcBlock		    "If"
+		    SrcPort		    2
+		    Points		    [130, 0]
+		    DstBlock		    "Else Center"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Y: LSh"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, 30]
+		    DstBlock		    "Subtract1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Y: LH"
+		    SrcPort		    1
+		    Points		    [45, 0; 0, -45]
+		    DstBlock		    "Subtract1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract1"
+		    SrcPort		    1
+		    DstBlock		    "Subtract2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If Down"
+		    SrcPort		    1
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Down"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    1
+		    Points		    [30, 0; 0, -85]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Merge1"
+		    SrcPort		    1
+		    DstBlock		    "Center"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    2
+		    DstBlock		    "Merge1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "If Down"
+		    SrcPort		    2
+		    Points		    [0, 25; 60, 0; 0, 60]
+		    DstBlock		    "Merge1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
 		  }
 		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  1
-		  Points		  [40, 0; 0, -53]
-		  DstBlock		  "If Down"
-		  DstPort		  ifaction
-		}
-		Line {
-		  Labels		  [1, 0]
-		  SrcBlock		  "If"
-		  SrcPort		  2
-		  Points		  [130, 0]
-		  DstBlock		  "Else Center"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "Y: LSh"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, 30]
-		  DstBlock		  "Subtract1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Y: LH"
-		  SrcPort		  1
-		  Points		  [45, 0; 0, -45]
-		  DstBlock		  "Subtract1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract1"
-		  SrcPort		  1
-		  DstBlock		  "Subtract2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "If Down"
-		  SrcPort		  1
-		  DstBlock		  "Merge"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Merge"
-		  SrcPort		  1
-		  DstBlock		  "Down"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Center"
-		  SrcPort		  1
-		  Points		  [30, 0; 0, -85]
-		  DstBlock		  "Merge"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Merge1"
-		  SrcPort		  1
-		  DstBlock		  "Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Else Center"
-		  SrcPort		  2
-		  DstBlock		  "Merge1"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "If Down"
-		  SrcPort		  2
-		  Points		  [0, 25; 60, 0; 0, 60]
-		  DstBlock		  "Merge1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "00"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      If
-	      Name		      "If Left or Right"
-	      SID		      "3362"
-	      Ports		      [2, 2]
-	      Position		      [170, 206, 360, 284]
-	      NumInputs		      "2"
-	      IfExpression	      "u1 >= u2"
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "If Up or Center"
-	      SID		      "3324"
-	      Ports		      [2, 4, 0, 0, 0, 0, 0, 1]
-	      Position		      [485, 98, 605, 172]
-	      TreatAsAtomicUnit	      on
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"If Up or Center"
-		Location		[2, 82, 1902, 1027]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"usletter"
-		PaperUnits		"inches"
-		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
 		Block {
-		  BlockType		  Inport
-		  Name			  "Y: LH"
-		  SID			  "3325"
-		  Position		  [45, 218, 75, 232]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Inport
-		  Name			  "Y: LSh"
-		  SID			  "3326"
-		  Position		  [45, 253, 75, 267]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  ActionPort
-		  Name			  "Action Port"
-		  SID			  "3327"
-		  Position		  [280, 30, 339, 58]
-		  ActionType		  "then"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Buffer"
-		  SID			  "3328"
-		  Position		  [285, 270, 315, 300]
-		  Value			  "0.14"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3597"
-		  Position		  [445, 515, 475, 545]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3599"
-		  Position		  [445, 640, 475, 670]
-		  Value			  "0"
+		  BlockType		  If
+		  Name			  "If Left or Right"
+		  SID			  "3362"
+		  Ports			  [2, 2]
+		  Position		  [170, 206, 360, 284]
+		  NumInputs		  "2"
+		  IfExpression		  "u1 >= u2"
 		}
 		Block {
 		  BlockType		  SubSystem
-		  Name			  "Else Center"
-		  SID			  "3329"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [725, 332, 795, 368]
+		  Name			  "If Up or Center"
+		  SID			  "3324"
+		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
+		  Position		  [485, 98, 605, 172]
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
 		  PropExecContextOutsideSubsystem off
@@ -6907,6 +6901,78 @@ Model {
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
 		  System {
+		    Name		    "If Up or Center"
+		    Location		    [2, 82, 1902, 1027]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Y: LH"
+		    SID			    "3325"
+		    Position		    [45, 218, 75, 232]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "Y: LSh"
+		    SID			    "3326"
+		    Position		    [45, 253, 75, 267]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    ActionPort
+		    Name		    "Action Port"
+		    SID			    "3327"
+		    Position		    [280, 30, 339, 58]
+		    ActionType		    "then"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Buffer"
+		    SID			    "3328"
+		    Position		    [285, 270, 315, 300]
+		    Value		    "0.14"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "3597"
+		    Position		    [445, 515, 475, 545]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "3599"
+		    Position		    [445, 640, 475, 670]
+		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "Else Center"
+		    SID			    "3329"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [725, 332, 795, 368]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
 		    Name		    "Else Center"
 		    Location		    [638, 303, 1136, 603]
 		    Open		    on
@@ -6982,30 +7048,30 @@ Model {
 		    DstBlock		    "0"
 		    DstPort		    1
 		    }
-		  }
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If"
-		  SID			  "3334"
-		  Ports			  [1, 2]
-		  Position		  [480, 246, 580, 284]
-		}
-		Block {
-		  BlockType		  SubSystem
-		  Name			  "If Top"
-		  SID			  "3335"
-		  Ports			  [1, 2, 0, 0, 0, 0, 0, 1]
-		  Position		  [720, 217, 790, 253]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
+		    }
+		    }
+		    Block {
+		    BlockType		    If
+		    Name		    "If"
+		    SID			    "3334"
+		    Ports		    [1, 2]
+		    Position		    [480, 246, 580, 284]
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "If Top"
+		    SID			    "3335"
+		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
+		    Position		    [720, 217, 790, 253]
+		    TreatAsAtomicUnit	    on
+		    MinAlgLoopOccurrences   off
+		    PropExecContextOutsideSubsystem off
+		    RTWSystemCode	    "Auto"
+		    FunctionWithSeparateData off
+		    Opaque		    off
+		    RequestExecContextInheritance off
+		    MaskHideContents	    off
+		    System {
 		    Name		    "If Top"
 		    Location		    [342, 471, 840, 771]
 		    Open		    off
@@ -7068,88 +7134,88 @@ Model {
 		    DstBlock		    "0"
 		    DstPort		    1
 		    }
-		  }
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge"
-		  SID			  "3582"
-		  Ports			  [2, 1]
-		  Position		  [885, 215, 925, 255]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge1"
-		  SID			  "3583"
-		  Ports			  [2, 1]
-		  Position		  [885, 330, 925, 370]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract1"
-		  SID			  "3339"
-		  Ports			  [2, 1]
-		  Position		  [175, 209, 250, 276]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Sum
-		  Name			  "Subtract2"
-		  SID			  "3340"
-		  Ports			  [2, 1]
-		  Position		  [345, 225, 405, 305]
-		  Inputs		  "+-"
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Top"
-		  SID			  "3341"
-		  Position		  [1005, 228, 1035, 242]
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "Center"
-		  SID			  "3342"
-		  Position		  [1005, 343, 1035, 357]
-		  Port			  "2"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "0"
-		  SID			  "3598"
-		  Position		  [695, 523, 725, 537]
-		  Port			  "3"
-		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "00"
-		  SID			  "3600"
-		  Position		  [695, 648, 725, 662]
-		  Port			  "4"
-		  IconDisplay		  "Port number"
-		}
-		Line {
-		  SrcBlock		  "Buffer"
-		  SrcPort		  1
-		  DstBlock		  "Subtract2"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Subtract2"
-		  SrcPort		  1
-		  Points		  [30, 0]
-		  Branch {
+		    }
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge"
+		    SID			    "3582"
+		    Ports		    [2, 1]
+		    Position		    [885, 215, 925, 255]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Merge
+		    Name		    "Merge1"
+		    SID			    "3583"
+		    Ports		    [2, 1]
+		    Position		    [885, 330, 925, 370]
+		    InitialOutput	    "[0]"
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract1"
+		    SID			    "3339"
+		    Ports		    [2, 1]
+		    Position		    [175, 209, 250, 276]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Subtract2"
+		    SID			    "3340"
+		    Ports		    [2, 1]
+		    Position		    [345, 225, 405, 305]
+		    Inputs		    "+-"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Top"
+		    SID			    "3341"
+		    Position		    [1005, 228, 1035, 242]
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Center"
+		    SID			    "3342"
+		    Position		    [1005, 343, 1035, 357]
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "0"
+		    SID			    "3598"
+		    Position		    [695, 523, 725, 537]
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "00"
+		    SID			    "3600"
+		    Position		    [695, 648, 725, 662]
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    SrcBlock		    "Buffer"
+		    SrcPort		    1
+		    DstBlock		    "Subtract2"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract2"
+		    SrcPort		    1
+		    Points		    [30, 0]
+		    Branch {
 		    Points		    [10, 0]
 		    Branch {
 		    DstBlock		    "If"
@@ -7160,374 +7226,569 @@ Model {
 		    DstBlock		    "If Top"
 		    DstPort		    1
 		    }
-		  }
-		  Branch {
+		    }
+		    Branch {
 		    Points		    [0, 85]
 		    DstBlock		    "Else Center"
 		    DstPort		    1
+		    }
+		    }
+		    Line {
+		    SrcBlock		    "If"
+		    SrcPort		    1
+		    Points		    [25, 0; 0, -53]
+		    DstBlock		    "If Top"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    Labels		    [1, 0]
+		    SrcBlock		    "If"
+		    SrcPort		    2
+		    Points		    [25, 0; 0, 27; 150, 0]
+		    DstBlock		    "Else Center"
+		    DstPort		    ifaction
+		    }
+		    Line {
+		    SrcBlock		    "Y: LH"
+		    SrcPort		    1
+		    DstBlock		    "Subtract1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Y: LSh"
+		    SrcPort		    1
+		    DstBlock		    "Subtract1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Subtract1"
+		    SrcPort		    1
+		    DstBlock		    "Subtract2"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If Top"
+		    SrcPort		    1
+		    DstBlock		    "Merge"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    1
+		    Points		    [35, 0; 0, -95]
+		    DstBlock		    "Merge"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Merge"
+		    SrcPort		    1
+		    DstBlock		    "Top"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Merge1"
+		    SrcPort		    1
+		    DstBlock		    "Center"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "If Top"
+		    SrcPort		    2
+		    Points		    [0, 25; 70, 0; 0, 70]
+		    DstBlock		    "Merge1"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Else Center"
+		    SrcPort		    2
+		    DstBlock		    "Merge1"
+		    DstPort		    2
+		    }
+		    Line {
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    DstBlock		    "0"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    DstBlock		    "00"
+		    DstPort		    1
+		    }
 		  }
 		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "3605"
+		  Ports			  [2, 1]
+		  Position		  [710, 55, 750, 95]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge1"
+		  SID			  "3606"
+		  Ports			  [2, 1]
+		  Position		  [725, 315, 765, 355]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge2"
+		  SID			  "3607"
+		  Ports			  [2, 1]
+		  Position		  [905, 155, 945, 195]
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge3"
+		  SID			  "3608"
+		  Ports			  [2, 1]
+		  Position		  [905, 235, 945, 275]
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation"
+		  SID			  "3487"
+		  Ports			  [1, 1]
+		  Position		  [1245, 215, 1275, 245]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation1"
+		  SID			  "3592"
+		  Ports			  [1, 1]
+		  Position		  [900, 60, 930, 90]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Saturate
+		  Name			  "Saturation2"
+		  SID			  "3594"
+		  Ports			  [1, 1]
+		  Position		  [910, 320, 940, 350]
+		  InputPortMap		  "u0"
+		  UpperLimit		  "1"
+		  LowerLimit		  "0"
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum of\nElements"
+		  SID			  "3485"
+		  Ports			  [2, 1]
+		  Position		  [1080, 221, 1110, 254]
+		  Inputs		  "+|+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Top"
+		  SID			  "3368"
+		  Position		  [1040, 68, 1070, 82]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Y Center"
+		  SID			  "3488"
+		  Position		  [1325, 223, 1355, 237]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Down"
+		  SID			  "3372"
+		  Position		  [1005, 328, 1035, 342]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
 		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  1
-		  Points		  [25, 0; 0, -53]
-		  DstBlock		  "If Top"
+		  SrcBlock		  "If Left or Right"
+		  SrcPort		  2
+		  Points		  [180, 0]
+		  DstBlock		  "If Down or Center"
 		  DstPort		  ifaction
 		}
 		Line {
-		  Labels		  [1, 0]
-		  SrcBlock		  "If"
-		  SrcPort		  2
-		  Points		  [25, 0; 0, 27; 150, 0]
-		  DstBlock		  "Else Center"
+		  SrcBlock		  "If Left or Right"
+		  SrcPort		  1
+		  Points		  [0, -150; 180, 0]
+		  DstBlock		  "If Up or Center"
 		  DstPort		  ifaction
 		}
 		Line {
 		  SrcBlock		  "Y: LH"
 		  SrcPort		  1
-		  DstBlock		  "Subtract1"
-		  DstPort		  1
+		  Points		  [40, 0]
+		  Branch {
+		    Points		    [20, 0]
+		    Branch {
+		    DstBlock		    "If Left or Right"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, -105]
+		    DstBlock		    "If Up or Center"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "If Down or Center"
+		    DstPort		    1
+		  }
 		}
 		Line {
 		  SrcBlock		  "Y: LSh"
 		  SrcPort		  1
-		  DstBlock		  "Subtract1"
-		  DstPort		  2
+		  Points		  [35, 0]
+		  Branch {
+		    Labels		    [1, 0]
+		    Points		    [40, 0]
+		    Branch {
+		    Labels		    [1, 0]
+		    DstBlock		    "If Left or Right"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, -110]
+		    DstBlock		    "If Up or Center"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    Points		    [0, 100]
+		    DstBlock		    "If Down or Center"
+		    DstPort		    2
+		  }
 		}
 		Line {
-		  SrcBlock		  "Subtract1"
+		  SrcBlock		  "Sum of\nElements"
 		  SrcPort		  1
-		  DstBlock		  "Subtract2"
+		  DstBlock		  "Gain"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Top"
+		  SrcBlock		  "Gain"
 		  SrcPort		  1
-		  DstBlock		  "Merge"
+		  DstBlock		  "Saturation"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Else Center"
+		  SrcBlock		  "Saturation"
 		  SrcPort		  1
-		  Points		  [35, 0; 0, -95]
-		  DstBlock		  "Merge"
-		  DstPort		  2
+		  DstBlock		  "Y Center"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Saturation1"
+		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation1"
 		  SrcPort		  1
 		  DstBlock		  "Top"
 		  DstPort		  1
 		}
 		Line {
+		  SrcBlock		  "Gain2"
+		  SrcPort		  1
+		  DstBlock		  "Saturation2"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Saturation2"
+		  SrcPort		  1
+		  DstBlock		  "Down"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Up or Center"
+		  SrcPort		  1
+		  Points		  [40, 0; 0, -40]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
 		  SrcBlock		  "Merge1"
 		  SrcPort		  1
-		  DstBlock		  "Center"
+		  DstBlock		  "Gain2"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Top"
+		  SrcBlock		  "If Down or Center"
 		  SrcPort		  2
-		  Points		  [0, 25; 70, 0; 0, 70]
 		  DstBlock		  "Merge1"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Else Center"
-		  SrcPort		  2
+		  SrcBlock		  "If Down or Center"
+		  SrcPort		  3
+		  Points		  [90, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Up or Center"
+		  SrcPort		  3
+		  Points		  [95, 0; 0, 200]
 		  DstBlock		  "Merge1"
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "0"
+		  SrcBlock		  "If Up or Center"
+		  SrcPort		  2
+		  Points		  [280, 0]
+		  DstBlock		  "Merge2"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Constant1"
+		  SrcBlock		  "If Down or Center"
 		  SrcPort		  1
-		  DstBlock		  "00"
+		  Points		  [285, 0]
+		  DstBlock		  "Merge3"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "If Up or Center"
+		  SrcPort		  4
+		  Points		  [275, 0; 0, 80]
+		  DstBlock		  "Merge3"
 		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "If Down or Center"
+		  SrcPort		  4
+		  Points		  [45, 0; 0, -190]
+		  DstBlock		  "Merge2"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Merge2"
+		  SrcPort		  1
+		  Points		  [55, 0; 0, 45]
+		  DstBlock		  "Sum of\nElements"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge3"
+		  SrcPort		  1
+		  Points		  [55, 0; 0, -10]
+		  DstBlock		  "Sum of\nElements"
+		  DstPort		  2
 		}
 	      }
 	    }
 	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge"
-	      SID		      "3605"
-	      Ports		      [2, 1]
-	      Position		      [710, 55, 750, 95]
+	      BlockType		      Display
+	      Name		      "XCenter"
+	      SID		      "3432"
+	      Ports		      [1]
+	      Position		      [865, 70, 955, 100]
+	      BackgroundColor	      "green"
+	      Decimation	      "1"
+	      Lockdown		      off
 	    }
 	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge1"
-	      SID		      "3606"
-	      Ports		      [2, 1]
-	      Position		      [725, 315, 765, 355]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge2"
-	      SID		      "3607"
-	      Ports		      [2, 1]
-	      Position		      [905, 155, 945, 195]
-	    }
-	    Block {
-	      BlockType		      Merge
-	      Name		      "Merge3"
-	      SID		      "3608"
-	      Ports		      [2, 1]
-	      Position		      [905, 235, 945, 275]
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation"
-	      SID		      "3487"
-	      Ports		      [1, 1]
-	      Position		      [1245, 215, 1275, 245]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation1"
-	      SID		      "3592"
-	      Ports		      [1, 1]
-	      Position		      [900, 60, 930, 90]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation2"
-	      SID		      "3594"
-	      Ports		      [1, 1]
-	      Position		      [910, 320, 940, 350]
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1"
-	      LowerLimit	      "0"
-	    }
-	    Block {
-	      BlockType		      Sum
-	      Name		      "Sum of\nElements"
-	      SID		      "3485"
-	      Ports		      [2, 1]
-	      Position		      [1080, 219, 1110, 251]
-	      Inputs		      "+|+"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Top"
-	      SID		      "3368"
-	      Position		      [1040, 68, 1070, 82]
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
+	      BlockType		      Display
 	      Name		      "Y Center"
-	      SID		      "3488"
-	      Position		      [1325, 223, 1355, 237]
-	      Port		      "2"
-	      IconDisplay	      "Port number"
+	      SID		      "3438"
+	      Ports		      [1]
+	      Position		      [730, 290, 820, 320]
+	      BackgroundColor	      "blue"
+	      Decimation	      "1"
+	      Lockdown		      off
+	    }
+	    Block {
+	      BlockType		      Display
+	      Name		      "ZCenter"
+	      SID		      "3441"
+	      Ports		      [1]
+	      Position		      [865, 545, 955, 575]
+	      BackgroundColor	      "orange"
+	      Decimation	      "1"
+	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Down"
-	      SID		      "3372"
-	      Position		      [1005, 328, 1035, 342]
-	      Port		      "3"
+	      Name		      "Out1"
+	      SID		      "3643"
+	      Position		      [955, 348, 985, 362]
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "If Left or Right"
-	      SrcPort		      2
-	      Points		      [180, 0]
-	      DstBlock		      "If Down or Center"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "If Left or Right"
-	      SrcPort		      1
-	      Points		      [0, -150; 180, 0]
-	      DstBlock		      "If Up or Center"
-	      DstPort		      ifaction
-	    }
-	    Line {
-	      SrcBlock		      "Y: LH"
-	      SrcPort		      1
-	      Points		      [40, 0]
-	      Branch {
-		Points			[20, 0]
-		Branch {
-		  DstBlock		  "If Left or Right"
-		  DstPort		  1
-		}
-		Branch {
-		  Points		  [0, -105]
-		  DstBlock		  "If Up or Center"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[0, 90]
-		DstBlock		"If Down or Center"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Y: LSh"
-	      SrcPort		      1
-	      Points		      [35, 0]
-	      Branch {
-		Labels			[1, 0]
-		Points			[40, 0]
-		Branch {
-		  Labels		  [1, 0]
-		  DstBlock		  "If Left or Right"
-		  DstPort		  2
-		}
-		Branch {
-		  Points		  [0, -110]
-		  DstBlock		  "If Up or Center"
-		  DstPort		  2
-		}
-	      }
-	      Branch {
-		Points			[0, 100]
-		DstBlock		"If Down or Center"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "Sum of\nElements"
-	      SrcPort		      1
-	      DstBlock		      "Gain"
+	      SrcBlock		      "Left or Center or Right"
+	      SrcPort		      3
+	      DstBlock		      "Right"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Gain"
-	      SrcPort		      1
-	      DstBlock		      "Saturation"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation"
-	      SrcPort		      1
-	      DstBlock		      "Y Center"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gain1"
-	      SrcPort		      1
-	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Merge"
-	      SrcPort		      1
-	      DstBlock		      "Gain1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation1"
+	      SrcBlock		      "Up or Center or Down"
 	      SrcPort		      1
 	      DstBlock		      "Top"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Gain2"
-	      SrcPort		      1
-	      DstBlock		      "Saturation2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation2"
-	      SrcPort		      1
+	      SrcBlock		      "Up or Center or Down"
+	      SrcPort		      3
 	      DstBlock		      "Down"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "If Up or Center"
+	      SrcBlock		      "Front or Center or Back"
 	      SrcPort		      1
-	      Points		      [40, 0; 0, -40]
-	      DstBlock		      "Merge"
+	      DstBlock		      "Front"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Merge1"
-	      SrcPort		      1
-	      DstBlock		      "Gain2"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Down or Center"
-	      SrcPort		      2
-	      DstBlock		      "Merge1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "If Down or Center"
+	      SrcBlock		      "Front or Center or Back"
 	      SrcPort		      3
-	      Points		      [90, 0]
-	      DstBlock		      "Merge"
-	      DstPort		      2
+	      DstBlock		      "Back"
+	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "If Up or Center"
-	      SrcPort		      3
-	      Points		      [95, 0; 0, 200]
-	      DstBlock		      "Merge1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Up or Center"
+	      SrcBlock		      "Left or Center or Right"
 	      SrcPort		      2
-	      Points		      [280, 0]
-	      DstBlock		      "Merge2"
+	      Points		      [530, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"XCenter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Up or Center or Down"
+	      SrcPort		      2
+	      Points		      [385, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -50]
+		DstBlock		"Y Center"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Front or Center or Back"
+	      SrcPort		      2
+	      Points		      [525, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			3
+	      }
+	      Branch {
+		DstBlock		"ZCenter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Saturation1"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "If Down or Center"
+	      SrcBlock		      "Left or Center or Right"
 	      SrcPort		      1
-	      Points		      [285, 0]
-	      DstBlock		      "Merge3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "If Up or Center"
-	      SrcPort		      4
-	      Points		      [275, 0; 0, 80]
-	      DstBlock		      "Merge3"
+	      DstBlock		      "Left"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "If Down or Center"
-	      SrcPort		      4
-	      Points		      [45, 0; 0, -190]
-	      DstBlock		      "Merge2"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Merge2"
+	      SrcBlock		      "In1"
 	      SrcPort		      1
-	      Points		      [55, 0; 0, 45]
-	      DstBlock		      "Sum of\nElements"
+	      DstBlock		      "Left or Center or Right"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Merge3"
+	      SrcBlock		      "In2"
 	      SrcPort		      1
-	      Points		      [55, 0; 0, -10]
-	      DstBlock		      "Sum of\nElements"
+	      DstBlock		      "Left or Center or Right"
 	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In3"
+	      SrcPort		      1
+	      DstBlock		      "Up or Center or Down"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      DstBlock		      "Up or Center or Down"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      DstBlock		      "Front or Center or Back"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In6"
+	      SrcPort		      1
+	      DstBlock		      "Front or Center or Back"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Saturation1"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
 	    }
 	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract"
+	  SID			  "2880"
+	  Ports			  [2, 1]
+	  Position		  [1665, 172, 1695, 203]
+	  Inputs		  "+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract1"
+	  SID			  "2881"
+	  Ports			  [2, 1]
+	  Position		  [1665, 377, 1695, 408]
+	  Inputs		  "+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Tracking Status \n(1: Tracking, 0: Not Tracking)"
+	  SID			  "2882"
+	  Ports			  [1]
+	  Position		  [1505, 35, 1595, 65]
+	  FontName		  "Arial"
+	  Decimation		  "1"
+	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  Width
@@ -7543,16 +7804,6 @@ Model {
 	  Position		  [275, 120, 305, 150]
 	  FontName		  "Arial"
 	  Value			  "60"
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "XCenter"
-	  SID			  "3432"
-	  Ports			  [1]
-	  Position		  [1740, 1055, 1830, 1085]
-	  BackgroundColor	  "green"
-	  Decimation		  "1"
-	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -8697,26 +8948,6 @@ Model {
 	      DstPort		      1
 	    }
 	  }
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "Y Center"
-	  SID			  "3438"
-	  Ports			  [1]
-	  Position		  [1730, 1000, 1820, 1030]
-	  BackgroundColor	  "blue"
-	  Decimation		  "1"
-	  Lockdown		  off
-	}
-	Block {
-	  BlockType		  Display
-	  Name			  "ZCenter"
-	  SID			  "3441"
-	  Ports			  [1]
-	  Position		  [1735, 1110, 1825, 1140]
-	  BackgroundColor	  "orange"
-	  Decimation		  "1"
-	  Lockdown		  off
 	}
 	Block {
 	  BlockType		  Display
@@ -10957,8 +11188,8 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, -5]
-	    DstBlock		    "Left or Center or Right"
+	    Points		    [0, 210]
+	    DstBlock		    "Subsystem"
 	    DstPort		    1
 	  }
 	}
@@ -10972,9 +11203,10 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, -10; 405, 0; 0, 200]
-	    DstBlock		    "Up or Center or Down"
-	    DstPort		    1
+	    Labels		    [0, 0]
+	    Points		    [0, -10; 405, 0; 0, 205]
+	    DstBlock		    "Subsystem"
+	    DstPort		    3
 	  }
 	}
 	Line {
@@ -10987,10 +11219,10 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Labels		    [1, 0]
-	    Points		    [320, 0; 0, 340]
-	    DstBlock		    "Front or Center or Back"
-	    DstPort		    1
+	    Labels		    [0, 0]
+	    Points		    [320, 0; 0, 185]
+	    DstBlock		    "Subsystem"
+	    DstPort		    5
 	  }
 	}
 	Line {
@@ -11024,8 +11256,8 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, -45; 320, 0; 0, -205]
-	    DstBlock		    "Left or Center or Right"
+	    Points		    [0, -45; 320, 0; 0, -95]
+	    DstBlock		    "Subsystem"
 	    DstPort		    2
 	  }
 	}
@@ -11039,10 +11271,10 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Labels		    [2, 0]
-	    Points		    [0, -10; 390, 0; 0, -75]
-	    DstBlock		    "Up or Center or Down"
-	    DstPort		    2
+	    Labels		    [0, 0]
+	    Points		    [0, -10; 390, 0; 0, -145]
+	    DstBlock		    "Subsystem"
+	    DstPort		    4
 	  }
 	}
 	Line {
@@ -11055,10 +11287,10 @@ Model {
 	    DstPort		    1
 	  }
 	  Branch {
-	    Labels		    [1, 0]
-	    Points		    [205, 0; 0, 65]
-	    DstBlock		    "Front or Center or Back"
-	    DstPort		    2
+	    Labels		    [0, 0]
+	    Points		    [205, 0; 0, -165]
+	    DstBlock		    "Subsystem"
+	    DstPort		    6
 	  }
 	}
 	Line {
@@ -11073,69 +11305,6 @@ Model {
 	  SrcPort		  1
 	  Points		  [10, 0; 0, 5]
 	  DstBlock		  "XYZtoX_Y_Z7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Left or Center or Right"
-	  SrcPort		  1
-	  Points		  [195, 0]
-	  DstBlock		  "Left"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Left or Center or Right"
-	  SrcPort		  3
-	  Points		  [420, 0]
-	  DstBlock		  "Right"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Up or Center or Down"
-	  SrcPort		  1
-	  Points		  [305, 0]
-	  DstBlock		  "Top"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Up or Center or Down"
-	  SrcPort		  2
-	  Points		  [305, 0]
-	  DstBlock		  "Y Center"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Up or Center or Down"
-	  SrcPort		  3
-	  Points		  [315, 0]
-	  DstBlock		  "Down"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Front or Center or Back"
-	  SrcPort		  1
-	  Points		  [405, 0]
-	  DstBlock		  "Front"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Front or Center or Back"
-	  SrcPort		  2
-	  Points		  [305, 0]
-	  DstBlock		  "ZCenter"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Front or Center or Back"
-	  SrcPort		  3
-	  Points		  [410, 0]
-	  DstBlock		  "Back"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Left or Center or Right"
-	  SrcPort		  2
-	  Points		  [315, 0]
-	  DstBlock		  "XCenter"
 	  DstPort		  1
 	}
 	Annotation {
@@ -13219,8 +13388,6 @@ Stateflow {
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
     firstTarget		    54
-    debug {
-    }
     sfVersion		    75014001
   }
   chart {
