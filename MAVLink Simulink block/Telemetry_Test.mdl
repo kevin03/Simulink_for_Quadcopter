@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1134"
+    ComputedModelVersion    "1.1137"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -28,9 +28,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 01 09:09:04 2013"
-  RTWModifiedTimeStamp	  305197275
-  ModelVersionFormat	  "1.%<AutoIncrement:1134>"
+  LastModifiedDate	  "Fri Nov 01 14:35:45 2013"
+  RTWModifiedTimeStamp	  305214999
+  ModelVersionFormat	  "1.%<AutoIncrement:1137>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1161,7 +1161,7 @@ Model {
   }
   System {
     Name		    "Telemetry_Test"
-    Location		    [2, 82, 1902, 1027]
+    Location		    [2, 74, 1918, 1019]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1175,7 +1175,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "140"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2644"
+    SIDHighWatermark	    "2646"
     Block {
       BlockType		      From
       Name		      "Debug"
@@ -1289,6 +1289,28 @@ Model {
       ",Input Message,Input Message,Input Message"
     }
     Block {
+      BlockType		      Reference
+      Name		      "Manual Switch"
+      SID		      "2645"
+      Ports		      [2, 1]
+      Position		      [70, 517, 100, 553]
+      LibraryVersion	      "1.236"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "2621"
@@ -1312,8 +1334,15 @@ Model {
       BlockType		      Constant
       Name		      "PWM"
       SID		      "2636"
-      Position		      [125, 520, 155, 550]
+      Position		      [20, 495, 50, 525]
       Value		      "1200"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PWM1"
+      SID		      "2646"
+      Position		      [15, 550, 45, 580]
+      Value		      "1600"
     }
     Block {
       BlockType		      Constant
@@ -1491,7 +1520,7 @@ Model {
       Position		      [880, 316, 1065, 404]
       Floating		      off
       Location		      [969, 56, 1913, 1031]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -1632,9 +1661,9 @@ Model {
       DstPort		      4
     }
     Line {
-      SrcBlock		      "PWM"
+      SrcBlock		      "Manual Switch"
       SrcPort		      1
-      Points		      [100, 0]
+      Points		      [155, 0]
       DstBlock		      "Mux1"
       DstPort		      5
     }
@@ -1657,6 +1686,20 @@ Model {
       Points		      [85, 0; 0, 65; 270, 0]
       DstBlock		      "Send"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PWM"
+      SrcPort		      1
+      Points		      [5, 0; 0, 15]
+      DstBlock		      "Manual Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PWM1"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Manual Switch"
+      DstPort		      2
     }
     Annotation {
       Name		      " "
