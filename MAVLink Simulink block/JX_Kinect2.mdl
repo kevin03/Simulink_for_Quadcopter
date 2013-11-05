@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1525"
+    ComputedModelVersion    "1.1526"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,9 +35,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 05 17:20:29 2013"
-  RTWModifiedTimeStamp	  305572778
-  ModelVersionFormat	  "1.%<AutoIncrement:1525>"
+  LastModifiedDate	  "Tue Nov 05 17:43:32 2013"
+  RTWModifiedTimeStamp	  305574186
+  ModelVersionFormat	  "1.%<AutoIncrement:1526>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1021,7 +1021,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2724"
+    SIDHighWatermark	    "2726"
     Block {
       BlockType		      Display
       Name		      "2000: Door Opens\n1000: Door Closes"
@@ -1047,7 +1047,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "5"
-      Position		      [860, 385, 900, 415]
+      Position		      [1070, 385, 1110, 415]
       GotoTag		      "RC"
       TagVisibility	      "global"
     }
@@ -7358,7 +7358,7 @@ Model {
       Name		      "Left Hand"
       SID		      "2722"
       Ports		      [1]
-      Position		      [445, 551, 550, 749]
+      Position		      [655, 551, 760, 749]
       Decimation	      "1"
       Lockdown		      off
     }
@@ -7367,7 +7367,7 @@ Model {
       Name		      "MAVLink Serial"
       SID		      "54"
       Ports		      [1, 1]
-      Position		      [420, 107, 740, 363]
+      Position		      [630, 107, 950, 363]
       BackgroundColor	      "cyan"
       DropShadow	      on
       FontName		      "Arial Black"
@@ -7406,7 +7406,7 @@ Model {
       Name		      "Planning"
       SID		      "1084"
       Ports		      [6, 2]
-      Position		      [240, 145, 345, 490]
+      Position		      [450, 145, 555, 490]
       BackgroundColor	      "darkGreen"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -8902,20 +8902,6 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
-	}
-	Block {
-	  BlockType		  RateTransition
-	  Name			  "Rate Transition2"
-	  SID			  "2723"
-	  Position		  [170, 775, 200, 805]
-	  OutPortSampleTime	  "0.02"
-	}
-	Block {
-	  BlockType		  RateTransition
-	  Name			  "Rate Transition3"
-	  SID			  "2724"
-	  Position		  [170, 850, 200, 880]
-	  OutPortSampleTime	  "0.02"
 	}
 	Block {
 	  BlockType		  Selector
@@ -10667,26 +10653,14 @@ Model {
 	Line {
 	  SrcBlock		  "Left Hand"
 	  SrcPort		  1
-	  DstBlock		  "Rate Transition2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Rate Transition2"
-	  SrcPort		  1
-	  Points		  [55, 0; 0, -280]
+	  Points		  [155, 0; 0, -280]
 	  DstBlock		  "Trajectory Logic"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Kinect Tracking"
 	  SrcPort		  1
-	  DstBlock		  "Rate Transition3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Rate Transition3"
-	  SrcPort		  1
-	  Points		  [65, 0]
+	  Points		  [170, 0]
 	  DstBlock		  "Trajectory Logic"
 	  DstPort		  6
 	}
@@ -10703,7 +10677,7 @@ Model {
       Name		      "RC Cmd\n[Channel 8 represents Thrust]"
       SID		      "55"
       Ports		      [1]
-      Position		      [855, 151, 975, 329]
+      Position		      [1065, 151, 1185, 329]
       DropShadow	      on
       FontName		      "Arial"
       FontWeight	      "bold"
@@ -10732,11 +10706,25 @@ Model {
       OutPortSampleTime	      "0.02"
     }
     Block {
+      BlockType		      RateTransition
+      Name		      "Rate Transition3"
+      SID		      "2725"
+      Position		      [240, 735, 270, 765]
+      OutPortSampleTime	      "0.02"
+    }
+    Block {
+      BlockType		      RateTransition
+      Name		      "Rate Transition4"
+      SID		      "2726"
+      Position		      [240, 835, 270, 865]
+      OutPortSampleTime	      "0.02"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "Real-time\nClock"
       SID		      "607"
       Ports		      []
-      Position		      [501, 31, 538, 62]
+      Position		      [711, 31, 748, 62]
       ShowPortLabels	      "none"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -15269,7 +15257,7 @@ Model {
       Name		      "rc"
       SID		      "1363"
       Ports		      [1]
-      Position		      [890, 110, 915, 130]
+      Position		      [1100, 110, 1125, 130]
       Floating		      off
       Location		      [692, 56, 1359, 719]
       Open		      off
@@ -15289,7 +15277,7 @@ Model {
     Line {
       SrcBlock		      "From"
       SrcPort		      1
-      Points		      [0, -30; 125, 0; 0, -35]
+      Points		      [210, 0; 0, -65]
       DstBlock		      "Planning"
       DstPort		      4
     }
@@ -15338,7 +15326,7 @@ Model {
     Line {
       SrcBlock		      "Rate Transition"
       SrcPort		      1
-      Points		      [70, 0]
+      Points		      [280, 0]
       DstBlock		      "Planning"
       DstPort		      1
     }
@@ -15357,7 +15345,7 @@ Model {
     Line {
       SrcBlock		      "Rate Transition2"
       SrcPort		      1
-      Points		      [25, 0; 0, -25]
+      Points		      [235, 0; 0, -25]
       DstBlock		      "Planning"
       DstPort		      3
     }
@@ -15369,8 +15357,35 @@ Model {
     }
     Line {
       SrcBlock		      "Kinect"
+      SrcPort		      1
+      DstBlock		      "Rate Transition3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Kinect"
       SrcPort		      2
-      Points		      [35, 0]
+      DstBlock		      "Rate Transition4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Rate Transition3"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	Points			[0, -350]
+	DstBlock		"Planning"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, -100]
+	DstBlock		"Left Hand"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Rate Transition4"
+      SrcPort		      1
+      Points		      [75, 0]
       Branch {
 	DstBlock		"Kinect Tracking"
 	DstPort			1
@@ -15381,23 +15396,9 @@ Model {
 	DstPort			6
       }
     }
-    Line {
-      SrcBlock		      "Kinect"
-      SrcPort		      1
-      Points		      [5, 0; 0, -100]
-      Branch {
-	Points			[0, -250]
-	DstBlock		"Planning"
-	DstPort			5
-      }
-      Branch {
-	DstBlock		"Left Hand"
-	DstPort			1
-      }
-    }
     Annotation {
       Name		      "Initialization\n(Connect to Vicon)"
-      Position		      [648, 51]
+      Position		      [858, 51]
       ForegroundColor	      "[0.000000, 0.000000, 0.500000]"
       DropShadow	      on
       ClickFcn		      "Initialization_Simulink_Vicon"
@@ -15992,7 +15993,6 @@ Stateflow {
     midPoint		    [254.9687 1700.1385]
     chart		    9
     linkNode		    [9 41 0]
-    visible		    0
     dataLimits		    [209.913 304.436 1697.738 1702.539]
     subviewer		    9
     drawStyle		    SMART
@@ -16015,7 +16015,6 @@ Stateflow {
     midPoint		    [910.0109 1550.3657]
     chart		    9
     linkNode		    [9 42 40]
-    visible		    0
     dataLimits		    [907.611 912.411 1499.5 1605.159]
     stampAngle		    NaN
     subviewer		    9
@@ -16039,7 +16038,6 @@ Stateflow {
     midPoint		    [638.4803 1554.2933]
     chart		    9
     linkNode		    [9 0 41]
-    visible		    0
     dataLimits		    [636.08 640.88 1499.5 1605.159]
     stampAngle		    NaN
     subviewer		    9
