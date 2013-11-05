@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.745"
+    ComputedModelVersion    "1.747"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -27,9 +27,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 01 19:06:13 2013"
-  RTWModifiedTimeStamp	  305229171
-  ModelVersionFormat	  "1.%<AutoIncrement:745>"
+  LastModifiedDate	  "Tue Nov 05 11:52:38 2013"
+  RTWModifiedTimeStamp	  305545169
+  ModelVersionFormat	  "1.%<AutoIncrement:747>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -949,7 +949,7 @@ Model {
   }
   System {
     Name		    "JX_Kinect1"
-    Location		    [0, 82, 1900, 1051]
+    Location		    [-2, 50, 1902, 1072]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -963,7 +963,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3646"
+    SIDHighWatermark	    "3655"
     Block {
       BlockType		      Display
       Name		      "0: Manual\n1: Stabilized\n2: Semi-autonomous"
@@ -1017,8 +1017,8 @@ Model {
       BlockType		      SubSystem
       Name		      "Kinect Roll Pitch Trigger"
       SID		      "2698"
-      Ports		      [0, 2]
-      Position		      [30, 343, 125, 432]
+      Ports		      [0, 3]
+      Position		      [30, 345, 125, 435]
       DropShadow	      on
       FontName		      "Arial"
       FontWeight	      "bold"
@@ -4278,7 +4278,7 @@ Model {
 	  Name			  "Subsystem"
 	  SID			  "3639"
 	  Ports			  [6, 1]
-	  Position		  [1305, 1074, 1345, 1136]
+	  Position		  [1305, 1000, 1405, 1120]
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -4288,8 +4288,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [924, 371, 1934, 1016]
-	    Open		    on
+	    Location		    [2, 82, 1902, 1027]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4347,36 +4347,6 @@ Model {
 	      Position		      [30, 573, 60, 587]
 	      Port		      "6"
 	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Back"
-	      SID		      "3442"
-	      Ports		      [1]
-	      Position		      [545, 575, 635, 605]
-	      BackgroundColor	      "orange"
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Down"
-	      SID		      "3439"
-	      Ports		      [1]
-	      Position		      [535, 395, 625, 425]
-	      BackgroundColor	      "blue"
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Front"
-	      SID		      "3440"
-	      Ports		      [1]
-	      Position		      [545, 465, 635, 495]
-	      BackgroundColor	      "orange"
-	      Decimation	      "1"
-	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -5063,16 +5033,6 @@ Model {
 		  DstPort		  1
 		}
 	      }
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Left"
-	      SID		      "3429"
-	      Ports		      [1]
-	      Position		      [535, 50, 625, 80]
-	      BackgroundColor	      "green"
-	      Decimation	      "1"
-	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -6327,14 +6287,14 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Display
-	      Name		      "Right"
-	      SID		      "3433"
-	      Ports		      [1]
-	      Position		      [535, 200, 625, 230]
-	      BackgroundColor	      "green"
-	      Decimation	      "1"
-	      Lockdown		      off
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "3653"
+	      Ports		      [7, 1]
+	      Position		      [1355, 70, 1455, 660]
+	      ShowName		      off
+	      Inputs		      "7"
+	      DisplayOption	      "signals"
 	    }
 	    Block {
 	      BlockType		      Saturate
@@ -6358,16 +6318,6 @@ Model {
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Top"
-	      SID		      "3434"
-	      Ports		      [1]
-	      Position		      [535, 285, 625, 315]
-	      BackgroundColor	      "blue"
-	      Decimation	      "1"
-	      Lockdown		      off
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -7596,122 +7546,64 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Display
-	      Name		      "XCenter"
-	      SID		      "3432"
-	      Ports		      [1]
-	      Position		      [865, 70, 955, 100]
-	      BackgroundColor	      "green"
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "Y Center"
-	      SID		      "3438"
-	      Ports		      [1]
-	      Position		      [730, 290, 820, 320]
-	      BackgroundColor	      "blue"
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
-	      BlockType		      Display
-	      Name		      "ZCenter"
-	      SID		      "3441"
-	      Ports		      [1]
-	      Position		      [865, 545, 955, 575]
-	      BackgroundColor	      "orange"
-	      Decimation	      "1"
-	      Lockdown		      off
-	    }
-	    Block {
 	      BlockType		      Outport
-	      Name		      "Out1"
-	      SID		      "3643"
-	      Position		      [955, 348, 985, 362]
+	      Name		      "Left Hand"
+	      SID		      "3654"
+	      Position		      [1550, 363, 1580, 377]
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "Left or Center or Right"
-	      SrcPort		      3
-	      DstBlock		      "Right"
-	      DstPort		      1
-	    }
-	    Line {
 	      SrcBlock		      "Up or Center or Down"
 	      SrcPort		      1
-	      DstBlock		      "Top"
-	      DstPort		      1
+	      Points		      [155, 0; 0, 65]
+	      DstBlock		      "Mux"
+	      DstPort		      4
 	    }
 	    Line {
 	      SrcBlock		      "Up or Center or Down"
 	      SrcPort		      3
-	      DstBlock		      "Down"
-	      DstPort		      1
+	      Points		      [775, 0; 0, 40]
+	      DstBlock		      "Mux"
+	      DstPort		      5
 	    }
 	    Line {
 	      SrcBlock		      "Front or Center or Back"
 	      SrcPort		      1
-	      DstBlock		      "Front"
-	      DstPort		      1
+	      Points		      [770, 0; 0, 55]
+	      DstBlock		      "Mux"
+	      DstPort		      6
 	    }
 	    Line {
 	      SrcBlock		      "Front or Center or Back"
 	      SrcPort		      3
-	      DstBlock		      "Back"
-	      DstPort		      1
+	      Points		      [1015, 0]
+	      DstBlock		      "Mux"
+	      DstPort		      7
 	    }
 	    Line {
 	      SrcBlock		      "Left or Center or Right"
 	      SrcPort		      2
 	      Points		      [530, 0]
-	      Branch {
-		DstBlock		"Sum"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"XCenter"
-		DstPort			1
-	      }
+	      DstBlock		      "Sum"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Up or Center or Down"
 	      SrcPort		      2
-	      Points		      [385, 0]
-	      Branch {
-		DstBlock		"Sum"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, -50]
-		DstBlock		"Y Center"
-		DstPort			1
-	      }
+	      DstBlock		      "Sum"
+	      DstPort		      2
 	    }
 	    Line {
 	      SrcBlock		      "Front or Center or Back"
 	      SrcPort		      2
 	      Points		      [525, 0]
-	      Branch {
-		DstBlock		"Sum"
-		DstPort			3
-	      }
-	      Branch {
-		DstBlock		"ZCenter"
-		DstPort			1
-	      }
+	      DstBlock		      "Sum"
+	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
 	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Left or Center or Right"
-	      SrcPort		      1
-	      DstBlock		      "Left"
 	      DstPort		      1
 	    }
 	    Line {
@@ -7751,9 +7643,30 @@ Model {
 	      DstPort		      2
 	    }
 	    Line {
+	      SrcBlock		      "Left or Center or Right"
+	      SrcPort		      1
+	      Points		      [790, 0; 0, 45]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Left or Center or Right"
+	      SrcPort		      3
+	      Points		      [780, 0; 0, 65]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
 	      SrcBlock		      "Saturation1"
 	      SrcPort		      1
-	      DstBlock		      "Out1"
+	      Points		      [25, 0; 0, -160]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Left Hand"
 	      DstPort		      1
 	    }
 	  }
@@ -10255,6 +10168,14 @@ Model {
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Left Hand"
+	  SID			  "3655"
+	  Position		  [1505, 1053, 1535, 1067]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
 	Line {
 	  SrcBlock		  "Saturation"
 	  SrcPort		  1
@@ -11188,7 +11109,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, 210]
+	    Points		    [0, 140]
 	    DstBlock		    "Subsystem"
 	    DstPort		    1
 	  }
@@ -11204,7 +11125,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, -10; 405, 0; 0, 205]
+	    Points		    [0, -10; 405, 0; 0, 155]
 	    DstBlock		    "Subsystem"
 	    DstPort		    3
 	  }
@@ -11220,7 +11141,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [320, 0; 0, 185]
+	    Points		    [320, 0; 0, 155]
 	    DstBlock		    "Subsystem"
 	    DstPort		    5
 	  }
@@ -11256,7 +11177,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, -45; 320, 0; 0, -95]
+	    Points		    [0, -45; 320, 0; 0, -155]
 	    DstBlock		    "Subsystem"
 	    DstPort		    2
 	  }
@@ -11272,7 +11193,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [0, -10; 390, 0; 0, -145]
+	    Points		    [0, -10; 390, 0; 0, -185]
 	    DstBlock		    "Subsystem"
 	    DstPort		    4
 	  }
@@ -11288,7 +11209,7 @@ Model {
 	  }
 	  Branch {
 	    Labels		    [0, 0]
-	    Points		    [205, 0; 0, -165]
+	    Points		    [205, 0; 0, -185]
 	    DstBlock		    "Subsystem"
 	    DstPort		    6
 	  }
@@ -11305,6 +11226,12 @@ Model {
 	  SrcPort		  1
 	  Points		  [10, 0; 0, 5]
 	  DstBlock		  "XYZtoX_Y_Z7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Subsystem"
+	  SrcPort		  1
+	  DstBlock		  "Left Hand"
 	  DstPort		  1
 	}
 	Annotation {
@@ -13329,7 +13256,7 @@ Model {
     Line {
       SrcBlock		      "Kinect Roll Pitch Trigger"
       SrcPort		      1
-      Points		      [50, 0]
+      Points		      [0, 5; 50, 0]
       Branch {
 	Points			[0, -140]
 	DstBlock		"Subsystem4"
@@ -13349,7 +13276,7 @@ Model {
     Line {
       SrcBlock		      "Kinect Roll Pitch Trigger"
       SrcPort		      2
-      Points		      [60, 0]
+      Points		      [0, 20; 60, 0]
       Branch {
 	Points			[0, 15]
 	DstBlock		"Kinect Tracking"
