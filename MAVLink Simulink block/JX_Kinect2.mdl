@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1550"
+    ComputedModelVersion    "1.1552"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,9 +35,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 07 17:20:26 2013"
-  RTWModifiedTimeStamp	  305745371
-  ModelVersionFormat	  "1.%<AutoIncrement:1550>"
+  LastModifiedDate	  "Thu Nov 07 18:11:47 2013"
+  RTWModifiedTimeStamp	  305746759
+  ModelVersionFormat	  "1.%<AutoIncrement:1552>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1021,7 +1021,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3031"
+    SIDHighWatermark	    "3040"
     Block {
       BlockType		      Display
       Name		      "2000: Door Opens\n1000: Door Closes"
@@ -1047,7 +1047,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "5"
-      Position		      [1070, 390, 1110, 420]
+      Position		      [1070, 385, 1110, 415]
       GotoTag		      "RC"
       TagVisibility	      "global"
     }
@@ -1077,7 +1077,7 @@ Model {
       System {
 	Name			"Kinect"
 	Location		[9, 98, 1892, 1060]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2353,41 +2353,29 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "2277"
-		  Position		  [1110, 62, 1175, 108]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "3039"
+		  Position		  [580, 330, 610, 360]
 		}
 		Block {
-		  BlockType		  Gain
-		  Name			  "Gain1"
-		  SID			  "2278"
-		  Position		  [1110, 317, 1175, 363]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  SID			  "3038"
+		  Position		  [595, 75, 625, 105]
 		}
 		Block {
-		  BlockType		  Gain
-		  Name			  "Gain2"
-		  SID			  "2279"
-		  Position		  [1190, 462, 1255, 508]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
+		  BlockType		  Constant
+		  Name			  "Constant3"
+		  SID			  "3040"
+		  Position		  [425, 525, 455, 555]
 		}
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "If Back"
 		  SID			  "2280"
 		  Ports			  [1, 3, 0, 0, 0, 0, 0, 1]
-		  Position		  [580, 486, 705, 594]
+		  Position		  [485, 486, 610, 594]
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
 		  PropExecContextOutsideSubsystem off
@@ -2487,7 +2475,7 @@ Model {
 		  Name			  "If Center"
 		  SID			  "2288"
 		  Ports			  [1, 3, 0, 0, 0, 0, 0, 1]
-		  Position		  [665, 309, 735, 381]
+		  Position		  [665, 308, 755, 382]
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
 		  PropExecContextOutsideSubsystem off
@@ -2735,30 +2723,10 @@ Model {
 		}
 		Block {
 		  BlockType		  Saturate
-		  Name			  "Saturation"
-		  SID			  "2311"
-		  Ports			  [1, 1]
-		  Position		  [1205, 70, 1235, 100]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
 		  Name			  "Saturation1"
 		  SID			  "2312"
 		  Ports			  [1, 1]
 		  Position		  [1205, 325, 1235, 355]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation2"
-		  SID			  "2313"
-		  Ports			  [1, 1]
-		  Position		  [1285, 470, 1315, 500]
 		  InputPortMap		  "u0"
 		  UpperLimit		  "1"
 		  LowerLimit		  "0"
@@ -2812,52 +2780,27 @@ Model {
 		Line {
 		  SrcBlock		  "Subtract"
 		  SrcPort		  1
-		  Points		  [55, 0]
-		  Branch {
-		    Points		    [0, -145]
-		    DstBlock		    "If front"
-		    DstPort		    1
-		  }
-		  Branch {
-		    Points		    [20, 0]
-		    Branch {
-		    Points		    [0, 115]
-		    DstBlock		    "If Center"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [10, 0]
-		    Branch {
-		    Labels		    [1, 0]
-		    DstBlock		    "If Front or Center or Back"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, 305]
-		    DstBlock		    "If Back"
-		    DstPort		    1
-		    }
-		    }
-		  }
+		  DstBlock		  "If Front or Center or Back"
+		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "If Front or Center or Back"
 		  SrcPort		  1
-		  Points		  [15, 0; 0, -168]
+		  Points		  [15, 0; 0, -170]
 		  DstBlock		  "If front"
 		  DstPort		  ifaction
 		}
 		Line {
 		  SrcBlock		  "If Front or Center or Back"
 		  SrcPort		  2
-		  Points		  [85, 0; 0, 57]
+		  Points		  [200, 0]
 		  DstBlock		  "If Center"
 		  DstPort		  ifaction
 		}
 		Line {
 		  SrcBlock		  "If Front or Center or Back"
 		  SrcPort		  3
-		  Points		  [130, 0]
+		  Points		  [35, 0]
 		  DstBlock		  "If Back"
 		  DstPort		  ifaction
 		}
@@ -2907,64 +2850,40 @@ Model {
 		Line {
 		  SrcBlock		  "If front"
 		  SrcPort		  3
-		  Points		  [140, 0; 0, 370]
+		  Points		  [150, 0; 0, 370]
 		  DstBlock		  "Merge5"
 		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "If Center"
 		  SrcPort		  2
-		  Points		  [70, 0; 0, -260]
+		  Points		  [50, 0; 0, -260]
 		  DstBlock		  "Merge3"
 		  DstPort		  2
 		}
 		Line {
 		  SrcBlock		  "If Back"
 		  SrcPort		  2
-		  Points		  [240, 0; 0, -445]
+		  Points		  [250, 0; 0, -445]
 		  DstBlock		  "Merge"
 		  DstPort		  2
 		}
 		Line {
 		  SrcBlock		  "If Center"
 		  SrcPort		  3
-		  Points		  [275, 0; 0, 100; 75, 0]
+		  Points		  [255, 0; 0, 100; 75, 0]
 		  DstBlock		  "Merge2"
 		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "If Back"
 		  SrcPort		  3
-		  Points		  [280, 0; 0, -225]
+		  Points		  [310, 0; 0, -225]
 		  DstBlock		  "Merge1"
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Merge"
-		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
-		  SrcPort		  1
-		  DstBlock		  "Saturation"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Saturation"
-		  SrcPort		  1
-		  DstBlock		  "Front"
-		  DstPort		  1
-		}
-		Line {
 		  SrcBlock		  "Merge1"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain1"
 		  SrcPort		  1
 		  DstBlock		  "Saturation1"
 		  DstPort		  1
@@ -2976,21 +2895,33 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Gain2"
+		  SrcBlock		  "Constant2"
 		  SrcPort		  1
-		  DstBlock		  "Saturation2"
+		  DstBlock		  "If front"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Saturation2"
+		  SrcBlock		  "Merge"
 		  SrcPort		  1
-		  DstBlock		  "Down"
+		  DstBlock		  "Front"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "If Center"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Constant3"
+		  SrcPort		  1
+		  DstBlock		  "If Back"
 		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "Merge2"
 		  SrcPort		  1
-		  DstBlock		  "Gain2"
+		  DstBlock		  "Down"
 		  DstPort		  1
 		}
 	      }
@@ -3048,36 +2979,6 @@ Model {
 		  Position		  [50, 413, 80, 427]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "2321"
-		  Position		  [1385, 359, 1455, 431]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain1"
-		  SID			  "2322"
-		  Position		  [850, 46, 905, 94]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain2"
-		  SID			  "2323"
-		  Position		  [850, 721, 905, 769]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
 		}
 		Block {
 		  BlockType		  SubSystem
@@ -3156,8 +3057,13 @@ Model {
 		    BlockType		    Constant
 		    Name		    "Constant2"
 		    SID			    "2331"
-		    Position		    [600, 120, 630, 150]
-		    Value		    "5"
+		    Position		    [665, 200, 695, 230]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    SID			    "3035"
+		    Position		    [540, 680, 570, 710]
 		    }
 		    Block {
 		    BlockType		    SubSystem
@@ -3204,13 +3110,6 @@ Model {
 		    ActionType		    "else"
 		    }
 		    Block {
-		    BlockType		    Abs
-		    Name		    "Abs"
-		    SID			    "2335"
-		    Position		    [185, 70, 215, 100]
-		    SaturateOnIntegerOverflow off
-		    }
-		    Block {
 		    BlockType		    Constant
 		    Name		    "Constant"
 		    SID			    "2336"
@@ -3235,12 +3134,6 @@ Model {
 		    Line {
 		    SrcBlock		    "In1"
 		    SrcPort		    1
-		    DstBlock		    "Abs"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Abs"
-		    SrcPort		    1
 		    DstBlock		    "Out1"
 		    DstPort		    1
 		    }
@@ -3253,18 +3146,11 @@ Model {
 		    }
 		    }
 		    Block {
-		    BlockType		    If
-		    Name		    "If"
-		    SID			    "2339"
-		    Ports		    [1, 2]
-		    Position		    [480, 236, 580, 274]
-		    }
-		    Block {
 		    BlockType		    SubSystem
 		    Name		    "If Left"
 		    SID			    "2340"
 		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
-		    Position		    [720, 210, 805, 265]
+		    Position		    [720, 185, 805, 240]
 		    TreatAsAtomicUnit	    on
 		    MinAlgLoopOccurrences   off
 		    PropExecContextOutsideSubsystem off
@@ -3340,6 +3226,13 @@ Model {
 		    }
 		    }
 		    Block {
+		    BlockType		    If
+		    Name		    "Left or Center"
+		    SID			    "2339"
+		    Ports		    [1, 2]
+		    Position		    [480, 236, 580, 274]
+		    }
+		    Block {
 		    BlockType		    Merge
 		    Name		    "Merge1"
 		    SID			    "2346"
@@ -3352,7 +3245,7 @@ Model {
 		    Name		    "Merge2"
 		    SID			    "2347"
 		    Ports		    [2, 1]
-		    Position		    [1335, 205, 1375, 245]
+		    Position		    [1335, 180, 1375, 220]
 		    InitialOutput	    "[0]"
 		    }
 		    Block {
@@ -3381,7 +3274,7 @@ Model {
 		    BlockType		    Outport
 		    Name		    "Left"
 		    SID			    "2350"
-		    Position		    [1590, 218, 1620, 232]
+		    Position		    [1590, 193, 1620, 207]
 		    IconDisplay		    "Port number"
 		    }
 		    Block {
@@ -3418,24 +3311,8 @@ Model {
 		    Line {
 		    SrcBlock		    "Subtract2"
 		    SrcPort		    1
-		    Points		    [20, 0]
-		    Branch {
-		    Points		    [0, 440]
-		    DstBlock		    "Else Center"
+		    DstBlock		    "Left or Center"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [15, 0]
-		    Branch {
-		    DstBlock		    "If"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -15]
-		    DstBlock		    "If Left"
-		    DstPort		    1
-		    }
-		    }
 		    }
 		    Line {
 		    SrcBlock		    "x:LH"
@@ -3484,14 +3361,14 @@ Model {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "If"
+		    SrcBlock		    "Left or Center"
 		    SrcPort		    1
-		    Points		    [125, 0; 0, -52]
+		    Points		    [55, 0; 0, -75]
 		    DstBlock		    "If Left"
 		    DstPort		    ifaction
 		    }
 		    Line {
-		    SrcBlock		    "If"
+		    SrcBlock		    "Left or Center"
 		    SrcPort		    2
 		    Points		    [85, 0]
 		    DstBlock		    "Else Center"
@@ -3500,14 +3377,14 @@ Model {
 		    Line {
 		    SrcBlock		    "If Left"
 		    SrcPort		    2
-		    Points		    [200, 0; 0, 415]
+		    Points		    [200, 0; 0, 440]
 		    DstBlock		    "Merge1"
 		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "Else Center"
 		    SrcPort		    2
-		    Points		    [500, 0; 0, -470]
+		    Points		    [500, 0; 0, -495]
 		    DstBlock		    "Merge2"
 		    DstPort		    2
 		    }
@@ -3521,6 +3398,18 @@ Model {
 		    SrcBlock		    "Constant1"
 		    SrcPort		    1
 		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    DstBlock		    "If Left"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Else Center"
 		    DstPort		    1
 		    }
 		  }
@@ -3597,6 +3486,18 @@ Model {
 		    SID			    "2360"
 		    Position		    [530, 650, 560, 680]
 		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    SID			    "3036"
+		    Position		    [525, 235, 555, 265]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    SID			    "3037"
+		    Position		    [490, 340, 520, 370]
 		    }
 		    Block {
 		    BlockType		    SubSystem
@@ -3857,24 +3758,8 @@ Model {
 		    Line {
 		    SrcBlock		    "Subtract2"
 		    SrcPort		    1
-		    Points		    [20, 0]
-		    Branch {
-		    Points		    [10, 0]
-		    Branch {
 		    DstBlock		    "If"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -30]
-		    DstBlock		    "If Right"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    Points		    [0, 75]
-		    DstBlock		    "Else Hover"
-		    DstPort		    1
-		    }
 		    }
 		    Line {
 		    SrcBlock		    "If"
@@ -3962,6 +3847,18 @@ Model {
 		    DstBlock		    "00"
 		    DstPort		    1
 		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    DstBlock		    "If Right"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Else Hover"
+		    DstPort		    1
+		    }
 		  }
 		}
 		Block {
@@ -4010,27 +3907,7 @@ Model {
 		  Name			  "Saturation"
 		  SID			  "2388"
 		  Ports			  [1, 1]
-		  Position		  [1535, 380, 1565, 410]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation1"
-		  SID			  "2389"
-		  Ports			  [1, 1]
-		  Position		  [960, 55, 990, 85]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation2"
-		  SID			  "2390"
-		  Ports			  [1, 1]
-		  Position		  [960, 730, 990, 760]
+		  Position		  [1535, 390, 1565, 420]
 		  InputPortMap		  "u0"
 		  UpperLimit		  "1"
 		  LowerLimit		  "0"
@@ -4057,7 +3934,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "X Center"
 		  SID			  "2393"
-		  Position		  [1610, 388, 1640, 402]
+		  Position		  [1610, 398, 1640, 412]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
@@ -4114,39 +3991,9 @@ Model {
 		  }
 		}
 		Line {
-		  SrcBlock		  "Sum of\nElements"
-		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
-		  SrcPort		  1
-		  DstBlock		  "Saturation"
-		  DstPort		  1
-		}
-		Line {
 		  SrcBlock		  "Saturation"
 		  SrcPort		  1
 		  DstBlock		  "X Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "Saturation1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain2"
-		  SrcPort		  1
-		  DstBlock		  "Saturation2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Saturation2"
-		  SrcPort		  1
-		  DstBlock		  "Right"
 		  DstPort		  1
 		}
 		Line {
@@ -4166,7 +4013,7 @@ Model {
 		Line {
 		  SrcBlock		  "Merge1"
 		  SrcPort		  1
-		  Points		  [120, 0; 0, 40]
+		  Points		  [120, 0; 0, 50]
 		  DstBlock		  "Sum of\nElements"
 		  DstPort		  1
 		}
@@ -4186,7 +4033,7 @@ Model {
 		Line {
 		  SrcBlock		  "Merge3"
 		  SrcPort		  1
-		  DstBlock		  "Gain2"
+		  DstBlock		  "Right"
 		  DstPort		  1
 		}
 		Line {
@@ -4240,13 +4087,13 @@ Model {
 		Line {
 		  SrcBlock		  "Merge"
 		  SrcPort		  1
-		  DstBlock		  "Gain1"
+		  DstBlock		  "Left"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Saturation1"
+		  SrcBlock		  "Sum of\nElements"
 		  SrcPort		  1
-		  DstBlock		  "Left"
+		  DstBlock		  "Saturation"
 		  DstPort		  1
 		}
 		Annotation {
@@ -4329,16 +4176,6 @@ Model {
 		  Position		  [25, 258, 55, 272]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "2401"
-		  Position		  [1150, 187, 1215, 233]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
 		}
 		Block {
 		  BlockType		  SubSystem
@@ -5411,7 +5248,7 @@ Model {
 		  Name			  "Saturation"
 		  SID			  "2467"
 		  Ports			  [1, 1]
-		  Position		  [1245, 195, 1275, 225]
+		  Position		  [1175, 195, 1205, 225]
 		  InputPortMap		  "u0"
 		  UpperLimit		  "1"
 		  LowerLimit		  "0"
@@ -5421,7 +5258,7 @@ Model {
 		  Name			  "Sum of\nElements"
 		  SID			  "2470"
 		  Ports			  [2, 1]
-		  Position		  [1080, 192, 1110, 228]
+		  Position		  [1045, 192, 1075, 228]
 		  Inputs		  "+|+"
 		  InputSameDT		  off
 		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -5438,7 +5275,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "ZCenter"
 		  SID			  "2472"
-		  Position		  [1325, 203, 1355, 217]
+		  Position		  [1255, 203, 1285, 217]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
@@ -5509,18 +5346,6 @@ Model {
 		    DstBlock		    "If Down or Center"
 		    DstPort		    2
 		  }
-		}
-		Line {
-		  SrcBlock		  "Sum of\nElements"
-		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
-		  SrcPort		  1
-		  DstBlock		  "Saturation"
-		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "Saturation"
@@ -5598,16 +5423,22 @@ Model {
 		Line {
 		  SrcBlock		  "Merge2"
 		  SrcPort		  1
-		  Points		  [55, 0; 0, 25]
+		  Points		  [20, 0; 0, 25]
 		  DstBlock		  "Sum of\nElements"
 		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "Merge3"
 		  SrcPort		  1
-		  Points		  [55, 0; 0, -35]
+		  Points		  [20, 0; 0, -35]
 		  DstBlock		  "Sum of\nElements"
 		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Sum of\nElements"
+		  SrcPort		  1
+		  DstBlock		  "Saturation"
+		  DstPort		  1
 		}
 	      }
 	    }
@@ -5834,7 +5665,7 @@ Model {
 	  System {
 	    Name		    "Subsystem1"
 	    Location		    [2, 82, 1902, 1051]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5850,14 +5681,14 @@ Model {
 	      BlockType		      Inport
 	      Name		      "XRSh"
 	      SID		      "2771"
-	      Position		      [230, 308, 260, 322]
+	      Position		      [230, 313, 260, 327]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "XRH"
 	      SID		      "2773"
-	      Position		      [230, 223, 260, 237]
+	      Position		      [230, 228, 260, 242]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -5865,7 +5696,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "YRSH"
 	      SID		      "2775"
-	      Position		      [280, 558, 310, 572]
+	      Position		      [280, 563, 310, 577]
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
@@ -5873,7 +5704,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "YRH"
 	      SID		      "2777"
-	      Position		      [280, 483, 310, 497]
+	      Position		      [280, 488, 310, 502]
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
@@ -5920,36 +5751,6 @@ Model {
 		  Position		  [50, 413, 80, 427]
 		  Port			  "2"
 		  IconDisplay		  "Port number"
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "2782"
-		  Position		  [1385, 369, 1455, 441]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain1"
-		  SID			  "2783"
-		  Position		  [850, 46, 905, 94]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain2"
-		  SID			  "2784"
-		  Position		  [850, 721, 905, 769]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
 		}
 		Block {
 		  BlockType		  SubSystem
@@ -6028,8 +5829,13 @@ Model {
 		    BlockType		    Constant
 		    Name		    "Constant2"
 		    SID			    "2792"
-		    Position		    [600, 120, 630, 150]
-		    Value		    "5"
+		    Position		    [665, 215, 695, 245]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    SID			    "3032"
+		    Position		    [570, 680, 600, 710]
 		    }
 		    Block {
 		    BlockType		    SubSystem
@@ -6073,13 +5879,7 @@ Model {
 		    SID			    "2795"
 		    Position		    [170, 15, 229, 43]
 		    InitializeStates	    "reset"
-		    }
-		    Block {
-		    BlockType		    Abs
-		    Name		    "Abs"
-		    SID			    "2796"
-		    Position		    [185, 70, 215, 100]
-		    SaturateOnIntegerOverflow off
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -6106,12 +5906,6 @@ Model {
 		    Line {
 		    SrcBlock		    "In1"
 		    SrcPort		    1
-		    DstBlock		    "Abs"
-		    DstPort		    1
-		    }
-		    Line {
-		    SrcBlock		    "Abs"
-		    SrcPort		    1
 		    DstBlock		    "Out1"
 		    DstPort		    1
 		    }
@@ -6135,7 +5929,7 @@ Model {
 		    Name		    "If Left"
 		    SID			    "2801"
 		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
-		    Position		    [720, 210, 805, 265]
+		    Position		    [720, 200, 805, 255]
 		    TreatAsAtomicUnit	    on
 		    MinAlgLoopOccurrences   off
 		    PropExecContextOutsideSubsystem off
@@ -6172,6 +5966,7 @@ Model {
 		    SID			    "2803"
 		    Position		    [170, 15, 229, 43]
 		    InitializeStates	    "reset"
+		    ActionType		    "then"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -6258,7 +6053,7 @@ Model {
 		    BlockType		    Outport
 		    Name		    "Center"
 		    SID			    "2812"
-		    Position		    [1590, 723, 1620, 737]
+		    Position		    [1590, 668, 1620, 682]
 		    Port		    "2"
 		    IconDisplay		    "Port number"
 		    }
@@ -6288,24 +6083,8 @@ Model {
 		    Line {
 		    SrcBlock		    "Subtract2"
 		    SrcPort		    1
-		    Points		    [20, 0]
-		    Branch {
-		    Points		    [0, 440]
-		    DstBlock		    "Else Center"
-		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [15, 0]
-		    Branch {
 		    DstBlock		    "If"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -35; 250, 0]
-		    DstBlock		    "If Left"
-		    DstPort		    1
-		    }
-		    }
 		    }
 		    Line {
 		    SrcBlock		    "x:RH"
@@ -6336,7 +6115,6 @@ Model {
 		    Line {
 		    SrcBlock		    "Merge1"
 		    SrcPort		    1
-		    Points		    [225, 0; 0, 55]
 		    DstBlock		    "Center"
 		    DstPort		    1
 		    }
@@ -6349,14 +6127,13 @@ Model {
 		    Line {
 		    SrcBlock		    "If Left"
 		    SrcPort		    1
-		    Points		    [0, -10]
 		    DstBlock		    "Merge2"
 		    DstPort		    1
 		    }
 		    Line {
 		    SrcBlock		    "If"
 		    SrcPort		    1
-		    Points		    [70, 0; 0, -57; 105, 2]
+		    Points		    [70, 0; 0, -65; 105, 0]
 		    DstBlock		    "If Left"
 		    DstPort		    ifaction
 		    }
@@ -6370,7 +6147,7 @@ Model {
 		    Line {
 		    SrcBlock		    "If Left"
 		    SrcPort		    2
-		    Points		    [200, 0; 0, 415]
+		    Points		    [200, 0; 0, 425]
 		    DstBlock		    "Merge1"
 		    DstPort		    1
 		    }
@@ -6391,6 +6168,18 @@ Model {
 		    SrcBlock		    "Constant1"
 		    SrcPort		    1
 		    DstBlock		    "00"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    DstBlock		    "If Left"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Else Center"
 		    DstPort		    1
 		    }
 		  }
@@ -6445,6 +6234,7 @@ Model {
 		    SID			    "2818"
 		    Position		    [150, 20, 209, 48]
 		    InitializeStates	    "reset"
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -6466,6 +6256,18 @@ Model {
 		    SID			    "2821"
 		    Position		    [530, 650, 560, 680]
 		    Value		    "0"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    SID			    "3033"
+		    Position		    [520, 235, 550, 265]
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant3"
+		    SID			    "3034"
+		    Position		    [470, 340, 500, 370]
 		    }
 		    Block {
 		    BlockType		    SubSystem
@@ -6509,6 +6311,7 @@ Model {
 		    SID			    "2824"
 		    Position		    [170, 15, 229, 43]
 		    InitializeStates	    "reset"
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Abs
@@ -6608,6 +6411,7 @@ Model {
 		    SID			    "2832"
 		    Position		    [170, 15, 229, 43]
 		    InitializeStates	    "reset"
+		    ActionType		    "then"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -6724,24 +6528,8 @@ Model {
 		    Line {
 		    SrcBlock		    "Subtract2"
 		    SrcPort		    1
-		    Points		    [20, 0]
-		    Branch {
-		    Points		    [10, 0]
-		    Branch {
 		    DstBlock		    "If"
 		    DstPort		    1
-		    }
-		    Branch {
-		    Points		    [0, -30]
-		    DstBlock		    "If Right"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    Points		    [0, 75]
-		    DstBlock		    "Else Hover"
-		    DstPort		    1
-		    }
 		    }
 		    Line {
 		    SrcBlock		    "If"
@@ -6829,6 +6617,18 @@ Model {
 		    DstBlock		    "00"
 		    DstPort		    1
 		    }
+		    Line {
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    DstBlock		    "If Right"
+		    DstPort		    1
+		    }
+		    Line {
+		    SrcBlock		    "Constant3"
+		    SrcPort		    1
+		    DstBlock		    "Else Hover"
+		    DstPort		    1
+		    }
 		  }
 		}
 		Block {
@@ -6878,26 +6678,6 @@ Model {
 		  SID			  "2849"
 		  Ports			  [1, 1]
 		  Position		  [1535, 390, 1565, 420]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation1"
-		  SID			  "2850"
-		  Ports			  [1, 1]
-		  Position		  [960, 55, 990, 85]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "0"
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation2"
-		  SID			  "2851"
-		  Ports			  [1, 1]
-		  Position		  [960, 730, 990, 760]
 		  InputPortMap		  "u0"
 		  UpperLimit		  "1"
 		  LowerLimit		  "0"
@@ -6983,12 +6763,6 @@ Model {
 		Line {
 		  SrcBlock		  "Sum of\nElements"
 		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
-		  SrcPort		  1
 		  DstBlock		  "Saturation"
 		  DstPort		  1
 		}
@@ -6996,24 +6770,6 @@ Model {
 		  SrcBlock		  "Saturation"
 		  SrcPort		  1
 		  DstBlock		  "X Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "Saturation1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain2"
-		  SrcPort		  1
-		  DstBlock		  "Saturation2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Saturation2"
-		  SrcPort		  1
-		  DstBlock		  "Right"
 		  DstPort		  1
 		}
 		Line {
@@ -7042,12 +6798,6 @@ Model {
 		  SrcPort		  1
 		  DstBlock		  "Merge2"
 		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Merge3"
-		  SrcPort		  1
-		  DstBlock		  "Gain2"
-		  DstPort		  1
 		}
 		Line {
 		  SrcBlock		  "If Action\nSubsystem1"
@@ -7098,23 +6848,23 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "Merge"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Saturation1"
-		  SrcPort		  1
-		  DstBlock		  "Left"
-		  DstPort		  1
-		}
-		Line {
 		  SrcBlock		  "If Left or Right"
 		  SrcPort		  1
 		  Points		  [180, 0; 0, -97]
 		  DstBlock		  "If Action\nSubsystem"
 		  DstPort		  ifaction
+		}
+		Line {
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Left"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Merge3"
+		  SrcPort		  1
+		  DstBlock		  "Right"
+		  DstPort		  1
 		}
 		Annotation {
 		  Position		  [604, 310]
@@ -7178,16 +6928,6 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "2945"
-		  Position		  [1150, 187, 1215, 233]
-		  Gain			  "1000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
 		  BlockType		  SubSystem
 		  Name			  "If Down or Center"
 		  SID			  "2946"
@@ -7236,6 +6976,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2949"
 		    Position		    [105, 35, 164, 63]
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7319,6 +7060,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2958"
 		    Position		    [170, 15, 229, 43]
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Abs
@@ -7419,6 +7161,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2966"
 		    Position		    [170, 15, 229, 43]
+		    ActionType		    "then"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7551,6 +7294,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2978"
 		    Position		    [170, 15, 229, 43]
+		    ActionType		    "elseif"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7830,6 +7574,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2990"
 		    Position		    [280, 30, 339, 58]
+		    ActionType		    "then"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -7905,6 +7650,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "2998"
 		    Position		    [170, 15, 229, 43]
+		    ActionType		    "else"
 		    }
 		    Block {
 		    BlockType		    Abs
@@ -8003,6 +7749,7 @@ Model {
 		    Name		    "Action Port"
 		    SID			    "3006"
 		    Position		    [170, 15, 229, 43]
+		    ActionType		    "then"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -8300,7 +8047,7 @@ Model {
 		Line {
 		  SrcBlock		  "If Left or Right"
 		  SrcPort		  1
-		  Points		  [0, -150; 180, 0]
+		  Points		  [55, 0; 0, -150; 125, 0]
 		  DstBlock		  "If Up or Center"
 		  DstPort		  ifaction
 		}
@@ -8352,12 +8099,6 @@ Model {
 		}
 		Line {
 		  SrcBlock		  "Sum of\nElements"
-		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
 		  SrcPort		  1
 		  DstBlock		  "Saturation"
 		  DstPort		  1
@@ -10155,7 +9896,7 @@ Model {
       Name		      "MAVLink Serial"
       SID		      "54"
       Ports		      [1, 1]
-      Position		      [630, 112, 950, 368]
+      Position		      [630, 107, 950, 363]
       BackgroundColor	      "cyan"
       DropShadow	      on
       FontName		      "Arial Black"
@@ -10205,7 +9946,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[2, 82, 1902, 1051]
+	Location		[0, 50, 1904, 1072]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11787,7 +11528,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [2, 82, 1902, 1051]
+	    Location		    [0, 50, 1904, 1072]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13496,7 +13237,7 @@ Model {
       Name		      "RC Cmd\n[Channel 8 represents Thrust]"
       SID		      "55"
       Ports		      [1]
-      Position		      [1065, 156, 1185, 334]
+      Position		      [1065, 151, 1185, 329]
       DropShadow	      on
       FontName		      "Arial"
       FontWeight	      "bold"
@@ -13528,7 +13269,7 @@ Model {
       BlockType		      RateTransition
       Name		      "Rate Transition3"
       SID		      "2725"
-      Position		      [240, 735, 270, 765]
+      Position		      [240, 745, 270, 775]
       OutPortSampleTime	      "0.02"
     }
     Block {
@@ -13542,7 +13283,7 @@ Model {
       BlockType		      RateTransition
       Name		      "Rate Transition5"
       SID		      "3029"
-      Position		      [235, 920, 265, 950]
+      Position		      [240, 925, 270, 955]
       OutPortSampleTime	      "0.02"
     }
     Block {
@@ -18071,7 +17812,7 @@ Model {
       Name		      "rc"
       SID		      "1363"
       Ports		      [1]
-      Position		      [1100, 115, 1125, 135]
+      Position		      [1100, 110, 1125, 130]
       Floating		      off
       Location		      [692, 56, 1359, 719]
       Open		      off
@@ -18173,7 +17914,6 @@ Model {
       Labels		      [0, 0]
       SrcBlock		      "Kinect"
       SrcPort		      1
-      Points		      [0, -15]
       DstBlock		      "Rate Transition3"
       DstPort		      1
     }
@@ -18186,7 +17926,7 @@ Model {
     Line {
       SrcBlock		      "Rate Transition3"
       SrcPort		      1
-      Points		      [25, 0]
+      Points		      [25, 0; 0, -10]
       Branch {
 	Points			[0, -380]
 	DstBlock		"Planning"
@@ -18221,7 +17961,7 @@ Model {
     Line {
       SrcBlock		      "Rate Transition5"
       SrcPort		      1
-      Points		      [150, 0; 0, -465]
+      Points		      [145, 0; 0, -470]
       DstBlock		      "Planning"
       DstPort		      7
     }
@@ -18400,7 +18140,6 @@ Stateflow {
     treeNode		    [0 18 0 0]
     firstTransition	    52
     viewObj		    9
-    visible		    1
     machine		    1
     subviewS {
       x1		      734.917
@@ -19356,8 +19095,6 @@ Stateflow {
     dataLimits		    [535.522 846.356 163.124 203.251]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    951
   }
