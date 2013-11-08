@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1562"
+    ComputedModelVersion    "1.1564"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,9 +35,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 08 10:06:51 2013"
-  RTWModifiedTimeStamp	  305804068
-  ModelVersionFormat	  "1.%<AutoIncrement:1562>"
+  LastModifiedDate	  "Fri Nov 08 13:05:14 2013"
+  RTWModifiedTimeStamp	  305816677
+  ModelVersionFormat	  "1.%<AutoIncrement:1564>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -2563,8 +2563,8 @@ Model {
 		  SID			  "2296"
 		  Ports			  [1, 3]
 		  Position		  [320, 189, 505, 281]
-		  IfExpression		  "u1 > 0.45"
-		  ElseIfExpressions	  "u1 >= 0.26"
+		  IfExpression		  "u1 > 0.43"
+		  ElseIfExpressions	  "u1 >= 0.27"
 		}
 		Block {
 		  BlockType		  SubSystem
@@ -4220,7 +4220,7 @@ Model {
 		    Name		    "Buffer"
 		    SID			    "2408"
 		    Position		    [170, 315, 200, 345]
-		    Value		    "0.14"
+		    Value		    "0.12"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -4818,7 +4818,7 @@ Model {
 		    Name		    "Buffer"
 		    SID			    "2438"
 		    Position		    [285, 270, 315, 300]
-		    Value		    "0.14"
+		    Value		    "0.12"
 		    }
 		    Block {
 		    BlockType		    Constant
@@ -5740,8 +5740,17 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Block {
+		  BlockType		  If
+		  Name			  "If Left or Right"
+		  SID			  "2844"
+		  Ports			  [2, 2]
+		  Position		  [240, 359, 350, 441]
+		  NumInputs		  "2"
+		  IfExpression		  "u1 >= u2"
+		}
+		Block {
 		  BlockType		  SubSystem
-		  Name			  "If Action\nSubsystem"
+		  Name			  "Left or Center"
 		  SID			  "2785"
 		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
 		  Position		  [555, 298, 635, 367]
@@ -5754,7 +5763,7 @@ Model {
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
 		  System {
-		    Name		    "If Action\nSubsystem"
+		    Name		    "Left or Center"
 		    Location		    [2, 82, 1885, 1027]
 		    Open		    off
 		    ModelBrowserVisibility  off
@@ -6172,8 +6181,40 @@ Model {
 		  }
 		}
 		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "2845"
+		  Ports			  [2, 1]
+		  Position		  [775, 50, 815, 90]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge1"
+		  SID			  "2846"
+		  Ports			  [2, 1]
+		  Position		  [995, 315, 1035, 355]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge2"
+		  SID			  "2847"
+		  Ports			  [2, 1]
+		  Position		  [995, 430, 1035, 470]
+		  InitialOutput		  "[0]"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge3"
+		  SID			  "2848"
+		  Ports			  [2, 1]
+		  Position		  [775, 725, 815, 765]
+		  InitialOutput		  "[0]"
+		}
+		Block {
 		  BlockType		  SubSystem
-		  Name			  "If Action\nSubsystem1"
+		  Name			  "Right or Center"
 		  SID			  "2815"
 		  Ports			  [2, 4, 0, 0, 0, 0, 0, 1]
 		  Position		  [520, 447, 630, 548]
@@ -6186,7 +6227,7 @@ Model {
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
 		  System {
-		    Name		    "If Action\nSubsystem1"
+		    Name		    "Right or Center"
 		    Location		    [2, 82, 1902, 1027]
 		    Open		    off
 		    ModelBrowserVisibility  off
@@ -6202,14 +6243,14 @@ Model {
 		    ZoomFactor		    "100"
 		    Block {
 		    BlockType		    Inport
-		    Name		    "x: LH"
+		    Name		    "x: RH"
 		    SID			    "2816"
 		    Position		    [30, 313, 60, 327]
 		    IconDisplay		    "Port number"
 		    }
 		    Block {
 		    BlockType		    Inport
-		    Name		    "x: LSh"
+		    Name		    "x: RSh"
 		    SID			    "2817"
 		    Position		    [30, 223, 60, 237]
 		    Port		    "2"
@@ -6258,7 +6299,7 @@ Model {
 		    }
 		    Block {
 		    BlockType		    SubSystem
-		    Name		    "Else Hover"
+		    Name		    "Else Center"
 		    SID			    "2822"
 		    Ports		    [1, 2, 0, 0, 0, 0, 0, 1]
 		    Position		    [545, 337, 615, 373]
@@ -6271,7 +6312,7 @@ Model {
 		    RequestExecContextInheritance off
 		    MaskHideContents	    off
 		    System {
-		    Name		    "Else Hover"
+		    Name		    "Else Center"
 		    Location		    [342, 471, 840, 771]
 		    Open		    off
 		    ModelBrowserVisibility  off
@@ -6530,18 +6571,18 @@ Model {
 		    SrcBlock		    "If"
 		    SrcPort		    2
 		    Points		    [40, 0; 0, 30; 65, 0]
-		    DstBlock		    "Else Hover"
+		    DstBlock		    "Else Center"
 		    DstPort		    ifaction
 		    }
 		    Line {
-		    SrcBlock		    "x: LSh"
+		    SrcBlock		    "x: RSh"
 		    SrcPort		    1
 		    Points		    [45, 0; 0, 30]
 		    DstBlock		    "Subtract1"
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "x: LH"
+		    SrcBlock		    "x: RH"
 		    SrcPort		    1
 		    Points		    [45, 0; 0, -45]
 		    DstBlock		    "Subtract1"
@@ -6566,13 +6607,13 @@ Model {
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Else Hover"
+		    SrcBlock		    "Else Center"
 		    SrcPort		    1
 		    DstBlock		    "Merge1"
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Else Hover"
+		    SrcBlock		    "Else Center"
 		    SrcPort		    2
 		    Points		    [80, 0; 0, -110; 60, 0]
 		    DstBlock		    "Merge"
@@ -6613,51 +6654,10 @@ Model {
 		    Line {
 		    SrcBlock		    "Constant3"
 		    SrcPort		    1
-		    DstBlock		    "Else Hover"
+		    DstBlock		    "Else Center"
 		    DstPort		    1
 		    }
 		  }
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If Left or Right"
-		  SID			  "2844"
-		  Ports			  [2, 2]
-		  Position		  [240, 359, 350, 441]
-		  NumInputs		  "2"
-		  IfExpression		  "u1 >= u2"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge"
-		  SID			  "2845"
-		  Ports			  [2, 1]
-		  Position		  [775, 50, 815, 90]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge1"
-		  SID			  "2846"
-		  Ports			  [2, 1]
-		  Position		  [995, 315, 1035, 355]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge2"
-		  SID			  "2847"
-		  Ports			  [2, 1]
-		  Position		  [995, 430, 1035, 470]
-		  InitialOutput		  "[0]"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge3"
-		  SID			  "2848"
-		  Ports			  [2, 1]
-		  Position		  [775, 725, 815, 765]
-		  InitialOutput		  "[0]"
 		}
 		Block {
 		  BlockType		  Saturate
@@ -6711,7 +6711,7 @@ Model {
 		    Points		    [20, 0]
 		    Branch {
 		    Points		    [0, -65]
-		    DstBlock		    "If Action\nSubsystem"
+		    DstBlock		    "Left or Center"
 		    DstPort		    1
 		    }
 		    Branch {
@@ -6721,7 +6721,7 @@ Model {
 		  }
 		  Branch {
 		    Points		    [0, 95]
-		    DstBlock		    "If Action\nSubsystem1"
+		    DstBlock		    "Right or Center"
 		    DstPort		    1
 		  }
 		}
@@ -6733,7 +6733,7 @@ Model {
 		    Points		    [60, 0]
 		    Branch {
 		    Points		    [0, -70]
-		    DstBlock		    "If Action\nSubsystem"
+		    DstBlock		    "Left or Center"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -6743,7 +6743,7 @@ Model {
 		  }
 		  Branch {
 		    Points		    [0, 105]
-		    DstBlock		    "If Action\nSubsystem1"
+		    DstBlock		    "Right or Center"
 		    DstPort		    2
 		  }
 		}
@@ -6763,7 +6763,7 @@ Model {
 		  SrcBlock		  "If Left or Right"
 		  SrcPort		  2
 		  Points		  [220, 0]
-		  DstBlock		  "If Action\nSubsystem1"
+		  DstBlock		  "Right or Center"
 		  DstPort		  ifaction
 		}
 		Line {
@@ -6781,54 +6781,54 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcBlock		  "Right or Center"
 		  SrcPort		  1
 		  DstBlock		  "Merge2"
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcBlock		  "Right or Center"
 		  SrcPort		  2
 		  Points		  [15, 0; 0, 270]
 		  DstBlock		  "Merge3"
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem"
+		  SrcBlock		  "Left or Center"
 		  SrcPort		  2
 		  DstBlock		  "Merge1"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem"
+		  SrcBlock		  "Left or Center"
 		  SrcPort		  1
 		  Points		  [30, 0; 0, -250]
 		  DstBlock		  "Merge"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem"
+		  SrcBlock		  "Left or Center"
 		  SrcPort		  3
 		  Points		  [95, 0; 0, 395]
 		  DstBlock		  "Merge3"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcBlock		  "Right or Center"
 		  SrcPort		  3
 		  Points		  [70, 0; 0, -430]
 		  DstBlock		  "Merge"
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem"
+		  SrcBlock		  "Left or Center"
 		  SrcPort		  4
 		  Points		  [340, 0]
 		  DstBlock		  "Merge2"
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "If Action\nSubsystem1"
+		  SrcBlock		  "Right or Center"
 		  SrcPort		  4
 		  Points		  [340, 0; 0, -190]
 		  DstBlock		  "Merge1"
@@ -6838,7 +6838,7 @@ Model {
 		  SrcBlock		  "If Left or Right"
 		  SrcPort		  1
 		  Points		  [180, 0; 0, -97]
-		  DstBlock		  "If Action\nSubsystem"
+		  DstBlock		  "Left or Center"
 		  DstPort		  ifaction
 		}
 		Line {
@@ -6901,14 +6901,14 @@ Model {
 		ZoomFactor		"100"
 		Block {
 		  BlockType		  Inport
-		  Name			  "Y: LH"
+		  Name			  "Y: RH"
 		  SID			  "2943"
 		  Position		  [25, 218, 55, 232]
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "Y: LSh"
+		  Name			  "Y: RSh"
 		  SID			  "2944"
 		  Position		  [25, 258, 55, 272]
 		  Port			  "2"
@@ -6945,14 +6945,14 @@ Model {
 		    ZoomFactor		    "100"
 		    Block {
 		    BlockType		    Inport
-		    Name		    "Y: LH"
+		    Name		    "Y: RH"
 		    SID			    "2947"
 		    Position		    [30, 313, 60, 327]
 		    IconDisplay		    "Port number"
 		    }
 		    Block {
 		    BlockType		    Inport
-		    Name		    "Y: LSh"
+		    Name		    "Y: RSh"
 		    SID			    "2948"
 		    Position		    [30, 223, 60, 237]
 		    Port		    "2"
@@ -7270,19 +7270,19 @@ Model {
 		    Labels		    [2, 0]
 		    SrcBlock		    "If"
 		    SrcPort		    2
-		    Points		    [0, 300; 130, 0]
+		    Points		    [130, 0]
 		    DstBlock		    "Else Center"
 		    DstPort		    ifaction
 		    }
 		    Line {
-		    SrcBlock		    "Y: LSh"
+		    SrcBlock		    "Y: RSh"
 		    SrcPort		    1
 		    Points		    [45, 0; 0, 30]
 		    DstBlock		    "Subtract1"
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Y: LH"
+		    SrcBlock		    "Y: RH"
 		    SrcPort		    1
 		    Points		    [45, 0; 0, -45]
 		    DstBlock		    "Subtract1"
@@ -7399,14 +7399,14 @@ Model {
 		    ZoomFactor		    "100"
 		    Block {
 		    BlockType		    Inport
-		    Name		    "Y: LH"
+		    Name		    "Y: RH"
 		    SID			    "2988"
 		    Position		    [45, 218, 75, 232]
 		    IconDisplay		    "Port number"
 		    }
 		    Block {
 		    BlockType		    Inport
-		    Name		    "Y: LSh"
+		    Name		    "Y: RSh"
 		    SID			    "2989"
 		    Position		    [45, 253, 75, 267]
 		    Port		    "2"
@@ -7727,13 +7727,13 @@ Model {
 		    DstPort		    ifaction
 		    }
 		    Line {
-		    SrcBlock		    "Y: LH"
+		    SrcBlock		    "Y: RH"
 		    SrcPort		    1
 		    DstBlock		    "Subtract1"
 		    DstPort		    1
 		    }
 		    Line {
-		    SrcBlock		    "Y: LSh"
+		    SrcBlock		    "Y: RSh"
 		    SrcPort		    1
 		    DstBlock		    "Subtract1"
 		    DstPort		    2
@@ -7895,7 +7895,7 @@ Model {
 		  DstPort		  ifaction
 		}
 		Line {
-		  SrcBlock		  "Y: LH"
+		  SrcBlock		  "Y: RH"
 		  SrcPort		  1
 		  Points		  [40, 0]
 		  Branch {
@@ -7917,7 +7917,7 @@ Model {
 		  }
 		}
 		Line {
-		  SrcBlock		  "Y: LSh"
+		  SrcBlock		  "Y: RSh"
 		  SrcPort		  1
 		  Points		  [35, 0]
 		  Branch {
@@ -17953,8 +17953,8 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [0 0 1440 753]
-    viewLimits		    [2088.167 3833.792 1419.58 2315.83]
+    windowPosition	    [18.75 0 1440 753]
+    viewLimits		    [2088.167 3833.792 0 896.25]
     zoomFactor		    1.25
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
@@ -17964,7 +17964,8 @@ Stateflow {
     visible		    1
     machine		    1
     subviewS {
-      zoomFactor	      3.802
+      x1		      2088.167
+      zoomFactor	      1.25
     }
     ssIdHighWaterMark	    1061
     decomposition	    CLUSTER_CHART
@@ -18009,7 +18010,6 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [27 0 0 15]
-    visible		    0
     subviewer		    9
     ssIdNumber		    841
     type		    OR_STATE
@@ -18046,13 +18046,13 @@ Stateflow {
   }
   state {
     id			    15
-    labelString		    "Hover\nen:\nPosDesired[0]=0+LeftRight, PosDesired[1]=0+FrontBack,PosDesired[2]= -1.5+UpDown;\nLX"
-    "counter =  0;\nLYcounter = 0;\nLZcounter = 0;\nRXYcounter = 0;\nRZcounter = 0;\nLHRH = 0;\nClawStatus = 1;"
+    labelString		    "Hover\nen:\nPosDesired[0]=0+LeftRight, PosDesired[1]=0+FrontBack,PosDesired[2]= -1.5+UpDown;\nPo"
+    "sDesired[3] =\nLXcounter =  0;\nLYcounter = 0;\nLZcounter = 0;\nRXYcounter = 0;\nRZcounter = 0;\nLHRH = 0;\nClawSt"
+    "atus = 1;"
     position		    [2368.5937 264 930.9375 195.1875]
     fontSize		    12
     chart		    9
     treeNode		    [27 0 12 43]
-    visible		    0
     subviewer		    9
     ssIdNumber		    828
     type		    OR_STATE
@@ -18065,7 +18065,6 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 21 17]
-    visible		    0
     subviewer		    9
     ssIdNumber		    829
     type		    OR_STATE
@@ -18078,7 +18077,6 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 16 0]
-    visible		    0
     subviewer		    9
     ssIdNumber		    830
     type		    OR_STATE
@@ -18092,7 +18090,6 @@ Stateflow {
     chart		    9
     treeNode		    [9 27 0 10]
     firstTransition	    68
-    visible		    0
     subviewer		    9
     ssIdNumber		    809
     type		    OR_STATE
@@ -18122,6 +18119,7 @@ Stateflow {
     treeNode		    [35 28 19 44]
     firstTransition	    85
     firstJunction	    55
+    visible		    0
     subviewer		    9
     ssIdNumber		    900
     type		    OR_STATE
@@ -18134,7 +18132,6 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 0 16]
-    visible		    0
     subviewer		    9
     ssIdNumber		    881
     type		    OR_STATE
@@ -18149,7 +18146,6 @@ Stateflow {
     treeNode		    [35 21 0 19]
     firstTransition	    70
     firstJunction	    53
-    visible		    0
     subviewer		    9
     ssIdNumber		    899
     type		    OR_STATE
@@ -18162,6 +18158,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [20 0 29 0]
+    visible		    0
     subviewer		    9
     ssIdNumber		    897
     type		    OR_STATE
@@ -18215,7 +18212,6 @@ Stateflow {
     treeNode		    [18 12 0 11]
     firstTransition	    86
     firstJunction	    56
-    visible		    0
     subviewer		    9
     ssIdNumber		    825
     type		    OR_STATE
@@ -18228,6 +18224,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [20 0 0 29]
+    visible		    0
     subviewer		    9
     ssIdNumber		    832
     type		    OR_STATE
@@ -18240,6 +18237,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [20 0 28 23]
+    visible		    0
     subviewer		    9
     ssIdNumber		    831
     type		    OR_STATE
@@ -18440,12 +18438,13 @@ Stateflow {
   state {
     id			    44
     labelString		    "CheckRIGHTXY"
-    position		    [1995.5156 1551.2448 1411.2813 689.9063]
+    position		    [2001.2968 1549.8385 1411.2813 689.9063]
     fontSize		    11.881
     chart		    9
     treeNode		    [35 45 20 46]
     firstTransition	    95
     firstJunction	    61
+    visible		    0
     subviewer		    9
     ssIdNumber		    1007
     type		    OR_STATE
@@ -18458,6 +18457,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [44 0 0 50]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1039
     type		    OR_STATE
@@ -18470,6 +18470,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [35 0 44 0]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1024
     type		    OR_STATE
@@ -18482,6 +18483,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [44 0 49 48]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1029
     type		    OR_STATE
@@ -18494,6 +18496,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [44 0 47 0]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1030
     type		    OR_STATE
@@ -18506,6 +18509,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [44 0 51 47]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1031
     type		    OR_STATE
@@ -18518,6 +18522,7 @@ Stateflow {
     fontSize		    11.881
     chart		    9
     treeNode		    [44 0 45 52]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1037
     type		    OR_STATE
@@ -18530,6 +18535,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [44 0 52 49]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1054
     type		    OR_STATE
@@ -18542,6 +18548,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [44 0 50 51]
+    visible		    0
     subviewer		    9
     ssIdNumber		    1055
     type		    OR_STATE
@@ -18916,7 +18923,7 @@ Stateflow {
     }
     midPoint		    [2854.5939 482.7939]
     chart		    9
-    linkNode		    [27 100 75]
+    linkNode		    [27 75 108]
     dataLimits		    [2852.194 2856.994 459.188 512.599]
     subviewer		    9
     drawStyle		    SMART
@@ -18958,21 +18965,19 @@ Stateflow {
     fontSize		    12
     src {
       id		      35
-      intersection	      [1 0 -1 0.5451 3238.5736 627.6093 0 399.8908]
+      intersection	      [1 0 -1 0.5447 3237.6239 627.6093 0 399.8908]
     }
     dst {
       id		      15
-      intersection	      [3 0 1 0.0665 3237.6238 459.1876 0 -399.8908]
+      intersection	      [3 -0 1 0.0665 3237.6239 459.1875 0 -399.8908]
     }
     midPoint		    [3238.0678 543.9978]
     chart		    9
-    linkNode		    [27 73 108]
+    linkNode		    [27 100 73]
     dataLimits		    [3235.224 3240.024 459.188 627.609]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    945
   }
@@ -19077,8 +19082,6 @@ Stateflow {
     dataLimits		    [535.522 846.356 163.124 269.938]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    951
   }
@@ -19264,7 +19267,7 @@ Stateflow {
     fontSize		    12
     src {
       id		      12
-      intersection	      [3 0 1 0.5533 2797.647 174.2811 0 29.4152]
+      intersection	      [3 -0 1 0.5533 2797.647 174.2811 0 29.4152]
     }
     dst {
       id		      15
@@ -19277,8 +19280,6 @@ Stateflow {
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    847
   }
@@ -19474,7 +19475,7 @@ Stateflow {
     slide {
       sticky		      BOTH_STICK
     }
-    executionOrder	    2
+    executionOrder	    1
     ssIdNumber		    1044
   }
   transition {
@@ -19588,9 +19589,9 @@ Stateflow {
     }
     midPoint		    [2061.6195 496.9466]
     chart		    9
-    linkNode		    [27 87 73]
+    linkNode		    [27 87 75]
     dataLimits		    [1752.485 2368.594 394.88 682.752]
-    stampAngle		    0.0808
+    stampAngle		    0.0809
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -19794,7 +19795,7 @@ Stateflow {
     }
     midPoint		    [1574.4043 511.0384]
     chart		    9
-    linkNode		    [27 75 107]
+    linkNode		    [27 73 107]
     dataLimits		    [1278.563 1745.62 468.631 678.797]
     stampAngle		    -1.0044
     subviewer		    9
@@ -19835,25 +19836,23 @@ Stateflow {
   transition {
     id			    110
     labelString		    "[(LZcounter==1)]"
-    labelPosition	    [2619.389 1518.405 91.831 16.842]
+    labelPosition	    [2619.433 1516.494 91.831 16.842]
     fontSize		    12
     src {
       id		      20
-      intersection	      [3 -0 1 0.5385 2607.7558 1501.125 0 53.6088]
+      intersection	      [3 -0 1 0.5385 2607.8 1501.125 0 53.6088]
     }
     dst {
       id		      44
-      intersection	      [1 0 -1 0.4338 2607.7558 1551.2448 0 -53.6088]
+      intersection	      [1 0 -1 0.4298 2607.8 1549.8385 0 -53.6088]
     }
-    midPoint		    [2607.7558 1523.0138]
+    midPoint		    [2607.8 1522.2801]
     chart		    9
     linkNode		    [35 97 113]
-    dataLimits		    [2605.356 2610.156 1501.125 1551.245]
+    dataLimits		    [2605.4 2610.2 1501.125 1549.839]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    1009
   }
@@ -19904,7 +19903,7 @@ Stateflow {
   transition {
     id			    113
     labelString		    "[RightHand[5]==0]"
-    labelPosition	    [3486.934 1682.04 101.201 16.842]
+    labelPosition	    [3487.421 1682.04 101.201 16.842]
     fontSize		    12
     src {
       id		      60
@@ -19912,12 +19911,12 @@ Stateflow {
     }
     dst {
       id		      44
-      intersection	      [2 1 0 0.2336 3406.7969 1712.3841 0 0]
+      intersection	      [2 1 0 0.2356 3412.5782 1712.3841 0 0]
     }
-    midPoint		    [3519.0542 1712.3841]
+    midPoint		    [3522.0705 1712.3841]
     chart		    9
     linkNode		    [35 110 114]
-    dataLimits		    [3406.797 3632.608 1709.984 1714.784]
+    dataLimits		    [3412.578 3632.608 1709.984 1714.784]
     subviewer		    9
     drawStyle		    SMART
     executionOrder	    2
@@ -19979,20 +19978,20 @@ Stateflow {
   transition {
     id			    116
     labelString		    "[RightHand[5]==1]"
-    labelPosition	    [3465.139 1999.862 101.201 16.842]
+    labelPosition	    [3468.016 1999.983 101.201 16.842]
     fontSize		    12
     src {
       id		      44
-      intersection	      [2 1 0 0.6174 3406.7969 1977.1669 0 -93.7172]
+      intersection	      [2 1 0 0.6194 3412.5782 1977.1669 0 -93.7172]
     }
     dst {
       id		      46
       intersection	      [4 -1 0 0.767 3530.858 2048.454 0 22.4301]
     }
-    midPoint		    [3467.0573 2015.1336]
+    midPoint		    [3469.8136 2015.1336]
     chart		    9
     linkNode		    [35 114 121]
-    dataLimits		    [3406.797 3530.858 1977.167 2050.854]
+    dataLimits		    [3412.578 3530.858 1977.167 2050.854]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -20006,20 +20005,20 @@ Stateflow {
   transition {
     id			    117
     labelString		    "[RightHand[0]==1]"
-    labelPosition	    [2784.843 1783.618 101.201 16.842]
+    labelPosition	    [2774.676 1783.986 101.201 16.842]
     fontSize		    11.881
     src {
       id		      45
-      intersection	      [3 0 1 0.5073 2911.136 1721.1587 0 -34.9484]
+      intersection	      [3 0 1 0.6681 2899.7295 1721.1587 0 -23.542]
     }
     dst {
       id		      47
       intersection	      [1 0 -1 0.384 2733.7188 2052.1275 0 -110.5]
     }
-    midPoint		    [2816.6457 1889.094]
+    midPoint		    [2811.3142 1889.151]
     chart		    9
-    linkNode		    [44 115 118]
-    dataLimits		    [2731.319 2911.136 1721.159 2052.127]
+    linkNode		    [44 115 119]
+    dataLimits		    [2731.319 2899.729 1721.159 2052.128]
     stampAngle		    -0.0589
     subviewer		    9
     drawStyle		    SMART
@@ -20029,26 +20028,26 @@ Stateflow {
       arcL		      -110.5
       arcClockDir	      COUNTER_CLOCKWISE
     }
-    executionOrder	    2
+    executionOrder	    3
     ssIdNumber		    1033
   }
   transition {
     id			    118
     labelString		    "[LeftHand[2]==1]"
-    labelPosition	    [3144.561 1983.502 92.768 16.842]
+    labelPosition	    [3145.175 1983.579 92.768 16.842]
     fontSize		    11.881
     src {
       id		      45
-      intersection	      [3 0 1 0.4787 2913.1672 1721.1587 0 33.9578]
+      intersection	      [3 0 1 0.3377 2923.167 1721.1587 0 23.958]
     }
     dst {
       id		      49
       intersection	      [1 0 -1 0.5301 3152.5001 2050.815 0 93.0938]
     }
-    midPoint		    [3040.6331 1888.0495]
+    midPoint		    [3045.3071 1888.1123]
     chart		    9
-    linkNode		    [44 117 119]
-    dataLimits		    [2913.167 3154.9 1721.159 2050.815]
+    linkNode		    [44 119 122]
+    dataLimits		    [2923.167 3154.9 1721.159 2050.815]
     stampAngle		    0.0318
     subviewer		    9
     drawStyle		    SMART
@@ -20063,24 +20062,23 @@ Stateflow {
   transition {
     id			    119
     labelString		    "[LeftHand[1]==1]"
-    labelPosition	    [2913.371 1851.353 92.768 16.842]
+    labelPosition	    [2909.621 1848.163 92.768 16.842]
     fontSize		    11.881
     src {
-      intersection	      [0 0 1 0.3906 2912.8547 1727.0802 0 -7.7609]
+      id		      45
+      intersection	      [3 0 1 0.536 2909.1045 1721.1587 0 2.5518]
     }
     dst {
       id		      48
-      intersection	      [1 0 -1 0.3372 2912.8547 2052.5962 0 7.7609]
+      intersection	      [1 0 -1 0.3076 2909.1045 2052.5962 0 -2.5518]
     }
-    midPoint		    [2912.8547 1892.6539]
+    midPoint		    [2909.1045 1889.8219]
     chart		    9
-    linkNode		    [44 118 122]
-    dataLimits		    [2910.455 2915.255 1727.08 2052.596]
+    linkNode		    [44 117 118]
+    dataLimits		    [2906.704 2911.505 1721.159 2052.596]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
+    executionOrder	    2
     ssIdNumber		    1035
   }
   transition {
@@ -20099,7 +20097,7 @@ Stateflow {
     midPoint		    [2807.5614 1625.9027]
     chart		    9
     linkNode		    [44 95 115]
-    dataLimits		    [2614.49 2912.442 1625.549 1696.159]
+    dataLimits		    [2614.49 2912.442 1622.944 1696.159]
     stampAngle		    0.0793
     subviewer		    9
     drawStyle		    SMART
@@ -20113,25 +20111,23 @@ Stateflow {
   transition {
     id			    121
     labelString		    "[Rcounter ==1]"
-    labelPosition	    [3431.448 2083.752 83.397 16.842]
+    labelPosition	    [3436.742 2083.75 83.397 16.842]
     fontSize		    12
     src {
       id		      44
-      intersection	      [2 1 0 0.7603 3406.7969 2075.7831 0 0.2115]
+      intersection	      [2 1 0 0.7623 3412.5782 2075.7813 0 0.2115]
     }
     dst {
       id		      46
-      intersection	      [4 -1 -0 0.4417 3530.858 2075.7831 0 -4.899]
+      intersection	      [4 -1 -0 0.4417 3530.858 2075.7813 0 -4.899]
     }
-    midPoint		    [3467.2637 2075.7831]
+    midPoint		    [3470.0287 2075.7813]
     chart		    9
     linkNode		    [35 116 0]
-    dataLimits		    [3406.797 3530.858 2073.383 2078.183]
+    dataLimits		    [3412.578 3530.858 2073.381 2078.181]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    2
     ssIdNumber		    1053
   }
@@ -20150,8 +20146,8 @@ Stateflow {
     }
     midPoint		    [2238.9023 1823.7144]
     chart		    9
-    linkNode		    [44 119 123]
-    dataLimits		    [2214.247 2264.261 1731.127 1916.877]
+    linkNode		    [44 118 123]
+    dataLimits		    [2214.247 2264.261 1731.128 1916.877]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -20178,7 +20174,7 @@ Stateflow {
     midPoint		    [2339.8712 1821.4043]
     chart		    9
     linkNode		    [44 122 0]
-    dataLimits		    [2298.323 2378.734 1731.127 1912.658]
+    dataLimits		    [2298.324 2378.734 1731.128 1912.658]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
