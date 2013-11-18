@@ -1,4 +1,4 @@
-function [ViconPose] = Wanchao(u)
+function [ViconPose] = GetViconPose(u)
 global MyClient;
 global QuadRotationMatix;
 
@@ -14,13 +14,13 @@ end
 % SubjectName = 'x330'; SegmentName = 'x330';
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('Weekiat', 'Weekiat');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('wanchao', 'wanchao');
 ViconPose(1) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(2) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(3) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('Weekiat', 'Weekiat');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('wanchao', 'wanchao');
 ViconPose(4) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(5) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
@@ -48,13 +48,13 @@ ViconPose(12) = QuadEulerXYZ.Rotation(3); % Yaw
 % SubjectName = 'brush'; SegmentName = 'brush';
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('Shuttlecock', 'Shuttlecock');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('shuttlecock', 'shuttlecock');
 ViconPose(13) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(14) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(15) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('Shuttlecock', 'Shuttlecock');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('shuttlecock', 'shuttlecock');
 ViconPose(16) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(17) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(18) = QuadEulerXYZ.Rotation(3); % Yaw

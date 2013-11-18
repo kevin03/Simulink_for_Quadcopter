@@ -1,12 +1,12 @@
 Model {
-  Name			  "WK_MaoBi_Record_using_backup"
-  Version		  7.8
+  Name			  "Wanchao_Shuttlecock_NewFilter"
+  Version		  7.7
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1454"
+    ComputedModelVersion    "1.1502"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,7 +19,6 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
-  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   InitFcn		  "sample_time=0.005;%0.004;%0.0025;%0.02;\nDeltaT = 0.02;\ng = 9.81;\nH0 = g%0.3165;\nKl = 1;\n\nOmega_r ="
   " 1.6;%for Horizontal reference\nZeta_r = 0.7; %for Horizontal reference\nOmega = 1.8;%for Horizontal Control\nZeta ="
@@ -32,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Birdman"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Oct 14 15:56:29 2013"
-  RTWModifiedTimeStamp	  303666773
-  ModelVersionFormat	  "1.%<AutoIncrement:1454>"
+  LastModifiedDate	  "Fri Nov 15 16:20:56 2013"
+  RTWModifiedTimeStamp	  306422743
+  ModelVersionFormat	  "1.%<AutoIncrement:1502>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -42,7 +41,6 @@ Model {
   WideLines		  off
   ShowLineDimensions	  on
   ShowPortDataTypes	  off
-  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -110,13 +108,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      1
-      Version		      "1.11.1"
+      Version		      "1.11.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -150,7 +148,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -182,7 +180,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -201,7 +199,6 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
-	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -238,7 +235,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -293,7 +290,6 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -322,11 +318,10 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
-	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -363,7 +358,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -378,7 +373,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -393,7 +388,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -446,7 +441,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		21
@@ -511,7 +506,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -539,7 +534,9 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
+	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
+	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -549,7 +546,6 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
-	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -594,8 +590,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Diagnostics"
-      ConfigPrmDlgPosition     [ 197, 46, 1084, 664 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 206, 84, 1075, 655 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -674,6 +670,13 @@ Model {
       Outputs		      "4"
       DisplayOption	      "none"
       BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Gain
@@ -781,15 +784,6 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      RateTransition
-      Integrity		      on
-      Deterministic	      on
-      X0		      "0"
-      OutPortSampleTimeOpt    "Specify"
-      OutPortSampleTimeMultiple	"1"
-      OutPortSampleTime	      "-1"
-    }
-    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
@@ -844,7 +838,6 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
     }
@@ -881,8 +874,8 @@ Model {
     }
   }
   System {
-    Name		    "WK_MaoBi_Record_using_backup"
-    Location		    [1005, 142, 2903, 1064]
+    Name		    "Wanchao_Shuttlecock_NewFilter"
+    Location		    [101, 63, 1069, 1071]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -894,36 +887,35 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "197"
+    ZoomFactor		    "94"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1979"
+    SIDHighWatermark	    "1988"
     Block {
-      BlockType		      RateTransition
-      Name		      "Rate Transition"
-      SID		      "1518"
-      Position		      [120, 105, 150, 135]
-      OutPortSampleTime	      "0.02"
+      BlockType		      Goto
+      Name		      "Goto"
+      SID		      "5"
+      Position		      [1035, 385, 1075, 415]
+      GotoTag		      "RC"
+      TagVisibility	      "global"
     }
     Block {
-      BlockType		      RateTransition
-      Name		      "Rate Transition1"
-      SID		      "1519"
-      Position		      [120, 220, 150, 250]
-      OutPortSampleTime	      "0.02"
-    }
-    Block {
-      BlockType		      RateTransition
-      Name		      "Rate Transition2"
-      SID		      "1751"
-      Position		      [120, 300, 150, 330]
-      OutPortSampleTime	      "0.02"
+      BlockType		      Display
+      Name		      "RC Cmd\n[Channel 8 represents Thrust]"
+      SID		      "55"
+      Ports		      [1]
+      Position		      [1030, 151, 1150, 329]
+      DropShadow	      on
+      FontName		      "Arial"
+      FontWeight	      "bold"
+      Decimation	      "1"
+      Lockdown		      off
     }
     Block {
       BlockType		      SubSystem
       Name		      "Real-time\nClock"
       SID		      "607"
       Ports		      []
-      Position		      [501, 31, 538, 62]
+      Position		      [676, 31, 713, 62]
       ShowPortLabels	      "none"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -984,29 +976,11 @@ Model {
       }
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "1979"
-      Ports		      [1]
-      Position		      [250, 139, 280, 171]
-      ZOrder		      -3
-      Floating		      off
-      Location		      [188, 390, 512, 629]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      SubSystem
       Name		      "Vicon_Data"
       SID		      "622"
       Ports		      [0, 3]
-      Position		      [15, 72, 80, 368]
+      Position		      [15, 71, 150, 369]
       BackgroundColor	      "lightBlue"
       FontName		      "Arial"
       FontSize		      14
@@ -1019,8 +993,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Vicon_Data"
-	Location		[608, 95, 2506, 1017]
-	Open			off
+	Location		[11, 95, 928, 978]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1065,6 +1039,16 @@ Model {
 	  SID			  "1725"
 	  Ports			  [1, 6]
 	  Position		  [560, 537, 570, 618]
+	  ShowName		  off
+	  Outputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  SID			  "1986"
+	  Ports			  [1, 6]
+	  Position		  [560, 662, 570, 743]
 	  ShowName		  off
 	  Outputs		  "6"
 	  DisplayOption		  "bar"
@@ -1182,9 +1166,18 @@ Model {
 	      SID		      "1732"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -1555,9 +1548,18 @@ Model {
 	      SID		      "1412"
 	      Ports		      [1, 1]
 	      Position		      [325, 234, 440, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -1717,7 +1719,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Filter8"
-	    Location		    [2, 95, 1348, 728]
+	    Location		    [2, 82, 1348, 715]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1781,9 +1783,18 @@ Model {
 	      SID		      "1487"
 	      Ports		      [1, 2]
 	      Position		      [315, 234, 430, 316]
-	      LibraryVersion	      "1.793"
+	      LibraryVersion	      "1.790"
 	      SourceBlock	      "dspadpt3/Kalman Filter"
 	      SourceType	      "Kalman Filter"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
 	      num_targets	      "1"
 	      sourceEnable	      "Always"
 	      isReset		      on
@@ -2117,6 +2128,15 @@ Model {
 	}
 	Block {
 	  BlockType		  M-S-Function
+	  Name			  "Logic to fix signal loss \nand object local axis flip2"
+	  SID			  "1984"
+	  Ports			  [1, 1]
+	  Position		  [355, 667, 515, 743]
+	  BackgroundColor	  "cyan"
+	  FunctionName		  "Vicon_Filter_Est"
+	}
+	Block {
+	  BlockType		  M-S-Function
 	  Name			  "Logic to fix signal loss \nand object local axis flip7"
 	  SID			  "1426"
 	  Ports			  [1, 1]
@@ -2293,6 +2313,26 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Mux
+	  Name			  "Mux5"
+	  SID			  "1985"
+	  Ports			  [2, 1]
+	  Position		  [315, 656, 325, 754]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux6"
+	  SID			  "1987"
+	  Ports			  [3, 1]
+	  Position		  [615, 657, 625, 703]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "Raw Quad Pose from Vicon"
 	  SID			  "675"
@@ -2311,7 +2351,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Raw Quad Pose from Vicon"
-	    Location		    [608, 95, 1851, 752]
+	    Location		    [606, 63, 1853, 776]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2345,9 +2385,9 @@ Model {
 	      Name		      "Interpreted MATLAB\nFunction"
 	      SID		      "678"
 	      Ports		      [1, 1]
-	      Position		      [105, 275, 175, 305]
+	      Position		      [100, 275, 170, 305]
 	      ShowName		      off
-	      MATLABFcn		      "WKboxrecord"
+	      MATLABFcn		      "Wanchao"
 	    }
 	    Block {
 	      BlockType		      SubSystem
@@ -2502,12 +2542,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -2594,12 +2643,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -3181,7 +3239,7 @@ Model {
 	      MaskHideContents	      off
 	      System {
 		Name			"Process Vicon Raw Data6"
-		Location		[2, 82, 712, 449]
+		Location		[2, 95, 712, 462]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -3319,12 +3377,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -3411,12 +3478,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -4136,12 +4212,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [315, 96, 400, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    ">"
 		    const		    "pi"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -4228,12 +4313,21 @@ Model {
 		    Ports		    [1, 1]
 		    Position		    [290, 96, 375, 124]
 		    ShowName		    off
-		    LibraryVersion	    "1.256"
+		    LibraryVersion	    "1.236"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
+		    ShowPortLabels	    "FromPortIcon"
+		    SystemSampleTime	    "-1"
+		    FunctionWithSeparateData off
+		    RTWMemSecFuncInitTerm   "Inherit from model"
+		    RTWMemSecFuncExecute    "Inherit from model"
+		    RTWMemSecDataConstants  "Inherit from model"
+		    RTWMemSecDataInternal   "Inherit from model"
+		    RTWMemSecDataParameters "Inherit from model"
+		    GeneratePreprocessorConditionals off
 		    relop		    "<"
 		    const		    "0"
-		    OutDataTypeStr	    "uint8"
+		    LogicOutDataTypeMode    "uint8"
 		    ZeroCross		    off
 		    }
 		    Block {
@@ -4833,7 +4927,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Position_Vicon_brush"
+	      Name		      "Position_Vicon_shuttlecock"
 	      SID		      "1722"
 	      Position		      [625, 463, 655, 477]
 	      Port		      "5"
@@ -4841,7 +4935,7 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Attitude_Vicon_brush"
+	      Name		      "Attitude_Vicon_shuttlecock"
 	      SID		      "1723"
 	      Position		      [625, 493, 655, 507]
 	      Port		      "6"
@@ -4901,13 +4995,13 @@ Model {
 	    Line {
 	      SrcBlock		      "Process Vicon Raw Data1"
 	      SrcPort		      2
-	      DstBlock		      "Attitude_Vicon_brush"
+	      DstBlock		      "Attitude_Vicon_shuttlecock"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Process Vicon Raw Data1"
 	      SrcPort		      1
-	      DstBlock		      "Position_Vicon_brush"
+	      DstBlock		      "Position_Vicon_shuttlecock"
 	      DstPort		      1
 	    }
 	    Line {
@@ -4918,6 +5012,27 @@ Model {
 	      DstPort		      1
 	    }
 	  }
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  SID			  "1988"
+	  Ports			  [2]
+	  Position		  [870, 726, 900, 759]
+	  Floating		  off
+	  Location		  [970, 64, 1912, 1022]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  YMin			  "-5~-5"
+	  YMax			  "5~5"
+	  SaveName		  "ScopeData7"
+	  DataFormat		  "StructureWithTime"
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Selector
@@ -4964,7 +5079,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "brush"
+	  Name			  "shuttlecock"
 	  SID			  "1750"
 	  Position		  [920, 603, 950, 617]
 	  BackgroundColor	  "[0.709804, 0.549020, 0.670588]"
@@ -5174,13 +5289,13 @@ Model {
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    Points		    [0, 55]
-	    DstBlock		    "Selector2"
+	    Points		    [0, -10]
+	    DstBlock		    "Selector1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, -10]
-	    DstBlock		    "Selector1"
+	    Points		    [0, 55]
+	    DstBlock		    "Selector2"
 	    DstPort		    1
 	  }
 	}
@@ -5308,7 +5423,7 @@ Model {
 	Line {
 	  SrcBlock		  "Bus\nCreator1"
 	  SrcPort		  1
-	  DstBlock		  "brush"
+	  DstBlock		  "shuttlecock"
 	  DstPort		  1
 	}
 	Line {
@@ -5329,29 +5444,89 @@ Model {
 	  SrcPort		  1
 	  Points		  [15, 0]
 	  Branch {
-	    Labels		    [2, 0]
-	    Points		    [0, -5; 160, 0]
-	    DstBlock		    "Bus\nCreator1"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [0, 85]
 	    DstBlock		    "Filter1"
 	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [2, 0]
+	    Points		    [0, -5; 130, 0]
+	    Branch {
+	      Points		      [30, 0]
+	      DstBlock		      "Bus\nCreator1"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 185]
+	      DstBlock		      "Scope"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Line {
 	  SrcBlock		  "Raw Quad Pose from Vicon"
 	  SrcPort		  5
-	  Points		  [50, 0; 0, 60]
-	  DstBlock		  "Mux2"
-	  DstPort		  1
+	  Points		  [50, 0; 0, 55]
+	  Branch {
+	    Points		    [15, 0]
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux5"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Raw Quad Pose from Vicon"
 	  SrcPort		  6
 	  Points		  [25, 0; 0, 15]
-	  DstBlock		  "Mux2"
+	  Branch {
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "Mux5"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux5"
+	  SrcPort		  1
+	  DstBlock		  "Logic to fix signal loss \nand object local axis flip2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logic to fix signal loss \nand object local axis flip2"
+	  SrcPort		  1
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "Mux6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "Mux6"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "Mux6"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Mux6"
+	  SrcPort		  1
+	  Points		  [105, 0; 0, 70]
+	  DstBlock		  "Scope"
 	  DstPort		  2
 	}
 	Annotation {
@@ -5363,37 +5538,51 @@ Model {
 	}
       }
     }
+    Block {
+      BlockType		      Scope
+      Name		      "rc"
+      SID		      "1363"
+      Ports		      [1]
+      Position		      [1065, 110, 1090, 130]
+      Floating		      off
+      Location		      [692, 56, 1359, 719]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "10"
+      YMin		      "-1"
+      YMax		      "0.1"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
     Line {
-      SrcBlock		      "Vicon_Data"
-      SrcPort		      1
-      Points		      [10, 0]
+      Points		      [920, 235; 0, 5; 65, 0]
       Branch {
-	DstBlock		"Rate Transition"
+	Points			[0, 160]
+	DstBlock		"Goto"
 	DstPort			1
       }
       Branch {
-	Points			[0, 35]
-	DstBlock		"Scope"
-	DstPort			1
+	Points			[15, 0]
+	Branch {
+	  DstBlock		  "RC Cmd\n[Channel 8 represents Thrust]"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -120]
+	  DstBlock		  "rc"
+	  DstPort		  1
+	}
       }
-    }
-    Line {
-      SrcBlock		      "Vicon_Data"
-      SrcPort		      2
-      Points		      [0, 15]
-      DstBlock		      "Rate Transition1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Vicon_Data"
-      SrcPort		      3
-      Points		      [0, -5]
-      DstBlock		      "Rate Transition2"
-      DstPort		      1
     }
     Annotation {
       Name		      "Initialization\n(Connect to Vicon)"
-      Position		      [653, 56]
+      Position		      [828, 56]
       ForegroundColor	      "[0.000000, 0.000000, 0.500000]"
       DropShadow	      on
       ClickFcn		      "Initialization_Simulink_Vicon"
@@ -5410,7 +5599,7 @@ Model {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2011b) dated Aug  6 2011, 13:17:15
+#    Stateflow Version 7.5 (R2010a) dated Mar  4 2011, 22:36:02
 #
 #
 
@@ -5418,7 +5607,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "WK_MaoBi_Record_using_backup"
+    name		    "Wanchao_Shuttlecock_NewFilter"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
     firstTarget		    2
@@ -5427,7 +5616,7 @@ Stateflow {
       runTimeCheck	      [0 0 0 0]
       animation		      [0 0 0]
     }
-    sfVersion		    76014001.0002
+    sfVersion		    75014001
   }
   target {
     id			    2
