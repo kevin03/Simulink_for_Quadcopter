@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1508"
+    ComputedModelVersion    "1.1519"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Birdman"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 19 13:29:16 2013"
-  RTWModifiedTimeStamp	  306709619
-  ModelVersionFormat	  "1.%<AutoIncrement:1508>"
+  LastModifiedDate	  "Tue Nov 19 16:50:10 2013"
+  RTWModifiedTimeStamp	  306775653
+  ModelVersionFormat	  "1.%<AutoIncrement:1519>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -949,7 +949,7 @@ Model {
   }
   System {
     Name		    "Wanchao_Shuttlecock_Parallel"
-    Location		    [687, 235, 1667, 1243]
+    Location		    [687, 235, 1667, 1166]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1035,7 +1035,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[1, 63, 1903, 1071]
+	Location		[1, 95, 1899, 1047]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1222,7 +1222,7 @@ Model {
 	  Ports			  [1, 2]
 	  Position		  [855, 40, 965, 180]
 	  BackgroundColor	  "green"
-	  LibraryVersion	  "1.39"
+	  LibraryVersion	  "1.40"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
 	  SourceType		  ""
 	  ShowPortLabels	  "FromPortIcon"
@@ -1623,7 +1623,7 @@ Model {
 	  Port {
 	    PortNumber		    1
 	    Name		    "position des"
-	    PropagatedSignals	    "ComRef, ComRef"
+	    PropagatedSignals	    ", "
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1705,18 +1705,19 @@ Model {
 	      BlockType		      Scope
 	      Name		      "All"
 	      SID		      "1982"
-	      Ports		      [1]
-	      Position		      [565, 454, 595, 486]
+	      Ports		      [2]
+	      Position		      [565, 456, 595, 489]
 	      Floating		      off
 	      Location		      [970, 64, 1912, 1022]
-	      Open		      off
-	      NumInputPorts	      "1"
+	      Open		      on
+	      NumInputPorts	      "2"
 	      List {
 		ListType		AxesTitles
 		axes1			"%<SignalLabel>"
+		axes2			"%<SignalLabel>"
 	      }
-	      YMin		      "-1.75"
-	      YMax		      "3"
+	      YMin		      "-1.75~-5"
+	      YMax		      "3~5"
 	      SaveName		      "ScopeData5"
 	      DataFormat	      "StructureWithTime"
 	      SampleTime	      "0"
@@ -1784,7 +1785,7 @@ Model {
 	      Name		      "Mux1"
 	      SID		      "1981"
 	      Ports		      [2, 1]
-	      Position		      [510, 451, 515, 489]
+	      Position		      [510, 455, 515, 530]
 	      ShowName		      off
 	      Inputs		      "2"
 	      DisplayOption	      "bar"
@@ -1796,7 +1797,7 @@ Model {
 	      Ports		      [1, 4]
 	      Position		      [370, 42, 490, 118]
 	      BackgroundColor	      "orange"
-	      LibraryVersion	      "1.39"
+	      LibraryVersion	      "1.40"
 	      SourceBlock	      "X330_Control/PosRefSystem"
 	      SourceType	      ""
 	      ShowPortLabels	      "FromPortIcon"
@@ -1832,7 +1833,7 @@ Model {
 	      BlockType		      SubSystem
 	      Name		      "UAV SF"
 	      SID		      "572"
-	      Ports		      [5, 5]
+	      Ports		      [5, 6]
 	      Position		      [205, 50, 345, 340]
 	      ErrorFcn		      "Stateflow.Translate.translate"
 	      PermitHierarchicalResolution "ExplicitOnly"
@@ -1869,7 +1870,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"46"
+		SIDHighWatermark	"47"
 		Block {
 		  BlockType		  Inport
 		  Name			  "RC"
@@ -1914,7 +1915,7 @@ Model {
 		  Name			  " Demux "
 		  SID			  "572::43"
 		  Ports			  [1, 1]
-		  Position		  [270, 280, 320, 320]
+		  Position		  [270, 315, 320, 355]
 		  Outputs		  "1"
 		}
 		Block {
@@ -1922,11 +1923,11 @@ Model {
 		  Name			  " SFunction "
 		  SID			  "572::42"
 		  Tag			  "Stateflow S-Function Wanchao_Shuttlecock_Parallel 3"
-		  Ports			  [5, 6]
-		  Position		  [180, 102, 230, 243]
+		  Ports			  [5, 7]
+		  Position		  [180, 104, 230, 266]
 		  FunctionName		  "sf_sfun"
 		  Parameters		  "DeltaT,H0,Kl,PI"
-		  PortCounts		  "[5 6]"
+		  PortCounts		  "[5 7]"
 		  EnableBusSupport	  on
 		  Port {
 		    PortNumber		    2
@@ -1958,12 +1959,18 @@ Model {
 		    RTWStorageClass	    "Auto"
 		    DataLoggingNameMode	    "SignalName"
 		  }
+		  Port {
+		    PortNumber		    7
+		    Name		    "DataReady"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
 		}
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
 		  SID			  "572::45"
-		  Position		  [460, 291, 480, 309]
+		  Position		  [460, 326, 480, 344]
 		}
 		Block {
 		  BlockType		  Outport
@@ -2002,6 +2009,14 @@ Model {
 		  SID			  "572::46"
 		  Position		  [460, 246, 480, 264]
 		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "DataReady"
+		  SID			  "572::47"
+		  Position		  [460, 281, 480, 299]
+		  Port			  "6"
 		  IconDisplay		  "Port number"
 		}
 		Line {
@@ -2068,10 +2083,18 @@ Model {
 		}
 		Line {
 		  Name			  "dp"
-		  Labels		  [0, 0]
+		  Labels		  [0, 0; 0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  6
 		  DstBlock		  "dp"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "DataReady"
+		  Labels		  [0, 0]
+		  SrcBlock		  " SFunction "
+		  SrcPort		  7
+		  DstBlock		  "DataReady"
 		  DstPort		  1
 		}
 		Line {
@@ -2189,7 +2212,7 @@ Model {
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      3
-	      Points		      [0, 35]
+	      Points		      [0, 60]
 	      DstBlock		      "Mode"
 	      DstPort		      1
 	    }
@@ -2233,7 +2256,7 @@ Model {
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      4
-	      Points		      [0, -10]
+	      Points		      [0, 25]
 	      DstBlock		      "PWM"
 	      DstPort		      1
 	    }
@@ -2280,7 +2303,7 @@ Model {
 		  DstPort		  1
 		}
 		Branch {
-		  Points		  [0, 100]
+		  Points		  [0, 130]
 		  DstBlock		  "Mux1"
 		  DstPort		  2
 		}
@@ -2289,14 +2312,14 @@ Model {
 	    Line {
 	      SrcBlock		      "UAV SF"
 	      SrcPort		      5
-	      Points		      [120, 0; 0, 60]
+	      Points		      [120, 0; 0, 105]
 	      Branch {
 		Points			[95, 0]
 		DstBlock		"Estimated"
 		DstPort			1
 	      }
 	      Branch {
-		Points			[0, 85]
+		Points			[0, 100]
 		DstBlock		"Mux1"
 		DstPort			1
 	      }
@@ -2304,8 +2327,16 @@ Model {
 	    Line {
 	      SrcBlock		      "Mux1"
 	      SrcPort		      1
+	      Points		      [0, -30]
 	      DstBlock		      "All"
 	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "UAV SF"
+	      SrcPort		      6
+	      Points		      [65, 0; 0, 230; 135, 0]
+	      DstBlock		      "All"
+	      DstPort		      2
 	    }
 	  }
 	}
@@ -8133,7 +8164,7 @@ Stateflow {
     name		    "Wanchao_Shuttlecock_Parallel"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    108
+    firstTarget		    118
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [0 0 0 0]
@@ -8259,23 +8290,23 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [0 29.793 1191.724 585.931]
-    viewLimits		    [0 1389.049 7.332 675.498]
-    zoomFactor		    1.202
+    windowPosition	    [5.586 35.379 584.69 575.379]
+    viewLimits		    [388.49 1098.484 0 704.908]
+    zoomFactor		    1.294
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.611111111111111]
     treeNode		    [0 10 0 0]
-    firstTransition	    42
+    firstTransition	    37
     viewObj		    9
+    visible		    1
     machine		    1
     subviewS {
-      x1		      538.337
-      y1		      7.332
+      y1		      6.057
       zoomFactor	      1.202
     }
-    ssIdHighWaterMark	    315
+    ssIdHighWaterMark	    337
     decomposition	    CLUSTER_CHART
-    firstData		    84
+    firstData		    93
     chartFileNumber	    3
     disableImplicitCasting  1
     supportVariableSizing   0
@@ -8283,11 +8314,11 @@ Stateflow {
   state {
     id			    10
     labelString		    "Airborne"
-    position		    [82.5949 24.0365 1177.1706 443.326]
+    position		    [82.5949 24.0365 1206.4414 443.9953]
     fontSize		    12
     chart		    9
     treeNode		    [9 11 0 19]
-    firstTransition	    29
+    firstTransition	    30
     subviewer		    9
     ssIdNumber		    205
     type		    OR_STATE
@@ -8322,42 +8353,49 @@ Stateflow {
   state {
     id			    13
     labelString		    "TrajE"
-    position		    [580.9244 159.5885 668.5685 281.0392]
+    position		    [578.8719 160.2519 676.5476 294.6988]
     fontSize		    12
     chart		    9
-    treeNode		    [10 14 12 16]
-    firstTransition	    37
+    treeNode		    [10 23 12 16]
     subviewer		    9
     ssIdNumber		    215
     type		    OR_STATE
     decomposition	    SET_STATE
-    firstData		    48
+    firstData		    57
   }
   state {
     id			    14
-    labelString		    "DAQ\nen:i=0;\ndu:x_cache[i]=Shuttlecock[0];y_cache[i]=Shuttlecock[1];\nz_cache[i]=Shuttlecock[2]"
-    ";i++;"
-    position		    [637.4622 172.6471 311.5562 71.9907]
+    labelString		    "daq\nen:i=0;DataReady=0;\ndu:x_cache[i]=Shuttlecock[0];y_cache[i]=Shuttlecock[1];\nz_cache[i]=Sh"
+    "uttlecock[2];i++;"
+    position		    [664.2343 193.1277 311.5562 71.9907]
     fontSize		    12
     chart		    9
-    treeNode		    [13 0 0 26]
+    treeNode		    [23 0 0 0]
     subviewer		    9
     ssIdNumber		    218
-    type		    AND_STATE
+    type		    OR_STATE
     decomposition	    CLUSTER_STATE
-    executionOrder	    1
   }
   state {
     id			    15
-    labelString		    "Calculation\nen:[xp,yp,zp,drz,rr]=TrajEst2(x,y,z,H);"
-    position		    [621.4102 362.0154 219.8452 45.4049]
+    labelString		    "[xe,ye,ze,zd,r]=TrajEst2(px,py,pz,Hz)"
+    position		    [907.6838 602.7547 193.4888 53.5526]
     fontSize		    12
     chart		    9
-    treeNode		    [26 0 23 0]
+    treeNode		    [9 0 24 0]
+    superState		    SUBCHART
     subviewer		    9
-    ssIdNumber		    219
-    type		    OR_STATE
+    ssIdNumber		    289
+    type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
+    firstData		    66
+    eml {
+      isEML		      1
+      script		      "function [xe,ye,ze,zd,r]=TrajEst2(px,py,pz,Hz)\n\nzd=sign(pz(end)-pz(1));\n\np=polyfit(t,pz,2)';\n"
+      "a=p(1);\nb=p(2);\nc=p(3);\nr=b^2-4*a*(c-Hz);\nif r>=0\n    te=(-b+sqrt(r))/(2*a);\n    xe=polyval(polyfit(t,px,1"
+      "),te);\n    ye=polyval(polyfit(t,py,1),te);\nelse\n    xe=0;\n    ye=-2;\nend\nze=Hz;"
+      editorLayout	      "100 M4x1[239 387 960 1032]"
+    }
   }
   state {
     id			    16
@@ -8367,6 +8405,7 @@ Stateflow {
     arrowSize		    12.592
     chart		    9
     treeNode		    [10 0 13 17]
+    visible		    0
     subviewer		    9
     ssIdNumber		    220
     type		    OR_STATE
@@ -8392,6 +8431,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [10 0 17 0]
+    visible		    0
     subviewer		    9
     ssIdNumber		    222
     type		    OR_STATE
@@ -8409,7 +8449,7 @@ Stateflow {
     ssIdNumber		    228
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
-    firstData		    57
+    firstData		    77
     eml {
       isEML		      1
       script		      "function [xe,ye,ze,zd]=TrajEst(px,py,pz,Hz)\n\nsgn=sign(mean(diff(px)));\nzd=sign(pz(5)-pz(4));\n"
@@ -8425,7 +8465,7 @@ Stateflow {
     fontSize		    8
     chart		    9
     treeNode		    [9 21 19 24]
-    firstTransition	    40
+    firstTransition	    41
     subviewer		    9
     ssIdNumber		    229
     type		    OR_STATE
@@ -8460,16 +8500,18 @@ Stateflow {
   }
   state {
     id			    23
-    labelString		    "OutputTargetPos\nen:PosDesired[0]=xp;\nPosDesired[1]=yp;\nPosDesired[2]=zp;\ndp[0]=xp;dp[1]=yp;d"
-    "p[2]=zp;\nDataReady=0;"
-    position		    [1028.1428 335.3519 161.868 88.4877]
+    labelString		    "DAQ"
+    position		    [630.9078 165.8529 606.7439 122.4821]
     fontSize		    12
     chart		    9
-    treeNode		    [26 0 0 15]
+    treeNode		    [13 14 0 27]
+    firstTransition	    56
+    firstJunction	    29
     subviewer		    9
-    ssIdNumber		    246
-    type		    OR_STATE
+    ssIdNumber		    319
+    type		    AND_STATE
     decomposition	    CLUSTER_STATE
+    executionOrder	    1
   }
   state {
     id			    24
@@ -8477,13 +8519,13 @@ Stateflow {
     position		    [906.1296 539.8094 194.7799 53.0604]
     fontSize		    12
     chart		    9
-    treeNode		    [9 0 20 25]
+    treeNode		    [9 0 20 15]
     superState		    SUBCHART
     subviewer		    9
     ssIdNumber		    274
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
-    firstData		    65
+    firstData		    85
     eml {
       isEML		      1
       script		      "function [xe,ye,ze,zd]=TrajEst1(px,py,pz,Hz)\n\nzd=sign(pz(5)-pz(4));\n\np=polyfit(py,pz,2);\na=p"
@@ -8495,33 +8537,37 @@ Stateflow {
   }
   state {
     id			    25
-    labelString		    "[xe,ye,ze,zd,r]=TrajEst2(px,py,pz,Hz)"
-    position		    [907.6838 602.7547 193.4888 53.5526]
+    labelString		    "Calculation\nen:[xp,yp,zp,drz,rr]=TrajEst2(x,y,z,H);"
+    position		    [628.5494 385.0394 219.8452 45.4049]
     fontSize		    12
     chart		    9
-    treeNode		    [9 0 24 0]
-    superState		    SUBCHART
+    treeNode		    [27 0 26 0]
     subviewer		    9
-    ssIdNumber		    289
-    type		    FUNC_STATE
+    ssIdNumber		    219
+    type		    OR_STATE
     decomposition	    CLUSTER_STATE
-    firstData		    73
-    eml {
-      isEML		      1
-      script		      "function [xe,ye,ze,zd,r]=TrajEst2(px,py,pz,Hz)\n\nzd=sign(pz(end)-pz(1));\n\np=polyfit(t,pz,2)';\n"
-      "a=p(1);\nb=p(2);\nc=p(3);\nr=b^2-4*a*(c-Hz);\nif r>=0\n    te=(-b+sqrt(r))/(2*a);\n    xe=polyval(polyfit(t,px,1"
-      "),te);\n    ye=polyval(polyfit(t,py,1),te);\nelse\n    xe=0;\n    ye=0;\nend\nze=Hz;"
-      editorLayout	      "100 M4x1[239 387 960 1032]"
-    }
   }
   state {
     id			    26
-    labelString		    "Estimation"
-    position		    [596.4002 301.6562 620.7294 129.5673]
+    labelString		    "OutputTargetPos\nen:PosDesired[0]=xp;\nPosDesired[1]=yp;\nPosDesired[2]=zp;\ndp[0]=xp;dp[1]=yp;d"
+    "p[2]=zp;\nDataReady=0;"
+    position		    [1028.1428 335.3519 161.868 88.4877]
     fontSize		    12
     chart		    9
-    treeNode		    [13 23 14 0]
-    firstTransition	    36
+    treeNode		    [27 0 0 25]
+    subviewer		    9
+    ssIdNumber		    246
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+  }
+  state {
+    id			    27
+    labelString		    "Estimation"
+    position		    [602.7363 297.2388 637.5958 145.0951]
+    fontSize		    12
+    chart		    9
+    treeNode		    [13 26 23 0]
+    firstTransition	    49
     firstJunction	    28
     subviewer		    9
     ssIdNumber		    307
@@ -8530,28 +8576,29 @@ Stateflow {
     executionOrder	    2
   }
   junction {
-    id			    27
-    position		    [890.9966 391.5692 7]
+    id			    28
+    position		    [731.9033 349.9107 7]
     chart		    9
-    linkNode		    [26 28 0]
+    linkNode		    [27 0 0]
     subviewer		    9
-    quantum		    [0 43 0 44]
-    ssIdNumber		    298
+    quantum		    [0 54 52 0]
+    ssIdNumber		    333
     type		    CONNECTIVE_JUNCTION
   }
   junction {
-    id			    28
-    position		    [890.9966 329.4793 7]
+    id			    29
+    position		    [1026.8302 226.6254 7]
     chart		    9
-    linkNode		    [26 0 27]
+    linkNode		    [23 0 0]
     subviewer		    9
-    ssIdNumber		    313
+    quantum		    [0 0 0 38]
+    ssIdNumber		    334
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    29
+    id			    30
     labelString		    "{PosDesired = Pos;PosDesired[2] =-0.9;}"
-    labelPosition	    [176.824 41.591 178.807 13.44]
+    labelPosition	    [176.824 41.591 182.081 13.666]
     fontSize		    9.327
     arrowSize		    12.592
     src {
@@ -8563,7 +8610,7 @@ Stateflow {
     }
     midPoint		    [305.3883 45.3984]
     chart		    9
-    linkNode		    [10 0 30]
+    linkNode		    [10 0 31]
     dataLimits		    [301.6 309.156 30.372 72.026]
     subviewer		    9
     slide {
@@ -8574,9 +8621,9 @@ Stateflow {
     ssIdNumber		    206
   }
   transition {
-    id			    30
+    id			    31
     labelString		    "after(1,sec)"
-    labelPosition	    [283.149 137.021 60.347 14.933]
+    labelPosition	    [283.149 137.021 61.763 15.273]
     fontSize		    12
     src {
       id		      11
@@ -8588,7 +8635,7 @@ Stateflow {
     }
     midPoint		    [279.6284 139.0968]
     chart		    9
-    linkNode		    [10 29 31]
+    linkNode		    [10 30 32]
     dataLimits		    [277.226 282.026 126.668 158.656]
     stampAngle		    NaN
     subviewer		    9
@@ -8597,9 +8644,9 @@ Stateflow {
     ssIdNumber		    207
   }
   transition {
-    id			    31
+    id			    32
     labelString		    "[(abs(Shuttlecock[0])<1)&(Shuttlecock[1]<2.5)&(Shuttlecock[2]<H-0.2)]"
-    labelPosition	    [427.554 134.646 361.339 14.933]
+    labelPosition	    [427.772 134.652 368.974 15.273]
     fontSize		    12
     src {
       id		      12
@@ -8607,12 +8654,12 @@ Stateflow {
     }
     dst {
       id		      13
-      intersection	      [4 -1 0 0.8418 580.9244 204.0483 0 -14.7744]
+      intersection	      [4 -1 0 0.8473 578.8719 205.2423 0 -14.7744]
     }
-    midPoint		    [510.0297 198.5261]
+    midPoint		    [508.9575 199.162]
     chart		    9
-    linkNode		    [10 30 32]
-    dataLimits		    [441.61 580.924 192.234 206.448]
+    linkNode		    [10 31 33]
+    dataLimits		    [441.61 578.872 192.234 207.642]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8622,9 +8669,9 @@ Stateflow {
     ssIdNumber		    208
   }
   transition {
-    id			    32
+    id			    33
     labelString		    "[RC[5] > 0]"
-    labelPosition	    [193.428 219.35 56.622 14.933]
+    labelPosition	    [193.428 219.35 58.555 15.273]
     fontSize		    12
     arrowSize		    12.592
     src {
@@ -8637,7 +8684,7 @@ Stateflow {
     }
     midPoint		    [166.493 229.1072]
     chart		    9
-    linkNode		    [10 31 33]
+    linkNode		    [10 32 34]
     dataLimits		    [162.715 170.271 210.219 259.275]
     stampAngle		    NaN
     subviewer		    9
@@ -8646,23 +8693,23 @@ Stateflow {
     ssIdNumber		    209
   }
   transition {
-    id			    33
+    id			    34
     labelString		    "[(RC[5] > 0)|((Shuttlecock[2]-H>-0.4)&(drz>=0))]"
-    labelPosition	    [333.784 231.659 243.624 14.933]
+    labelPosition	    [318.046 226.707 251.865 15.273]
     fontSize		    12
     arrowSize		    12.592
     src {
       id		      13
-      intersection	      [4 -1 0 0.5671 580.9244 281.2637 0 -3.3408]
+      intersection	      [4 -1 0 0.5894 578.8719 281.2645 0 -3.3408]
     }
     dst {
       id		      16
-      intersection	      [2 1 -0 0.5896 360.8282 281.2637 0 3.3408]
+      intersection	      [2 1 -0 0.5896 360.8282 281.2645 0 3.3408]
     }
-    midPoint		    [472.798 281.2637]
+    midPoint		    [471.8163 281.2645]
     chart		    9
-    linkNode		    [10 32 34]
-    dataLimits		    [360.828 580.924 277.486 285.041]
+    linkNode		    [10 33 35]
+    dataLimits		    [360.828 578.872 277.487 285.042]
     stampAngle		    0.0119
     subviewer		    9
     drawStyle		    SMART
@@ -8673,9 +8720,9 @@ Stateflow {
     ssIdNumber		    210
   }
   transition {
-    id			    34
+    id			    35
     labelString		    "after(3, sec)"
-    labelPosition	    [261.144 300.784 63.327 14.933]
+    labelPosition	    [261.144 300.784 64.972 15.273]
     fontSize		    12
     src {
       id		      16
@@ -8687,20 +8734,18 @@ Stateflow {
     }
     midPoint		    [329.5047 308.1853]
     chart		    9
-    linkNode		    [10 33 35]
+    linkNode		    [10 34 36]
     dataLimits		    [327.105 331.905 296.57 326.998]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    211
   }
   transition {
-    id			    35
+    id			    36
     labelString		    "[PerchError < 0.01]"
-    labelPosition	    [266.816 386.847 99.834 14.933]
+    labelPosition	    [266.816 386.847 101.869 15.273]
     fontSize		    12
     src {
       id		      17
@@ -8712,59 +8757,57 @@ Stateflow {
     }
     midPoint		    [267.1582 387.742]
     chart		    9
-    linkNode		    [10 34 0]
+    linkNode		    [10 35 0]
     dataLimits		    [264.758 269.558 378.938 403.979]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    212
   }
   transition {
-    id			    36
-    labelString		    "[DataReady==1]"
-    labelPosition	    [697.907 329.969 86.423 14.933]
-    fontSize		    12
+    id			    37
+    labelString		    "{HoverThrottle = 0;}"
+    labelPosition	    [0 308.973 67.378 11.254]
+    fontSize		    8
     src {
-      intersection	      [0 0 1 0 695.3372 323.0435 0 0]
+      intersection	      [0 1 0 0 0.7046 324.9765 0 0]
     }
     dst {
-      id		      15
-      intersection	      [1 0 -1 0.3363 695.3372 362.0154 0 0]
+      id		      10
+      intersection	      [4 -1 0 0.3222 82.5949 324.9765 0 0]
     }
-    midPoint		    [695.3372 339.116]
+    midPoint		    [39.1693 324.9765]
     chart		    9
-    linkNode		    [26 0 46]
-    dataLimits		    [692.937 697.737 323.044 362.015]
+    linkNode		    [9 0 39]
+    visible		    0
+    dataLimits		    [0.705 82.595 322.577 327.377]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    236
+  }
+  transition {
+    id			    38
+    labelString		    "[i==5]{x=x_cache;y=y_cache;z=z_cache;DataReady=1;}"
+    labelPosition	    [904.573 174.879 296.784 15.273]
+    fontSize		    12
+    src {
+      id		      14
+      intersection	      [2 1 0 0.4653 975.7905 226.6254 0 50.5853]
+    }
+    dst {
+      id		      29
+      intersection	      [0 -1 0 -1 1019.8302 226.6254 0 -50.5853]
+    }
+    midPoint		    [994.507 226.6254]
+    chart		    9
+    linkNode		    [23 56 55]
+    dataLimits		    [975.79 1019.83 224.225 229.025]
     subviewer		    9
     drawStyle		    SMART
     slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    308
-  }
-  transition {
-    id			    37
-    labelString		    "[i==5]{x=x_cache;y=y_cache;z=z_cache;DataReady=1;}"
-    labelPosition	    [955.553 193.187 287.581 14.933]
-    fontSize		    12
-    src {
-      id		      14
-      intersection	      [2 1 0 0.4769 949.0184 206.982 0 50.5853]
-    }
-    dst {
-      id		      14
-      intersection	      [3 0 1 0.1273 909.3691 244.6378 0 -50.5853]
-    }
-    midPoint		    [959.9658 262.7761]
-    chart		    9
-    linkNode		    [13 0 0]
-    dataLimits		    [906.969 967.621 206.982 268.294]
-    subviewer		    9
-    slide {
-      mode		      MIRROR_SLIDE
+      sticky		      DST_STICK
       arcClockDir	      COUNTER_CLOCKWISE
       midPointSticky	      1
     }
@@ -8772,22 +8815,22 @@ Stateflow {
     ssIdNumber		    217
   }
   transition {
-    id			    38
+    id			    39
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [354.364 474.407 81.208 17.92]
+    labelPosition	    [354.369 475.076 83.42 18.489]
     fontSize		    14
     src {
       id		      20
-      intersection	      [1 -0 -1 0.3602 441.0259 508.1584 0 -43.3643]
+      intersection	      [1 -0 -1 0.3602 441.0313 508.1584 0 -43.3643]
     }
     dst {
       id		      10
-      intersection	      [3 0 1 0.6955 441.0259 467.3625 0 43.3643]
+      intersection	      [3 0 1 0.7029 441.0313 468.0318 0 43.3643]
     }
-    midPoint		    [441.0259 491.1343]
+    midPoint		    [441.0313 491.4835]
     chart		    9
-    linkNode		    [9 42 39]
-    dataLimits		    [438.626 443.426 467.362 508.158]
+    linkNode		    [9 37 40]
+    dataLimits		    [438.631 443.431 468.032 508.158]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8797,22 +8840,22 @@ Stateflow {
     ssIdNumber		    232
   }
   transition {
-    id			    39
+    id			    40
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [611.972 479.667 85.678 17.92]
+    labelPosition	    [611.954 479.667 88.233 18.489]
     fontSize		    14
     src {
       id		      10
-      intersection	      [3 0 1 0.4719 704.2173 467.3625 0 -229.2353]
+      intersection	      [3 0 1 0.4848 704.1992 468.0318 0 -229.2353]
     }
     dst {
       id		      20
-      intersection	      [1 -0 -1 0.7963 704.2173 508.1584 0 229.0139]
+      intersection	      [1 -0 -1 0.7963 704.1992 508.1584 0 229.0139]
     }
-    midPoint		    [704.2173 484.3866]
+    midPoint		    [704.1992 484.7067]
     chart		    9
-    linkNode		    [9 38 0]
-    dataLimits		    [701.817 706.617 467.362 508.158]
+    linkNode		    [9 39 0]
+    dataLimits		    [701.799 706.599 468.032 508.158]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -8822,8 +8865,8 @@ Stateflow {
     ssIdNumber		    233
   }
   transition {
-    id			    40
-    labelPosition	    [244.011 527.004 6.705 12.693]
+    id			    41
+    labelPosition	    [244.011 527.004 5.615 11.254]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8835,19 +8878,17 @@ Stateflow {
     }
     midPoint		    [255.4235 538.4819]
     chart		    9
-    linkNode		    [20 0 41]
+    linkNode		    [20 0 42]
     dataLimits		    [230.472 285.495 536.366 540.598]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    1
     ssIdNumber		    234
   }
   transition {
-    id			    41
+    id			    42
     labelString		    "[Pos[2] > (PerchPos[2]-0.1)]"
-    labelPosition	    [705.821 571.139 113.244 12.693]
+    labelPosition	    [705.821 571.139 95.452 11.254]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -8860,7 +8901,7 @@ Stateflow {
     }
     midPoint		    [693.5975 576.0774]
     chart		    9
-    linkNode		    [20 40 0]
+    linkNode		    [20 41 0]
     dataLimits		    [691.482 695.713 559.77 598.225]
     stampAngle		    NaN
     subviewer		    9
@@ -8872,97 +8913,118 @@ Stateflow {
     ssIdNumber		    235
   }
   transition {
-    id			    42
-    labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [0 308.532 78.973 12.693]
-    fontSize		    8
-    src {
-      intersection	      [0 1 0 0 0.7046 324.5357 0 0]
-    }
-    dst {
-      id		      10
-      intersection	      [4 -1 0 0.3222 82.5949 324.5357 0 0]
-    }
-    midPoint		    [39.1693 324.5357]
-    chart		    9
-    linkNode		    [9 0 38]
-    dataLimits		    [0.705 82.595 322.136 326.936]
-    subviewer		    9
-    drawStyle		    SMART
-    slide {
-    }
-    executionOrder	    1
-    ssIdNumber		    236
-  }
-  transition {
     id			    43
     labelString		    "[(abs(xp)<1)&(abs(yp+0.5)<1)]"
-    labelPosition	    [862.913 405.319 157.946 14.933]
+    labelPosition	    [862.913 412.414 161.226 15.273]
     fontSize		    12
     src {
-      id		      27
-      intersection	      [0 1 0 -1 897.9966 391.5692 0 0]
+      intersection	      [0 1 0 -1 897.9966 398.6638 0 0]
     }
     dst {
-      id		      23
-      intersection	      [4 -1 0 0.3647 1028.1428 391.5692 0 0]
+      id		      26
+      intersection	      [4 -1 0 0.2845 1028.1428 398.6638 0 0]
     }
-    midPoint		    [961.6382 391.5692]
+    midPoint		    [961.6383 398.6638]
     chart		    9
-    linkNode		    [26 44 0]
-    dataLimits		    [897.997 1028.143 389.169 393.969]
+    linkNode		    [27 44 50]
+    visible		    0
+    dataLimits		    [897.997 1028.143 396.264 401.064]
     subviewer		    9
     drawStyle		    SMART
     slide {
       sticky		      SRC_STICK
       arcClockDir	      COUNTER_CLOCKWISE
     }
-    executionOrder	    1
+    executionOrder	    2
     ssIdNumber		    299
   }
   transition {
     id			    44
-    labelString		    "[rr>=0]"
-    labelPosition	    [843.159 373.364 35.016 14.933]
+    labelPosition	    [849.1 381.233 8.021 15.273]
     fontSize		    12
     src {
-      id		      15
-      intersection	      [2 1 0 0.6509 841.2554 391.5692 0 1.0123]
+      id		      25
+      intersection	      [2 1 0 0.322 848.3946 399.6591 0 1.0123]
     }
     dst {
-      id		      27
-      intersection	      [0 -1 0 -1 883.9966 391.5692 0 -1.0123]
+      intersection	      [0 -1 0 -1 883.9966 398.6638 0 -1.0123]
     }
-    midPoint		    [859.2944 391.5692]
+    midPoint		    [862.7087 399.129]
     chart		    9
-    linkNode		    [26 47 43]
-    dataLimits		    [841.255 883.997 389.169 393.969]
+    linkNode		    [27 45 43]
+    visible		    0
+    dataLimits		    [848.395 883.997 396.264 401.064]
     subviewer		    9
     drawStyle		    SMART
     slide {
       sticky		      DST_STICK
       arcClockDir	      COUNTER_CLOCKWISE
     }
-    executionOrder	    1
+    executionOrder	    2
     ssIdNumber		    256
   }
   transition {
     id			    45
-    labelString		    "[DataReady==1]"
-    labelPosition	    [793.187 311.309 86.423 14.933]
+    labelPosition	    [736.417 352.774 8.021 15.273]
     fontSize		    12
     src {
-      id		      28
-      intersection	      [0 -0.9517 0.3071 -1 884.3348 331.629 0 30.372]
+      intersection	      [3 -0 1 0.5055 738.0228 357.0499 0 -0.7139]
     }
     dst {
-      id		      15
-      intersection	      [1 0 -1 0.8516 808.6207 362.0154 0 -64.1439]
+      id		      25
+      intersection	      [1 0 -1 0.498 738.0228 385.0394 0 0.7139]
     }
-    midPoint		    [834.7447 335.9205]
+    midPoint		    [738.0228 367.3924]
     chart		    9
-    linkNode		    [26 46 47]
-    dataLimits		    [806.221 884.335 331.629 362.015]
+    linkNode		    [27 52 44]
+    visible		    0
+    dataLimits		    [735.623 740.423 357.05 385.039]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    4
+    ssIdNumber		    322
+  }
+  transition {
+    id			    46
+    labelString		    "[(abs(xp)>=1)|(abs(yp+0.5)>=1)]"
+    labelPosition	    [835.564 346.762 170.049 15.273]
+    fontSize		    12
+    src {
+      intersection	      [0 0 -1 -1 890.9966 391.6638 0 0]
+    }
+    dst {
+      intersection	      [0 0 1 -1 890.9966 336.4793 0 0]
+    }
+    midPoint		    [890.9966 367.1326]
+    chart		    9
+    linkNode		    [27 47 54]
+    visible		    0
+    dataLimits		    [888.597 893.397 336.479 391.664]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    315
+  }
+  transition {
+    id			    47
+    labelString		    "[DataReady==1]"
+    labelPosition	    [797.163 322.22 87.431 15.273]
+    fontSize		    12
+    src {
+      intersection	      [0 -0.7964 0.6048 -1 885.422 333.713 0 30.372]
+    }
+    dst {
+      id		      25
+      intersection	      [1 0 -1 0.8516 815.7599 385.0394 0 -64.1439]
+    }
+    midPoint		    [840.0973 351.7685]
+    chart		    9
+    linkNode		    [27 48 46]
+    visible		    0
+    dataLimits		    [813.36 885.422 333.713 385.039]
     stampAngle		    -0.2671
     subviewer		    9
     drawStyle		    SMART
@@ -8976,20 +9038,20 @@ Stateflow {
     ssIdNumber		    312
   }
   transition {
-    id			    46
-    labelPosition	    [954.204 333.974 8.195 14.933]
+    id			    48
+    labelPosition	    [954.204 333.974 8.021 15.273]
     fontSize		    12
     src {
-      id		      23
+      id		      26
       intersection	      [4 -1 0 0.8425 1028.1428 349.2903 0 0]
     }
     dst {
-      id		      28
       intersection	      [0 0.997 -0.0769 -1 897.9758 328.9409 0 0]
     }
     midPoint		    [964.444 336.8054]
     chart		    9
-    linkNode		    [26 36 45]
+    linkNode		    [27 51 47]
+    visible		    0
     dataLimits		    [897.976 1028.143 325.933 349.29]
     stampAngle		    0.1198
     subviewer		    9
@@ -8998,206 +9060,208 @@ Stateflow {
       sticky		      BOTH_STICK
       arcL		      -13.9384
     }
-    executionOrder	    1
+    executionOrder	    2
     ssIdNumber		    314
   }
   transition {
-    id			    47
-    labelPosition	    [890.997 360.581 8.195 14.933]
+    id			    49
+    labelPosition	    [710.533 312.298 8.021 15.273]
     fontSize		    12
     src {
-      id		      27
-      intersection	      [0 0 -1 -1 890.9966 384.5692 0 0]
+      intersection	      [0 0 0 0 696.9565 309.0833 0 0]
+    }
+    dst {
+      intersection	      [1 0 -1 0.4932 737.9177 331.1703 0 0]
+    }
+    midPoint		    [723.6602 313.1632]
+    chart		    9
+    linkNode		    [27 0 51]
+    visible		    0
+    dataLimits		    [696.956 740.318 309.083 331.17]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    4
+    ssIdNumber		    308
+  }
+  transition {
+    id			    50
+    labelString		    "[(abs(xp)<1)&(abs(yp+0.5)<1)]"
+    labelPosition	    [859.695 382.84 161.226 15.273]
+    fontSize		    12
+    src {
+      id		      25
+      intersection	      [2 1 0 0.4203 848.3946 404.1241 0 -3.6177]
+    }
+    dst {
+      id		      26
+      intersection	      [4 -1 0 0.2228 1028.1428 404.1241 0 3.6177]
+    }
+    midPoint		    [937.9156 404.1241]
+    chart		    9
+    linkNode		    [27 43 0]
+    dataLimits		    [848.395 1028.143 401.724 406.524]
+    stampAngle		    0.0749
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    324
+  }
+  transition {
+    id			    51
+    labelPosition	    [731.903 315.045 8.021 15.273]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 731.9033 312.5637 0 0]
     }
     dst {
       id		      28
-      intersection	      [0 0 1 -1 890.9966 336.4793 0 0]
+      intersection	      [0 -0 -1 -1 731.9033 342.9107 0 0]
     }
-    midPoint		    [890.9966 363.7395]
+    midPoint		    [731.9033 324.1362]
     chart		    9
-    linkNode		    [26 45 44]
-    dataLimits		    [888.597 893.397 336.479 384.569]
+    linkNode		    [27 49 48]
+    dataLimits		    [729.503 734.303 312.564 342.911]
     subviewer		    9
     drawStyle		    SMART
-    executionOrder	    2
-    ssIdNumber		    315
-  }
-  data {
-    id			    48
-    ssIdNumber		    240
-    name		    "x"
-    linkNode		    [13 0 49]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    slide {
     }
-    dataType		    "double"
+    executionOrder	    3
+    ssIdNumber		    325
   }
-  data {
-    id			    49
-    ssIdNumber		    241
-    name		    "y"
-    linkNode		    [13 48 50]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    50
-    ssIdNumber		    242
-    name		    "z"
-    linkNode		    [13 49 51]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    51
-    ssIdNumber		    248
-    name		    "xp"
-    linkNode		    [13 50 52]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
+  transition {
     id			    52
-    ssIdNumber		    249
-    name		    "yp"
-    linkNode		    [13 51 53]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    labelString		    "[DataReady==1]"
+    labelPosition	    [636.684 358.745 87.431 15.273]
+    fontSize		    12
+    src {
+      id		      28
+      intersection	      [0 0 1 -1 731.9033 356.9107 0 6.8335]
     }
-    dataType		    "double"
+    dst {
+      id		      25
+      intersection	      [1 0 -1 0.4701 731.9033 385.0394 0 -6.8335]
+    }
+    midPoint		    [731.9033 367.3258]
+    chart		    9
+    linkNode		    [27 53 45]
+    dataLimits		    [729.503 734.303 356.911 385.039]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      sticky		      SRC_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    326
   }
-  data {
+  transition {
     id			    53
-    ssIdNumber		    250
-    name		    "zp"
-    linkNode		    [13 52 54]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    labelString		    "[(abs(xp)>=1)|(abs(yp+0.5)>=1)]{DataReady=0;}"
+    labelPosition	    [766.422 359.505 253.469 15.273]
+    fontSize		    12
+    src {
+      id		      25
+      intersection	      [1 0 -1 0.61 762.6583 385.0394 0 24.4898]
     }
-    dataType		    "double"
+    dst {
+      id		      28
+      intersection	      [0 0.7562 0.6544 -1 737.1964 354.4913 0 -24.4898]
+    }
+    midPoint		    [756.2344 370.2]
+    chart		    9
+    linkNode		    [27 54 52]
+    dataLimits		    [737.196 762.658 354.491 385.039]
+    stampAngle		    0.8574
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+      arcL		      30.7551
+    }
+    executionOrder	    1
+    ssIdNumber		    331
   }
-  data {
+  transition {
     id			    54
-    ssIdNumber		    304
-    name		    "x_cache"
-    linkNode		    [13 53 55]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    labelPosition	    [857.368 349.911 8.021 15.273]
+    fontSize		    12
+    src {
+      id		      26
+      intersection	      [4 -1 0 0.8355 1028.1428 349.9107 0 -24.6161]
     }
-    dataType		    "double"
+    dst {
+      id		      28
+      intersection	      [0 1 0 -1 738.9033 349.9107 0 -0.2231]
+    }
+    midPoint		    [881.4959 349.9107]
+    chart		    9
+    linkNode		    [27 46 53]
+    dataLimits		    [738.903 1028.143 347.511 352.311]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      sticky		      DST_STICK
+      arcClockDir	      COUNTER_CLOCKWISE
+    }
+    executionOrder	    1
+    ssIdNumber		    328
   }
-  data {
+  transition {
     id			    55
-    ssIdNumber		    305
-    name		    "y_cache"
-    linkNode		    [13 54 56]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    labelPosition	    [998.823 239.205 8.021 15.273]
+    fontSize		    12
+    src {
+      id		      29
+      intersection	      [0 -0.9411 0.3382 -1 1020.2426 228.9928 0 0]
     }
-    dataType		    "double"
+    dst {
+      id		      14
+      intersection	      [2 1 0 0.6822 975.7905 242.2413 0 0]
+    }
+    midPoint		    [1001.658 237.9209]
+    chart		    9
+    linkNode		    [23 38 0]
+    dataLimits		    [975.79 1020.243 228.993 244.641]
+    stampAngle		    0.345
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+      arcL		      15.6159
+    }
+    executionOrder	    1
+    ssIdNumber		    335
   }
-  data {
+  transition {
     id			    56
-    ssIdNumber		    306
-    name		    "z_cache"
-    linkNode		    [13 55 0]
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      initialValue	      "[0 0 0 0 0]"
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
+    labelPosition	    [642.195 211.625 8.021 15.273]
+    fontSize		    12
+    src {
+      intersection	      [0 1 0 0 639.4067 226.6254 0 0]
     }
-    dataType		    "double"
+    dst {
+      id		      14
+      intersection	      [4 -1 0 0.5347 664.2343 226.6254 0 0]
+    }
+    midPoint		    [646.8469 226.6254]
+    chart		    9
+    linkNode		    [23 0 38]
+    dataLimits		    [639.407 664.234 224.225 229.025]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    1
+    ssIdNumber		    336
   }
   data {
     id			    57
-    ssIdNumber		    223
-    name		    "px"
-    linkNode		    [19 0 58]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    240
+    name		    "x"
+    linkNode		    [13 0 58]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
 	size			"5"
       }
@@ -9211,12 +9275,13 @@ Stateflow {
   }
   data {
     id			    58
-    ssIdNumber		    244
-    name		    "py"
-    linkNode		    [19 57 59]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    241
+    name		    "y"
+    linkNode		    [13 57 59]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
 	size			"5"
       }
@@ -9230,12 +9295,13 @@ Stateflow {
   }
   data {
     id			    59
-    ssIdNumber		    245
-    name		    "pz"
-    linkNode		    [19 58 60]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    242
+    name		    "z"
+    linkNode		    [13 58 60]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
 	size			"5"
       }
@@ -9249,15 +9315,12 @@ Stateflow {
   }
   data {
     id			    60
-    ssIdNumber		    224
-    name		    "xe"
-    linkNode		    [19 59 61]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    248
+    name		    "xp"
+    linkNode		    [13 59 61]
+    scope		    LOCAL_DATA
     machine		    1
     props {
-      array {
-	size			"1"
-      }
       type {
 	primitive		SF_DOUBLE_TYPE
 	isSigned		1
@@ -9268,15 +9331,12 @@ Stateflow {
   }
   data {
     id			    61
-    ssIdNumber		    225
-    name		    "Hz"
-    linkNode		    [19 60 62]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    249
+    name		    "yp"
+    linkNode		    [13 60 62]
+    scope		    LOCAL_DATA
     machine		    1
     props {
-      array {
-	size			"1"
-      }
       type {
 	primitive		SF_DOUBLE_TYPE
 	isSigned		1
@@ -9287,15 +9347,12 @@ Stateflow {
   }
   data {
     id			    62
-    ssIdNumber		    226
-    name		    "ye"
-    linkNode		    [19 61 63]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    250
+    name		    "zp"
+    linkNode		    [13 61 63]
+    scope		    LOCAL_DATA
     machine		    1
     props {
-      array {
-	size			"1"
-      }
       type {
 	primitive		SF_DOUBLE_TYPE
 	isSigned		1
@@ -9306,14 +9363,15 @@ Stateflow {
   }
   data {
     id			    63
-    ssIdNumber		    227
-    name		    "ze"
-    linkNode		    [19 62 64]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    304
+    name		    "x_cache"
+    linkNode		    [13 62 64]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
-	size			"1"
+	size			"5"
       }
       type {
 	primitive		SF_DOUBLE_TYPE
@@ -9325,14 +9383,15 @@ Stateflow {
   }
   data {
     id			    64
-    ssIdNumber		    252
-    name		    "zd"
-    linkNode		    [19 63 0]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    305
+    name		    "y_cache"
+    linkNode		    [13 63 65]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
-	size			"1"
+	size			"5"
       }
       type {
 	primitive		SF_DOUBLE_TYPE
@@ -9344,12 +9403,13 @@ Stateflow {
   }
   data {
     id			    65
-    ssIdNumber		    266
-    name		    "px"
-    linkNode		    [24 0 66]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    306
+    name		    "z_cache"
+    linkNode		    [13 64 0]
+    scope		    LOCAL_DATA
     machine		    1
     props {
+      initialValue	      "[0 0 0 0 0]"
       array {
 	size			"5"
       }
@@ -9363,9 +9423,9 @@ Stateflow {
   }
   data {
     id			    66
-    ssIdNumber		    267
-    name		    "py"
-    linkNode		    [24 65 67]
+    ssIdNumber		    281
+    name		    "px"
+    linkNode		    [15 0 67]
     scope		    FUNCTION_INPUT_DATA
     machine		    1
     props {
@@ -9382,9 +9442,9 @@ Stateflow {
   }
   data {
     id			    67
-    ssIdNumber		    268
-    name		    "pz"
-    linkNode		    [24 66 68]
+    ssIdNumber		    282
+    name		    "py"
+    linkNode		    [15 66 68]
     scope		    FUNCTION_INPUT_DATA
     machine		    1
     props {
@@ -9401,14 +9461,14 @@ Stateflow {
   }
   data {
     id			    68
-    ssIdNumber		    269
-    name		    "xe"
-    linkNode		    [24 67 69]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    283
+    name		    "pz"
+    linkNode		    [15 67 69]
+    scope		    FUNCTION_INPUT_DATA
     machine		    1
     props {
       array {
-	size			"1"
+	size			"5"
       }
       type {
 	primitive		SF_DOUBLE_TYPE
@@ -9420,10 +9480,10 @@ Stateflow {
   }
   data {
     id			    69
-    ssIdNumber		    270
-    name		    "Hz"
-    linkNode		    [24 68 70]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    284
+    name		    "xe"
+    linkNode		    [15 68 70]
+    scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
       array {
@@ -9439,10 +9499,10 @@ Stateflow {
   }
   data {
     id			    70
-    ssIdNumber		    271
-    name		    "ye"
-    linkNode		    [24 69 71]
-    scope		    FUNCTION_OUTPUT_DATA
+    ssIdNumber		    285
+    name		    "Hz"
+    linkNode		    [15 69 71]
+    scope		    FUNCTION_INPUT_DATA
     machine		    1
     props {
       array {
@@ -9458,9 +9518,9 @@ Stateflow {
   }
   data {
     id			    71
-    ssIdNumber		    272
-    name		    "ze"
-    linkNode		    [24 70 72]
+    ssIdNumber		    286
+    name		    "ye"
+    linkNode		    [15 70 72]
     scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
@@ -9477,9 +9537,9 @@ Stateflow {
   }
   data {
     id			    72
-    ssIdNumber		    273
-    name		    "zd"
-    linkNode		    [24 71 0]
+    ssIdNumber		    287
+    name		    "ze"
+    linkNode		    [15 71 73]
     scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
@@ -9496,14 +9556,14 @@ Stateflow {
   }
   data {
     id			    73
-    ssIdNumber		    281
-    name		    "px"
-    linkNode		    [25 0 74]
-    scope		    FUNCTION_INPUT_DATA
+    ssIdNumber		    288
+    name		    "zd"
+    linkNode		    [15 72 74]
+    scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
       array {
-	size			"5"
+	size			"1"
       }
       type {
 	primitive		SF_DOUBLE_TYPE
@@ -9515,142 +9575,9 @@ Stateflow {
   }
   data {
     id			    74
-    ssIdNumber		    282
-    name		    "py"
-    linkNode		    [25 73 75]
-    scope		    FUNCTION_INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    75
-    ssIdNumber		    283
-    name		    "pz"
-    linkNode		    [25 74 76]
-    scope		    FUNCTION_INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"5"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    76
-    ssIdNumber		    284
-    name		    "xe"
-    linkNode		    [25 75 77]
-    scope		    FUNCTION_OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    77
-    ssIdNumber		    285
-    name		    "Hz"
-    linkNode		    [25 76 78]
-    scope		    FUNCTION_INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    78
-    ssIdNumber		    286
-    name		    "ye"
-    linkNode		    [25 77 79]
-    scope		    FUNCTION_OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    79
-    ssIdNumber		    287
-    name		    "ze"
-    linkNode		    [25 78 80]
-    scope		    FUNCTION_OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    80
-    ssIdNumber		    288
-    name		    "zd"
-    linkNode		    [25 79 81]
-    scope		    FUNCTION_OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"1"
-      }
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    81
     ssIdNumber		    290
     name		    "p"
-    linkNode		    [25 80 82]
+    linkNode		    [15 73 75]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9667,10 +9594,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    82
+    id			    75
     ssIdNumber		    291
     name		    "t"
-    linkNode		    [25 81 83]
+    linkNode		    [15 74 76]
     scope		    CONSTANT_DATA
     machine		    1
     props {
@@ -9687,10 +9614,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    83
+    id			    76
     ssIdNumber		    296
     name		    "r"
-    linkNode		    [25 82 0]
+    linkNode		    [15 75 0]
     scope		    FUNCTION_OUTPUT_DATA
     machine		    1
     props {
@@ -9703,10 +9630,314 @@ Stateflow {
     dataType		    "double"
   }
   data {
+    id			    77
+    ssIdNumber		    223
+    name		    "px"
+    linkNode		    [19 0 78]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    78
+    ssIdNumber		    244
+    name		    "py"
+    linkNode		    [19 77 79]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    79
+    ssIdNumber		    245
+    name		    "pz"
+    linkNode		    [19 78 80]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    80
+    ssIdNumber		    224
+    name		    "xe"
+    linkNode		    [19 79 81]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    81
+    ssIdNumber		    225
+    name		    "Hz"
+    linkNode		    [19 80 82]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    82
+    ssIdNumber		    226
+    name		    "ye"
+    linkNode		    [19 81 83]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    83
+    ssIdNumber		    227
+    name		    "ze"
+    linkNode		    [19 82 84]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
     id			    84
+    ssIdNumber		    252
+    name		    "zd"
+    linkNode		    [19 83 0]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    85
+    ssIdNumber		    266
+    name		    "px"
+    linkNode		    [24 0 86]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    86
+    ssIdNumber		    267
+    name		    "py"
+    linkNode		    [24 85 87]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    87
+    ssIdNumber		    268
+    name		    "pz"
+    linkNode		    [24 86 88]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"5"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    88
+    ssIdNumber		    269
+    name		    "xe"
+    linkNode		    [24 87 89]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    89
+    ssIdNumber		    270
+    name		    "Hz"
+    linkNode		    [24 88 90]
+    scope		    FUNCTION_INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    90
+    ssIdNumber		    271
+    name		    "ye"
+    linkNode		    [24 89 91]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    91
+    ssIdNumber		    272
+    name		    "ze"
+    linkNode		    [24 90 92]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    92
+    ssIdNumber		    273
+    name		    "zd"
+    linkNode		    [24 91 0]
+    scope		    FUNCTION_OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    93
     ssIdNumber		    28
     name		    "PosDesired"
-    linkNode		    [9 0 85]
+    linkNode		    [9 0 94]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9723,10 +9954,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    85
+    id			    94
     ssIdNumber		    29
     name		    "HoverThrottle"
-    linkNode		    [9 84 86]
+    linkNode		    [9 93 95]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9743,10 +9974,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    86
+    id			    95
     ssIdNumber		    30
     name		    "Mode"
-    linkNode		    [9 85 87]
+    linkNode		    [9 94 96]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9763,10 +9994,10 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    87
+    id			    96
     ssIdNumber		    31
     name		    "RC"
-    linkNode		    [9 86 88]
+    linkNode		    [9 95 97]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9784,10 +10015,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    88
+    id			    97
     ssIdNumber		    32
     name		    "Pos"
-    linkNode		    [9 87 89]
+    linkNode		    [9 96 98]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9805,10 +10036,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    89
+    id			    98
     ssIdNumber		    35
     name		    "PerchPos"
-    linkNode		    [9 88 90]
+    linkNode		    [9 97 99]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9826,10 +10057,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    90
+    id			    99
     ssIdNumber		    47
     name		    "DeltaT"
-    linkNode		    [9 89 91]
+    linkNode		    [9 98 100]
     scope		    PARAMETER_DATA
     machine		    1
     props {
@@ -9847,10 +10078,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    91
+    id			    100
     ssIdNumber		    48
     name		    "H0"
-    linkNode		    [9 90 92]
+    linkNode		    [9 99 101]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 1
     machine		    1
@@ -9869,10 +10100,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    92
+    id			    101
     ssIdNumber		    49
     name		    "Kl"
-    linkNode		    [9 91 93]
+    linkNode		    [9 100 102]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 2
     machine		    1
@@ -9891,10 +10122,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    93
+    id			    102
     ssIdNumber		    94
     name		    "VelCmd"
-    linkNode		    [9 92 94]
+    linkNode		    [9 101 103]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -9911,10 +10142,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    94
+    id			    103
     ssIdNumber		    119
     name		    "PWM"
-    linkNode		    [9 93 95]
+    linkNode		    [9 102 104]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -9928,10 +10159,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    95
+    id			    104
     ssIdNumber		    135
     name		    "PerchError"
-    linkNode		    [9 94 96]
+    linkNode		    [9 103 105]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9949,10 +10180,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    96
+    id			    105
     ssIdNumber		    183
     name		    "PI"
-    linkNode		    [9 95 97]
+    linkNode		    [9 104 106]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 3
     machine		    1
@@ -9971,10 +10202,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    97
+    id			    106
     ssIdNumber		    190
     name		    "Shuttlecock"
-    linkNode		    [9 96 98]
+    linkNode		    [9 105 107]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -9992,10 +10223,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    98
+    id			    107
     ssIdNumber		    237
     name		    "H"
-    linkNode		    [9 97 99]
+    linkNode		    [9 106 108]
     scope		    CONSTANT_DATA
     machine		    1
     props {
@@ -10009,10 +10240,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    99
+    id			    108
     ssIdNumber		    238
     name		    "InitialPos"
-    linkNode		    [9 98 100]
+    linkNode		    [9 107 109]
     scope		    CONSTANT_DATA
     machine		    1
     props {
@@ -10029,10 +10260,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    100
+    id			    109
     ssIdNumber		    239
     name		    "i"
-    linkNode		    [9 99 101]
+    linkNode		    [9 108 110]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10046,10 +10277,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    101
+    id			    110
     ssIdNumber		    254
     name		    "dp"
-    linkNode		    [9 100 102]
+    linkNode		    [9 109 111]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -10067,10 +10298,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    102
+    id			    111
     ssIdNumber		    255
     name		    "drz"
-    linkNode		    [9 101 103]
+    linkNode		    [9 110 112]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10083,10 +10314,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    103
+    id			    112
     ssIdNumber		    278
     name		    "a"
-    linkNode		    [9 102 104]
+    linkNode		    [9 111 113]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10099,10 +10330,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    104
+    id			    113
     ssIdNumber		    279
     name		    "b"
-    linkNode		    [9 103 105]
+    linkNode		    [9 112 114]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10115,10 +10346,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    105
+    id			    114
     ssIdNumber		    280
     name		    "c"
-    linkNode		    [9 104 106]
+    linkNode		    [9 113 115]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10131,10 +10362,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    106
+    id			    115
     ssIdNumber		    297
     name		    "rr"
-    linkNode		    [9 105 0]
+    linkNode		    [9 114 116]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -10143,26 +10374,47 @@ Stateflow {
 	isSigned		1
 	wordLength		"16"
       }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    116
+    ssIdNumber		    316
+    name		    "DataReady"
+    linkNode		    [9 115 0]
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      initialValue	      "0"
+      array {
+	size			"1"
+      }
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
     }
     dataType		    "double"
   }
   instance {
-    id			    107
+    id			    117
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    108
+    id			    118
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 109]
+    linkNode		    [1 0 119]
   }
   target {
-    id			    109
+    id			    119
     name		    "rtw"
     machine		    1
-    linkNode		    [1 108 0]
+    linkNode		    [1 118 0]
   }
 }
