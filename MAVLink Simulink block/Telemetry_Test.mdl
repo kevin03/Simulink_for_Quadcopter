@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1128"
+    ComputedModelVersion    "1.1137"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -28,9 +28,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Sep 20 15:44:18 2013"
-  RTWModifiedTimeStamp	  301592655
-  ModelVersionFormat	  "1.%<AutoIncrement:1128>"
+  LastModifiedDate	  "Fri Nov 01 14:35:45 2013"
+  RTWModifiedTimeStamp	  305214999
+  ModelVersionFormat	  "1.%<AutoIncrement:1137>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1085,47 +1085,12 @@ Model {
       IconDisplay	      "Tag"
     }
     Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
       UseBusObject	      off
       BusObject		      "BusObject"
       NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
     }
     Block {
       BlockType		      S-Function
@@ -1210,7 +1175,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "140"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2631"
+    SIDHighWatermark	    "2646"
     Block {
       BlockType		      From
       Name		      "Debug"
@@ -1218,153 +1183,6 @@ Model {
       Position		      [55, 171, 95, 199]
       GotoTag		      "Debug"
       TagVisibility	      "global"
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Debug vector"
-      SID		      "2608"
-      Ports		      [1, 1]
-      Position		      [400, 346, 480, 394]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Debug vector"
-	Location		[658, 279, 1423, 896]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"218"
-	Block {
-	  BlockType		  Inport
-	  Name			  "ID"
-	  SID			  "2625"
-	  Position		  [120, 273, 150, 287]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux1"
-	  SID			  "2609"
-	  Ports			  [6, 1]
-	  Position		  [220, 33, 225, 302]
-	  ShowName		  off
-	  Inputs		  "6"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "PWM"
-	  SID			  "2610"
-	  Position		  [120, 215, 150, 245]
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Pitch"
-	  SID			  "2611"
-	  Position		  [120, 125, 150, 155]
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Roll"
-	  SID			  "2612"
-	  Position		  [120, 80, 150, 110]
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Sin
-	  Name			  "Sine Wave"
-	  SID			  "2613"
-	  Ports			  [0, 1]
-	  Position		  [160, 40, 190, 70]
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Thrust"
-	  SID			  "2614"
-	  Position		  [55, 40, 85, 70]
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Yaw"
-	  SID			  "2615"
-	  Position		  [120, 170, 150, 200]
-	  Value			  "0"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "TRPY PWM ID"
-	  SID			  "2617"
-	  Position		  [300, 163, 330, 177]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Mux1"
-	  SrcPort		  1
-	  DstBlock		  "TRPY PWM ID"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Roll"
-	  SrcPort		  1
-	  Points		  [40, 0; 0, 5]
-	  DstBlock		  "Mux1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Pitch"
-	  SrcPort		  1
-	  Points		  [35, 0; 0, 5]
-	  DstBlock		  "Mux1"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Yaw"
-	  SrcPort		  1
-	  Points		  [30, 0; 0, 5]
-	  DstBlock		  "Mux1"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "PWM"
-	  SrcPort		  1
-	  Points		  [25, 0; 0, 5]
-	  DstBlock		  "Mux1"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "ID"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  6
-	}
-	Line {
-	  SrcBlock		  "Sine Wave"
-	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  1
-	}
-	Annotation {
-	  Name			  "6x1 vector (usec, XYZRPY)"
-	  Position		  [346, 291]
-	}
-      }
     }
     Block {
       BlockType		      Goto
@@ -1386,7 +1204,7 @@ Model {
       BlockType		      Constant
       Name		      "ID"
       SID		      "2626"
-      Position		      [345, 355, 375, 385]
+      Position		      [125, 575, 155, 605]
     }
     Block {
       BlockType		      S-Function
@@ -1395,7 +1213,6 @@ Model {
       Ports		      [1, 2]
       Position		      [150, 54, 470, 316]
       BackgroundColor	      "cyan"
-      DropShadow	      on
       FontName		      "Arial Black"
       FontSize		      11
       FontWeight	      "bold"
@@ -1463,13 +1280,35 @@ Model {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM7'|57600|on|on|off|off|off|off|off|off|on|off|off|off|off|off|off|off|off|off|off|off"
+      MaskValueString	      "'COM6'|57600|on|on|on|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off"
       "|off|off|off|off|off|off|off|off|off|off|off|off"
       MaskTabNameString	      "Setting,Setting,Output Message,Output Message,Input Message,Input Message,Input Message"
       ",Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message"
       ",Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message"
       ",Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message"
       ",Input Message,Input Message,Input Message"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Manual Switch"
+      SID		      "2645"
+      Ports		      [2, 1]
+      Position		      [70, 517, 100, 553]
+      LibraryVersion	      "1.236"
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      sw		      "0"
+      action		      "0"
+      varsize		      off
     }
     Block {
       BlockType		      Mux
@@ -1482,11 +1321,42 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "2641"
+      Ports		      [6, 1]
+      Position		      [275, 343, 280, 612]
+      ShowName		      off
+      Inputs		      "6"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PWM"
+      SID		      "2636"
+      Position		      [20, 495, 50, 525]
+      Value		      "1200"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PWM1"
+      SID		      "2646"
+      Position		      [15, 550, 45, 580]
+      Value		      "1600"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Pitch"
+      SID		      "2637"
+      Position		      [125, 425, 155, 455]
+      Value		      "0.5"
+    }
+    Block {
       BlockType		      Display
       Name		      "RC Cmd\n[Channel 8 represents Thrust]"
       SID		      "55"
       Ports		      [1]
-      Position		      [610, 31, 730, 209]
+      Position		      [615, 48, 705, 192]
       DropShadow	      on
       FontName		      "Arial"
       FontWeight	      "bold"
@@ -1559,6 +1429,26 @@ Model {
       }
     }
     Block {
+      BlockType		      Display
+      Name		      "Recieved"
+      SID		      "2632"
+      Ports		      [1]
+      Position		      [680, 427, 815, 603]
+      BackgroundColor	      "red"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontWeight	      "bold"
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Roll"
+      SID		      "2638"
+      Position		      [125, 380, 155, 410]
+      Value		      "0.4"
+    }
+    Block {
       BlockType		      Selector
       Name		      "Selector"
       SID		      "2623"
@@ -1582,15 +1472,57 @@ Model {
       OutputSizes	      "1"
     }
     Block {
+      BlockType		      Selector
+      Name		      "Selector2"
+      SID		      "2644"
+      Ports		      [1, 1]
+      Position		      [445, 538, 485, 592]
+      ShowName		      off
+      InputPortWidth	      "6"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "[6 5 1 2 3 4]"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Send"
+      SID		      "2643"
+      Ports		      [1]
+      Position		      [860, 427, 995, 603]
+      BackgroundColor	      "red"
+      DropShadow	      on
+      FontName		      "Arial"
+      FontWeight	      "bold"
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Thrust"
+      SID		      "2639"
+      Ports		      [0, 1]
+      Position		      [125, 340, 155, 370]
+      NamePlacement	      "alternate"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Yaw"
+      SID		      "2640"
+      Position		      [125, 470, 155, 500]
+      Value		      "0.6"
+    }
+    Block {
       BlockType		      Scope
       Name		      "debug1"
       SID		      "2629"
       Ports		      [1]
-      Position		      [640, 340, 670, 380]
+      Position		      [880, 316, 1065, 404]
       Floating		      off
       Location		      [969, 56, 1913, 1031]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -1654,23 +1586,25 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Debug vector"
+      SrcBlock		      "Mux1"
       SrcPort		      1
-      Points		      [5, 0]
+      Points		      [0, -110; 140, 0; 0, 110]
       Branch {
-	DstBlock		"Selector1"
-	DstPort			1
+	Points			[0, -110; 65, 0]
+	Branch {
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Goto1"
+	  DstPort		  1
+	}
       }
       Branch {
-	DstBlock		"Goto1"
+	Points			[0, 85]
+	DstBlock		"Selector2"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "ID"
-      SrcPort		      1
-      DstBlock		      "Debug vector"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Selector"
@@ -1688,8 +1622,16 @@ Model {
     Line {
       SrcBlock		      "MAVLink Serial"
       SrcPort		      2
-      DstBlock		      "Selector"
-      DstPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"Selector"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 255; 95, 0; 0, 10]
+	DstBlock		"Recieved"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Debug"
@@ -1697,9 +1639,71 @@ Model {
       DstBlock		      "MAVLink Serial"
       DstPort		      1
     }
+    Line {
+      SrcBlock		      "Roll"
+      SrcPort		      1
+      Points		      [40, 0; 0, 5; 60, 0]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Pitch"
+      SrcPort		      1
+      Points		      [35, 0; 0, 5; 65, 0]
+      DstBlock		      "Mux1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Yaw"
+      SrcPort		      1
+      Points		      [30, 0; 0, 5; 70, 0]
+      DstBlock		      "Mux1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Manual Switch"
+      SrcPort		      1
+      Points		      [155, 0]
+      DstBlock		      "Mux1"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Thrust"
+      SrcPort		      1
+      Points		      [100, 0]
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "ID"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Selector2"
+      SrcPort		      1
+      Points		      [85, 0; 0, 65; 270, 0]
+      DstBlock		      "Send"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PWM"
+      SrcPort		      1
+      Points		      [5, 0; 0, 15]
+      DstBlock		      "Manual Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PWM1"
+      SrcPort		      1
+      Points		      [5, 0]
+      DstBlock		      "Manual Switch"
+      DstPort		      2
+    }
     Annotation {
       Name		      " "
-      Position		      [357, 367]
+      Position		      [337, 367]
     }
   }
 }

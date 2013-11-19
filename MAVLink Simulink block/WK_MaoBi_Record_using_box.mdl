@@ -6,7 +6,11 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
+<<<<<<< HEAD
     ComputedModelVersion    "1.1453"
+=======
+    ComputedModelVersion    "1.1459"
+>>>>>>> WK
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,9 +36,15 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Birdman"
   ModifiedDateFormat	  "%<Auto>"
+<<<<<<< HEAD
   LastModifiedDate	  "Sun Oct 27 10:17:22 2013"
   RTWModifiedTimeStamp	  304769648
   ModelVersionFormat	  "1.%<AutoIncrement:1453>"
+=======
+  LastModifiedDate	  "Wed Oct 16 16:03:57 2013"
+  RTWModifiedTimeStamp	  303838892
+  ModelVersionFormat	  "1.%<AutoIncrement:1459>"
+>>>>>>> WK
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -954,8 +964,13 @@ Model {
   }
   System {
     Name		    "WK_MaoBi_Record_using_box"
+<<<<<<< HEAD
     Location		    [8, 95, 948, 1007]
     Open		    on
+=======
+    Location		    [14, 84, 954, 996]
+    Open		    off
+>>>>>>> WK
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -968,7 +983,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "94"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1978"
+    SIDHighWatermark	    "1991"
     Block {
       BlockType		      From
       Name		      "From"
@@ -1040,7 +1055,11 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
+<<<<<<< HEAD
 	Location		[2, 95, 1900, 1040]
+=======
+	Location		[10, 82, 950, 994]
+>>>>>>> WK
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1052,7 +1071,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vicon"
@@ -1181,10 +1200,10 @@ Model {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector3"
 	  SID			  "1972"
-	  Ports			  [1, 3]
-	  Position		  [885, 669, 890, 721]
+	  Ports			  [1, 5]
+	  Position		  [885, 623, 890, 797]
 	  ShowName		  off
-	  OutputSignals		  "Position,position des,Attitude"
+	  OutputSignals		  "Position,position des,Attitude,velocity,Acceleration"
 	  Port {
 	    PortNumber		    1
 	    Name		    "<Position>"
@@ -1200,6 +1219,18 @@ Model {
 	  Port {
 	    PortNumber		    3
 	    Name		    "<Attitude>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<velocity>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<Acceleration>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1481,7 +1512,7 @@ Model {
 	  Name			  "Mux4"
 	  SID			  "1973"
 	  Ports			  [2, 1]
-	  Position		  [935, 676, 940, 714]
+	  Position		  [930, 646, 935, 684]
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
@@ -1491,10 +1522,10 @@ Model {
 	  Name			  "P vs P_des"
 	  SID			  "1971"
 	  Ports			  [1]
-	  Position		  [995, 679, 1025, 711]
+	  Position		  [990, 649, 1020, 681]
 	  Floating		  off
 	  Location		  [969, 56, 1913, 1031]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -1577,7 +1608,7 @@ Model {
 	  Name			  "Selector4"
 	  SID			  "1977"
 	  Ports			  [1, 1]
-	  Position		  [1050, 801, 1070, 839]
+	  Position		  [1060, 756, 1080, 794]
 	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  InputPortWidth	  "3"
@@ -1594,6 +1625,39 @@ Model {
 	  VariableName		  "MB"
 	  MaxDataPoints		  "inf"
 	  SampleTime		  "0.02"
+	  SaveFormat		  "Structure With Time"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  SID			  "1987"
+	  Ports			  [1]
+	  Position		  [1055, 570, 1115, 600]
+	  VariableName		  "Position"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure With Time"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  SID			  "1988"
+	  Ports			  [1]
+	  Position		  [1075, 660, 1135, 690]
+	  VariableName		  "Vel"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Structure With Time"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace3"
+	  SID			  "1989"
+	  Ports			  [1]
+	  Position		  [1160, 715, 1220, 745]
+	  VariableName		  "acc"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
 	  SaveFormat		  "Structure With Time"
 	}
 	Block {
@@ -2160,6 +2224,28 @@ Model {
 	      DstPort		      5
 	    }
 	  }
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Vel"
+	  SID			  "1991"
+	  Ports			  [1]
+	  Position		  [1190, 599, 1220, 631]
+	  Floating		  off
+	  Location		  [969, 56, 1913, 1031]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "-0.05"
+	  YMax			  "0.9"
+	  SaveName		  "ScopeData7"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2865,6 +2951,28 @@ Model {
 	}
 	Block {
 	  BlockType		  Scope
+	  Name			  "acc"
+	  SID			  "1990"
+	  Ports			  [1]
+	  Position		  [1195, 664, 1225, 696]
+	  Floating		  off
+	  Location		  [969, 56, 1913, 1031]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  ZoomMode		  "xonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "-0.05"
+	  YMax			  "0.9"
+	  SaveName		  "ScopeData6"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
 	  Name			  "heading"
 	  SID			  "1978"
 	  Ports			  [1]
@@ -3240,16 +3348,22 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, 5]
-	  DstBlock		  "Mux4"
-	  DstPort		  1
+	  Points		  [0, 15; 10, 0]
+	  Branch {
+	    DstBlock		    "Mux4"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "<position des>"
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  2
-	  Points		  [0, 10]
 	  DstBlock		  "Mux4"
 	  DstPort		  2
 	}
@@ -3258,15 +3372,48 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector3"
 	  SrcPort		  3
-	  Points		  [0, 110]
+	  Points		  [95, 0; 0, 65]
 	  DstBlock		  "Selector4"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Selector4"
 	  SrcPort		  1
+	  Points		  [0, 45]
 	  DstBlock		  "heading"
 	  DstPort		  1
+	}
+	Line {
+	  Name			  "<velocity>"
+	  Labels		  [0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  4
+	  Points		  [165, 0; 0, -70]
+	  Branch {
+	    DstBlock		    "To Workspace2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Vel"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "<Acceleration>"
+	  Labels		  [0, 0; 0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  5
+	  Points		  [145, 0; 0, -50; 95, 0]
+	  Branch {
+	    DstBlock		    "To Workspace3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -50]
+	    DstBlock		    "acc"
+	    DstPort		    1
+	  }
 	}
 	Annotation {
 	  Position		  [830, 128]
@@ -3882,8 +4029,8 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Filter7"
 	  SID			  "1406"
-	  Ports			  [1, 3]
-	  Position		  [785, 309, 850, 371]
+	  Ports			  [1, 4]
+	  Position		  [785, 311, 850, 374]
 	  BackgroundColor	  "cyan"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -3981,6 +4128,19 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Selector
+	      Name		      "Selector2"
+	      SID		      "1982"
+	      Ports		      [1, 1]
+	      Position		      [695, 102, 720, 128]
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      InputPortWidth	      "12"
+	      IndexOptions	      "Index vector (dialog)"
+	      Indices		      "[1 4 7]"
+	      OutputSizes	      "1"
+	    }
+	    Block {
+	      BlockType		      Selector
 	      Name		      "Selector5"
 	      SID		      "1419"
 	      Ports		      [1, 1]
@@ -4028,6 +4188,14 @@ Model {
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "POS"
+	      SID		      "1983"
+	      Position		      [815, 108, 845, 122]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
 	    Line {
 	      SrcBlock		      "Selector6"
 	      SrcPort		      1
@@ -4039,21 +4207,29 @@ Model {
 	      SrcPort		      1
 	      Points		      [0, 20; 65, 0]
 	      Branch {
-		Points			[0, -95; 115, 0]
-		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Selector6"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "Selector5"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
 		Points			[5, 0; 0, 35]
 		DstBlock		"Selector1"
 		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -95; 105, 0]
+		Branch {
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, 75]
+		    DstBlock		    "Selector6"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Selector5"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  Points		  [0, -85]
+		  DstBlock		  "Selector2"
+		  DstPort		  1
+		}
 	      }
 	    }
 	    Line {
@@ -4072,6 +4248,12 @@ Model {
 	      SrcBlock		      "Selector1"
 	      SrcPort		      1
 	      DstBlock		      "Psi"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Selector2"
+	      SrcPort		      1
+	      DstBlock		      "POS"
 	      DstPort		      1
 	    }
 	  }
@@ -4504,6 +4686,27 @@ Model {
 	  TagVisibility		  "global"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "KF"
+	  SID			  "1984"
+	  Ports			  [1]
+	  Position		  [1095, 389, 1125, 421]
+	  Floating		  off
+	  Location		  [969, 56, 1913, 1031]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "-3.5"
+	  YMax			  "3"
+	  SaveName		  "ScopeData5"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  M-S-Function
 	  Name			  "Logic to fix signal loss \nand object local axis flip1"
 	  SID			  "1746"
@@ -4688,6 +4891,27 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Raw"
+	  SID			  "1979"
+	  Ports			  [1]
+	  Position		  [615, 94, 645, 126]
+	  Floating		  off
+	  Location		  [9, 56, 953, 1031]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "-3.25"
+	  YMax			  "2"
+	  SaveName		  "ScopeData3"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -7371,6 +7595,27 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "Scope1"
+	  SID			  "1980"
+	  Ports			  [1]
+	  Position		  [1095, 99, 1125, 131]
+	  Floating		  off
+	  Location		  [969, 56, 1913, 1031]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "-3"
+	  YMax			  "2"
+	  SaveName		  "ScopeData4"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Selector
 	  Name			  "Selector1"
 	  SID			  "1581"
@@ -7482,15 +7727,23 @@ Model {
 	  SrcPort		  1
 	  Points		  [15, 0; 0, -5; 15, 0]
 	  Branch {
-	    Labels		    [1, 0]
-	    Points		    [350, 0]
-	    DstBlock		    "Bus\nCreator7"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [0, 85]
 	    DstBlock		    "Mux"
 	    DstPort		    1
+	  }
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [250, 0]
+	    Branch {
+	      Points		      [100, 0]
+	      DstBlock		      "Bus\nCreator7"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -130]
+	      DstBlock		      "Scope1"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Line {
@@ -7593,9 +7846,17 @@ Model {
 	Line {
 	  SrcBlock		  "Raw Quad Pose from Vicon"
 	  SrcPort		  1
-	  Points		  [55, 0; 0, 135]
-	  DstBlock		  "Mux19"
-	  DstPort		  1
+	  Points		  [55, 0; 0, 5]
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux19"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [310, 0]
+	    DstBlock		    "Raw"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Raw Quad Pose from Vicon"
@@ -7669,6 +7930,7 @@ Model {
 	Line {
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
+	  Points		  [10, 0]
 	  DstBlock		  "Filter7"
 	  DstPort		  1
 	}
@@ -7804,6 +8066,13 @@ Model {
 	  Points		  [25, 0; 0, 15]
 	  DstBlock		  "Mux2"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Filter7"
+	  SrcPort		  4
+	  Points		  [110, 0; 0, 40]
+	  DstBlock		  "KF"
+	  DstPort		  1
 	}
 	Annotation {
 	  Name			  "Process Vicon Raw Data to take care of signal loss and object local axis flip"
