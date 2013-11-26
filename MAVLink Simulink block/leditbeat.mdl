@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.3"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "Jx"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Jx"
+  LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 26 13:14:40 2013"
-  RTWModifiedTimeStamp	  307372422
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Tue Nov 26 14:10:24 2013"
+  RTWModifiedTimeStamp	  307374729
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,8 +65,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "leditbeat"
-    signals_		    []
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -789,7 +788,7 @@ Model {
   }
   System {
     Name		    "leditbeat"
-    Location		    [2, 74, 1918, 1059]
+    Location		    [0, 50, 1904, 1072]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -803,19 +802,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "37"
+    SIDHighWatermark	    "40"
     Block {
       BlockType		      SubSystem
-      Name		      "Bandpass Filter"
-      SID		      "6"
-      Ports		      [1, 1]
-      Position		      [330, 374, 430, 416]
-      UserDataPersistent      on
-      UserData		      "DataTag0"
-      DialogController	      "fdesignblkfcn"
-      DialogControllerArgs    "DataTag1"
-      CopyFcn		      "fdesignblkfcn(gcbh, {'CopyFcn'});"
-      InitFcn		      "fdesignblkfcn(gcbh, {'InitFcn'});"
+      Name		      "Subsystem"
+      SID		      "38"
+      Ports		      [0, 2]
+      Position		      [495, 230, 535, 290]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -823,20 +816,9 @@ Model {
       Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      off
-      MaskType		      "Bandpass Filter"
-      MaskDescription	      "Design a bandpass filter"
-      MaskHelp		      "helpview(mapfilelocation('dsp'), 'dspbandpassfilter');"
-      MaskSelfModifiable      on
-      MaskDisplay	      "disp('Bandpass');"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskCapabilities	      "dspmaskedcaps(gcbh)"
       System {
-	Name			"Bandpass Filter"
-	Location		[219, 526, 717, 826]
+	Name			"Subsystem"
+	Location		[-8, 116, 1047, 568]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -849,794 +831,864 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"826"
 	Block {
-	  BlockType		  Inport
-	  Name			  "In"
-	  SID			  "6:2"
-	  Position		  [110, 103, 140, 117]
-	  IconDisplay		  "Port number"
+	  BlockType		  SubSystem
+	  Name			  "Bandpass Filter"
+	  SID			  "6"
+	  Ports			  [1, 1]
+	  Position		  [340, 344, 440, 386]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  DialogController	  "fdesignblkfcn"
+	  DialogControllerArgs	  "DataTag1"
+	  CopyFcn		  "fdesignblkfcn(gcbh, {'CopyFcn'});"
+	  InitFcn		  "fdesignblkfcn(gcbh, {'InitFcn'});"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Bandpass Filter"
+	  MaskDescription	  "Design a bandpass filter"
+	  MaskHelp		  "helpview(mapfilelocation('dsp'), 'dspbandpassfilter');"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "disp('Bandpass');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskCapabilities	  "dspmaskedcaps(gcbh)"
+	  System {
+	    Name		    "Bandpass Filter"
+	    Location		    [219, 526, 717, 826]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "826"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      "6:2"
+	      Position		      [110, 103, 140, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Generated Filter Block"
+	      SID		      "6:826"
+	      Tag		      "BlockMethodSubSystem"
+	      Ports		      [1, 1]
+	      Position		      [220, 90, 295, 130]
+	      LibraryVersion	      "1.314"
+	      UserDataPersistent      on
+	      UserData		      "DataTag2"
+	      SourceBlock	      "dsparch4/Digital Filter"
+	      SourceType	      "Digital Filter"
+	      TypePopup		      "FIR (all zeros)"
+	      IIRFiltStruct	      "Direct form II transposed"
+	      AllPoleFiltStruct	      "Direct form"
+	      FIRFiltStruct	      "Direct form symmetric"
+	      CoeffSource	      "Specify via dialog"
+	      NumCoeffs		      "[-0.00089922914877443 0.00164145187479437 0.00313520718422254 -0.00407075508288149 -0.0063731"
+	      "8522279041 0.00748742868060905 0.00983543195662957 -0.0101893165134462 -0.0113027944658741 0.00969291858418184 "
+	      "0.00794286539874642 -0.00313682478812216 0.00282998788779431 -0.0115086742430015 -0.0220801362194616 0.03424532"
+	      "54245077 0.0483566616489055 -0.0623553691698842 -0.0775034781625939 0.0906877681531257 0.103531711058442 -0.112"
+	      "978600842298 -0.120358660249785 0.123793608015391 0.123793608015391 -0.120358660249785 -0.112978600842298 0.103"
+	      "531711058442 0.0906877681531257 -0.0775034781625939 -0.0623553691698842 0.0483566616489055 0.0342453254245077 -"
+	      "0.0220801362194616 -0.0115086742430015 0.00282998788779431 -0.00313682478812216 0.00794286539874642 0.009692918"
+	      "58418184 -0.0113027944658741 -0.0101893165134462 0.00983543195662957 0.00748742868060905 -0.00637318522279041 -"
+	      "0.00407075508288149 0.00313520718422254 0.00164145187479437 -0.00089922914877443]"
+	      DenCoeffs		      "[1 0.1]"
+	      BiQuadCoeffs	      "[1 0.3 0.4 1 0.1 0.2]"
+	      LatticeCoeffs	      "[0.2 0.4]"
+	      denIgnore		      on
+	      FiltPerSampPopup	      "One filter per frame"
+	      IC		      "0"
+	      ICnum		      "0"
+	      ICden		      "0"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      showCoeff		      off
+	      firstCoeffMode	      "Same word length as input"
+	      firstCoeffWordLength    "16"
+	      firstCoeffFracLength    "15"
+	      secondCoeffMode	      "Same as numerator"
+	      secondCoeffWordLength   "16"
+	      secondCoeffFracLength   "15"
+	      thirdCoeffMode	      "Same as input"
+	      thirdCoeffWordLength    "16"
+	      thirdCoeffFracLength    "15"
+	      showOut		      off
+	      outputMode	      "Same as accumulator"
+	      outputWordLength	      "16"
+	      outputFracLength	      "15"
+	      showAcc		      off
+	      accumMode		      "Same as product output"
+	      accumWordLength	      "32"
+	      accumFracLength	      "30"
+	      showMpy		      off
+	      prodOutputMode	      "Same as input"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "30"
+	      showMem		      off
+	      memoryMode	      "Same as accumulator"
+	      memoryWordLength	      "16"
+	      memoryFracLength	      "15"
+	      roundingMode	      "Floor"
+	      overflowMode	      off
+	      ScaleValues	      "1"
+	      scaleValueFracLength    "14"
+	      tapSumMode	      "Same as input"
+	      tapSumWordLength	      "32"
+	      tapSumFracLength	      "30"
+	      stageIOMode	      "Same as input"
+	      stageIOWordLength	      "16"
+	      stageInFracLength	      "15"
+	      stageOutFracLength      "15"
+	      LockScale		      off
+	      FilterSource	      "Specify via dialog"
+	      dfiltObjectName	      "dfilt.dffir([1 2 1])"
+	      multiplicandMode	      "Same as output"
+	      multiplicandWordLength  "32"
+	      multiplicandFracLength  "30"
+	      InputProcessing	      "Columns as channels (frame based)"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "6:2"
+	      Position		      [360, 103, 390, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Generated Filter Block"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Generated Filter Block"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Generated Filter Block"
-	  SID			  "6:826"
-	  Tag			  "BlockMethodSubSystem"
+	  Name			  "Convert 2-D to 1-D"
+	  SID			  "12"
 	  Ports			  [1, 1]
-	  Position		  [220, 90, 295, 130]
-	  LibraryVersion	  "1.314"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag2"
-	  SourceBlock		  "dsparch4/Digital Filter"
-	  SourceType		  "Digital Filter"
-	  TypePopup		  "FIR (all zeros)"
-	  IIRFiltStruct		  "Direct form II transposed"
-	  AllPoleFiltStruct	  "Direct form"
-	  FIRFiltStruct		  "Direct form symmetric"
-	  CoeffSource		  "Specify via dialog"
-	  NumCoeffs		  "[-0.00089922914877443 0.00164145187479437 0.00313520718422254 -0.00407075508288149 -0.006373185222790"
-	  "41 0.00748742868060905 0.00983543195662957 -0.0101893165134462 -0.0113027944658741 0.00969291858418184 0.0079428653"
-	  "9874642 -0.00313682478812216 0.00282998788779431 -0.0115086742430015 -0.0220801362194616 0.0342453254245077 0.04835"
-	  "66616489055 -0.0623553691698842 -0.0775034781625939 0.0906877681531257 0.103531711058442 -0.112978600842298 -0.1203"
-	  "58660249785 0.123793608015391 0.123793608015391 -0.120358660249785 -0.112978600842298 0.103531711058442 0.090687768"
-	  "1531257 -0.0775034781625939 -0.0623553691698842 0.0483566616489055 0.0342453254245077 -0.0220801362194616 -0.011508"
-	  "6742430015 0.00282998788779431 -0.00313682478812216 0.00794286539874642 0.00969291858418184 -0.0113027944658741 -0."
-	  "0101893165134462 0.00983543195662957 0.00748742868060905 -0.00637318522279041 -0.00407075508288149 0.00313520718422"
-	  "254 0.00164145187479437 -0.00089922914877443]"
-	  DenCoeffs		  "[1 0.1]"
-	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
-	  LatticeCoeffs		  "[0.2 0.4]"
-	  denIgnore		  on
-	  FiltPerSampPopup	  "One filter per frame"
-	  IC			  "0"
-	  ICnum			  "0"
-	  ICden			  "0"
-	  additionalParams	  off
-	  allowOverrides	  on
-	  showCoeff		  off
-	  firstCoeffMode	  "Same word length as input"
-	  firstCoeffWordLength	  "16"
-	  firstCoeffFracLength	  "15"
-	  secondCoeffMode	  "Same as numerator"
-	  secondCoeffWordLength	  "16"
-	  secondCoeffFracLength	  "15"
-	  thirdCoeffMode	  "Same as input"
-	  thirdCoeffWordLength	  "16"
-	  thirdCoeffFracLength	  "15"
-	  showOut		  off
-	  outputMode		  "Same as accumulator"
-	  outputWordLength	  "16"
-	  outputFracLength	  "15"
-	  showAcc		  off
-	  accumMode		  "Same as product output"
-	  accumWordLength	  "32"
-	  accumFracLength	  "30"
-	  showMpy		  off
-	  prodOutputMode	  "Same as input"
-	  prodOutputWordLength	  "32"
-	  prodOutputFracLength	  "30"
-	  showMem		  off
-	  memoryMode		  "Same as accumulator"
-	  memoryWordLength	  "16"
-	  memoryFracLength	  "15"
-	  roundingMode		  "Floor"
-	  overflowMode		  off
-	  ScaleValues		  "1"
-	  scaleValueFracLength	  "14"
-	  tapSumMode		  "Same as input"
-	  tapSumWordLength	  "32"
-	  tapSumFracLength	  "30"
-	  stageIOMode		  "Same as input"
-	  stageIOWordLength	  "16"
-	  stageInFracLength	  "15"
-	  stageOutFracLength	  "15"
-	  LockScale		  off
-	  FilterSource		  "Specify via dialog"
-	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
-	  multiplicandMode	  "Same as output"
-	  multiplicandWordLength  "32"
-	  multiplicandFracLength  "30"
-	  InputProcessing	  "Columns as channels (frame based)"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out"
-	  SID			  "6:2"
-	  Position		  [360, 103, 390, 117]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "In"
-	  SrcPort		  1
-	  DstBlock		  "Generated Filter Block"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Generated Filter Block"
-	  SrcPort		  1
-	  DstBlock		  "Out"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Convert 2-D to 1-D"
-      SID		      "12"
-      Ports		      [1, 1]
-      Position		      [585, 174, 645, 216]
-      LibraryVersion	      "1.503"
-      SourceBlock	      "dspsigattribs/Convert 2-D to 1-D"
-      SourceType	      "Convert 2-D to 1-D"
-      ShowPortLabels	      "none"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Convert 2-D to 1-D1"
-      SID		      "19"
-      Ports		      [1, 1]
-      Position		      [585, 279, 645, 321]
-      LibraryVersion	      "1.503"
-      SourceBlock	      "dspsigattribs/Convert 2-D to 1-D"
-      SourceType	      "Convert 2-D to 1-D"
-      ShowPortLabels	      "none"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Convert 2-D to 1-D2"
-      SID		      "20"
-      Ports		      [1, 1]
-      Position		      [585, 374, 645, 416]
-      LibraryVersion	      "1.503"
-      SourceBlock	      "dspsigattribs/Convert 2-D to 1-D"
-      SourceType	      "Convert 2-D to 1-D"
-      ShowPortLabels	      "none"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay Line"
-      SID		      "13"
-      Ports		      [1, 1]
-      Position		      [700, 167, 760, 223]
-      LibraryVersion	      "1.412"
-      UserDataPersistent      on
-      UserData		      "DataTag3"
-      SourceBlock	      "dspbuff3/Delay Line"
-      SourceType	      "Delay Line"
-      siz		      "64"
-      ic		      "0"
-      directfeed	      off
-      enable_output	      off
-      hold_output	      off
-      TreatMby1Signals	      "One channel"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay Line1"
-      SID		      "23"
-      Ports		      [1, 1]
-      Position		      [700, 272, 760, 328]
-      LibraryVersion	      "1.412"
-      UserDataPersistent      on
-      UserData		      "DataTag4"
-      SourceBlock	      "dspbuff3/Delay Line"
-      SourceType	      "Delay Line"
-      siz		      "64"
-      ic		      "0"
-      directfeed	      off
-      enable_output	      off
-      hold_output	      off
-      TreatMby1Signals	      "One channel"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Delay Line2"
-      SID		      "24"
-      Ports		      [1, 1]
-      Position		      [700, 367, 760, 423]
-      LibraryVersion	      "1.412"
-      UserDataPersistent      on
-      UserData		      "DataTag5"
-      SourceBlock	      "dspbuff3/Delay Line"
-      SourceType	      "Delay Line"
-      siz		      "64"
-      ic		      "0"
-      directfeed	      off
-      enable_output	      off
-      hold_output	      off
-      TreatMby1Signals	      "One channel"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display"
-      SID		      "36"
-      Ports		      [1]
-      Position		      [930, 180, 1020, 210]
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "From Multimedia File1"
-      SID		      "11"
-      Ports		      [0, 1]
-      Position		      [15, 253, 155, 347]
-      LibraryVersion	      "1.712"
-      SourceBlock	      "dspsrcs4/From Multimedia File"
-      SourceType	      "From Multimedia File"
-      inputFilename	      "C:\\Users\\Jx\\Desktop\\jx\\Music\\01 Good Time.mp3"
-      loop		      on
-      numPlays		      "inf"
-      outputStreams	      "Audio only"
-      videoDataType	      "single"
-      audioDataType	      "single"
-      inheritSampleTime	      on
-      userDefinedSampleTime   "1/30"
-      noAudioOutput	      off
-      isIntensityVideo	      off
-      fourcc		      "RGB"
-      colorVideoFormat	      "Separate color signals"
-      outputEOF		      off
-      dataOrg		      "Column-major"
-      audioFrameSize	      "1024"
-      computeAudioFrameSize   off
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Highpass Filter"
-      SID		      "5"
-      Ports		      [1, 1]
-      Position		      [330, 279, 430, 321]
-      UserDataPersistent      on
-      UserData		      "DataTag6"
-      DialogController	      "fdesignblkfcn"
-      DialogControllerArgs    "DataTag7"
-      CopyFcn		      "fdesignblkfcn(gcbh, {'CopyFcn'});"
-      InitFcn		      "fdesignblkfcn(gcbh, {'InitFcn'});"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      MaskType		      "Highpass Filter"
-      MaskDescription	      "Design a highpass filter"
-      MaskHelp		      "helpview(mapfilelocation('dsp'), 'dsphighpassfilter');"
-      MaskSelfModifiable      on
-      MaskDisplay	      "disp('Highpass')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskCapabilities	      "dspmaskedcaps(gcbh)"
-      System {
-	Name			"Highpass Filter"
-	Location		[219, 526, 717, 826]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"1054"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In"
-	  SID			  "5:9"
-	  Position		  [110, 103, 140, 117]
-	  IconDisplay		  "Port number"
+	  Position		  [595, 144, 655, 186]
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Convert 2-D to 1-D"
+	  SourceType		  "Convert 2-D to 1-D"
+	  ShowPortLabels	  "none"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Generated Filter Block"
-	  SID			  "5:1054"
-	  Tag			  "BlockMethodSubSystem"
+	  Name			  "Convert 2-D to 1-D1"
+	  SID			  "19"
 	  Ports			  [1, 1]
-	  Position		  [220, 90, 295, 130]
-	  LibraryVersion	  "1.314"
-	  UserDataPersistent	  on
-	  UserData		  "DataTag8"
-	  SourceBlock		  "dsparch4/Digital Filter"
-	  SourceType		  "Digital Filter"
-	  TypePopup		  "FIR (all zeros)"
-	  IIRFiltStruct		  "Direct form II transposed"
-	  AllPoleFiltStruct	  "Direct form"
-	  FIRFiltStruct		  "Direct form"
-	  CoeffSource		  "Specify via dialog"
-	  NumCoeffs		  "[-0.00171368266511037 0.00831437844808067 -0.0127173552334869 0.00556095179025034 0.00733971024255366"
-	  " -0.00653104905017925 -0.0076900499697795 0.0090269831680985 0.00883886189950912 -0.0129607413537662 -0.01007495866"
-	  "72528 0.0185201740100089 0.011233354613589 -0.0263752483836136 -0.0122707821857659 0.0381809766923897 0.01313042591"
-	  "82936 -0.0582933593251923 -0.0137682959486481 0.102813257992074 0.0141678767738541 -0.317202552416035 0.48569804617"
-	  "0518 -0.317202552416035 0.0141678767738541 0.102813257992074 -0.0137682959486481 -0.0582933593251923 0.013130425918"
-	  "2936 0.0381809766923897 -0.0122707821857659 -0.0263752483836136 0.011233354613589 0.0185201740100089 -0.01007495866"
-	  "72528 -0.0129607413537662 0.00883886189950912 0.0090269831680985 -0.0076900499697795 -0.00653104905017925 0.0073397"
-	  "1024255366 0.00556095179025034 -0.0127173552334869 0.00831437844808067 -0.00171368266511037]"
-	  DenCoeffs		  "[1 0.1]"
-	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
-	  LatticeCoeffs		  "[0.2 0.4]"
-	  denIgnore		  on
-	  FiltPerSampPopup	  "One filter per frame"
-	  IC			  "0"
-	  ICnum			  "0"
-	  ICden			  "0"
-	  additionalParams	  off
-	  allowOverrides	  on
-	  showCoeff		  off
-	  firstCoeffMode	  "Same word length as input"
-	  firstCoeffWordLength	  "16"
-	  firstCoeffFracLength	  "15"
-	  secondCoeffMode	  "Same as numerator"
-	  secondCoeffWordLength	  "16"
-	  secondCoeffFracLength	  "15"
-	  thirdCoeffMode	  "Same as input"
-	  thirdCoeffWordLength	  "16"
-	  thirdCoeffFracLength	  "15"
-	  showOut		  off
-	  outputMode		  "Same as accumulator"
-	  outputWordLength	  "16"
-	  outputFracLength	  "15"
-	  showAcc		  off
-	  accumMode		  "Same as product output"
-	  accumWordLength	  "32"
-	  accumFracLength	  "30"
-	  showMpy		  off
-	  prodOutputMode	  "Same as input"
-	  prodOutputWordLength	  "32"
-	  prodOutputFracLength	  "30"
-	  showMem		  off
-	  memoryMode		  "Same as accumulator"
-	  memoryWordLength	  "16"
-	  memoryFracLength	  "15"
-	  roundingMode		  "Floor"
-	  overflowMode		  off
-	  ScaleValues		  "1"
-	  scaleValueFracLength	  "14"
-	  tapSumMode		  "Same as input"
-	  tapSumWordLength	  "32"
-	  tapSumFracLength	  "30"
-	  stageIOMode		  "Same as input"
-	  stageIOWordLength	  "16"
-	  stageInFracLength	  "15"
-	  stageOutFracLength	  "15"
-	  LockScale		  off
-	  FilterSource		  "Specify via dialog"
-	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
-	  multiplicandMode	  "Same as output"
-	  multiplicandWordLength  "32"
-	  multiplicandFracLength  "30"
-	  InputProcessing	  "Columns as channels (frame based)"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out"
-	  SID			  "5:9"
-	  Position		  [360, 103, 390, 117]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Generated Filter Block"
-	  SrcPort		  1
-	  DstBlock		  "Out"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "In"
-	  SrcPort		  1
-	  DstBlock		  "Generated Filter Block"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Idealized ADC quantizer1"
-      SID		      "21"
-      Ports		      [1, 1]
-      Position		      [470, 275, 530, 325]
-      AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
-      LibraryVersion	      "1.41"
-      SourceBlock	      "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
-      SourceType	      "IdealADC"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-      NumberOfConverterBits   "8"
-      Vmin		      "0"
-      Vmax		      "255"
-      OutputDataType	      "uint8"
-      OutputNegativeValues    off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Idealized ADC quantizer2"
-      SID		      "22"
-      Ports		      [1, 1]
-      Position		      [470, 370, 530, 420]
-      AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
-      LibraryVersion	      "1.41"
-      SourceBlock	      "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
-      SourceType	      "IdealADC"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-      NumberOfConverterBits   "8"
-      Vmin		      "0"
-      Vmax		      "255"
-      OutputDataType	      "uint8"
-      OutputNegativeValues    off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Idealized ADC quantizer3"
-      SID		      "37"
-      Ports		      [1, 1]
-      Position		      [470, 170, 530, 220]
-      AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
-      LibraryVersion	      "1.41"
-      SourceBlock	      "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
-      SourceType	      "IdealADC"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-      NumberOfConverterBits   "16"
-      Vmin		      "0"
-      Vmax		      "5"
-      OutputDataType	      "single"
-      OutputNegativeValues    off
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Lowpass Filter"
-      SID		      "2"
-      Ports		      [1, 1]
-      Position		      [330, 174, 430, 216]
-      UserDataPersistent      on
-      UserData		      "DataTag9"
-      DialogController	      "fdesignblkfcn"
-      DialogControllerArgs    "DataTag10"
-      CopyFcn		      "fdesignblkfcn(gcbh, {'CopyFcn'});"
-      InitFcn		      "fdesignblkfcn(gcbh, {'InitFcn'});"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      MaskType		      "Lowpass Filter"
-      MaskDescription	      "Design a lowpass filter"
-      MaskHelp		      "helpview(mapfilelocation('dsp'), 'dsplowpassfilter');\n"
-      MaskSelfModifiable      on
-      MaskDisplay	      "disp('Lowpass')"
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskCapabilities	      "dspmaskedcaps(gcbh)"
-      System {
-	Name			"Lowpass Filter"
-	Location		[74, 567, 580, 923]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"738"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In"
-	  SID			  "2:12"
-	  Position		  [110, 103, 140, 117]
-	  IconDisplay		  "Port number"
+	  Position		  [595, 249, 655, 291]
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Convert 2-D to 1-D"
+	  SourceType		  "Convert 2-D to 1-D"
+	  ShowPortLabels	  "none"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Generated Filter Block"
-	  SID			  "2:738"
-	  Tag			  "BlockMethodSubSystem"
+	  Name			  "Convert 2-D to 1-D2"
+	  SID			  "20"
 	  Ports			  [1, 1]
-	  Position		  [220, 90, 295, 130]
-	  LibraryVersion	  "1.314"
+	  Position		  [595, 344, 655, 386]
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Convert 2-D to 1-D"
+	  SourceType		  "Convert 2-D to 1-D"
+	  ShowPortLabels	  "none"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay Line"
+	  SID			  "13"
+	  Ports			  [1, 1]
+	  Position		  [710, 137, 770, 193]
+	  LibraryVersion	  "1.412"
 	  UserDataPersistent	  on
-	  UserData		  "DataTag11"
-	  SourceBlock		  "dsparch4/Digital Filter"
-	  SourceType		  "Digital Filter"
-	  TypePopup		  "FIR (all zeros)"
-	  IIRFiltStruct		  "Direct form II transposed"
-	  AllPoleFiltStruct	  "Direct form"
-	  FIRFiltStruct		  "Direct form"
-	  CoeffSource		  "Specify via dialog"
-	  NumCoeffs		  "[-0.00242287385232699 -0.00208324498207929 0.00677034464011864 0.016731945423489 0.0111170760810776 -"
-	  "0.00623114541414452 -0.00840161718602686 0.00925679761513803 0.0129828838088558 -0.010121234703279 -0.0182735187337"
-	  "825 0.011431962071778 0.0261758885804076 -0.012489027835323 -0.0379966231454636 0.0133889451993669 0.05815546581472"
-	  "99 -0.0140480435158089 -0.102724668578822 0.0144622757712384 0.317166497217695 0.485387646787325 0.317166497217695 "
-	  "0.0144622757712384 -0.102724668578822 -0.0140480435158089 0.0581554658147299 0.0133889451993669 -0.0379966231454636"
-	  " -0.012489027835323 0.0261758885804076 0.011431962071778 -0.0182735187337825 -0.010121234703279 0.0129828838088558 "
-	  "0.00925679761513803 -0.00840161718602686 -0.00623114541414452 0.0111170760810776 0.016731945423489 0.00677034464011"
-	  "864 -0.00208324498207929 -0.00242287385232699]"
-	  DenCoeffs		  "[1 0.1]"
-	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
-	  LatticeCoeffs		  "[0.2 0.4]"
-	  denIgnore		  on
-	  FiltPerSampPopup	  "One filter per frame"
-	  IC			  "0"
-	  ICnum			  "0"
-	  ICden			  "0"
-	  additionalParams	  off
-	  allowOverrides	  on
-	  showCoeff		  off
-	  firstCoeffMode	  "Same word length as input"
-	  firstCoeffWordLength	  "16"
-	  firstCoeffFracLength	  "15"
-	  secondCoeffMode	  "Same as numerator"
-	  secondCoeffWordLength	  "16"
-	  secondCoeffFracLength	  "15"
-	  thirdCoeffMode	  "Same as input"
-	  thirdCoeffWordLength	  "16"
-	  thirdCoeffFracLength	  "15"
-	  showOut		  off
-	  outputMode		  "Same as accumulator"
-	  outputWordLength	  "16"
-	  outputFracLength	  "15"
-	  showAcc		  off
-	  accumMode		  "Same as product output"
-	  accumWordLength	  "32"
-	  accumFracLength	  "30"
-	  showMpy		  off
-	  prodOutputMode	  "Same as input"
-	  prodOutputWordLength	  "32"
-	  prodOutputFracLength	  "30"
-	  showMem		  off
-	  memoryMode		  "Same as accumulator"
-	  memoryWordLength	  "16"
-	  memoryFracLength	  "15"
-	  roundingMode		  "Floor"
-	  overflowMode		  off
-	  ScaleValues		  "1"
-	  scaleValueFracLength	  "14"
-	  tapSumMode		  "Same as input"
-	  tapSumWordLength	  "32"
-	  tapSumFracLength	  "30"
-	  stageIOMode		  "Same as input"
-	  stageIOWordLength	  "16"
-	  stageInFracLength	  "15"
-	  stageOutFracLength	  "15"
-	  LockScale		  off
-	  FilterSource		  "Specify via dialog"
-	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
-	  multiplicandMode	  "Same as output"
-	  multiplicandWordLength  "32"
-	  multiplicandFracLength  "30"
-	  InputProcessing	  "Columns as channels (frame based)"
+	  UserData		  "DataTag3"
+	  SourceBlock		  "dspbuff3/Delay Line"
+	  SourceType		  "Delay Line"
+	  siz			  "64"
+	  ic			  "0"
+	  directfeed		  off
+	  enable_output		  off
+	  hold_output		  off
+	  TreatMby1Signals	  "One channel"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay Line1"
+	  SID			  "23"
+	  Ports			  [1, 1]
+	  Position		  [710, 242, 770, 298]
+	  LibraryVersion	  "1.412"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag4"
+	  SourceBlock		  "dspbuff3/Delay Line"
+	  SourceType		  "Delay Line"
+	  siz			  "64"
+	  ic			  "0"
+	  directfeed		  off
+	  enable_output		  off
+	  hold_output		  off
+	  TreatMby1Signals	  "One channel"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay Line2"
+	  SID			  "24"
+	  Ports			  [1, 1]
+	  Position		  [710, 337, 770, 393]
+	  LibraryVersion	  "1.412"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag5"
+	  SourceBlock		  "dspbuff3/Delay Line"
+	  SourceType		  "Delay Line"
+	  siz			  "64"
+	  ic			  "0"
+	  directfeed		  off
+	  enable_output		  off
+	  hold_output		  off
+	  TreatMby1Signals	  "One channel"
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display"
+	  SID			  "36"
+	  Ports			  [1]
+	  Position		  [940, 150, 1030, 180]
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "From Multimedia File1"
+	  SID			  "11"
+	  Ports			  [0, 1]
+	  Position		  [25, 223, 165, 317]
+	  LibraryVersion	  "1.712"
+	  SourceBlock		  "dspsrcs4/From Multimedia File"
+	  SourceType		  "From Multimedia File"
+	  inputFilename		  "C:\\Users\\Jx\\Desktop\\jx\\Music\\01 Good Time.mp3"
+	  loop			  on
+	  numPlays		  "inf"
+	  outputStreams		  "Audio only"
+	  videoDataType		  "single"
+	  audioDataType		  "single"
+	  inheritSampleTime	  on
+	  userDefinedSampleTime	  "1/30"
+	  noAudioOutput		  off
+	  isIntensityVideo	  off
+	  fourcc		  "RGB"
+	  colorVideoFormat	  "Separate color signals"
+	  outputEOF		  off
+	  dataOrg		  "Column-major"
+	  audioFrameSize	  "1024"
+	  computeAudioFrameSize	  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Highpass Filter"
+	  SID			  "5"
+	  Ports			  [1, 1]
+	  Position		  [340, 249, 440, 291]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag6"
+	  DialogController	  "fdesignblkfcn"
+	  DialogControllerArgs	  "DataTag7"
+	  CopyFcn		  "fdesignblkfcn(gcbh, {'CopyFcn'});"
+	  InitFcn		  "fdesignblkfcn(gcbh, {'InitFcn'});"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Highpass Filter"
+	  MaskDescription	  "Design a highpass filter"
+	  MaskHelp		  "helpview(mapfilelocation('dsp'), 'dsphighpassfilter');"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "disp('Highpass')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskCapabilities	  "dspmaskedcaps(gcbh)"
+	  System {
+	    Name		    "Highpass Filter"
+	    Location		    [219, 526, 717, 826]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "1054"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      "5:9"
+	      Position		      [110, 103, 140, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Generated Filter Block"
+	      SID		      "5:1054"
+	      Tag		      "BlockMethodSubSystem"
+	      Ports		      [1, 1]
+	      Position		      [220, 90, 295, 130]
+	      LibraryVersion	      "1.314"
+	      UserDataPersistent      on
+	      UserData		      "DataTag8"
+	      SourceBlock	      "dsparch4/Digital Filter"
+	      SourceType	      "Digital Filter"
+	      TypePopup		      "FIR (all zeros)"
+	      IIRFiltStruct	      "Direct form II transposed"
+	      AllPoleFiltStruct	      "Direct form"
+	      FIRFiltStruct	      "Direct form"
+	      CoeffSource	      "Specify via dialog"
+	      NumCoeffs		      "[-0.00171368266511037 0.00831437844808067 -0.0127173552334869 0.00556095179025034 0.007339710"
+	      "24255366 -0.00653104905017925 -0.0076900499697795 0.0090269831680985 0.00883886189950912 -0.0129607413537662 -0"
+	      ".0100749586672528 0.0185201740100089 0.011233354613589 -0.0263752483836136 -0.0122707821857659 0.03818097669238"
+	      "97 0.0131304259182936 -0.0582933593251923 -0.0137682959486481 0.102813257992074 0.0141678767738541 -0.317202552"
+	      "416035 0.485698046170518 -0.317202552416035 0.0141678767738541 0.102813257992074 -0.0137682959486481 -0.0582933"
+	      "593251923 0.0131304259182936 0.0381809766923897 -0.0122707821857659 -0.0263752483836136 0.011233354613589 0.018"
+	      "5201740100089 -0.0100749586672528 -0.0129607413537662 0.00883886189950912 0.0090269831680985 -0.007690049969779"
+	      "5 -0.00653104905017925 0.00733971024255366 0.00556095179025034 -0.0127173552334869 0.00831437844808067 -0.00171"
+	      "368266511037]"
+	      DenCoeffs		      "[1 0.1]"
+	      BiQuadCoeffs	      "[1 0.3 0.4 1 0.1 0.2]"
+	      LatticeCoeffs	      "[0.2 0.4]"
+	      denIgnore		      on
+	      FiltPerSampPopup	      "One filter per frame"
+	      IC		      "0"
+	      ICnum		      "0"
+	      ICden		      "0"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      showCoeff		      off
+	      firstCoeffMode	      "Same word length as input"
+	      firstCoeffWordLength    "16"
+	      firstCoeffFracLength    "15"
+	      secondCoeffMode	      "Same as numerator"
+	      secondCoeffWordLength   "16"
+	      secondCoeffFracLength   "15"
+	      thirdCoeffMode	      "Same as input"
+	      thirdCoeffWordLength    "16"
+	      thirdCoeffFracLength    "15"
+	      showOut		      off
+	      outputMode	      "Same as accumulator"
+	      outputWordLength	      "16"
+	      outputFracLength	      "15"
+	      showAcc		      off
+	      accumMode		      "Same as product output"
+	      accumWordLength	      "32"
+	      accumFracLength	      "30"
+	      showMpy		      off
+	      prodOutputMode	      "Same as input"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "30"
+	      showMem		      off
+	      memoryMode	      "Same as accumulator"
+	      memoryWordLength	      "16"
+	      memoryFracLength	      "15"
+	      roundingMode	      "Floor"
+	      overflowMode	      off
+	      ScaleValues	      "1"
+	      scaleValueFracLength    "14"
+	      tapSumMode	      "Same as input"
+	      tapSumWordLength	      "32"
+	      tapSumFracLength	      "30"
+	      stageIOMode	      "Same as input"
+	      stageIOWordLength	      "16"
+	      stageInFracLength	      "15"
+	      stageOutFracLength      "15"
+	      LockScale		      off
+	      FilterSource	      "Specify via dialog"
+	      dfiltObjectName	      "dfilt.dffir([1 2 1])"
+	      multiplicandMode	      "Same as output"
+	      multiplicandWordLength  "32"
+	      multiplicandFracLength  "30"
+	      InputProcessing	      "Columns as channels (frame based)"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "5:9"
+	      Position		      [360, 103, 390, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Generated Filter Block"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Generated Filter Block"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Idealized ADC quantizer1"
+	  SID			  "21"
+	  Ports			  [1, 1]
+	  Position		  [480, 245, 540, 295]
+	  AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
+	  LibraryVersion	  "1.41"
+	  SourceBlock		  "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
+	  SourceType		  "IdealADC"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  NumberOfConverterBits	  "8"
+	  Vmin			  "0"
+	  Vmax			  "255"
+	  OutputDataType	  "uint8"
+	  OutputNegativeValues	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Idealized ADC quantizer2"
+	  SID			  "22"
+	  Ports			  [1, 1]
+	  Position		  [480, 340, 540, 390]
+	  AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
+	  LibraryVersion	  "1.41"
+	  SourceBlock		  "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
+	  SourceType		  "IdealADC"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  NumberOfConverterBits	  "8"
+	  Vmin			  "0"
+	  Vmax			  "255"
+	  OutputDataType	  "uint8"
+	  OutputNegativeValues	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Idealized ADC quantizer3"
+	  SID			  "37"
+	  Ports			  [1, 1]
+	  Position		  [480, 140, 540, 190]
+	  AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
+	  LibraryVersion	  "1.41"
+	  SourceBlock		  "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
+	  SourceType		  "IdealADC"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  NumberOfConverterBits	  "16"
+	  Vmin			  "0"
+	  Vmax			  "5"
+	  OutputDataType	  "single"
+	  OutputNegativeValues	  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Lowpass Filter"
+	  SID			  "2"
+	  Ports			  [1, 1]
+	  Position		  [340, 144, 440, 186]
+	  UserDataPersistent	  on
+	  UserData		  "DataTag9"
+	  DialogController	  "fdesignblkfcn"
+	  DialogControllerArgs	  "DataTag10"
+	  CopyFcn		  "fdesignblkfcn(gcbh, {'CopyFcn'});"
+	  InitFcn		  "fdesignblkfcn(gcbh, {'InitFcn'});"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskType		  "Lowpass Filter"
+	  MaskDescription	  "Design a lowpass filter"
+	  MaskHelp		  "helpview(mapfilelocation('dsp'), 'dsplowpassfilter');\n"
+	  MaskSelfModifiable	  on
+	  MaskDisplay		  "disp('Lowpass')"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskCapabilities	  "dspmaskedcaps(gcbh)"
+	  System {
+	    Name		    "Lowpass Filter"
+	    Location		    [74, 567, 580, 923]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "738"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In"
+	      SID		      "2:12"
+	      Position		      [110, 103, 140, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Generated Filter Block"
+	      SID		      "2:738"
+	      Tag		      "BlockMethodSubSystem"
+	      Ports		      [1, 1]
+	      Position		      [220, 90, 295, 130]
+	      LibraryVersion	      "1.314"
+	      UserDataPersistent      on
+	      UserData		      "DataTag11"
+	      SourceBlock	      "dsparch4/Digital Filter"
+	      SourceType	      "Digital Filter"
+	      TypePopup		      "FIR (all zeros)"
+	      IIRFiltStruct	      "Direct form II transposed"
+	      AllPoleFiltStruct	      "Direct form"
+	      FIRFiltStruct	      "Direct form"
+	      CoeffSource	      "Specify via dialog"
+	      NumCoeffs		      "[-0.00242287385232699 -0.00208324498207929 0.00677034464011864 0.016731945423489 0.0111170760"
+	      "810776 -0.00623114541414452 -0.00840161718602686 0.00925679761513803 0.0129828838088558 -0.010121234703279 -0.0"
+	      "182735187337825 0.011431962071778 0.0261758885804076 -0.012489027835323 -0.0379966231454636 0.0133889451993669 "
+	      "0.0581554658147299 -0.0140480435158089 -0.102724668578822 0.0144622757712384 0.317166497217695 0.48538764678732"
+	      "5 0.317166497217695 0.0144622757712384 -0.102724668578822 -0.0140480435158089 0.0581554658147299 0.013388945199"
+	      "3669 -0.0379966231454636 -0.012489027835323 0.0261758885804076 0.011431962071778 -0.0182735187337825 -0.0101212"
+	      "34703279 0.0129828838088558 0.00925679761513803 -0.00840161718602686 -0.00623114541414452 0.0111170760810776 0."
+	      "016731945423489 0.00677034464011864 -0.00208324498207929 -0.00242287385232699]"
+	      DenCoeffs		      "[1 0.1]"
+	      BiQuadCoeffs	      "[1 0.3 0.4 1 0.1 0.2]"
+	      LatticeCoeffs	      "[0.2 0.4]"
+	      denIgnore		      on
+	      FiltPerSampPopup	      "One filter per frame"
+	      IC		      "0"
+	      ICnum		      "0"
+	      ICden		      "0"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      showCoeff		      off
+	      firstCoeffMode	      "Same word length as input"
+	      firstCoeffWordLength    "16"
+	      firstCoeffFracLength    "15"
+	      secondCoeffMode	      "Same as numerator"
+	      secondCoeffWordLength   "16"
+	      secondCoeffFracLength   "15"
+	      thirdCoeffMode	      "Same as input"
+	      thirdCoeffWordLength    "16"
+	      thirdCoeffFracLength    "15"
+	      showOut		      off
+	      outputMode	      "Same as accumulator"
+	      outputWordLength	      "16"
+	      outputFracLength	      "15"
+	      showAcc		      off
+	      accumMode		      "Same as product output"
+	      accumWordLength	      "32"
+	      accumFracLength	      "30"
+	      showMpy		      off
+	      prodOutputMode	      "Same as input"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "30"
+	      showMem		      off
+	      memoryMode	      "Same as accumulator"
+	      memoryWordLength	      "16"
+	      memoryFracLength	      "15"
+	      roundingMode	      "Floor"
+	      overflowMode	      off
+	      ScaleValues	      "1"
+	      scaleValueFracLength    "14"
+	      tapSumMode	      "Same as input"
+	      tapSumWordLength	      "32"
+	      tapSumFracLength	      "30"
+	      stageIOMode	      "Same as input"
+	      stageIOWordLength	      "16"
+	      stageInFracLength	      "15"
+	      stageOutFracLength      "15"
+	      LockScale		      off
+	      FilterSource	      "Specify via dialog"
+	      dfiltObjectName	      "dfilt.dffir([1 2 1])"
+	      multiplicandMode	      "Same as output"
+	      multiplicandWordLength  "32"
+	      multiplicandFracLength  "30"
+	      InputProcessing	      "Columns as channels (frame based)"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "2:12"
+	      Position		      [360, 103, 390, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "In"
+	      SrcPort		      1
+	      DstBlock		      "Generated Filter Block"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Generated Filter Block"
+	      SrcPort		      1
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "To Audio\nDevice"
+	  SID			  "9"
+	  Ports			  [1]
+	  Position		  [400, 29, 455, 81]
+	  LibraryVersion	  "1.473"
+	  SourceBlock		  "dspsnks4/To Audio\nDevice"
+	  SourceType		  "To Audio Device"
+	  deviceName		  "Default"
+	  inheritSampleRate	  on
+	  sampleRate		  "44100"
+	  deviceDatatype	  "Determine from input data type"
+	  autoBufferSize	  on
+	  bufferSize		  "4096"
+	  queueDuration		  "1.0"
+	}
+	Block {
+	  BlockType		  Unbuffer
+	  Name			  "Unbuffer"
+	  SID			  "14"
+	  Ports			  [1, 1]
+	  Position		  [830, 140, 880, 190]
+	  SampleBasedProcessing	  "Same as frame based"
+	}
+	Block {
+	  BlockType		  Unbuffer
+	  Name			  "Unbuffer1"
+	  SID			  "25"
+	  Ports			  [1, 1]
+	  Position		  [830, 245, 880, 295]
+	  SampleBasedProcessing	  "Same as frame based"
+	}
+	Block {
+	  BlockType		  Unbuffer
+	  Name			  "Unbuffer2"
+	  SID			  "26"
+	  Ports			  [1, 1]
+	  Position		  [830, 340, 880, 390]
+	  SampleBasedProcessing	  "Same as frame based"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Out"
-	  SID			  "2:12"
-	  Position		  [360, 103, 390, 117]
+	  Name			  "Out1"
+	  SID			  "39"
+	  Position		  [905, 263, 935, 277]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  SID			  "40"
+	  Position		  [905, 358, 935, 372]
+	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "In"
+	  SrcBlock		  "From Multimedia File1"
 	  SrcPort		  1
-	  DstBlock		  "Generated Filter Block"
+	  Points		  [140, 0]
+	  Branch {
+	    DstBlock		    "Highpass Filter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "Bandpass Filter"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -105]
+	    Branch {
+	      DstBlock		      "Lowpass Filter"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, -110]
+	      DstBlock		      "To Audio\nDevice"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Highpass Filter"
+	  SrcPort		  1
+	  DstBlock		  "Idealized ADC quantizer1"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Generated Filter Block"
+	  SrcBlock		  "Bandpass Filter"
 	  SrcPort		  1
-	  DstBlock		  "Out"
+	  DstBlock		  "Idealized ADC quantizer2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Idealized ADC quantizer1"
+	  SrcPort		  1
+	  DstBlock		  "Convert 2-D to 1-D1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Idealized ADC quantizer2"
+	  SrcPort		  1
+	  DstBlock		  "Convert 2-D to 1-D2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert 2-D to 1-D"
+	  SrcPort		  1
+	  DstBlock		  "Delay Line"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert 2-D to 1-D1"
+	  SrcPort		  1
+	  DstBlock		  "Delay Line1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Convert 2-D to 1-D2"
+	  SrcPort		  1
+	  DstBlock		  "Delay Line2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay Line"
+	  SrcPort		  1
+	  DstBlock		  "Unbuffer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay Line1"
+	  SrcPort		  1
+	  DstBlock		  "Unbuffer1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Delay Line2"
+	  SrcPort		  1
+	  DstBlock		  "Unbuffer2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unbuffer"
+	  SrcPort		  1
+	  DstBlock		  "Display"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Lowpass Filter"
+	  SrcPort		  1
+	  DstBlock		  "Idealized ADC quantizer3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Idealized ADC quantizer3"
+	  SrcPort		  1
+	  DstBlock		  "Convert 2-D to 1-D"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unbuffer1"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unbuffer2"
+	  SrcPort		  1
+	  DstBlock		  "Out2"
 	  DstPort		  1
 	}
       }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "To Audio\nDevice"
-      SID		      "9"
-      Ports		      [1]
-      Position		      [390, 59, 445, 111]
-      LibraryVersion	      "1.473"
-      SourceBlock	      "dspsnks4/To Audio\nDevice"
-      SourceType	      "To Audio Device"
-      deviceName	      "Default"
-      inheritSampleRate	      on
-      sampleRate	      "44100"
-      deviceDatatype	      "Determine from input data type"
-      autoBufferSize	      on
-      bufferSize	      "4096"
-      queueDuration	      "1.0"
-    }
-    Block {
-      BlockType		      Unbuffer
-      Name		      "Unbuffer"
-      SID		      "14"
-      Ports		      [1, 1]
-      Position		      [820, 170, 870, 220]
-      SampleBasedProcessing   "Same as frame based"
-    }
-    Block {
-      BlockType		      Unbuffer
-      Name		      "Unbuffer1"
-      SID		      "25"
-      Ports		      [1, 1]
-      Position		      [820, 275, 870, 325]
-      SampleBasedProcessing   "Same as frame based"
-    }
-    Block {
-      BlockType		      Unbuffer
-      Name		      "Unbuffer2"
-      SID		      "26"
-      Ports		      [1, 1]
-      Position		      [820, 370, 870, 420]
-      SampleBasedProcessing   "Same as frame based"
-    }
-    Line {
-      SrcBlock		      "From Multimedia File1"
-      SrcPort		      1
-      Points		      [140, 0]
-      Branch {
-	DstBlock		"Highpass Filter"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 95]
-	DstBlock		"Bandpass Filter"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -105]
-	Branch {
-	  DstBlock		  "Lowpass Filter"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [0, -110]
-	  DstBlock		  "To Audio\nDevice"
-	  DstPort		  1
-	}
-      }
-    }
-    Line {
-      SrcBlock		      "Highpass Filter"
-      SrcPort		      1
-      DstBlock		      "Idealized ADC quantizer1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Bandpass Filter"
-      SrcPort		      1
-      DstBlock		      "Idealized ADC quantizer2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Idealized ADC quantizer1"
-      SrcPort		      1
-      DstBlock		      "Convert 2-D to 1-D1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Idealized ADC quantizer2"
-      SrcPort		      1
-      DstBlock		      "Convert 2-D to 1-D2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Convert 2-D to 1-D"
-      SrcPort		      1
-      DstBlock		      "Delay Line"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Convert 2-D to 1-D1"
-      SrcPort		      1
-      DstBlock		      "Delay Line1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Convert 2-D to 1-D2"
-      SrcPort		      1
-      DstBlock		      "Delay Line2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay Line"
-      SrcPort		      1
-      DstBlock		      "Unbuffer"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay Line1"
-      SrcPort		      1
-      DstBlock		      "Unbuffer1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Delay Line2"
-      SrcPort		      1
-      DstBlock		      "Unbuffer2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unbuffer1"
-      SrcPort		      1
-      Points		      [15, 0]
-    }
-    Line {
-      SrcBlock		      "Unbuffer"
-      SrcPort		      1
-      DstBlock		      "Display"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Lowpass Filter"
-      SrcPort		      1
-      DstBlock		      "Idealized ADC quantizer3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Idealized ADC quantizer3"
-      SrcPort		      1
-      DstBlock		      "Convert 2-D to 1-D"
-      DstPort		      1
     }
   }
 }
