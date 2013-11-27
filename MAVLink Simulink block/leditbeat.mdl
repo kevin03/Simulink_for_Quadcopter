@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.3"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 26 13:14:40 2013"
-  RTWModifiedTimeStamp	  307372422
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Tue Nov 26 13:48:18 2013"
+  RTWModifiedTimeStamp	  307374225
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,8 +65,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "leditbeat"
-    signals_		    []
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -803,7 +802,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "37"
+    SIDHighWatermark	    "39"
     Block {
       BlockType		      SubSystem
       Name		      "Bandpass Filter"
@@ -849,7 +848,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"826"
+	SIDHighWatermark	"837"
 	Block {
 	  BlockType		  Inport
 	  Name			  "In"
@@ -860,7 +859,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Generated Filter Block"
-	  SID			  "6:826"
+	  SID			  "6:837"
 	  Tag			  "BlockMethodSubSystem"
 	  Ports			  [1, 1]
 	  Position		  [220, 90, 295, 130]
@@ -1080,6 +1079,24 @@ Model {
       Lockdown		      off
     }
     Block {
+      BlockType		      Display
+      Name		      "Display1"
+      SID		      "38"
+      Ports		      [1]
+      Position		      [930, 285, 1020, 315]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display2"
+      SID		      "39"
+      Ports		      [1]
+      Position		      [930, 380, 1020, 410]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
       BlockType		      Reference
       Name		      "From Multimedia File1"
       SID		      "11"
@@ -1278,10 +1295,10 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
-      NumberOfConverterBits   "8"
+      NumberOfConverterBits   "16"
       Vmin		      "0"
-      Vmax		      "255"
-      OutputDataType	      "uint8"
+      Vmax		      "5"
+      OutputDataType	      "int16"
       OutputNegativeValues    off
     }
     Block {
@@ -1303,10 +1320,10 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
-      NumberOfConverterBits   "8"
+      NumberOfConverterBits   "16"
       Vmin		      "0"
-      Vmax		      "255"
-      OutputDataType	      "uint8"
+      Vmax		      "5"
+      OutputDataType	      "int16"
       OutputNegativeValues    off
     }
     Block {
@@ -1331,7 +1348,7 @@ Model {
       NumberOfConverterBits   "16"
       Vmin		      "0"
       Vmax		      "5"
-      OutputDataType	      "single"
+      OutputDataType	      "int16"
       OutputNegativeValues    off
     }
     Block {
@@ -1618,7 +1635,8 @@ Model {
     Line {
       SrcBlock		      "Unbuffer1"
       SrcPort		      1
-      Points		      [15, 0]
+      DstBlock		      "Display1"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Unbuffer"
@@ -1636,6 +1654,12 @@ Model {
       SrcBlock		      "Idealized ADC quantizer3"
       SrcPort		      1
       DstBlock		      "Convert 2-D to 1-D"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Unbuffer2"
+      SrcPort		      1
+      DstBlock		      "Display2"
       DstPort		      1
     }
   }
