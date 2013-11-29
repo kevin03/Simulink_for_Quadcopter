@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1146"
+    ComputedModelVersion    "1.1152"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,11 +26,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Vicon"
+  LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 26 19:56:35 2013"
-  RTWModifiedTimeStamp	  307396252
-  ModelVersionFormat	  "1.%<AutoIncrement:1146>"
+  LastModifiedDate	  "Wed Nov 27 18:16:51 2013"
+  RTWModifiedTimeStamp	  307470813
+  ModelVersionFormat	  "1.%<AutoIncrement:1152>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1159,6 +1159,21 @@ Model {
       SFunctionDeploymentMode off
     }
     Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
       BlockType		      Scope
       ModelBased	      off
       TickLabels	      "OneTimeTick"
@@ -1218,6 +1233,22 @@ Model {
       GeneratePreprocessorConditionals off
     }
     Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Unbuffer
       ic		      "0"
       SampleBasedProcessing   "Pass through (this choice will be removed - see release notes)"
@@ -1225,7 +1256,7 @@ Model {
   }
   System {
     Name		    "LED_Test_full"
-    Location		    [2, 82, 1885, 1027]
+    Location		    [0, 50, 1904, 1072]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1239,7 +1270,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "140"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2701"
+    SIDHighWatermark	    "2707"
     Block {
       BlockType		      Constant
       Name		      "Constant"
@@ -1360,7 +1391,7 @@ Model {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM7'|57600|on|on|on|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off"
+      MaskValueString	      "'COM3'|57600|on|on|on|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off|off"
       "|off|off|off|off|off|off|off|off|off|off|off|off"
       MaskTabNameString	      "Setting,Setting,Output Message,Output Message,Input Message,Input Message,Input Message"
       ",Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message,Input Message"
@@ -1386,7 +1417,7 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
-      sw		      "0"
+      sw		      "1"
       action		      "0"
       varsize		      off
     }
@@ -1415,14 +1446,14 @@ Model {
       Name		      "PWM"
       SID		      "2636"
       Position		      [20, 495, 50, 525]
-      Value		      "3000"
+      Value		      "2000"
     }
     Block {
       BlockType		      Constant
       Name		      "PWM1"
       SID		      "2646"
       Position		      [20, 550, 50, 580]
-      Value		      "1600"
+      Value		      "500"
     }
     Block {
       BlockType		      Constant
@@ -1599,8 +1630,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[2, 82, 1902, 1027]
-	Open			off
+	Location		[2, 82, 1902, 1051]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1613,11 +1644,18 @@ Model {
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
 	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "2703"
+	  Position		  [560, 240, 590, 270]
+	  Value			  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Convert 2-D to 1-D"
-	  SID			  "2679"
+	  SID			  "2707"
 	  Ports			  [1, 1]
-	  Position		  [105, 144, 165, 186]
+	  Position		  [155, 354, 215, 396]
 	  LibraryVersion	  "1.503"
 	  SourceBlock		  "dspsigattribs/Convert 2-D to 1-D"
 	  SourceType		  "Convert 2-D to 1-D"
@@ -1636,13 +1674,13 @@ Model {
 	  Name			  "Delay Line"
 	  SID			  "2699"
 	  Ports			  [1, 1]
-	  Position		  [1060, 137, 1120, 193]
+	  Position		  [455, 132, 515, 188]
 	  LibraryVersion	  "1.412"
 	  UserDataPersistent	  on
 	  UserData		  "DataTag0"
 	  SourceBlock		  "dspbuff3/Delay Line"
 	  SourceType		  "Delay Line"
-	  siz			  "50"
+	  siz			  "100"
 	  ic			  "0"
 	  directfeed		  off
 	  enable_output		  off
@@ -1654,7 +1692,16 @@ Model {
 	  Name			  "Display1"
 	  SID			  "2685"
 	  Ports			  [1]
-	  Position		  [800, 225, 890, 255]
+	  Position		  [890, 95, 980, 125]
+	  Decimation		  "1"
+	  Lockdown		  off
+	}
+	Block {
+	  BlockType		  Display
+	  Name			  "Display2"
+	  SID			  "2702"
+	  Ports			  [1]
+	  Position		  [625, 40, 715, 70]
 	  Decimation		  "1"
 	  Lockdown		  off
 	}
@@ -1663,26 +1710,26 @@ Model {
 	  Name			  "From Audio\nDevice"
 	  SID			  "2691"
 	  Ports			  [0, 1]
-	  Position		  [30, 139, 85, 191]
+	  Position		  [45, 134, 100, 186]
 	  LibraryVersion	  "1.712"
 	  SourceBlock		  "dspsrcs4/From Audio\nDevice"
 	  SourceType		  "From Audio Device"
 	  deviceName		  "Microphone (Realtek High Definition Audio)"
-	  numChannels		  "2"
-	  sampleRate		  "1000"
+	  numChannels		  "1"
+	  sampleRate		  "2000"
 	  deviceDatatype	  "Determine from output data type"
 	  autoBufferSize	  on
 	  bufferSize		  "4096"
 	  queueDuration		  "1.0"
-	  frameSize		  "500"
+	  frameSize		  "2000"
 	  outputDatatype	  "double"
 	}
 	Block {
 	  BlockType		  Gain
 	  Name			  "Gain"
-	  SID			  "2695"
-	  Position		  [945, 138, 995, 192]
-	  Gain			  "100"
+	  SID			  "2705"
+	  Position		  [810, 155, 840, 185]
+	  Gain			  "60"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -1692,7 +1739,7 @@ Model {
 	  Name			  "Idealized ADC quantizer3"
 	  SID			  "2661"
 	  Ports			  [1, 1]
-	  Position		  [635, 140, 695, 190]
+	  Position		  [355, 135, 415, 185]
 	  AttributesFormatString  "(settings: %<NumberOfConverterBits>-bit converter\\nVmin: %<Vmin>, Vmax: %<Vmax>)"
 	  LibraryVersion	  "1.41"
 	  SourceBlock		  "simulink_extras/Additional\nDiscrete/Idealized ADC quantizer"
@@ -1717,7 +1764,7 @@ Model {
 	  Name			  "Lowpass Filter"
 	  SID			  "2689"
 	  Ports			  [1, 1]
-	  Position		  [505, 144, 605, 186]
+	  Position		  [225, 139, 325, 181]
 	  UserDataPersistent	  on
 	  UserData		  "DataTag1"
 	  DialogController	  "fdesignblkfcn"
@@ -1867,13 +1914,23 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "2704"
+	  Ports			  [1, 1]
+	  Position		  [725, 155, 755, 185]
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1000"
+	  LowerLimit		  "0"
+	}
+	Block {
 	  BlockType		  Scope
 	  Name			  "Scope"
 	  SID			  "2690"
 	  Ports			  [1]
-	  Position		  [830, 169, 860, 201]
+	  Position		  [1175, 834, 1205, 866]
 	  Floating		  off
-	  Location		  [1, 48, 1921, 1039]
+	  Location		  [969, 56, 1913, 1071]
 	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
@@ -1886,25 +1943,36 @@ Model {
 	  SampleTime		  "0"
 	}
 	Block {
+	  BlockType		  Sum
+	  Name			  "Subtract"
+	  SID			  "2706"
+	  Ports			  [2, 1]
+	  Position		  [635, 152, 665, 183]
+	  Inputs		  "+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  Unbuffer
 	  Name			  "Unbuffer"
 	  SID			  "2700"
 	  Ports			  [1, 1]
-	  Position		  [1155, 140, 1205, 190]
+	  Position		  [550, 135, 600, 185]
 	  SampleBasedProcessing	  "Same as frame based"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Low"
 	  SID			  "2694"
-	  Position		  [1265, 158, 1295, 172]
+	  Position		  [1055, 163, 1085, 177]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Band"
 	  SID			  "2668"
-	  Position		  [1070, 358, 1100, 372]
+	  Position		  [1025, 873, 1055, 887]
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -1912,28 +1980,22 @@ Model {
 	  BlockType		  Outport
 	  Name			  "High"
 	  SID			  "2667"
-	  Position		  [1070, 263, 1100, 277]
+	  Position		  [1025, 778, 1055, 792]
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  Points		  [1050, 270]
+	  Points		  [1005, 785]
 	  DstBlock		  "High"
 	  DstPort		  1
 	}
 	Line {
-	  Points		  [1050, 365]
+	  Points		  [1005, 880]
 	  DstBlock		  "Band"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From Audio\nDevice"
-	  SrcPort		  1
-	  DstBlock		  "Convert 2-D to 1-D"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Convert 2-D to 1-D"
 	  SrcPort		  1
 	  DstBlock		  "Lowpass Filter"
 	  DstPort		  1
@@ -1947,28 +2009,6 @@ Model {
 	Line {
 	  SrcBlock		  "Idealized ADC quantizer3"
 	  SrcPort		  1
-	  Points		  [65, 0]
-	  Branch {
-	    Points		    [0, 75]
-	    DstBlock		    "Display1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [40, 0]
-	    Branch {
-	      Points		      [0, 20]
-	      DstBlock		      "Scope"
-	      DstPort		      1
-	    }
-	    Branch {
-	      DstBlock		      "Gain"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Line {
-	  SrcBlock		  "Gain"
-	  SrcPort		  1
 	  DstBlock		  "Delay Line"
 	  DstPort		  1
 	}
@@ -1981,7 +2021,50 @@ Model {
 	Line {
 	  SrcBlock		  "Unbuffer"
 	  SrcPort		  1
-	  DstBlock		  "Low"
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, -105]
+	    DstBlock		    "Display2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Subtract"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  Labels		  [1, 0]
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -60]
+	    DstBlock		    "Display1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Low"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -80]
+	  DstBlock		  "Subtract"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Subtract"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
 	  DstPort		  1
 	}
       }
@@ -2191,7 +2274,7 @@ Model {
     Line {
       SrcBlock		      "PWM1"
       SrcPort		      1
-      Points		      [0, -25]
+      Points		      [50, 0; 0, -25]
       DstBlock		      "Manual Switch"
       DstPort		      2
     }
