@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1594"
+    ComputedModelVersion    "1.1598"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -35,9 +35,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 03 14:00:21 2013"
-  RTWModifiedTimeStamp	  307979374
-  ModelVersionFormat	  "1.%<AutoIncrement:1594>"
+  LastModifiedDate	  "Tue Dec 03 16:29:27 2013"
+  RTWModifiedTimeStamp	  307986862
+  ModelVersionFormat	  "1.%<AutoIncrement:1598>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1008,7 +1008,7 @@ Model {
   System {
     Name		    "Wk_game_version1"
     Location		    [10, 82, 1893, 1051]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -9874,7 +9874,7 @@ Model {
       MaskIconRotate	      "none"
       MaskPortRotate	      "default"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "'COM7'|57600|on|on|off|off"
+      MaskValueString	      "'COM6'|57600|on|on|off|off"
       MaskTabNameString	      "Setting,Setting,Output Message,Input Message,Input Message,Input Message"
     }
     Block {
@@ -11315,7 +11315,7 @@ Model {
 	  BackgroundColor	  "red"
 	  Floating		  off
 	  Location		  [963, 77, 1913, 1031]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -11433,7 +11433,7 @@ Model {
 	  System {
 	    Name		    "Trajectory Logic"
 	    Location		    [-4, 82, 1896, 1051]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -17813,6 +17813,7 @@ Stateflow {
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [0 0 0 0]
+      animation		      [0 0 0]
     }
     sfVersion		    75014001
   }
@@ -17934,8 +17935,8 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [6 36 708 711]
-    viewLimits		    [1047.375 1711.875 821.497 1496.497]
+    windowPosition	    [0 30 1440 723]
+    viewLimits		    [1187.223 2583.723 782.556 1469.556]
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 18 0 0]
@@ -17943,9 +17944,8 @@ Stateflow {
     viewObj		    9
     machine		    1
     subviewS {
-      x1		      611.016
-      y1		      551.801
-      zoomFactor	      1.825
+      x1		      1047.375
+      y1		      821.497
     }
     ssIdHighWaterMark	    1164
     decomposition	    CLUSTER_CHART
@@ -18209,7 +18209,7 @@ Stateflow {
   state {
     id			    27
     labelString		    "Pickup_object\nen:\nPosDesired[0]=PerchPos[0], PosDesired[1]=PerchPos[1], PosDesired[2]= PerchPo"
-    "s[2]-0.1;"
+    "s[2]-0.08;"
     position		    [1292.856 781.5516 537.1563 80.5313]
     fontSize		    11.881
     chart		    9
@@ -18223,7 +18223,7 @@ Stateflow {
   state {
     id			    28
     labelString		    "CloseClaw\nen:\nPWM=1200;"
-    position		    [1298.731 897.4266 369.9063 70.7813]
+    position		    [1322.2307 925.4893 369.9063 70.7813]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 27 29]
@@ -18284,7 +18284,6 @@ Stateflow {
     chart		    9
     treeNode		    [22 0 17 30]
     superState		    GROUPED
-    visible		    0
     subviewer		    9
     ssIdNumber		    1148
     type		    OR_STATE
@@ -18902,7 +18901,7 @@ Stateflow {
     }
     dst {
       id		      27
-      intersection	      [1 0 -1 0.508 1565.7314 781.5516 0 5.25]
+      intersection	      [1 -0 -1 0.508 1565.7314 781.5516 0 5.25]
     }
     midPoint		    [1565.7314 748.954]
     chart		    9
@@ -18911,52 +18910,58 @@ Stateflow {
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1126
   }
   transition {
     id			    60
-    labelString		    "[(abs(Pos[0]-PerchPos[0])+abs(Pos[1]-PerchPos[1]))<0.01]"
-    labelPosition	    [1570.872 864.932 309.6 14.971]
+    labelString		    "[(abs(Pos[0]-PerchPos[0])+abs(Pos[1]-PerchPos[1])+abs(Pos[2]-PerchPos[2]))<0.1]"
+    labelPosition	    [1594.381 882.681 438.538 14.971]
     fontSize		    12
     src {
       id		      27
-      intersection	      [3 0 1 0.4838 1570.1216 862.0829 0 -8.6875]
+      intersection	      [3 0 1 0.4401 1593.6309 862.0829 0 -8.6875]
     }
     dst {
       id		      28
-      intersection	      [1 -0 -1 0.7337 1570.1216 897.4266 0 8.6875]
+      intersection	      [1 -0 -1 0.7337 1593.6309 925.4893 0 8.6875]
     }
-    midPoint		    [1570.1216 876.2624]
+    midPoint		    [1593.6309 890.9038]
     chart		    9
     linkNode		    [22 59 61]
-    dataLimits		    [1567.722 1572.522 862.083 897.427]
+    dataLimits		    [1591.231 1596.031 862.083 925.489]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1129
   }
   transition {
     id			    61
     labelString		    "after(5,sec)"
-    labelPosition	    [1571.294 985.624 60.721 14.971]
+    labelPosition	    [1594.788 1003.12 60.721 14.971]
     fontSize		    12
     src {
       id		      28
-      intersection	      [3 -0 1 0.2652 1570.5442 968.2079 0 -88.3601]
+      intersection	      [3 0 1 0.2652 1594.0378 996.2706 0 -88.3601]
     }
     dst {
       id		      29
-      intersection	      [1 0 -1 0.5012 1570.5442 1019.2454 0 86.8601]
+      intersection	      [1 0 -1 0.5449 1594.0378 1019.2454 0 86.8601]
     }
-    midPoint		    [1570.5442 990.5754]
+    midPoint		    [1594.0378 1003.9967]
     chart		    9
     linkNode		    [22 60 54]
-    dataLimits		    [1568.144 1572.944 968.208 1019.245]
+    dataLimits		    [1591.638 1596.438 996.271 1019.245]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1132
   }
