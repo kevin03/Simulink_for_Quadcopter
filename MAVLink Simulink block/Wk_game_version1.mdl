@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1598"
+    ComputedModelVersion    "1.1599"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,11 +33,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Vicon"
+  LastModifiedBy	  "wee kiat"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 03 16:29:27 2013"
-  RTWModifiedTimeStamp	  307986862
-  ModelVersionFormat	  "1.%<AutoIncrement:1598>"
+  LastModifiedDate	  "Wed Dec 04 00:35:32 2013"
+  RTWModifiedTimeStamp	  308016019
+  ModelVersionFormat	  "1.%<AutoIncrement:1599>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1007,7 +1007,7 @@ Model {
   }
   System {
     Name		    "Wk_game_version1"
-    Location		    [10, 82, 1893, 1051]
+    Location		    [8, 50, 1912, 1072]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -9893,8 +9893,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Planning"
-	Location		[2, 82, 1885, 1027]
-	Open			off
+	Location		[0, 50, 1904, 1048]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -11432,8 +11432,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [-4, 82, 1896, 1051]
-	    Open		    off
+	    Location		    [-6, 50, 1898, 1072]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -17809,7 +17809,7 @@ Stateflow {
     name		    "Wk_game_version1"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    90
+    firstTarget		    100
     debug {
       disableAllBreakpoints   1
       runTimeCheck	      [0 0 0 0]
@@ -17936,20 +17936,22 @@ Stateflow {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
     windowPosition	    [0 30 1440 723]
-    viewLimits		    [1187.223 2583.723 782.556 1469.556]
+    viewLimits		    [0 6982.5 0 3435]
+    zoomFactor		    5
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 18 0 0]
-    firstTransition	    38
+    firstTransition	    39
     viewObj		    9
+    visible		    1
     machine		    1
     subviewS {
-      x1		      1047.375
-      y1		      821.497
+      x1		      1187.223
+      y1		      782.556
     }
-    ssIdHighWaterMark	    1164
+    ssIdHighWaterMark	    1176
     decomposition	    CLUSTER_CHART
-    firstData		    70
+    firstData		    79
     chartFileNumber	    3
     disableImplicitCasting  1
     supportVariableSizing   0
@@ -17961,9 +17963,8 @@ Stateflow {
     fontSize		    8
     chart		    9
     treeNode		    [9 13 18 0]
-    firstTransition	    40
+    firstTransition	    41
     superState		    GROUPED
-    visible		    0
     subviewer		    9
     ssIdNumber		    9
     type		    OR_STATE
@@ -17978,7 +17979,6 @@ Stateflow {
     chart		    9
     treeNode		    [18 0 23 16]
     superState		    GROUPED
-    visible		    0
     subviewer		    9
     ssIdNumber		    7
     type		    OR_STATE
@@ -17986,14 +17986,14 @@ Stateflow {
   }
   state {
     id			    12
-    labelString		    "Initialise\n\nen:\nPosDesired[0]=0, PosDesired[1]=-0,PosDesired[2]= -1.3,PosDesired[3]=0;\n\nPWM"
-    " = 1600;"
-    position		    [1178.4531 65.0936 447.073 139.9062]
+    labelString		    "Initialise\n\nen:\nPosDesired[0]=0, PosDesired[1]=-0,PosDesired[2]= -1.3,PosDesired[3]=0;\nrate="
+    "0;\ncounter=0.1;\nPWM = 1600;\nstage=0;"
+    position		    [1178.4531 65.0936 492.3855 146.4687]
     fontSize		    12
     chart		    9
     treeNode		    [23 0 0 15]
     superState		    GROUPED
-    visible		    0
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    841
     type		    OR_STATE
@@ -18009,7 +18009,6 @@ Stateflow {
     chart		    9
     treeNode		    [10 0 0 14]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    75
     type		    OR_STATE
@@ -18024,7 +18023,6 @@ Stateflow {
     chart		    9
     treeNode		    [10 0 13 0]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    78
     type		    OR_STATE
@@ -18032,14 +18030,13 @@ Stateflow {
   }
   state {
     id			    15
-    labelString		    "Hover\nen:\nPosDesired[0]=Pos[0]; PosDesired[1]=Pos[1];PosDesired[2]=Pos[2];\nrate=0;\ncounter=0"
-    ".1;"
+    labelString		    "Hover\nen:\nPosDesired[0]=Pos[0]; PosDesired[1]=Pos[1];PosDesired[2]=Pos[2];"
     position		    [1130.8541 276.5 643.1563 92.5313]
     fontSize		    12
     chart		    9
     treeNode		    [23 0 12 22]
     superState		    GROUPED
-    visible		    0
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    828
     type		    OR_STATE
@@ -18052,9 +18049,8 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [18 21 11 0]
-    firstTransition	    45
+    firstTransition	    46
     superState		    GROUPED
-    visible		    0
     subviewer		    9
     ssIdNumber		    812
     type		    OR_STATE
@@ -18062,13 +18058,14 @@ Stateflow {
   }
   state {
     id			    17
-    labelString		    "ToBin5\nen:\nPosDesired[0]=PerchPos[0]+rate, PosDesired[1]=PerchPos[1]+1;\nPosDesired[2]=PerchPo"
-    "s[2]-0.5-counter;"
+    labelString		    "ToBin5\nen:\nPosDesired[0]=PerchPos[0]+rate+0.5, PosDesired[1]=PerchPos[1]+1;\nPosDesired[2]=Per"
+    "chPos[2]-0.4-counter;\nstage=4;"
     position		    [1306.216 1151.9947 562.9063 118.7813]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 29 32]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1133
     type		    OR_STATE
@@ -18081,8 +18078,7 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [9 23 0 10]
-    firstTransition	    42
-    visible		    0
+    firstTransition	    43
     subviewer		    9
     ssIdNumber		    809
     type		    OR_STATE
@@ -18097,7 +18093,6 @@ Stateflow {
     chart		    9
     treeNode		    [16 0 25 0]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    323
     type		    OR_STATE
@@ -18106,11 +18101,12 @@ Stateflow {
   state {
     id			    20
     labelString		    "ClawControl\nen:\nPWM=1600;"
-    position		    [1238.731 1357.1766 133.6563 59.5313]
+    position		    [1142.3248 1338.8954 133.6563 59.5313]
     fontSize		    11.881
     chart		    9
-    treeNode		    [22 0 30 33]
+    treeNode		    [22 0 32 30]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    900
     type		    OR_STATE
@@ -18118,14 +18114,13 @@ Stateflow {
   }
   state {
     id			    21
-    labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]= -1.5;"
-    position		    [38.3859 887.4779 549.6174 47.4942]
+    labelString		    "SafyHover\nen:PosDesired = Pos; PosDesired[2]= -1.5;\nPWM=1600;"
+    position		    [38.3859 887.4779 553.9523 60.4989]
     fontSize		    12
     arrowSize		    13.343
     chart		    9
     treeNode		    [16 0 0 24]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    212
     type		    OR_STATE
@@ -18138,9 +18133,10 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [23 26 15 0]
-    firstTransition	    39
+    firstTransition	    40
     firstJunction	    35
-    visible		    0
+    superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    946
     type		    OR_STATE
@@ -18153,9 +18149,9 @@ Stateflow {
     fontSize		    12
     chart		    9
     treeNode		    [18 12 0 11]
-    firstTransition	    55
+    firstTransition	    56
     firstJunction	    34
-    visible		    0
+    superState		    GROUPED
     subviewer		    9
     ssIdNumber		    825
     type		    OR_STATE
@@ -18170,7 +18166,6 @@ Stateflow {
     chart		    9
     treeNode		    [16 0 21 25]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    216
     type		    OR_STATE
@@ -18185,7 +18180,6 @@ Stateflow {
     chart		    9
     treeNode		    [16 0 24 19]
     isGrouped		    1
-    visible		    0
     subviewer		    9
     ssIdNumber		    225
     type		    OR_STATE
@@ -18194,13 +18188,13 @@ Stateflow {
   state {
     id			    26
     labelString		    "TopickupZone\nen:\nPosDesired[0]=PerchPos[0], PosDesired[1]=PerchPos[1], PosDesired[2]= PerchPos"
-    "[2]-0.5;\nrate=0.3;"
-    position		    [1288.856 630.4266 546.8126 91.8751]
+    "[2]-0.5;\nrate=0.3;\nstage=0;"
+    position		    [1289.3123 630.4266 591.1917 104.4484]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 0 27]
     superState		    GROUPED
-    visible		    0
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1118
     type		    OR_STATE
@@ -18209,12 +18203,13 @@ Stateflow {
   state {
     id			    27
     labelString		    "Pickup_object\nen:\nPosDesired[0]=PerchPos[0], PosDesired[1]=PerchPos[1], PosDesired[2]= PerchPo"
-    "s[2]-0.08;"
-    position		    [1292.856 781.5516 537.1563 80.5313]
+    "s[2]-0.08;\nstage=1;"
+    position		    [1292.856 781.5516 608.7188 83.3438]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 26 28]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1125
     type		    OR_STATE
@@ -18222,12 +18217,13 @@ Stateflow {
   }
   state {
     id			    28
-    labelString		    "CloseClaw\nen:\nPWM=1200;"
+    labelString		    "CloseClaw\nen:\nPWM=1200; stage=2;"
     position		    [1322.2307 925.4893 369.9063 70.7813]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 27 29]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1127
     type		    OR_STATE
@@ -18236,12 +18232,13 @@ Stateflow {
   state {
     id			    29
     labelString		    "Bin1\nen:\nPosDesired[0]=PerchPos[0], PosDesired[1]=PerchPos[1]+1, PosDesired[2]= PerchPos[2]-0."
-    "5;"
-    position		    [1301.341 1019.2454 537.1563 80.5313]
+    "5;\nstage=3;"
+    position		    [1301.341 1019.2454 599.3438 79.5938]
     fontSize		    11.881
     chart		    9
     treeNode		    [22 0 28 17]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1131
     type		    OR_STATE
@@ -18249,13 +18246,14 @@ Stateflow {
   }
   state {
     id			    30
-    labelString		    "Clear\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+1, PosDesired[1]=PerchPos[1]+1,PosDesired[2]=Pe"
-    "rchPos[2]-1;"
-    position		    [1407.6487 1352.4322 542.6563 103.7813]
+    labelString		    "Clear\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+2, PosDesired[1]=PerchPos[1]+1,PosDesired[2]=Pe"
+    "rchPos[2]-1;\nstage=5;"
+    position		    [1407.6487 1347.7447 593.5938 108.4688]
     fontSize		    11.881
     chart		    9
-    treeNode		    [22 0 32 20]
+    treeNode		    [22 0 20 31]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1144
     type		    OR_STATE
@@ -18263,14 +18261,14 @@ Stateflow {
   }
   state {
     id			    31
-    labelString		    "Return\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+1, PosDesired[1]=PerchPos[1],PosDesired[2]=Per"
-    "chPos[2]-1;"
-    position		    [1404.3994 1523.3432 542.6563 103.7813]
+    labelString		    "Return\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+2, PosDesired[1]=PerchPos[1],PosDesired[2]=Per"
+    "chPos[2]-1;\nstage=6;"
+    position		    [1404.3994 1523.3432 593.5938 106.5938]
     fontSize		    11.881
     chart		    9
-    treeNode		    [22 0 33 0]
+    treeNode		    [22 0 30 33]
     superState		    GROUPED
-    visible		    0
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1146
     type		    OR_STATE
@@ -18282,8 +18280,9 @@ Stateflow {
     position		    [2190.7431 1158.5451 157.2813 95.1563]
     fontSize		    11.881
     chart		    9
-    treeNode		    [22 0 17 30]
+    treeNode		    [22 0 17 20]
     superState		    GROUPED
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1148
     type		    OR_STATE
@@ -18291,14 +18290,14 @@ Stateflow {
   }
   state {
     id			    33
-    labelString		    "Return_midpoint\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+0.5, PosDesired[1]=PerchPos[1],PosDes"
-    "ired[2]=PerchPos[2]-1;\ncounter=counter+0.1;"
-    position		    [2032.1494 1520.3264 542.6563 103.7813]
+    labelString		    "Return_midpoint\nen:\nPWM=1600;\nPosDesired[0]=PerchPos[0]+1, PosDesired[1]=PerchPos[1],PosDesir"
+    "ed[2]=PerchPos[2]-1;\ncounter=counter+0.3;\nstage=7;"
+    position		    [2247.9307 1524.5451 565.4688 112.2188]
     fontSize		    11.881
     chart		    9
-    treeNode		    [22 0 20 31]
+    treeNode		    [22 0 31 0]
     superState		    GROUPED
-    visible		    0
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1152
     type		    OR_STATE
@@ -18309,8 +18308,9 @@ Stateflow {
     position		    [1546.8436 441.2313 7]
     chart		    9
     linkNode		    [23 0 0]
+    isGrouped		    1
     subviewer		    9
-    quantum		    [0 0 50 0]
+    quantum		    [0 0 51 0]
     ssIdNumber		    1160
     type		    CONNECTIVE_JUNCTION
   }
@@ -18318,15 +18318,26 @@ Stateflow {
     id			    35
     position		    [1498.5102 1125.071 7]
     chart		    9
-    linkNode		    [22 0 0]
+    linkNode		    [22 0 36]
+    isGrouped		    1
     subviewer		    9
     ssIdNumber		    1163
     type		    CONNECTIVE_JUNCTION
   }
-  transition {
+  junction {
     id			    36
+    position		    [2106.0102 1532.0855 7]
+    chart		    9
+    linkNode		    [22 35 0]
+    isGrouped		    1
+    subviewer		    9
+    ssIdNumber		    1165
+    type		    CONNECTIVE_JUNCTION
+  }
+  transition {
+    id			    37
     labelString		    "{HoverThrottle = 0;}"
-    labelPosition	    [201.731 2259.426 71.965 11.977]
+    labelPosition	    [201.731 2259.426 119.942 22.456]
     fontSize		    8
     src {
       intersection	      [0 1 0 0 192.9611 2278.1478 0 0]
@@ -18337,8 +18348,7 @@ Stateflow {
     }
     midPoint		    [238.017 2278.1478]
     chart		    9
-    linkNode		    [9 37 0]
-    visible		    0
+    linkNode		    [9 38 0]
     dataLimits		    [192.961 287.485 2275.748 2280.548]
     subviewer		    9
     drawStyle		    SMART
@@ -18346,9 +18356,9 @@ Stateflow {
     ssIdNumber		    16
   }
   transition {
-    id			    37
+    id			    38
     labelString		    "[RC[6] < -0.5]"
-    labelPosition	    [794.041 2043.227 86.208 17.965]
+    labelPosition	    [794.041 2043.227 89.956 26.199]
     fontSize		    14
     src {
       id		      18
@@ -18360,19 +18370,20 @@ Stateflow {
     }
     midPoint		    [893.0592 2043.8594]
     chart		    9
-    linkNode		    [9 38 36]
-    visible		    0
+    linkNode		    [9 39 37]
     dataLimits		    [890.659 895.459 1900.795 2183.168]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    18
   }
   transition {
-    id			    38
+    id			    39
     labelString		    "[RC[6] > 0.5]"
-    labelPosition	    [525.384 2016.373 81.71 17.965]
+    labelPosition	    [525.384 2016.373 86.208 26.199]
     fontSize		    14
     src {
       id		      10
@@ -18384,30 +18395,33 @@ Stateflow {
     }
     midPoint		    [621.5286 2040.1036]
     chart		    9
-    linkNode		    [9 0 37]
-    visible		    0
+    linkNode		    [9 0 38]
     dataLimits		    [619.129 623.929 1900.795 2183.168]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    17
   }
   transition {
-    id			    39
-    labelPosition	    [1582.817 577.995 8.246 14.971]
+    id			    40
+    labelString		    "[stage==0]"
+    labelPosition	    [1621.312 574.398 71.216 22.456]
     fontSize		    12
     src {
-      intersection	      [0 0 1 0.4901 1572.2143 567.0047 0 44.2427]
+      intersection	      [0 0 1 0.4901 1595.6679 567.0047 0 44.2427]
     }
     dst {
       id		      26
-      intersection	      [1 0 -1 0.5182 1572.2143 630.4266 0 -44.2427]
+      intersection	      [1 0 -1 0.5182 1595.6679 630.4266 0 -44.2427]
     }
-    midPoint		    [1572.2143 595.8337]
+    midPoint		    [1595.6679 595.8337]
     chart		    9
-    linkNode		    [22 0 68]
-    dataLimits		    [1569.814 1574.614 567.005 630.427]
+    linkNode		    [22 0 69]
+    isGrouped		    1
+    dataLimits		    [1593.268 1598.068 567.005 630.427]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -18415,8 +18429,8 @@ Stateflow {
     ssIdNumber		    968
   }
   transition {
-    id			    40
-    labelPosition	    [363.667 2222.108 5.997 11.977]
+    id			    41
+    labelPosition	    [363.667 2222.108 14.993 22.456]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -18428,8 +18442,7 @@ Stateflow {
     }
     midPoint		    [375.4658 2233.5862]
     chart		    9
-    linkNode		    [10 0 41]
-    visible		    0
+    linkNode		    [10 0 42]
     isGrouped		    1
     dataLimits		    [341.985 413.356 2231.47 2235.701]
     subviewer		    9
@@ -18441,9 +18454,9 @@ Stateflow {
     ssIdNumber		    84
   }
   transition {
-    id			    41
+    id			    42
     labelString		    "[Pos[2] >(0.0 -0.1)]"
-    labelPosition	    [901.692 2245.416 68.967 11.977]
+    labelPosition	    [901.692 2245.416 116.194 22.456]
     fontSize		    7.84
     arrowSize		    7.053
     src {
@@ -18456,8 +18469,7 @@ Stateflow {
     }
     midPoint		    [858.7701 2259.6105]
     chart		    9
-    linkNode		    [10 40 0]
-    visible		    0
+    linkNode		    [10 41 0]
     isGrouped		    1
     dataLimits		    [823.741 891.616 2254.874 2272.205]
     stampAngle		    NaN
@@ -18471,9 +18483,9 @@ Stateflow {
     ssIdNumber		    85
   }
   transition {
-    id			    42
+    id			    43
     labelString		    "{PosDesired = Pos;  PosDesired[2] =-1.2;}"
-    labelPosition	    [323.716 117.91 185.91 13.474]
+    labelPosition	    [323.716 117.91 251.128 22.456]
     fontSize		    9.883
     arrowSize		    13.343
     src {
@@ -18485,7 +18497,7 @@ Stateflow {
     }
     midPoint		    [298.0256 110.5123]
     chart		    9
-    linkNode		    [18 0 53]
+    linkNode		    [18 0 54]
     dataLimits		    [294.023 302.029 97.007 136.513]
     subviewer		    9
     drawStyle		    SMART
@@ -18493,9 +18505,9 @@ Stateflow {
     ssIdNumber		    13
   }
   transition {
-    id			    43
+    id			    44
     labelString		    "after(1,sec)"
-    labelPosition	    [212.916 1080.688 60.721 14.971]
+    labelPosition	    [212.916 1080.688 74.964 22.456]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -18508,8 +18520,7 @@ Stateflow {
     }
     midPoint		    [200 1079.286]
     chart		    9
-    linkNode		    [16 51 48]
-    visible		    0
+    linkNode		    [16 52 49]
     isGrouped		    1
     dataLimits		    [197.462 202.549 1051.22 1113.666]
     stampAngle		    NaN
@@ -18519,9 +18530,9 @@ Stateflow {
     ssIdNumber		    231
   }
   transition {
-    id			    44
-    labelString		    "[counter==0.5]"
-    labelPosition	    [746.75 1194.981 75.713 14.971]
+    id			    45
+    labelString		    "[counter==1.6]"
+    labelPosition	    [746.75 1194.981 93.705 22.456]
     fontSize		    12
     src {
       id		      23
@@ -18533,41 +18544,42 @@ Stateflow {
     }
     midPoint		    [786.3551 1225.7313]
     chart		    9
-    linkNode		    [18 58 0]
+    linkNode		    [18 59 0]
     dataLimits		    [723.188 846.356 1223.35 1228.15]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1161
   }
   transition {
-    id			    45
-    labelPosition	    [310.253 859.461 8.246 14.971]
+    id			    46
+    labelPosition	    [312.336 859.461 14.993 22.456]
     fontSize		    12
     arrowSize		    13.343
     src {
-      intersection	      [0 0 1 0.4348 304.25 856.4371 0 12.4024]
+      intersection	      [0 0 1 0.4348 306.3326 856.4371 0 12.4024]
     }
     dst {
       id		      21
-      intersection	      [1 0 -1 0.4837 304.25 887.4779 0 -12.4024]
+      intersection	      [1 0 -1 0.4837 306.3326 887.4779 0 -12.4024]
     }
-    midPoint		    [304.25 865.526]
+    midPoint		    [306.3326 865.526]
     chart		    9
-    linkNode		    [16 0 51]
-    visible		    0
+    linkNode		    [16 0 52]
     isGrouped		    1
-    dataLimits		    [300.247 308.253 856.437 887.478]
+    dataLimits		    [302.33 310.336 856.437 887.478]
     subviewer		    9
     drawStyle		    SMART
     executionOrder	    1
     ssIdNumber		    950
   }
   transition {
-    id			    46
+    id			    47
     labelString		    "after (0.5,sec)"
-    labelPosition	    [493.985 1200.445 73.464 14.971]
+    labelPosition	    [493.985 1200.445 89.956 22.456]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -18580,8 +18592,7 @@ Stateflow {
     }
     midPoint		    [477.625 1200.092]
     chart		    9
-    linkNode		    [16 48 0]
-    visible		    0
+    linkNode		    [16 49 0]
     isGrouped		    1
     dataLimits		    [475.091 480.177 1153.902 1241.041]
     stampAngle		    NaN
@@ -18591,9 +18602,9 @@ Stateflow {
     ssIdNumber		    456
   }
   transition {
-    id			    47
+    id			    48
     labelString		    "after (0.02,sec)"
-    labelPosition	    [1553.451 388.748 80.211 14.971]
+    labelPosition	    [1553.451 388.748 97.453 22.456]
     fontSize		    12
     src {
       id		      15
@@ -18605,7 +18616,8 @@ Stateflow {
     }
     midPoint		    [1536.8376 402.1067]
     chart		    9
-    linkNode		    [23 56 49]
+    linkNode		    [23 57 71]
+    isGrouped		    1
     dataLimits		    [1534.234 1546.844 369.031 435.631]
     stampAngle		    -5.6397
     subviewer		    9
@@ -18617,9 +18629,9 @@ Stateflow {
     ssIdNumber		    873
   }
   transition {
-    id			    48
+    id			    49
     labelString		    "after(2,sec)"
-    labelPosition	    [153.477 1197.043 60.721 14.971]
+    labelPosition	    [153.477 1197.043 74.964 22.456]
     fontSize		    12
     arrowSize		    8.477
     src {
@@ -18632,8 +18644,7 @@ Stateflow {
     }
     midPoint		    [257.875 1194.8512]
     chart		    9
-    linkNode		    [16 43 46]
-    visible		    0
+    linkNode		    [16 44 47]
     isGrouped		    1
     dataLimits		    [255.339 260.426 1153.902 1241.041]
     stampAngle		    NaN
@@ -18643,34 +18654,38 @@ Stateflow {
     ssIdNumber		    325
   }
   transition {
-    id			    49
-    labelString		    "[KinectTracking==0]"
-    labelPosition	    [1275.14 428.856 105.699 14.971]
+    id			    50
+    labelString		    "after (2,sec)"
+    labelPosition	    [2167.894 1550.278 78.712 22.456]
     fontSize		    12
     src {
-      id		      22
-      intersection	      [1 0 -1 0.175 1268.8111 530.4422 0 -186.8292]
+      id		      36
+      intersection	      [0 0.4658 0.8849 -1 2109.2711 1538.2796 0 0]
     }
     dst {
-      id		      15
-      intersection	      [3 -0 1 0.7855 1268.8111 369.0313 0 186.8292]
+      id		      33
+      intersection	      [4 -1 0 0.6404 2247.9307 1564.898 0 0]
     }
-    midPoint		    [1268.8062 450.4885]
+    midPoint		    [2168.3267 1567.366]
     chart		    9
-    linkNode		    [23 47 50]
-    dataLimits		    [1266.411 1271.211 369.031 530.442]
-    stampAngle		    NaN
+    linkNode		    [22 68 77]
+    isGrouped		    1
+    dataLimits		    [2109.271 2247.931 1538.28 1567.527]
+    stampAngle		    -1.0862
     subviewer		    9
     drawStyle		    SMART
     slide {
+      sticky		      BOTH_STICK
+      arcL		      -32.8125
+      arcClockDir	      COUNTER_CLOCKWISE
     }
     executionOrder	    1
-    ssIdNumber		    945
+    ssIdNumber		    1166
   }
   transition {
-    id			    50
+    id			    51
     labelString		    "[KinectTracking==1]"
-    labelPosition	    [1558.807 482.104 105.699 14.971]
+    labelPosition	    [1558.807 482.104 127.438 22.456]
     fontSize		    12
     src {
       id		      34
@@ -18682,7 +18697,8 @@ Stateflow {
     }
     midPoint		    [1546.8436 486.8632]
     chart		    9
-    linkNode		    [23 49 0]
+    linkNode		    [23 71 0]
+    isGrouped		    1
     dataLimits		    [1544.444 1549.244 448.231 530.442]
     subviewer		    9
     drawStyle		    SMART
@@ -18694,48 +18710,50 @@ Stateflow {
     ssIdNumber		    956
   }
   transition {
-    id			    51
+    id			    52
     labelString		    "after (3, sec)"
-    labelPosition	    [259.624 963.225 66.718 14.971]
+    labelPosition	    [259.63 963.225 82.46 22.456]
     fontSize		    12
     arrowSize		    8.477
     src {
       id		      21
-      intersection	      [3 0 1 0.4539 338.5259 934.9721 0 -38.2554]
+      intersection	      [3 0 1 0.4582 338.532 947.9768 0 -38.2554]
     }
     dst {
       id		      24
-      intersection	      [1 -0 -1 0.4841 338.5259 990.9114 0 37.5742]
+      intersection	      [1 0 -1 0.4841 338.532 990.9114 0 37.5742]
     }
-    midPoint		    [338.5229 959.6431]
+    midPoint		    [338.532 965.8627]
     chart		    9
-    linkNode		    [16 45 43]
-    visible		    0
+    linkNode		    [16 46 44]
     isGrouped		    1
-    dataLimits		    [335.983 341.069 934.972 990.911]
+    dataLimits		    [335.989 341.075 947.977 990.911]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    218
   }
   transition {
-    id			    52
+    id			    53
     labelString		    "[LeftHand[6]==1]"
-    labelPosition	    [1191.749 1202.505 87.708 14.971]
+    labelPosition	    [1111.565 1224.227 104.949 22.456]
     fontSize		    12
     src {
       id		      17
-      intersection	      [4 -1 0 0.3958 1306.216 1223.7603 0 47.0156]
+      intersection	      [4 -1 0 0.3958 1306.216 1223.7603 0 47.0157]
     }
     dst {
       id		      20
-      intersection	      [4 -1 0 0.3069 1238.731 1398.4397 0 -108.7482]
+      intersection	      [1 0 -1 0.1864 1167.233 1338.8954 0 -108.7481]
     }
-    midPoint		    [1219.2865 1316.7925]
+    midPoint		    [1210.6572 1257.323]
     chart		    9
-    linkNode		    [22 66 62]
-    dataLimits		    [1211.645 1306.216 1223.76 1400.84]
+    linkNode		    [22 67 63]
+    isGrouped		    1
+    dataLimits		    [1164.833 1306.216 1223.76 1338.895]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -18747,9 +18765,9 @@ Stateflow {
     ssIdNumber		    1142
   }
   transition {
-    id			    53
+    id			    54
     labelString		    "after (5,sec)"
-    labelPosition	    [609.577 136.887 63.719 14.971]
+    labelPosition	    [609.577 136.887 78.712 22.456]
     fontSize		    12
     src {
       id		      11
@@ -18761,7 +18779,7 @@ Stateflow {
     }
     midPoint		    [693.3962 186.7504]
     chart		    9
-    linkNode		    [18 42 57]
+    linkNode		    [18 43 58]
     dataLimits		    [535.522 846.356 161.25 211.53]
     subviewer		    9
     drawStyle		    SMART
@@ -18773,22 +18791,23 @@ Stateflow {
     ssIdNumber		    951
   }
   transition {
-    id			    54
+    id			    55
     labelString		    "[LeftHand[6]==0]"
-    labelPosition	    [1528.328 1106.012 87.708 14.971]
+    labelPosition	    [1528.417 1105.735 104.949 22.456]
     fontSize		    12
     src {
       id		      29
-      intersection	      [3 0 1 0.5946 1519.1183 1099.7767 0 46.0965]
+      intersection	      [3 0 1 0.6366 1519.1183 1098.8392 0 46.0965]
     }
     dst {
       id		      35
       intersection	      [0 0.6 -0.8 -1 1502.7102 1119.471 0 -46.0965]
     }
-    midPoint		    [1514.9383 1107.2464]
+    midPoint		    [1514.9951 1106.8193]
     chart		    9
-    linkNode		    [22 61 69]
-    dataLimits		    [1502.71 1519.118 1099.777 1119.471]
+    linkNode		    [22 74 70]
+    isGrouped		    1
+    dataLimits		    [1502.71 1519.118 1098.839 1119.471]
     stampAngle		    -0.6435
     subviewer		    9
     drawStyle		    SMART
@@ -18802,52 +18821,56 @@ Stateflow {
     ssIdNumber		    1138
   }
   transition {
-    id			    55
-    labelPosition	    [1161.746 121.004 8.246 14.971]
+    id			    56
+    labelPosition	    [1161.746 124.312 14.993 22.456]
     fontSize		    12
     src {
-      intersection	      [0 1 0 -1 1148.7415 135.6063 0 0]
+      intersection	      [0 1 0 -1 1148.7415 138.9138 0 0]
     }
     dst {
       id		      12
-      intersection	      [4 -1 0 0.496 1178.4531 135.6063 0 0]
+      intersection	      [4 -1 0 0.496 1178.4531 138.9138 0 0]
     }
-    midPoint		    [1159.9825 135.6063]
+    midPoint		    [1159.9825 138.9138]
     chart		    9
-    linkNode		    [23 0 56]
-    dataLimits		    [1148.742 1178.453 133.206 138.006]
+    linkNode		    [23 0 57]
+    isGrouped		    1
+    dataLimits		    [1148.742 1178.453 136.514 141.314]
     subviewer		    9
     drawStyle		    SMART
     executionOrder	    1
     ssIdNumber		    852
   }
   transition {
-    id			    56
+    id			    57
     labelString		    "after (3,sec)"
-    labelPosition	    [1353.709 216.454 63.719 14.971]
+    labelPosition	    [1353.682 222.625 78.712 22.456]
     fontSize		    12
     src {
       id		      12
-      intersection	      [3 0 1 0.6302 1343.7655 204.9998 0 29.4152]
+      intersection	      [3 -0 1 0.6643 1343.7388 211.5623 0 29.4152]
     }
     dst {
       id		      15
-      intersection	      [1 0 -1 0.331 1343.7655 276.5 0 -29.4152]
+      intersection	      [1 0 -1 0.331 1343.7388 276.5 0 -29.4152]
     }
-    midPoint		    [1343.7655 238.0435]
+    midPoint		    [1343.7388 241.1821]
     chart		    9
-    linkNode		    [23 55 47]
-    dataLimits		    [1341.365 1346.166 205 276.5]
+    linkNode		    [23 56 48]
+    isGrouped		    1
+    dataLimits		    [1341.339 1346.139 211.562 276.5]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    847
   }
   transition {
-    id			    57
+    id			    58
     labelString		    "[RC[5] > 0.5]"
-    labelPosition	    [323.162 476.115 66.718 14.971]
+    labelPosition	    [323.162 476.115 78.712 22.456]
     fontSize		    12
     src {
       id		      11
@@ -18859,18 +18882,20 @@ Stateflow {
     }
     midPoint		    [305.1941 527.8005]
     chart		    9
-    linkNode		    [18 53 58]
+    linkNode		    [18 54 59]
     dataLimits		    [302.808 307.608 191.211 844.507]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    2
     ssIdNumber		    486
   }
   transition {
-    id			    58
+    id			    59
     labelString		    "[RC[5] > 0.5]"
-    labelPosition	    [725.676 1113.613 66.718 14.971]
+    labelPosition	    [725.676 1113.613 78.712 22.456]
     fontSize		    12
     src {
       id		      23
@@ -18882,31 +18907,34 @@ Stateflow {
     }
     midPoint		    [786.3551 1139.401]
     chart		    9
-    linkNode		    [18 57 44]
+    linkNode		    [18 58 45]
     dataLimits		    [723.188 846.356 1137.001 1141.801]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    2
     ssIdNumber		    525
   }
   transition {
-    id			    59
+    id			    60
     labelString		    "[(abs(Pos[0]-PerchPos[0])+abs(Pos[1]-PerchPos[1]))<0.01]"
-    labelPosition	    [1567.232 736.394 309.6 14.971]
+    labelPosition	    [1580.237 751.871 348.581 22.456]
     fontSize		    12
     src {
       id		      26
-      intersection	      [3 0 1 0.4937 1565.7314 722.3017 0 -4.5]
+      intersection	      [3 0 1 0.5317 1566.1877 734.875 0 -4.5]
     }
     dst {
       id		      27
-      intersection	      [1 -0 -1 0.508 1565.7314 781.5516 0 5.25]
+      intersection	      [1 0 -1 0.449 1566.1877 781.5516 0 5.25]
     }
-    midPoint		    [1565.7314 748.954]
+    midPoint		    [1566.1877 754.9673]
     chart		    9
-    linkNode		    [22 68 60]
-    dataLimits		    [1563.331 1568.131 722.302 781.552]
+    linkNode		    [22 69 72]
+    isGrouped		    1
+    dataLimits		    [1563.788 1568.588 734.875 781.552]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -18916,22 +18944,23 @@ Stateflow {
     ssIdNumber		    1126
   }
   transition {
-    id			    60
+    id			    61
     labelString		    "[(abs(Pos[0]-PerchPos[0])+abs(Pos[1]-PerchPos[1])+abs(Pos[2]-PerchPos[2]))<0.1]"
-    labelPosition	    [1594.381 882.681 438.538 14.971]
+    labelPosition	    [1594.381 883.107 491.012 22.456]
     fontSize		    12
     src {
       id		      27
-      intersection	      [3 0 1 0.4401 1593.6309 862.0829 0 -8.6875]
+      intersection	      [3 0 1 0.5059 1593.631 864.8954 0 -8.6875]
     }
     dst {
       id		      28
-      intersection	      [1 -0 -1 0.7337 1593.6309 925.4893 0 8.6875]
+      intersection	      [1 -0 -1 0.7337 1593.631 925.4893 0 8.6875]
     }
-    midPoint		    [1593.6309 890.9038]
+    midPoint		    [1593.631 892.2489]
     chart		    9
-    linkNode		    [22 59 61]
-    dataLimits		    [1591.231 1596.031 862.083 925.489]
+    linkNode		    [22 72 73]
+    isGrouped		    1
+    dataLimits		    [1591.231 1596.031 864.895 925.489]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -18941,21 +18970,22 @@ Stateflow {
     ssIdNumber		    1129
   }
   transition {
-    id			    61
-    labelString		    "after(5,sec)"
-    labelPosition	    [1594.788 1003.12 60.721 14.971]
+    id			    62
+    labelString		    "after(3,sec)"
+    labelPosition	    [1604.319 1000.776 74.964 22.456]
     fontSize		    12
     src {
       id		      28
-      intersection	      [3 0 1 0.2652 1594.0378 996.2706 0 -88.3601]
+      intersection	      [3 -0 1 0.2652 1594.0378 996.2706 0 -88.3601]
     }
     dst {
       id		      29
-      intersection	      [1 0 -1 0.5449 1594.0378 1019.2454 0 86.8601]
+      intersection	      [1 0 -1 0.4884 1594.0378 1019.2454 0 86.8601]
     }
     midPoint		    [1594.0378 1003.9967]
     chart		    9
-    linkNode		    [22 60 54]
+    linkNode		    [22 73 74]
+    isGrouped		    1
     dataLimits		    [1591.638 1596.438 996.271 1019.245]
     stampAngle		    NaN
     subviewer		    9
@@ -18966,22 +18996,23 @@ Stateflow {
     ssIdNumber		    1132
   }
   transition {
-    id			    62
+    id			    63
     labelString		    "after(0.5,sec)"
-    labelPosition	    [1356.492 1297.195 70.466 14.971]
+    labelPosition	    [1354.163 1297.235 86.208 22.456]
     fontSize		    12
     src {
       id		      20
-      intersection	      [1 0 -1 0.354 1286.0403 1357.1766 0 -20.1757]
+      intersection	      [1 0 -1 0.849 1255.8054 1338.8954 0 -20.1757]
     }
     dst {
       id		      17
       intersection	      [3 0 1 0.9023 1361.2115 1270.776 0 -54.9955]
     }
-    midPoint		    [1326.0756 1316.6638]
+    midPoint		    [1311.9434 1308.2381]
     chart		    9
-    linkNode		    [22 52 63]
-    dataLimits		    [1286.04 1363.612 1270.776 1357.177]
+    linkNode		    [22 53 64]
+    isGrouped		    1
+    dataLimits		    [1255.805 1363.612 1270.776 1338.895]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -18993,55 +19024,61 @@ Stateflow {
     ssIdNumber		    1143
   }
   transition {
-    id			    63
-    labelString		    "[Pos[0]>PerchPos[0]+1]"
-    labelPosition	    [1593.164 1297.533 125.939 14.971]
+    id			    64
+    labelString		    "[Pos[0]>PerchPos[0]+2]"
+    labelPosition	    [1593.159 1296.455 146.179 22.456]
     fontSize		    12
     src {
       id		      17
-      intersection	      [3 0 1 0.5185 1577.2831 1270.776 0 59.3174]
+      intersection	      [3 -0 1 0.5185 1577.2831 1270.776 0 59.3174]
     }
     dst {
       id		      30
-      intersection	      [1 -0 -1 0.3126 1577.2831 1352.4322 0 -57.0674]
+      intersection	      [1 0 -1 0.2858 1577.2831 1347.7447 0 -57.0674]
     }
-    midPoint		    [1577.2893 1309.1185]
+    midPoint		    [1577.2831 1306.6729]
     chart		    9
-    linkNode		    [22 62 64]
-    dataLimits		    [1574.883 1579.683 1270.776 1352.432]
+    linkNode		    [22 63 76]
+    isGrouped		    1
+    dataLimits		    [1574.883 1579.683 1270.776 1347.745]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    2
     ssIdNumber		    1145
   }
   transition {
-    id			    64
+    id			    65
     labelString		    "after (2,sec)"
-    labelPosition	    [1575.853 1479.411 63.719 14.971]
+    labelPosition	    [1575.853 1479.825 78.712 22.456]
     fontSize		    12
     src {
       id		      30
-      intersection	      [3 -0 1 0.6928 1574.3527 1456.2135 0 103.1242]
+      intersection	      [3 0 1 0.7192 1574.3527 1456.2135 0 103.1242]
     }
     dst {
       id		      31
-      intersection	      [1 0 -1 0.3132 1574.3527 1523.3432 0 -104.6242]
+      intersection	      [1 -0 -1 0.2863 1574.3527 1523.3432 0 -104.6242]
     }
-    midPoint		    [1574.3526 1486.977]
+    midPoint		    [1574.3527 1486.977]
     chart		    9
-    linkNode		    [22 63 67]
+    linkNode		    [22 78 68]
+    isGrouped		    1
     dataLimits		    [1571.953 1576.753 1456.214 1523.343]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1147
   }
   transition {
-    id			    65
+    id			    66
     labelString		    "[Pos[0]>(PerchPos[0]+rate)]"
-    labelPosition	    [1895.468 1163.896 146.929 14.971]
+    labelPosition	    [1895.468 1163.896 168.668 22.456]
     fontSize		    12
     src {
       id		      17
@@ -19049,81 +19086,95 @@ Stateflow {
     }
     dst {
       id		      32
-      intersection	      [4 -1 0 0.6911 2190.7431 1187.9389 0 18.1875]
+      intersection	      [4 -1 -0 0.6911 2190.7431 1187.9389 0 18.1875]
     }
     midPoint		    [2032.6637 1188.6349]
     chart		    9
-    linkNode		    [22 69 66]
+    linkNode		    [22 75 67]
+    isGrouped		    1
     dataLimits		    [1869.122 2190.743 1185.539 1190.339]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1149
   }
   transition {
-    id			    66
+    id			    67
     labelString		    "after (0.1,sec)"
-    labelPosition	    [1984.586 1229.936 73.464 14.971]
+    labelPosition	    [1984.586 1229.936 89.956 22.456]
     fontSize		    12
     src {
       id		      32
-      intersection	      [4 -1 0 0.3798 2190.7431 1217.5611 0 -11.4375]
+      intersection	      [4 -1 -0 0.3798 2190.7431 1217.561 0 -11.4375]
     }
     dst {
       id		      17
-      intersection	      [2 1 0 0.552 1869.1223 1217.5611 0 11.4375]
+      intersection	      [2 1 0 0.552 1869.1223 1217.561 0 11.4375]
     }
     midPoint		    [2027.2017 1217.5611]
     chart		    9
-    linkNode		    [22 65 52]
+    linkNode		    [22 66 53]
+    isGrouped		    1
     dataLimits		    [1869.122 2190.743 1215.161 1219.961]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
+    slide {
+    }
     executionOrder	    1
     ssIdNumber		    1150
   }
   transition {
-    id			    67
-    labelString		    "[counter<0.5]"
-    labelPosition	    [1959.228 1536.519 68.967 14.971]
+    id			    68
+    labelString		    "[counter<1.6]"
+    labelPosition	    [2058.697 1502.758 86.208 22.456]
     fontSize		    12
     src {
       id		      31
-      intersection	      [2 1 0 0.3835 1947.0557 1563.1433 0 -12.8395]
+      intersection	      [2 1 0 0.6077 1997.9932 1588.125 0 -9.3983]
     }
     dst {
-      id		      33
-      intersection	      [4 -1 -0 0.5874 2032.1494 1563.1433 0 12.0895]
+      id		      36
+      intersection	      [0 -0.8682 -0.4961 -1 2099.9325 1528.6126 0 9.3983]
     }
-    midPoint		    [1987.1917 1563.1443]
+    midPoint		    [2049.3297 1546.6911]
     chart		    9
-    linkNode		    [22 64 0]
-    dataLimits		    [1947.056 2032.149 1560.743 1565.543]
-    stampAngle		    NaN
+    linkNode		    [22 65 50]
+    isGrouped		    1
+    dataLimits		    [1997.993 2099.932 1521.755 1588.125]
+    stampAngle		    -0.5191
     subviewer		    9
     drawStyle		    SMART
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+      arcL		      56.0395
+      arcClockDir	      COUNTER_CLOCKWISE
+    }
     executionOrder	    1
     ssIdNumber		    1153
   }
   transition {
-    id			    68
+    id			    69
     labelString		    "[abs(PosDesired[0]-(PerchPos[0]+0.5))<0.5]"
-    labelPosition	    [2240.767 878.244 232.388 14.971]
+    labelPosition	    [2343.752 857.747 262.373 22.456]
     fontSize		    12
     src {
       id		      33
-      intersection	      [1 0 -1 0.8212 2477.7909 1520.3264 0 445.6415]
+      intersection	      [1 0 -1 0.7881 2693.5722 1524.5451 0 445.6415]
     }
     dst {
       id		      26
-      intersection	      [2 1 0 0.4546 1835.6686 672.1917 0 -50.11]
+      intersection	      [2 1 0 0.5202 1880.504 684.765 0 -50.11]
     }
-    midPoint		    [2278.558 941.6678]
+    midPoint		    [2416.9785 937.7934]
     chart		    9
-    linkNode		    [22 39 59]
-    dataLimits		    [1835.669 2477.791 669.792 1520.326]
+    linkNode		    [22 40 60]
+    isGrouped		    1
+    dataLimits		    [1880.504 2693.572 682.365 1524.545]
     stampAngle		    NaN
     subviewer		    9
     drawStyle		    SMART
@@ -19135,9 +19186,9 @@ Stateflow {
     ssIdNumber		    1162
   }
   transition {
-    id			    69
+    id			    70
     labelString		    "[(abs(Pos[0]-PerchPos[0])+abs(Pos[1]-PerchPos[1]))<0.1]"
-    labelPosition	    [1502.416 1132.102 302.853 14.971]
+    labelPosition	    [1502.416 1132.102 341.085 22.456]
     fontSize		    12
     src {
       id		      35
@@ -19149,9 +19200,10 @@ Stateflow {
     }
     midPoint		    [1484.101 1136.7961]
     chart		    9
-    linkNode		    [22 54 65]
+    linkNode		    [22 55 75]
+    isGrouped		    1
     dataLimits		    [1476.423 1494.23 1130.61 1151.995]
-    stampAngle		    -0.6579
+    stampAngle		    -0.6578
     subviewer		    9
     drawStyle		    SMART
     slide {
@@ -19162,11 +19214,203 @@ Stateflow {
     executionOrder	    1
     ssIdNumber		    1164
   }
+  transition {
+    id			    71
+    labelString		    "[KinectTracking==0]"
+    labelPosition	    [1275.145 429.112 127.438 22.456]
+    fontSize		    12
+    src {
+      id		      22
+      intersection	      [1 0 -1 0.175 1268.8111 530.4422 0 -186.8292]
+    }
+    dst {
+      id		      15
+      intersection	      [3 -0 1 0.7855 1268.8111 369.0313 0 186.8292]
+    }
+    midPoint		    [1268.8111 450.4885]
+    chart		    9
+    linkNode		    [23 48 51]
+    isGrouped		    1
+    dataLimits		    [1266.411 1271.211 369.031 530.442]
+    stampAngle		    NaN
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    1
+    ssIdNumber		    945
+  }
+  transition {
+    id			    72
+    labelString		    "[stage==1]"
+    labelPosition	    [1210.162 799.628 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 1 0 0 1199.1917 830.3708 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [4 -1 0 0.4142 1292.856 830.3708 0 0]
+    }
+    midPoint		    [1243.7993 830.3708]
+    chart		    9
+    linkNode		    [22 60 61]
+    isGrouped		    1
+    dataLimits		    [1199.192 1292.856 827.971 832.771]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    2
+    ssIdNumber		    1169
+  }
+  transition {
+    id			    73
+    labelString		    "[stage==2]"
+    labelPosition	    [1230.718 939.257 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 1 0 0 1207.4051 965.8931 0 0]
+    }
+    dst {
+      id		      28
+      intersection	      [4 -1 0 0.4292 1322.2307 965.8931 0 0]
+    }
+    midPoint		    [1263.0534 965.8931]
+    chart		    9
+    linkNode		    [22 61 62]
+    isGrouped		    1
+    dataLimits		    [1207.405 1322.231 963.493 968.293]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    3
+    ssIdNumber		    1170
+  }
+  transition {
+    id			    74
+    labelString		    "[stage==3]"
+    labelPosition	    [1203.65 1037.819 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 1 0 0 1184.1336 1064.4547 0 0]
+    }
+    dst {
+      id		      29
+      intersection	      [4 -1 0 0.432 1301.341 1064.4547 0 0]
+    }
+    midPoint		    [1241.0246 1064.4547]
+    chart		    9
+    linkNode		    [22 62 55]
+    isGrouped		    1
+    dataLimits		    [1184.134 1301.341 1062.055 1066.855]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    4
+    ssIdNumber		    1171
+  }
+  transition {
+    id			    75
+    labelString		    "[stage==4]"
+    labelPosition	    [1211.512 1156.172 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 0 0 0 1184.1336 1173.9677 0 0]
+    }
+    dst {
+      id		      17
+      intersection	      [4 -1 0 0.6767 1306.216 1190.3946 0 0]
+    }
+    midPoint		    [1243.4248 1184.6768]
+    chart		    9
+    linkNode		    [22 70 66]
+    isGrouped		    1
+    dataLimits		    [1184.134 1306.216 1173.968 1192.795]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    5
+    ssIdNumber		    1172
+  }
+  transition {
+    id			    76
+    labelString		    "[stage==5]"
+    labelPosition	    [1322.15 1388.391 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 0 0 0 1315.5492 1443.6433 0 0]
+    }
+    dst {
+      id		      30
+      intersection	      [4 -1 0 0.3683 1407.6487 1416.2651 0 0]
+    }
+    midPoint		    [1358.8218 1425.7947]
+    chart		    9
+    linkNode		    [22 64 78]
+    isGrouped		    1
+    dataLimits		    [1315.549 1407.649 1413.865 1443.643]
+    subviewer		    9
+    drawStyle		    SMART
+    executionOrder	    7
+    ssIdNumber		    1173
+  }
+  transition {
+    id			    77
+    labelString		    "[stage==6]"
+    labelPosition	    [1324.106 1551.161 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 1 0 0 1297.7533 1584.6412 0 0]
+    }
+    dst {
+      id		      31
+      intersection	      [4 -1 0 0.4249 1404.3994 1584.6412 0 0]
+    }
+    midPoint		    [1349.134 1584.6412]
+    chart		    9
+    linkNode		    [22 50 0]
+    isGrouped		    1
+    dataLimits		    [1297.753 1404.399 1582.241 1587.041]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    8
+    ssIdNumber		    1174
+  }
+  transition {
+    id			    78
+    labelString		    "[stage==7]"
+    labelPosition	    [2428.996 1475.465 71.216 22.456]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 2412.0476 1438.1677 0 0]
+    }
+    dst {
+      id		      33
+      intersection	      [1 0 -1 0.2902 2412.0476 1524.5451 0 0]
+    }
+    midPoint		    [2412.0476 1478.9735]
+    chart		    9
+    linkNode		    [22 76 65]
+    isGrouped		    1
+    dataLimits		    [2409.648 2414.448 1438.168 1524.545]
+    subviewer		    9
+    drawStyle		    SMART
+    slide {
+    }
+    executionOrder	    6
+    ssIdNumber		    1175
+  }
   data {
-    id			    70
+    id			    79
     ssIdNumber		    28
     name		    "PosDesired"
-    linkNode		    [9 0 71]
+    linkNode		    [9 0 80]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19183,10 +19427,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    71
+    id			    80
     ssIdNumber		    29
     name		    "HoverThrottle"
-    linkNode		    [9 70 72]
+    linkNode		    [9 79 81]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19203,10 +19447,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    72
+    id			    81
     ssIdNumber		    30
     name		    "Mode"
-    linkNode		    [9 71 73]
+    linkNode		    [9 80 82]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19223,10 +19467,10 @@ Stateflow {
     dataType		    "uint8"
   }
   data {
-    id			    73
+    id			    82
     ssIdNumber		    31
     name		    "RC"
-    linkNode		    [9 72 74]
+    linkNode		    [9 81 83]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19244,10 +19488,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    74
+    id			    83
     ssIdNumber		    32
     name		    "Pos"
-    linkNode		    [9 73 75]
+    linkNode		    [9 82 84]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19265,10 +19509,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    75
+    id			    84
     ssIdNumber		    35
     name		    "PerchPos"
-    linkNode		    [9 74 76]
+    linkNode		    [9 83 85]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19286,10 +19530,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    76
+    id			    85
     ssIdNumber		    47
     name		    "DeltaT"
-    linkNode		    [9 75 77]
+    linkNode		    [9 84 86]
     scope		    PARAMETER_DATA
     machine		    1
     props {
@@ -19307,10 +19551,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    77
+    id			    86
     ssIdNumber		    48
     name		    "H0"
-    linkNode		    [9 76 78]
+    linkNode		    [9 85 87]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 1
     machine		    1
@@ -19329,10 +19573,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    78
+    id			    87
     ssIdNumber		    49
     name		    "Kl"
-    linkNode		    [9 77 79]
+    linkNode		    [9 86 88]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 2
     machine		    1
@@ -19351,10 +19595,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    79
+    id			    88
     ssIdNumber		    94
     name		    "VelCmd"
-    linkNode		    [9 78 80]
+    linkNode		    [9 87 89]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -19371,10 +19615,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    80
+    id			    89
     ssIdNumber		    119
     name		    "PWM"
-    linkNode		    [9 79 81]
+    linkNode		    [9 88 90]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -19388,10 +19632,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    81
+    id			    90
     ssIdNumber		    183
     name		    "PI"
-    linkNode		    [9 80 82]
+    linkNode		    [9 89 91]
     scope		    PARAMETER_DATA
     paramIndexForInitFromWorkspace 3
     machine		    1
@@ -19410,10 +19654,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    82
+    id			    91
     ssIdNumber		    190
     name		    "draw"
-    linkNode		    [9 81 83]
+    linkNode		    [9 90 92]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19431,10 +19675,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    83
+    id			    92
     ssIdNumber		    455
     name		    "descentrate"
-    linkNode		    [9 82 84]
+    linkNode		    [9 91 93]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -19447,10 +19691,10 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    84
+    id			    93
     ssIdNumber		    781
     name		    "LeftHand"
-    linkNode		    [9 83 85]
+    linkNode		    [9 92 94]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19468,10 +19712,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    85
+    id			    94
     ssIdNumber		    819
     name		    "KinectTracking"
-    linkNode		    [9 84 86]
+    linkNode		    [9 93 95]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19489,10 +19733,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    86
+    id			    95
     ssIdNumber		    1006
     name		    "RightHand"
-    linkNode		    [9 85 87]
+    linkNode		    [9 94 96]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -19510,10 +19754,10 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   data {
-    id			    87
+    id			    96
     ssIdNumber		    1141
     name		    "rate"
-    linkNode		    [9 86 88]
+    linkNode		    [9 95 97]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -19526,10 +19770,26 @@ Stateflow {
     dataType		    "double"
   }
   data {
-    id			    88
+    id			    97
     ssIdNumber		    1151
     name		    "counter"
-    linkNode		    [9 87 0]
+    linkNode		    [9 96 98]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  data {
+    id			    98
+    ssIdNumber		    1168
+    name		    "stage"
+    linkNode		    [9 97 0]
     scope		    LOCAL_DATA
     machine		    1
     props {
@@ -19542,22 +19802,22 @@ Stateflow {
     dataType		    "double"
   }
   instance {
-    id			    89
+    id			    99
     name		    "Planning/Trajectory Logic/UAV SF"
     machine		    1
     chart		    9
   }
   target {
-    id			    90
+    id			    100
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
-    linkNode		    [1 0 91]
+    linkNode		    [1 0 101]
   }
   target {
-    id			    91
+    id			    101
     name		    "rtw"
     machine		    1
-    linkNode		    [1 90 0]
+    linkNode		    [1 100 0]
   }
 }
