@@ -48,13 +48,13 @@ ViconPose(12) = QuadEulerXYZ.Rotation(3); % Yaw
 % SubjectName = 'brush'; SegmentName = 'brush';
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('draw', 'draw');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('JX2', 'JX2');
 ViconPose(13) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(14) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(15) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('draw', 'draw');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('JX2', 'JX2');
 ViconPose(16) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(17) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(18) = QuadEulerXYZ.Rotation(3); % Yaw
