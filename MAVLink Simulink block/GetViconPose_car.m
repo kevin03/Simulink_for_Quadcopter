@@ -36,6 +36,17 @@ ViconPose(10) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(11) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(12) = QuadEulerXYZ.Rotation(3); % Yaw
 
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('landing_area', 'landing_area');
+ViconPose(7) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
+ViconPose(8) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
+ViconPose(9) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
+
+% Euler Angles
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('landing_area', 'landing_area');
+ViconPose(10) = QuadEulerXYZ.Rotation(1); % Roll
+ViconPose(11) = QuadEulerXYZ.Rotation(2); % Pitch
+ViconPose(12) = QuadEulerXYZ.Rotation(3); % Yaw
+
 
 end 
 
