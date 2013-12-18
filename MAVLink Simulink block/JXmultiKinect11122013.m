@@ -48,13 +48,13 @@ ViconPose(12) = QuadEulerXYZ.Rotation(3); % Yaw
 % SubjectName = 'k2'; SegmentName = 'k2';
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('JX2', 'JX2');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('jx', 'jx');
 ViconPose(13) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(14) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(15) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('JX2', 'JX2');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('jx', 'jx');
 ViconPose(16) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(17) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(18) = QuadEulerXYZ.Rotation(3); % Yaw
@@ -82,13 +82,13 @@ ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 % SubjectName = 'k2'; SegmentName = 'k2';
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('JX', 'JX');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('JX2', 'JX2');
 ViconPose(25) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(26) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(27) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('JX', 'JX');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('JX2', 'JX2');
 ViconPose(28) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(29) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(30) = QuadEulerXYZ.Rotation(3); % Yaw

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1665"
+    ComputedModelVersion    "1.1666"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -33,11 +33,11 @@ Model {
   Creator		  "ttcl3"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Vicon"
+  LastModifiedBy	  "Jx"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Nov 29 15:08:51 2013"
-  RTWModifiedTimeStamp	  307633008
-  ModelVersionFormat	  "1.%<AutoIncrement:1665>"
+  LastModifiedDate	  "Sun Dec 15 19:02:42 2013"
+  RTWModifiedTimeStamp	  309034955
+  ModelVersionFormat	  "1.%<AutoIncrement:1666>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1006,7 +1006,7 @@ Model {
   System {
     Name		    "JX_Kinect20131128"
     Location		    [10, 82, 933, 1034]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1019,7 +1019,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3170"
+    SIDHighWatermark	    "3172"
     Block {
       BlockType		      From
       Name		      "From"
@@ -1062,7 +1062,7 @@ Model {
       System {
 	Name			"Kinect"
 	Location		[7, 82, 1890, 1051]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3372,7 +3372,7 @@ Model {
 	  System {
 	    Name		    "Subsystem1"
 	    Location		    [2, 82, 1902, 1051]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3432,7 +3432,7 @@ Model {
 	      System {
 		Name			"Left or Center or Right"
 		Location		[0, 82, 1900, 1051]
-		Open			off
+		Open			on
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -3468,24 +3468,10 @@ Model {
 		  UpperValue		  "0.12"
 		}
 		Block {
-		  BlockType		  Gain
-		  Name			  "Gain"
-		  SID			  "3131"
-		  Position		  [345, 84, 395, 146]
-		  Gain			  "2000"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Saturate
-		  Name			  "Saturation"
-		  SID			  "3132"
-		  Ports			  [1, 1]
-		  Position		  [465, 100, 495, 130]
-		  InputPortMap		  "u0"
-		  UpperLimit		  "1"
-		  LowerLimit		  "-1"
+		  BlockType		  Signum
+		  Name			  "Sign"
+		  SID			  "3172"
+		  Position		  [345, 100, 375, 130]
 		}
 		Block {
 		  BlockType		  Sum
@@ -3519,19 +3505,7 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  SrcBlock		  "Dead Zone"
-		  SrcPort		  1
-		  DstBlock		  "Gain"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain"
-		  SrcPort		  1
-		  DstBlock		  "Saturation"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Saturation"
+		  SrcBlock		  "Sign"
 		  SrcPort		  1
 		  DstBlock		  "LeftCenterRight"
 		  DstPort		  1
@@ -3541,6 +3515,12 @@ Model {
 		  SrcPort		  1
 		  Points		  [0, 10]
 		  DstBlock		  "Subtract"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Dead Zone"
+		  SrcPort		  1
+		  DstBlock		  "Sign"
 		  DstPort		  1
 		}
 	      }
@@ -3599,84 +3579,6 @@ Model {
 		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  SubSystem
-		  Name			  "Center"
-		  SID			  "3137"
-		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
-		  Position		  [685, 290, 755, 380]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "Center"
-		    Location		    [342, 471, 840, 771]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3138"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3139"
-		    Position		    [170, 15, 229, 43]
-		    ActionType		    "elseif"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3140"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "3141"
-		  Position		  [600, 105, 630, 135]
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "3142"
-		  Position		  [590, 320, 620, 350]
-		  Value			  "0"
-		}
-		Block {
-		  BlockType		  Constant
-		  Name			  "Constant2"
-		  SID			  "3143"
-		  Position		  [590, 465, 620, 495]
-		  Value			  "-1"
-		}
-		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
 		  SID			  "3145"
@@ -3685,88 +3587,10 @@ Model {
 		  UpperValue		  "0.14"
 		}
 		Block {
-		  BlockType		  SubSystem
-		  Name			  "Down1"
-		  SID			  "3150"
-		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
-		  Position		  [685, 441, 755, 519]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "Down1"
-		    Location		    [342, 471, 840, 771]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3151"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3152"
-		    Position		    [170, 15, 229, 43]
-		    ActionType		    "else"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3153"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
-		  BlockType		  Gain
-		  Name			  "Gain1"
-		  SID			  "3154"
-		  Position		  [305, 159, 355, 221]
-		  Gain			  "2"
-		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  If
-		  Name			  "If"
-		  SID			  "3155"
-		  Ports			  [1, 3]
-		  Position		  [390, 171, 490, 209]
-		  ElseIfExpressions	  "u1 ==0"
-		}
-		Block {
-		  BlockType		  Merge
-		  Name			  "Merge4"
-		  SID			  "3156"
-		  Ports			  [3, 1]
-		  Position		  [890, 350, 930, 390]
-		  Inputs		  "3"
+		  BlockType		  Signum
+		  Name			  "Sign"
+		  SID			  "3171"
+		  Position		  [275, 175, 305, 205]
 		}
 		Block {
 		  BlockType		  Sum
@@ -3780,145 +3604,16 @@ Model {
 		  SaturateOnIntegerOverflow off
 		}
 		Block {
-		  BlockType		  SubSystem
-		  Name			  "Top1"
-		  SID			  "3158"
-		  Ports			  [1, 1, 0, 0, 0, 0, 0, 1]
-		  Position		  [685, 86, 760, 154]
-		  TreatAsAtomicUnit	  on
-		  MinAlgLoopOccurrences	  off
-		  PropExecContextOutsideSubsystem off
-		  RTWSystemCode		  "Auto"
-		  FunctionWithSeparateData off
-		  Opaque		  off
-		  RequestExecContextInheritance	off
-		  MaskHideContents	  off
-		  System {
-		    Name		    "Top1"
-		    Location		    [342, 471, 840, 771]
-		    Open		    off
-		    ModelBrowserVisibility  off
-		    ModelBrowserWidth	    200
-		    ScreenColor		    "white"
-		    PaperOrientation	    "landscape"
-		    PaperPositionMode	    "auto"
-		    PaperType		    "usletter"
-		    PaperUnits		    "inches"
-		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-		    TiledPageScale	    1
-		    ShowPageBoundaries	    off
-		    ZoomFactor		    "100"
-		    Block {
-		    BlockType		    Inport
-		    Name		    "In1"
-		    SID			    "3159"
-		    Position		    [75, 78, 105, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Block {
-		    BlockType		    ActionPort
-		    Name		    "Action Port"
-		    SID			    "3160"
-		    Position		    [170, 15, 229, 43]
-		    ActionType		    "then"
-		    }
-		    Block {
-		    BlockType		    Outport
-		    Name		    "Out1"
-		    SID			    "3161"
-		    Position		    [325, 78, 355, 92]
-		    IconDisplay		    "Port number"
-		    }
-		    Line {
-		    SrcBlock		    "In1"
-		    SrcPort		    1
-		    DstBlock		    "Out1"
-		    DstPort		    1
-		    }
-		  }
-		}
-		Block {
 		  BlockType		  Outport
 		  Name			  "UpCenterDown"
 		  SID			  "3162"
-		  Position		  [1045, 363, 1075, 377]
+		  Position		  [370, 183, 400, 197]
 		  IconDisplay		  "Port number"
 		}
 		Line {
 		  SrcBlock		  "Subtract"
 		  SrcPort		  1
 		  DstBlock		  "Dead Zone"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  1
-		  Points		  [40, 0; 0, -111]
-		  DstBlock		  "Top1"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  2
-		  Points		  [225, 0]
-		  DstBlock		  "Center"
-		  DstPort		  ifaction
-		}
-		Line {
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "Top1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Dead Zone"
-		  SrcPort		  1
-		  DstBlock		  "Gain1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Gain1"
-		  SrcPort		  1
-		  DstBlock		  "If"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "Center"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Constant2"
-		  SrcPort		  1
-		  DstBlock		  "Down1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Center"
-		  SrcPort		  1
-		  Points		  [50, 0; 0, 35]
-		  DstBlock		  "Merge4"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "Down1"
-		  SrcPort		  1
-		  Points		  [50, 0; 0, -95]
-		  DstBlock		  "Merge4"
-		  DstPort		  3
-		}
-		Line {
-		  SrcBlock		  "Top1"
-		  SrcPort		  1
-		  Points		  [90, 0; 0, 235]
-		  DstBlock		  "Merge4"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Merge4"
-		  SrcPort		  1
-		  DstBlock		  "UpCenterDown"
 		  DstPort		  1
 		}
 		Line {
@@ -3934,11 +3629,16 @@ Model {
 		  DstPort		  2
 		}
 		Line {
-		  SrcBlock		  "If"
-		  SrcPort		  3
-		  Points		  [80, 0; 0, 226]
-		  DstBlock		  "Down1"
-		  DstPort		  ifaction
+		  SrcBlock		  "Dead Zone"
+		  SrcPort		  1
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sign"
+		  SrcPort		  1
+		  DstBlock		  "UpCenterDown"
+		  DstPort		  1
 		}
 	      }
 	    }
@@ -6844,7 +6544,7 @@ Model {
 	  ForegroundColor	  "green"
 	  LibraryVersion	  "1.40"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  ShowPortLabels	  "FromPortIcon"
 	  SystemSampleTime	  "-1"
 	  FunctionWithSeparateData off
@@ -13846,7 +13546,7 @@ Stateflow {
   chart {
     id			    9
     name		    "Planning/Trajectory Logic/UAV SF"
-    windowPosition	    [0 30 1440 723]
+    windowPosition	    [18.75 30 1440 723]
     viewLimits		    [1683.962 3080.462 766.403 1453.403]
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
@@ -13856,7 +13556,8 @@ Stateflow {
     visible		    1
     machine		    1
     subviewS {
-      zoomFactor	      3.762
+      x1		      1683.962
+      y1		      766.403
     }
     ssIdHighWaterMark	    1313
     decomposition	    CLUSTER_CHART
@@ -15190,8 +14891,6 @@ Stateflow {
     dataLimits		    [2038.999 2043.806 369.895 550.359]
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    2
     ssIdNumber		    956
   }
@@ -15215,8 +14914,6 @@ Stateflow {
     stampAngle		    -0.3155
     subviewer		    9
     drawStyle		    SMART
-    slide {
-    }
     executionOrder	    2
     ssIdNumber		    930
   }
