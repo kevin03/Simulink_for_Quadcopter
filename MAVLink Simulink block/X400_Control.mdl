@@ -1,5 +1,5 @@
 Library {
-  Name			  "X330_Control"
+  Name			  "X400_Control"
   Version		  7.7
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -15,9 +15,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 06 15:24:07 2013"
-  RTWModifiedTimeStamp	  305652244
-  ModelVersionFormat	  "1.%<AutoIncrement:40>"
+  LastModifiedDate	  "Wed Oct 02 13:03:44 2013"
+  RTWModifiedTimeStamp	  301426114
+  ModelVersionFormat	  "1.%<AutoIncrement:41>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -806,7 +806,7 @@ Library {
     }
   }
   System {
-    Name		    "X330_Control"
+    Name		    "X400_Control"
     Location		    [970, 82, 1910, 1011]
     Open		    on
     ModelBrowserVisibility  off
@@ -821,7 +821,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "262"
+    SIDHighWatermark	    "199"
     Block {
       BlockType		      SubSystem
       Name		      "Horizontal Pos controller"
@@ -1364,7 +1364,7 @@ Library {
 	      ShowName		      off
 	      InputPortWidth	      "8"
 	      IndexOptions	      "Index vector (dialog)"
-	      Indices		      "[5]"
+	      Indices		      "[7]"
 	      OutputSizes	      "1"
 	      Port {
 		PortNumber		1
@@ -1749,8 +1749,8 @@ Library {
       "ing,Vertical Setting"
       System {
 	Name			"PosRefSystem"
-	Location		[2, 82, 1902, 1027]
-	Open			on
+	Location		[2, 74, 1918, 1019]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"[0.800000, 0.909804, 0.811765]"
@@ -2051,25 +2051,6 @@ Library {
 	  Position		  [1560, 610, 1590, 640]
 	  Value			  "0"
 	  SampleTime		  "0.02"
-	}
-	Block {
-	  BlockType		  Saturate
-	  Name			  "Pos XY Lim"
-	  SID			  "261"
-	  Ports			  [1, 1]
-	  Position		  [1425, 73, 1450, 97]
-	  InputPortMap		  "u0"
-	  UpperLimit		  "3"
-	  LowerLimit		  "-3"
-	}
-	Block {
-	  BlockType		  Saturate
-	  Name			  "Pos Z Lim"
-	  SID			  "262"
-	  Ports			  [1, 1]
-	  Position		  [1425, 348, 1450, 372]
-	  InputPortMap		  "u0"
-	  LowerLimit		  "-3"
 	}
 	Block {
 	  BlockType		  Constant
@@ -2414,8 +2395,9 @@ Library {
 	  }
 	  Branch {
 	    Labels		    [1, 1]
-	    DstBlock		    "Pos Z Lim"
-	    DstPort		    1
+	    Points		    [170, 0]
+	    DstBlock		    "Mux"
+	    DstPort		    2
 	  }
 	}
 	Line {
@@ -2558,13 +2540,14 @@ Library {
 	  SrcPort		  1
 	  Points		  [55, 0]
 	  Branch {
+	    Points		    [200, 0]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	  Branch {
 	    Points		    [0, 115; -455, 0]
 	    DstBlock		    "Sum"
 	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Pos XY Lim"
-	    DstPort		    1
 	  }
 	}
 	Line {
@@ -2667,7 +2650,6 @@ Library {
 	Line {
 	  SrcBlock		  "Selector4"
 	  SrcPort		  1
-	  Points		  [35, 0]
 	  DstBlock		  "Sum8"
 	  DstPort		  1
 	}
@@ -2723,20 +2705,6 @@ Library {
 	  SrcPort		  1
 	  DstBlock		  "Gain3"
 	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Pos XY Lim"
-	  SrcPort		  1
-	  Points		  [105, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Pos Z Lim"
-	  SrcPort		  1
-	  Points		  [105, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  2
 	}
       }
     }
@@ -2942,7 +2910,7 @@ Library {
 	  ShowName		  off
 	  InputPortWidth	  "8"
 	  IndexOptions		  "Index vector (dialog)"
-	  Indices		  "[5]"
+	  Indices		  "[7]"
 	  OutputSizes		  "1"
 	  Port {
 	    PortNumber		    1
@@ -3010,7 +2978,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Verticall Pos Controller"
-	    Location		    [970, 82, 1910, 1011]
+	    Location		    [2, 82, 1902, 1027]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3022,7 +2990,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "87"
+	    ZoomFactor		    "174"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Pos Error"
@@ -3090,8 +3058,8 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Force --> Control"
 	      SID		      "192"
-	      Position		      [830, 415, 935, 445]
-	      Expr		      "u(1)*0.0287 + 0.1485"
+	      Position		      [830, 413, 990, 447]
+	      Expr		      "-0.0004*(u(1)^2) + 0.0334*u(1) + 0.0717"
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -3202,7 +3170,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "T  Commands [0, 1]"
 	      SID		      "89"
-	      Position		      [1010, 423, 1040, 437]
+	      Position		      [1025, 423, 1055, 437]
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -4453,7 +4421,7 @@ Library {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "51::14"
-	      Tag		      "Stateflow S-Function X330_Control 1"
+	      Tag		      "Stateflow S-Function X400_Control 1"
 	      Ports		      [1, 2]
 	      Position		      [180, 100, 230, 160]
 	      FunctionName	      "sf_sfun"
@@ -4675,7 +4643,7 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "X330_Control"
+    name		    "X400_Control"
     created		    "06-Sep-2013 16:11:40"
     isLibrary		    1
     firstTarget		    9
