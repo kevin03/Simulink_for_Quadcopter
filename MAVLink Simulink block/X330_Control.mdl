@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [51.0, 0.0, 960.0, 1040.0]
+      Location		      [-8.0, -8.0, 1936.0, 1056.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[908.0, 872.0]
-	ZoomFactor		[1.0419753086419754]
-	Offset			[12.014218009478782, 21.563981042654007]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"100"
+	Extents			[1884.0, 888.0]
+	ZoomFactor		[1.0781295381934359]
+	Offset			[36.889547413793217, -49.824353448275907]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Dec 21 19:00:15 2013"
-  RTWModifiedTimeStamp	  309548469
-  ModelVersionFormat	  "1.%<AutoIncrement:81>"
+  LastModifiedDate	  "Sun Dec 22 16:14:41 2013"
+  RTWModifiedTimeStamp	  309629678
+  ModelVersionFormat	  "1.%<AutoIncrement:82>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -900,7 +900,7 @@ Library {
   System {
     Name		    "X330_Control"
     Location		    [51, 0, 1011, 1040]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -913,7 +913,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "104"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1083"
+    SIDHighWatermark	    "1087"
     Block {
       BlockType		      SubSystem
       Name		      "Axi Vertical Controller\nAxiMotor + APC Prop"
@@ -1121,7 +1121,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "42"
+	    SIDHighWatermark	    "47"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -3315,7 +3315,7 @@ Library {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"46"
+		SIDHighWatermark	"51"
 		Block {
 		  BlockType		  Inport
 		  Name			  "u"
@@ -3865,7 +3865,7 @@ Library {
       Position		      [335, 35, 445, 175]
       ZOrder		      4
       BackgroundColor	      "green"
-      LibraryVersion	      "1.79"
+      LibraryVersion	      "1.81"
       SourceBlock	      "X330_Control/Horizontal Pos controller"
       SourceType	      ""
       Max_RP		      "60"
@@ -4328,7 +4328,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Pos Error"
 	      SID		      "452"
-	      Position		      [145, 153, 175, 167]
+	      Position		      [165, 173, 195, 187]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
@@ -4336,7 +4336,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Reset"
 	      SID		      "453"
-	      Position		      [145, 278, 175, 292]
+	      Position		      [165, 298, 195, 312]
 	      ZOrder		      -2
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4345,7 +4345,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Vel Error"
 	      SID		      "454"
-	      Position		      [145, 318, 175, 332]
+	      Position		      [165, 338, 195, 352]
 	      ZOrder		      -3
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -4354,7 +4354,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Hover Throttle"
 	      SID		      "455"
-	      Position		      [140, 448, 170, 462]
+	      Position		      [160, 468, 190, 482]
 	      ZOrder		      -4
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -4370,7 +4370,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Acc des"
 	      SID		      "456"
-	      Position		      [145, 363, 175, 377]
+	      Position		      [165, 383, 195, 397]
 	      ZOrder		      -5
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -4379,7 +4379,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "XY_Acc_d"
 	      SID		      "457"
-	      Position		      [140, 538, 170, 552]
+	      Position		      [160, 558, 190, 572]
 	      ZOrder		      -6
 	      Port		      "6"
 	      IconDisplay	      "Port number"
@@ -4388,7 +4388,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Height\nRef"
 	      SID		      "458"
-	      Position		      [140, 703, 170, 717]
+	      Position		      [160, 723, 190, 737]
 	      ZOrder		      -7
 	      Port		      "7"
 	      IconDisplay	      "Port number"
@@ -4397,7 +4397,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Height"
 	      SID		      "459"
-	      Position		      [140, 778, 170, 792]
+	      Position		      [160, 798, 190, 812]
 	      ZOrder		      -8
 	      Port		      "8"
 	      IconDisplay	      "Port number"
@@ -4406,7 +4406,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "RC"
 	      SID		      "460"
-	      Position		      [140, 633, 170, 647]
+	      Position		      [160, 653, 190, 667]
 	      ZOrder		      -9
 	      Port		      "9"
 	      IconDisplay	      "Port number"
@@ -4415,7 +4415,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Vel"
 	      SID		      "461"
-	      Position		      [135, 928, 165, 942]
+	      Position		      [155, 948, 185, 962]
 	      ZOrder		      -10
 	      Port		      "10"
 	      IconDisplay	      "Port number"
@@ -4424,7 +4424,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "D Gain"
 	      SID		      "463"
-	      Position		      [255, 306, 450, 344]
+	      Position		      [275, 326, 470, 364]
 	      ZOrder		      -11
 	      Gain		      "2*Omega_h*Zeta_h"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -4435,7 +4435,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
 	      SID		      "464"
-	      Position		      [205, 918, 320, 952]
+	      Position		      [225, 938, 340, 972]
 	      ZOrder		      -12
 	      BackgroundColor	      "gray"
 	      ShowName		      off
@@ -4445,7 +4445,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Fcn3"
 	      SID		      "465"
-	      Position		      [820, 973, 935, 1007]
+	      Position		      [840, 993, 955, 1027]
 	      ZOrder		      -13
 	      BackgroundColor	      "gray"
 	      ShowName		      off
@@ -4455,7 +4455,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Force --> Control1"
 	      SID		      "483"
-	      Position		      [800, 410, 915, 440]
+	      Position		      [820, 430, 935, 460]
 	      ZOrder		      -14
 	      Expr		      "0.0317*u(1) +0.1208"
 	    }
@@ -4463,7 +4463,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Integral Gain"
 	      SID		      "467"
-	      Position		      [230, 211, 330, 259]
+	      Position		      [250, 231, 350, 279]
 	      ZOrder		      -15
 	      DisableCoverage	      on
 	      Gain		      "PID_I_h"
@@ -4476,7 +4476,7 @@ Library {
 	      Name		      "Integrator"
 	      SID		      "468"
 	      Ports		      [2, 1]
-	      Position		      [405, 218, 480, 282]
+	      Position		      [425, 238, 500, 302]
 	      ZOrder		      -16
 	      DisableCoverage	      on
 	      IntegratorMethod	      "Integration: Trapezoidal"
@@ -4494,7 +4494,7 @@ Library {
 	      Name		      "Level-2 M-file\nS-Function"
 	      SID		      "469"
 	      Ports		      [4, 4]
-	      Position		      [480, 667, 605, 978]
+	      Position		      [500, 687, 625, 998]
 	      ZOrder		      -17
 	      BackgroundColor	      "gray"
 	      FunctionName	      "msfcn_Adaptive_NN_HeightOnly"
@@ -4511,7 +4511,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Mass"
 	      SID		      "470"
-	      Position		      [715, 411, 770, 439]
+	      Position		      [735, 431, 790, 459]
 	      ZOrder		      -18
 	      DisableCoverage	      on
 	      Gain		      "mass"
@@ -4524,7 +4524,7 @@ Library {
 	      Name		      "Mux"
 	      SID		      "471"
 	      Ports		      [2, 1]
-	      Position		      [325, 515, 330, 575]
+	      Position		      [345, 535, 350, 595]
 	      ZOrder		      -19
 	      ShowName		      off
 	      Inputs		      "2"
@@ -4535,7 +4535,7 @@ Library {
 	      Name		      "Mux1"
 	      SID		      "472"
 	      Ports		      [2, 1]
-	      Position		      [865, 780, 870, 840]
+	      Position		      [885, 800, 890, 860]
 	      ZOrder		      -20
 	      ShowName		      off
 	      Inputs		      "2"
@@ -4545,7 +4545,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Proportional Gain"
 	      SID		      "473"
-	      Position		      [235, 144, 370, 176]
+	      Position		      [255, 164, 390, 196]
 	      ZOrder		      -21
 	      DisableCoverage	      on
 	      Gain		      "Omega_h^2"
@@ -4558,7 +4558,7 @@ Library {
 	      Name		      "Selector7"
 	      SID		      "475"
 	      Ports		      [1, 1]
-	      Position		      [220, 603, 245, 677]
+	      Position		      [240, 623, 265, 697]
 	      ZOrder		      -22
 	      NamePlacement	      "alternate"
 	      ShowName		      off
@@ -4572,7 +4572,7 @@ Library {
 	      Name		      "Sum1"
 	      SID		      "476"
 	      Ports		      [5, 1]
-	      Position		      [545, 240, 615, 300]
+	      Position		      [565, 260, 635, 320]
 	      ZOrder		      -23
 	      DisableCoverage	      on
 	      IconShape		      "round"
@@ -4594,7 +4594,7 @@ Library {
 	      Name		      "Sum2"
 	      SID		      "477"
 	      Ports		      [2, 1]
-	      Position		      [635, 405, 665, 445]
+	      Position		      [655, 425, 685, 465]
 	      ZOrder		      -24
 	      ShowName		      off
 	      DisableCoverage	      on
@@ -4610,7 +4610,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Total Acc des"
 	      SID		      "479"
-	      Position		      [365, 534, 460, 566]
+	      Position		      [385, 554, 480, 586]
 	      ZOrder		      -25
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -4619,7 +4619,7 @@ Library {
 	      Name		      "Transport\nDelay"
 	      SID		      "480"
 	      Ports		      [1, 1]
-	      Position		      [350, 845, 380, 875]
+	      Position		      [370, 865, 400, 895]
 	      ZOrder		      -26
 	      BackgroundColor	      "gray"
 	      DelayTime		      "0.02"
@@ -4628,7 +4628,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "T  Commands [0, 1]"
 	      SID		      "481"
-	      Position		      [990, 418, 1020, 432]
+	      Position		      [1010, 438, 1040, 452]
 	      ZOrder		      -27
 	      IconDisplay	      "Port number"
 	    }
@@ -4636,7 +4636,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "NN"
 	      SID		      "604"
-	      Position		      [970, 803, 1000, 817]
+	      Position		      [990, 823, 1020, 837]
 	      ZOrder		      -28
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4836,7 +4836,7 @@ Library {
 	    Annotation {
 	      SID		      "608"
 	      Name		      " "
-	      Position		      [895, 322]
+	      Position		      [915, 342]
 	    }
 	  }
 	}
@@ -5517,7 +5517,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Pos Error"
 	      SID		      "406"
-	      Position		      [145, 153, 175, 167]
+	      Position		      [165, 173, 195, 187]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
@@ -5525,7 +5525,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Reset"
 	      SID		      "407"
-	      Position		      [145, 278, 175, 292]
+	      Position		      [165, 298, 195, 312]
 	      ZOrder		      -2
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5534,7 +5534,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Vel Error"
 	      SID		      "408"
-	      Position		      [145, 318, 175, 332]
+	      Position		      [165, 338, 195, 352]
 	      ZOrder		      -3
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -5543,7 +5543,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Hover Throttle"
 	      SID		      "409"
-	      Position		      [140, 448, 170, 462]
+	      Position		      [160, 468, 190, 482]
 	      ZOrder		      -4
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -5559,7 +5559,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Acc des"
 	      SID		      "410"
-	      Position		      [145, 363, 175, 377]
+	      Position		      [165, 383, 195, 397]
 	      ZOrder		      -5
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -5568,7 +5568,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "XY_Acc_d"
 	      SID		      "411"
-	      Position		      [140, 538, 170, 552]
+	      Position		      [160, 558, 190, 572]
 	      ZOrder		      -6
 	      Port		      "6"
 	      IconDisplay	      "Port number"
@@ -5577,7 +5577,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Height\nRef"
 	      SID		      "412"
-	      Position		      [140, 703, 170, 717]
+	      Position		      [160, 723, 190, 737]
 	      ZOrder		      -7
 	      Port		      "7"
 	      IconDisplay	      "Port number"
@@ -5586,7 +5586,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Height"
 	      SID		      "413"
-	      Position		      [140, 778, 170, 792]
+	      Position		      [160, 798, 190, 812]
 	      ZOrder		      -8
 	      Port		      "8"
 	      IconDisplay	      "Port number"
@@ -5595,7 +5595,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "RC"
 	      SID		      "414"
-	      Position		      [140, 633, 170, 647]
+	      Position		      [160, 653, 190, 667]
 	      ZOrder		      -9
 	      Port		      "9"
 	      IconDisplay	      "Port number"
@@ -5604,7 +5604,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Vel"
 	      SID		      "415"
-	      Position		      [135, 928, 165, 942]
+	      Position		      [155, 948, 185, 962]
 	      ZOrder		      -10
 	      Port		      "10"
 	      IconDisplay	      "Port number"
@@ -5613,7 +5613,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "D Gain"
 	      SID		      "417"
-	      Position		      [255, 306, 450, 344]
+	      Position		      [275, 326, 470, 364]
 	      ZOrder		      -11
 	      Gain		      "2*Omega_h*Zeta_h"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -5624,7 +5624,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Fcn1"
 	      SID		      "418"
-	      Position		      [205, 918, 320, 952]
+	      Position		      [225, 938, 340, 972]
 	      ZOrder		      -12
 	      BackgroundColor	      "gray"
 	      ShowName		      off
@@ -5634,7 +5634,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Fcn3"
 	      SID		      "419"
-	      Position		      [820, 973, 935, 1007]
+	      Position		      [840, 993, 955, 1027]
 	      ZOrder		      -13
 	      BackgroundColor	      "gray"
 	      ShowName		      off
@@ -5644,7 +5644,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Force --> Control"
 	      SID		      "420"
-	      Position		      [780, 410, 885, 440]
+	      Position		      [800, 430, 905, 460]
 	      ZOrder		      -14
 	      Expr		      "u(1)*0.0297 + 0.1485"
 	    }
@@ -5652,7 +5652,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Integral Gain"
 	      SID		      "421"
-	      Position		      [230, 211, 330, 259]
+	      Position		      [250, 231, 350, 279]
 	      ZOrder		      -15
 	      DisableCoverage	      on
 	      Gain		      "PID_I_h"
@@ -5665,7 +5665,7 @@ Library {
 	      Name		      "Integrator"
 	      SID		      "422"
 	      Ports		      [2, 1]
-	      Position		      [405, 218, 480, 282]
+	      Position		      [425, 238, 500, 302]
 	      ZOrder		      -16
 	      DisableCoverage	      on
 	      IntegratorMethod	      "Integration: Trapezoidal"
@@ -5683,7 +5683,7 @@ Library {
 	      Name		      "Level-2 M-file\nS-Function"
 	      SID		      "423"
 	      Ports		      [4, 4]
-	      Position		      [480, 667, 605, 978]
+	      Position		      [500, 687, 625, 998]
 	      ZOrder		      -17
 	      BackgroundColor	      "gray"
 	      FunctionName	      "msfcn_Adaptive_NN_HeightOnly"
@@ -5700,7 +5700,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Mass"
 	      SID		      "424"
-	      Position		      [715, 411, 770, 439]
+	      Position		      [735, 431, 790, 459]
 	      ZOrder		      -18
 	      DisableCoverage	      on
 	      Gain		      "mass"
@@ -5713,7 +5713,7 @@ Library {
 	      Name		      "Mux"
 	      SID		      "425"
 	      Ports		      [2, 1]
-	      Position		      [325, 515, 330, 575]
+	      Position		      [345, 535, 350, 595]
 	      ZOrder		      -19
 	      ShowName		      off
 	      Inputs		      "2"
@@ -5724,7 +5724,7 @@ Library {
 	      Name		      "Mux1"
 	      SID		      "426"
 	      Ports		      [2, 1]
-	      Position		      [865, 780, 870, 840]
+	      Position		      [885, 800, 890, 860]
 	      ZOrder		      -20
 	      ShowName		      off
 	      Inputs		      "2"
@@ -5734,7 +5734,7 @@ Library {
 	      BlockType		      Gain
 	      Name		      "Proportional Gain"
 	      SID		      "427"
-	      Position		      [235, 144, 370, 176]
+	      Position		      [255, 164, 390, 196]
 	      ZOrder		      -21
 	      DisableCoverage	      on
 	      Gain		      "Omega_h^2"
@@ -5747,7 +5747,7 @@ Library {
 	      Name		      "Selector7"
 	      SID		      "429"
 	      Ports		      [1, 1]
-	      Position		      [220, 603, 245, 677]
+	      Position		      [240, 623, 265, 697]
 	      ZOrder		      -22
 	      NamePlacement	      "alternate"
 	      ShowName		      off
@@ -5761,7 +5761,7 @@ Library {
 	      Name		      "Sum1"
 	      SID		      "430"
 	      Ports		      [5, 1]
-	      Position		      [545, 240, 615, 300]
+	      Position		      [565, 260, 635, 320]
 	      ZOrder		      -23
 	      DisableCoverage	      on
 	      IconShape		      "round"
@@ -5783,7 +5783,7 @@ Library {
 	      Name		      "Sum2"
 	      SID		      "431"
 	      Ports		      [2, 1]
-	      Position		      [635, 405, 665, 445]
+	      Position		      [655, 425, 685, 465]
 	      ZOrder		      -24
 	      ShowName		      off
 	      DisableCoverage	      on
@@ -5799,7 +5799,7 @@ Library {
 	      BlockType		      Fcn
 	      Name		      "Total Acc des"
 	      SID		      "433"
-	      Position		      [365, 534, 460, 566]
+	      Position		      [385, 554, 480, 586]
 	      ZOrder		      -25
 	      Expr		      "sqrt(u(1)^2+u(2)^2)"
 	    }
@@ -5808,7 +5808,7 @@ Library {
 	      Name		      "Transport\nDelay"
 	      SID		      "434"
 	      Ports		      [1, 1]
-	      Position		      [350, 845, 380, 875]
+	      Position		      [370, 865, 400, 895]
 	      ZOrder		      -26
 	      BackgroundColor	      "gray"
 	      DelayTime		      "0.02"
@@ -5817,7 +5817,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "T  Commands [0, 1]"
 	      SID		      "435"
-	      Position		      [945, 418, 975, 432]
+	      Position		      [965, 438, 995, 452]
 	      ZOrder		      -27
 	      IconDisplay	      "Port number"
 	    }
@@ -5825,7 +5825,7 @@ Library {
 	      BlockType		      Outport
 	      Name		      "NN"
 	      SID		      "603"
-	      Position		      [970, 803, 1000, 817]
+	      Position		      [990, 823, 1020, 837]
 	      ZOrder		      -28
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -6025,7 +6025,7 @@ Library {
 	    Annotation {
 	      SID		      "962"
 	      Name		      " "
-	      Position		      [895, 322]
+	      Position		      [915, 342]
 	    }
 	  }
 	}
@@ -6326,8 +6326,8 @@ Library {
       }
       System {
 	Name			"PosRefSystem"
-	Location		[402, 104, 1362, 1144]
-	Open			off
+	Location		[-8, -8, 1928, 1048]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"[0.800000, 0.909804, 0.811765]"
@@ -6338,7 +6338,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"60"
+	ZoomFactor		"107"
 	Block {
 	  BlockType		  Inport
 	  Name			  "PosCom"
@@ -6590,6 +6590,17 @@ Library {
 	  ZOrder		  -25
 	  Value			  "0"
 	  SampleTime		  "0.02"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "1087"
+	  Ports			  [1, 1]
+	  Position		  [585, 265, 615, 295]
+	  ZOrder		  1
+	  InputPortMap		  "u0"
+	  UpperLimit		  "-0.5"
+	  LowerLimit		  "-2.5"
 	}
 	Block {
 	  BlockType		  Selector
@@ -7114,8 +7125,8 @@ Library {
 	  Points		  [12, 0]
 	  Branch {
 	    Points		    [0, -35]
-	    DstBlock		    "Mux"
-	    DstPort		    2
+	    DstBlock		    "Saturation"
+	    DstPort		    1
 	  }
 	  Branch {
 	    Points		    [23, 0]
@@ -7176,6 +7187,12 @@ Library {
 	  DstBlock		  "Gain3"
 	  DstPort		  1
 	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -7186,7 +7203,7 @@ Library {
       Position		      [270, 752, 390, 828]
       ZOrder		      3
       BackgroundColor	      "orange"
-      LibraryVersion	      "1.79"
+      LibraryVersion	      "1.81"
       SourceBlock	      "X330_Control/PosRefSystem"
       SourceType	      ""
       Omega_r		      "Q6_Omega_r"
@@ -7706,7 +7723,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "16"
+	    SIDHighWatermark	    "21"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
@@ -7839,7 +7856,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "16"
+	    SIDHighWatermark	    "21"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
