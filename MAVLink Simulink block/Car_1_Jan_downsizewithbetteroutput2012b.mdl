@@ -1,12 +1,12 @@
 Model {
-  Name			  "Car_1_Jan_downsizewithbetteroutput"
-  Version		  8.1
+  Name			  "Car_1_Jan_downsizewithbetteroutput2012b"
+  Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2568"
+    ComputedModelVersion    "1.2569"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -36,7 +36,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 0.0, 1382.0, 744.0]
+      Location		      [-8.0, -8.0, 1382.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -58,12 +58,12 @@ Model {
 	Dimension		4
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2388"
 	  Extents		  [1332.0, 567.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [276.03877551020423, 26.795716684206042]
+	  ZoomFactor		  [0.65811965811965811]
+	  Offset		  [-273.84902597402595, 24.727272727272727]
 	}
 	Object {
 	  $ObjectID		  6
@@ -71,8 +71,8 @@ Model {
 	  ViewObjType		  "StateflowChart"
 	  LoadSaveID		  "3271"
 	  Extents		  [1332.0, 567.0]
-	  ZoomFactor		  [1.5]
-	  Offset		  [629.63522813455631, 26.728679128440355]
+	  ZoomFactor		  [0.79758675127915735]
+	  Offset		  [3.198914678899083, -19.147628211009149]
 	}
 	Object {
 	  $ObjectID		  7
@@ -85,7 +85,7 @@ Model {
 	}
 	Object {
 	  $ObjectID		  8
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1332.0, 567.0]
@@ -102,9 +102,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "eric"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 02 00:42:15 2014"
-  RTWModifiedTimeStamp	  310524132
-  ModelVersionFormat	  "1.%<AutoIncrement:2568>"
+  LastModifiedDate	  "Thu Jan 02 00:43:23 2014"
+  RTWModifiedTimeStamp	  310524201
+  ModelVersionFormat	  "1.%<AutoIncrement:2569>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -141,11 +141,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    9
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Car_1_Jan_downsizewithbetteroutput"
+    model_		    "Car_1_Jan_downsizewithbetteroutput2012b"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Car_1_Jan_downsizewithbetteroutput"
+      Cell		      "Car_1_Jan_downsizewithbetteroutput2012b"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -198,13 +198,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      10
-      Version		      "1.13.0"
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  11
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -239,7 +239,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  12
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -271,7 +271,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  13
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -327,7 +327,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  14
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -417,12 +417,11 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  15
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
-	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -432,20 +431,17 @@ Model {
 	  ProdEndianess		  "Unspecified"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
-	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Generic"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
-	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
-	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -458,7 +454,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  16
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -473,7 +469,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  17
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -488,7 +484,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  18
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    15
@@ -537,7 +533,6 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
-	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -558,7 +553,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      19
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		22
@@ -618,7 +613,7 @@ Model {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
-	      InternalIdentifier      "Shortened"
+	      InternalIdentifier      Classic
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
@@ -626,7 +621,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      20
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -645,7 +640,7 @@ Model {
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
 		Cell			"SupportNonInlinedSFcns"
-		Cell			"GenerateAllocFcn"
+		Cell			"MultiInstanceERTCode"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
@@ -684,12 +679,10 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      on
-	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -712,7 +705,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 26, 152, 895, 723 ] 
+      ConfigPrmDlgPosition    [ 26, 152, 895, 723 ]  
     }
     PropName		    "ConfigurationSets"
   }
@@ -1103,7 +1096,6 @@ Model {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -1161,9 +1153,9 @@ Model {
     }
   }
   System {
-    Name		    "Car_1_Jan_downsizewithbetteroutput"
+    Name		    "Car_1_Jan_downsizewithbetteroutput2012b"
     Location		    [-8, 0, 1374, 744]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1332,7 +1324,6 @@ Model {
 	  SID			  "2837"
 	  Name			  "6x1 vector (usec, XYZRPY)"
 	  Position		  [346, 291]
-	  ZOrder		  -1
 	}
       }
     }
@@ -1649,7 +1640,7 @@ Model {
       System {
 	Name			"UAV 1"
 	Location		[-8, 0, 1374, 744]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2024,7 +2015,6 @@ Model {
 	      SID		      "2838"
 	      Name		      "7x1 vector (usec, XYZRPY)"
 	      Position		      [276, 271]
-	      ZOrder		      -1
 	    }
 	  }
 	}
@@ -2148,8 +2138,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [-8, 0, 1374, 744]
-	    Open		    on
+	    Location		    [-8, -8, 1374, 736]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2160,7 +2150,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "66"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "UAV Bus"
@@ -2721,7 +2711,7 @@ Model {
 	      Commented		      on
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
-	      PermitHierarchicalResolution "ExplicitOnly"
+	      PermitHierarchicalResolution "ParametersOnly"
 	      TreatAsAtomicUnit	      on
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -2731,6 +2721,18 @@ Model {
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
 	      SFBlockType	      "MATLAB Function"
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		39
+		$ClassName		"Simulink.Mask"
+		Type			"Stateflow"
+		Description		"Embedded MATLAB block"
+		SelfModifiable		"on"
+		Display			"bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/eml_me"
+		"mbrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+		IconOpaque		"off"
+		IconUnits		"normalized"
+	      }
 	      System {
 		Name			"boundary_sets"
 		Location		[223, 338, 826, 833]
@@ -2746,7 +2748,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"39"
+		SIDHighWatermark	"3446"
 		Block {
 		  BlockType		  Inport
 		  Name			  "Cpx"
@@ -2840,7 +2842,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3387::18"
-		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput 2"
+		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput2012b 2"
 		  Ports			  [9, 3]
 		  Position		  [180, 125, 230, 325]
 		  ZOrder		  4
@@ -3230,7 +3232,7 @@ Model {
 	      ZOrder		      218
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
-	      PermitHierarchicalResolution "ExplicitOnly"
+	      PermitHierarchicalResolution "ParametersOnly"
 	      TreatAsAtomicUnit	      on
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -3240,6 +3242,18 @@ Model {
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
 	      SFBlockType	      "MATLAB Function"
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		40
+		$ClassName		"Simulink.Mask"
+		Type			"Stateflow"
+		Description		"Embedded MATLAB block"
+		SelfModifiable		"on"
+		Display			"bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/eml_me"
+		"mbrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+		IconOpaque		"off"
+		IconUnits		"normalized"
+	      }
 	      System {
 		Name			"circular_linear_motion_estimation"
 		Location		[193, 226, 852, 905]
@@ -3255,7 +3269,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"3269"
+		SIDHighWatermark	"3446"
 		Block {
 		  BlockType		  Inport
 		  Name			  "Cpx"
@@ -3358,7 +3372,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3372::3247"
-		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput 1"
+		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput2012b 1"
 		  Ports			  [10, 4]
 		  Position		  [180, 125, 230, 345]
 		  ZOrder		  21
@@ -3674,13 +3688,13 @@ Model {
 	      MaskHideContents	      off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		39
+		$ObjectID		41
 		$ClassName		"Simulink.Mask"
 		Array {
 		  Type			  "Simulink.MaskParameter"
 		  Dimension		  6
 		  Object {
-		    $ObjectID		    40
+		    $ObjectID		    42
 		    Type		    "edit"
 		    Name		    "Omega_r"
 		    Prompt		    "Omega_r (P Gain= Omega_r^2)"
@@ -3688,7 +3702,7 @@ Model {
 		    TabName		    "Horizontal Setting"
 		  }
 		  Object {
-		    $ObjectID		    41
+		    $ObjectID		    43
 		    Type		    "edit"
 		    Name		    "Zeta_r"
 		    Prompt		    "Zeta_r (D = 2*Omega_r*Zeta_r)"
@@ -3696,7 +3710,7 @@ Model {
 		    TabName		    "Horizontal Setting"
 		  }
 		  Object {
-		    $ObjectID		    42
+		    $ObjectID		    44
 		    Type		    "edit"
 		    Name		    "Acc_Max"
 		    Prompt		    "Acc_Max"
@@ -3704,7 +3718,7 @@ Model {
 		    TabName		    "Horizontal Setting"
 		  }
 		  Object {
-		    $ObjectID		    43
+		    $ObjectID		    45
 		    Type		    "edit"
 		    Name		    "Omega_h_r"
 		    Prompt		    "Omega_h_r"
@@ -3712,7 +3726,7 @@ Model {
 		    TabName		    "Vertical Setting"
 		  }
 		  Object {
-		    $ObjectID		    44
+		    $ObjectID		    46
 		    Type		    "edit"
 		    Name		    "Zeta_h_r"
 		    Prompt		    "Zeta_h_r"
@@ -3720,7 +3734,7 @@ Model {
 		    TabName		    "Vertical Setting"
 		  }
 		  Object {
-		    $ObjectID		    45
+		    $ObjectID		    47
 		    Type		    "edit"
 		    Name		    "Acc_h_Max"
 		    Prompt		    "Acc_h_Max"
@@ -4764,7 +4778,7 @@ Model {
 	      ZOrder		      238
 	      LibraryVersion	      "1.32"
 	      ErrorFcn		      "Stateflow.Translate.translate"
-	      PermitHierarchicalResolution "ExplicitOnly"
+	      PermitHierarchicalResolution "ParametersOnly"
 	      TreatAsAtomicUnit	      on
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -4774,6 +4788,18 @@ Model {
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
 	      SFBlockType	      "MATLAB Function"
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		48
+		$ClassName		"Simulink.Mask"
+		Type			"Stateflow"
+		Description		"Embedded MATLAB block"
+		SelfModifiable		"on"
+		Display			"bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/eml_me"
+		"mbrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+		IconOpaque		"off"
+		IconUnits		"normalized"
+	      }
 	      System {
 		Name			"special case dyaw"
 		Location		[223, 338, 826, 833]
@@ -4789,7 +4815,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"21"
+		SIDHighWatermark	"3446"
 		Block {
 		  BlockType		  Inport
 		  Name			  "yaw"
@@ -4820,7 +4846,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3415::18"
-		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput 3"
+		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput2012b 3"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
 		  ZOrder		  4
@@ -4891,7 +4917,7 @@ Model {
 	      Position		      [655, 46, 940, 454]
 	      ZOrder		      129
 	      ErrorFcn		      "Stateflow.Translate.translate"
-	      PermitHierarchicalResolution "ExplicitOnly"
+	      PermitHierarchicalResolution "ParametersOnly"
 	      TreatAsAtomicUnit	      on
 	      MinAlgLoopOccurrences   off
 	      PropExecContextOutsideSubsystem off
@@ -4901,10 +4927,22 @@ Model {
 	      RequestExecContextInheritance off
 	      MaskHideContents	      off
 	      SFBlockType	      "Chart"
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		49
+		$ClassName		"Simulink.Mask"
+		Type			"Stateflow"
+		Description		"Stateflow diagram"
+		SelfModifiable		"on"
+		Display			"plot(sf('Private','sfblk','xIcon'),sf('Private','sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIco"
+		"n'),'HorizontalAl','Center','VerticalAl','Bottom');"
+		IconOpaque		"off"
+		IconUnits		"normalized"
+	      }
 	      System {
 		Name			"stateflowforwholesequence"
 		Location		[-8, 0, 1374, 744]
-		Open			on
+		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
 		ScreenColor		"white"
@@ -4916,7 +4954,7 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"3350"
+		SIDHighWatermark	"3446"
 		Block {
 		  BlockType		  Inport
 		  Name			  "RC"
@@ -4974,7 +5012,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3271::3348"
-		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput 10"
+		  Tag			  "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput2012b 10"
 		  Ports			  [5, 3]
 		  Position		  [180, 105, 230, 225]
 		  ZOrder		  19
@@ -5495,13 +5533,13 @@ Model {
 	  MaskHideContents	  off
 	  Object {
 	    $PropName		    "MaskObject"
-	    $ObjectID		    46
+	    $ObjectID		    50
 	    $ClassName		    "Simulink.Mask"
 	    Array {
 	      Type		      "Simulink.MaskParameter"
 	      Dimension		      4
 	      Object {
-		$ObjectID		47
+		$ObjectID		51
 		Type			"edit"
 		Name			"Omega_h"
 		Prompt			"Omega (P Gain  = Omega^2)"
@@ -5509,7 +5547,7 @@ Model {
 		TabName			"Control Paramters"
 	      }
 	      Object {
-		$ObjectID		48
+		$ObjectID		52
 		Type			"edit"
 		Name			"Zeta_h"
 		Prompt			"Zeta (D Gain = 2*Omega*Zeta)"
@@ -5517,7 +5555,7 @@ Model {
 		TabName			"Control Paramters"
 	      }
 	      Object {
-		$ObjectID		49
+		$ObjectID		53
 		Type			"edit"
 		Name			"PID_I_h"
 		Prompt			"I Gain"
@@ -5525,7 +5563,7 @@ Model {
 		TabName			"Control Paramters"
 	      }
 	      Object {
-		$ObjectID		50
+		$ObjectID		54
 		Type			"edit"
 		Name			"mass"
 		Prompt			"Mass"
@@ -5941,7 +5979,7 @@ Model {
 		  ZOrder		  4
 		  LibraryVersion	  "1.32"
 		  ErrorFcn		  "Stateflow.Translate.translate"
-		  PermitHierarchicalResolution "ExplicitOnly"
+		  PermitHierarchicalResolution "ParametersOnly"
 		  TreatAsAtomicUnit	  on
 		  MinAlgLoopOccurrences	  off
 		  PropExecContextOutsideSubsystem off
@@ -5951,6 +5989,18 @@ Model {
 		  RequestExecContextInheritance	off
 		  MaskHideContents	  off
 		  SFBlockType		  "MATLAB Function"
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    55
+		    $ClassName		    "Simulink.Mask"
+		    Type		    "Stateflow"
+		    Description		    "Embedded MATLAB block"
+		    SelfModifiable	    "on"
+		    Display		    "bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private"
+		    "/eml_membrane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+		    IconOpaque		    "off"
+		    IconUnits		    "normalized"
+		  }
 		  System {
 		    Name		    "MATLAB Function"
 		    Location		    [223, 338, 826, 833]
@@ -5966,7 +6016,7 @@ Model {
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
 		    ZoomFactor		    "100"
-		    SIDHighWatermark	    "25"
+		    SIDHighWatermark	    "205"
 		    Block {
 		    BlockType		    Inport
 		    Name		    "match_flag"
@@ -5988,7 +6038,7 @@ Model {
 		    BlockType		    S-Function
 		    Name		    " SFunction "
 		    SID			    "2402:205::23"
-		    Tag			    "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput 15"
+		    Tag			    "Stateflow S-Function Car_1_Jan_downsizewithbetteroutput2012b 15"
 		    Ports		    [1, 2]
 		    Position		    [180, 100, 230, 160]
 		    ZOrder		    9
@@ -6455,7 +6505,6 @@ Model {
 	      SID		      "2402:201"
 	      Name		      "Manual Thrust"
 	      Position		      [722, 24]
-	      ZOrder		      -1
 	    }
 	  }
 	}
@@ -6701,7 +6750,6 @@ Model {
 	Annotation {
 	  SID			  "2839"
 	  Position		  [830, 128]
-	  ZOrder		  -1
 	}
       }
     }
@@ -6981,7 +7029,7 @@ Model {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    51
+		    $ObjectID		    56
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -pi to pi"
 		    Description		    "Flips the inputs into the range -pi to pi"
@@ -7080,7 +7128,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    52
+		    $ObjectID		    57
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip zero to 2pi"
 		    Description		    "Flips the inputs into the range zero to +2pi"
@@ -7178,7 +7226,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    53
+		    $ObjectID		    58
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -2pi to 2pi   "
 		    Description		    "Flips the inputs into the range -2pi to +2pi"
@@ -7716,19 +7764,16 @@ Model {
 		  SID			  "2840"
 		  Name			  "X"
 		  Position		  [99, 27]
-		  ZOrder		  -1
 		}
 		Annotation {
 		  SID			  "2841"
 		  Name			  "Y"
 		  Position		  [102, 85]
-		  ZOrder		  -2
 		}
 		Annotation {
 		  SID			  "2842"
 		  Name			  "Z"
 		  Position		  [99, 146]
-		  ZOrder		  -3
 		}
 	      }
 	    }
@@ -7842,7 +7887,7 @@ Model {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    54
+		    $ObjectID		    59
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -pi to pi"
 		    Description		    "Flips the inputs into the range -pi to pi"
@@ -7941,7 +7986,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    55
+		    $ObjectID		    60
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip zero to 2pi"
 		    Description		    "Flips the inputs into the range zero to +2pi"
@@ -8039,7 +8084,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    56
+		    $ObjectID		    61
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -2pi to 2pi   "
 		    Description		    "Flips the inputs into the range -2pi to +2pi"
@@ -8577,19 +8622,16 @@ Model {
 		  SID			  "2888"
 		  Name			  "X"
 		  Position		  [99, 27]
-		  ZOrder		  -1
 		}
 		Annotation {
 		  SID			  "2887"
 		  Name			  "Y"
 		  Position		  [102, 85]
-		  ZOrder		  -2
 		}
 		Annotation {
 		  SID			  "2886"
 		  Name			  "Z"
 		  Position		  [99, 146]
-		  ZOrder		  -3
 		}
 	      }
 	    }
@@ -8703,7 +8745,7 @@ Model {
 		  MaskHideContents	  off
 		  Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    57
+		    $ObjectID		    62
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -pi to pi"
 		    Description		    "Flips the inputs into the range -pi to pi"
@@ -8802,7 +8844,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    58
+		    $ObjectID		    63
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip zero to 2pi"
 		    Description		    "Flips the inputs into the range zero to +2pi"
@@ -8900,7 +8942,7 @@ Model {
 		    MaskHideContents	    off
 		    Object {
 		    $PropName		    "MaskObject"
-		    $ObjectID		    59
+		    $ObjectID		    64
 		    $ClassName		    "Simulink.Mask"
 		    Type		    "Flip -2pi to 2pi   "
 		    Description		    "Flips the inputs into the range -2pi to +2pi"
@@ -9440,19 +9482,16 @@ Model {
 		  SID			  "3208"
 		  Name			  "X"
 		  Position		  [99, 27]
-		  ZOrder		  -1
 		}
 		Annotation {
 		  SID			  "3207"
 		  Name			  "Y"
 		  Position		  [102, 85]
-		  ZOrder		  -2
 		}
 		Annotation {
 		  SID			  "3206"
 		  Name			  "Z"
 		  Position		  [99, 146]
-		  ZOrder		  -3
 		}
 	      }
 	    }
@@ -9628,7 +9667,7 @@ Model {
 	  ZOrder		  9
 	  ForegroundColor	  "red"
 	  BackgroundColor	  "magenta"
-	  LibraryVersion	  "1.40"
+	  LibraryVersion	  "1.38"
 	  SourceBlock		  "X330_Control/Vicon Filter"
 	  SourceType		  "SubSystem"
 	}
@@ -9762,7 +9801,6 @@ Model {
 	  Name			  "Process Vicon Raw Data to take care of signal loss and object local axis flip"
 	  Position		  [328, 31]
 	  DropShadow		  on
-	  ZOrder		  -1
 	  FontName		  "Arial Narrow"
 	  FontSize		  22
 	}
@@ -9890,7 +9928,6 @@ Model {
       Position		      [818, 41]
       ForegroundColor	      "[0.000000, 0.000000, 0.500000]"
       DropShadow	      on
-      ZOrder		      -1
       ClickFcn		      "Initialization_Simulink_Vicon"
       FontName		      "Arial Narrow"
       FontSize		      22
@@ -9898,18 +9935,15 @@ Model {
     Annotation {
       SID		      "2845"
       Position		      [45, 313]
-      ZOrder		      -2
     }
     Annotation {
       SID		      "2846"
       Position		      [55, 332]
-      ZOrder		      -3
     }
     Annotation {
       SID		      "2847"
       Name		      " "
       Position		      [1272, 607]
-      ZOrder		      -4
     }
   }
 }
@@ -12560,11 +12594,10 @@ MatData {
 #    Stateflow Version 7.6 (R2013a) dated Jan 19 2013, 14:32:20
 #
 #
-
 Stateflow {
   machine {
     id			    1
-    name		    "Car_1_Jan_downsizewithbetteroutput"
+    name		    "Car_1_Jan_downsizewithbetteroutput2012b"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
     firstTarget		    111
@@ -12572,7 +12605,7 @@ Stateflow {
       disableAllBreakpoints   1
       animation		      [0 0 0]
     }
-    sfVersion		    76014001.0015
+    sfVersion		    60014000.000006
   }
   chart {
     id			    2
@@ -13426,8 +13459,8 @@ Stateflow {
     id			    44
     name		    "UAV 1/Trajectory Logic/stateflowforwholesequence"
     windowPosition	    [1912 0 1936 1096]
-    viewLimits		    [629.635 1517.635 26.729 404.729]
-    zoomFactor		    0.889
+    viewLimits		    [3.199 1673.237 -19.148 691.747]
+    zoomFactor		    1.672
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 49 0 0]
@@ -13798,7 +13831,7 @@ Stateflow {
     midPoint		    [1247.7749 106.3644]
     chart		    44
     linkNode		    [47 65 67]
-    dataLimits		    [1245.879 1249.671 97.075 121.974]
+    dataLimits		    [1245.879 1249.671 97.076 121.974]
     subviewer		    44
     drawStyle		    SMART
     slide {
@@ -13851,7 +13884,7 @@ Stateflow {
     midPoint		    [893.5516 146.0828]
     chart		    44
     linkNode		    [47 67 69]
-    dataLimits		    [783.427 997.355 144.186 147.979]
+    dataLimits		    [783.427 997.355 144.187 147.979]
     subviewer		    44
     drawStyle		    SMART
     slide {
@@ -13903,7 +13936,7 @@ Stateflow {
     midPoint		    [1243.1422 163.8139]
     chart		    44
     linkNode		    [47 69 71]
-    dataLimits		    [1241.246 1245.038 151.974 181.974]
+    dataLimits		    [1241.246 1245.039 151.974 181.974]
     subviewer		    44
     drawStyle		    SMART
     slide {
@@ -14008,7 +14041,7 @@ Stateflow {
     midPoint		    [974.2898 323.8299]
     chart		    44
     linkNode		    [47 73 75]
-    dataLimits		    [959.831 995.069 321.934 325.726]
+    dataLimits		    [959.832 995.069 321.934 325.726]
     subviewer		    44
     drawStyle		    SMART
     slide {
