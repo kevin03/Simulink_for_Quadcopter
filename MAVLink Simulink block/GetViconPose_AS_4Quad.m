@@ -81,13 +81,13 @@ ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 % *********************************
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('test', 'test');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('test1', 'test1');
 ViconPose(25) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(26) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(27) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('test', 'test');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('test1', 'test1');
 ViconPose(28) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(29) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(30) = QuadEulerXYZ.Rotation(3); % Yaw
