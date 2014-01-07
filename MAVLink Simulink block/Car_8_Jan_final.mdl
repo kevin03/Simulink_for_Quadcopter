@@ -1,12 +1,12 @@
 Model {
-  Name			  "Car_7_Jan_final"
+  Name			  "Car_8_Jan_final"
   Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2902"
+    ComputedModelVersion    "1.2903"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -58,7 +58,7 @@ Model {
 	Dimension		3
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "StateflowChart"
 	  LoadSaveID		  "3271"
 	  Extents		  [1884.0, 877.0]
@@ -67,12 +67,12 @@ Model {
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2388"
 	  Extents		  [1884.0, 877.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [5.5999999999992411, 6.7999999999997538]
+	  Offset		  [405.59999999999997, 6.7999999999997272]
 	}
 	Object {
 	  $ObjectID		  7
@@ -93,9 +93,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 08 04:46:48 2014"
-  RTWModifiedTimeStamp	  311044191
-  ModelVersionFormat	  "1.%<AutoIncrement:2902>"
+  LastModifiedDate	  "Wed Jan 08 04:56:36 2014"
+  RTWModifiedTimeStamp	  311057787
+  ModelVersionFormat	  "1.%<AutoIncrement:2903>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -132,11 +132,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Car_7_Jan_final"
+    model_		    "Car_8_Jan_final"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Car_7_Jan_final"
+      Cell		      "Car_8_Jan_final"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1143,7 +1143,7 @@ Model {
     }
   }
   System {
-    Name		    "Car_7_Jan_final"
+    Name		    "Car_8_Jan_final"
     Location		    [-8, -8, 1928, 1048]
     Open		    off
     ModelBrowserVisibility  off
@@ -1796,7 +1796,7 @@ Model {
 	  ForegroundColor	  "green"
 	  LibraryVersion	  "1.38"
 	  SourceBlock		  "X330_Control/Horizontal Pos controller"
-	  SourceType		  ""
+	  SourceType		  "Unknown"
 	  Max_RP		  "60"
 	  Omega			  "Q6_Omega"
 	  PID_i			  "1"
@@ -2028,7 +2028,7 @@ Model {
 	  Position		  [1250, 755, 1275, 775]
 	  ZOrder		  -9
 	  Floating		  off
-	  Location		  [1, 48, 1921, 1039]
+	  Location		  [5, 48, 1925, 1039]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
@@ -2684,7 +2684,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3519::19"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 7"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 7"
 		  Ports			  [3, 3]
 		  Position		  [180, 108, 230, 272]
 		  ZOrder		  5
@@ -2789,17 +2789,6 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Mux
-	      Name		      "Mux1"
-	      SID		      "3526"
-	      Ports		      [2, 1]
-	      Position		      [1745, 61, 1750, 99]
-	      ZOrder		      309
-	      ShowName		      off
-	      Inputs		      "2"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Mux
 	      Name		      "Mux2"
 	      SID		      "3344"
 	      Ports		      [4, 1]
@@ -2807,40 +2796,6 @@ Model {
 	      ZOrder		      148
 	      ShowName		      off
 	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Scope
-	      Name		      "Pd VS P1111111111111"
-	      SID		      "3525"
-	      Ports		      [1]
-	      Position		      [1820, 70, 1845, 90]
-	      ZOrder		      308
-	      Floating		      off
-	      Location		      [5, 48, 1925, 1039]
-	      Open		      on
-	      NumInputPorts	      "1"
-	      List {
-		ListType		AxesTitles
-		axes1			"%<SignalLabel>"
-	      }
-	      List {
-		ListType		ScopeGraphics
-		FigureColor		"[0.5 0.5 0.5]"
-		AxesColor		"[0 0 0]"
-		AxesTickColor		"[1 1 1]"
-		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-		LineStyles		"-|-|-|-|-|-"
-		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-		MarkerStyles		"none|none|none|none|none|none"
-	      }
-	      ShowLegends	      off
-	      TimeRange		      "10"
-	      YMin		      "-4.25"
-	      YMax		      "0.5"
-	      SaveName		      "ScopeData3"
-	      DataFormat	      "StructureWithTime"
-	      LimitDataPoints	      off
-	      SampleTime	      "0"
 	    }
 	    Block {
 	      BlockType		      RateTransition
@@ -3054,7 +3009,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3447::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 4"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 4"
 		  Ports			  [6, 4]
 		  Position		  [180, 102, 230, 243]
 		  ZOrder		  21
@@ -3589,7 +3544,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3372::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 1"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 1"
 		  Ports			  [10, 4]
 		  Position		  [180, 100, 230, 320]
 		  ZOrder		  49
@@ -3961,7 +3916,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3517::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 6"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 6"
 		  Ports			  [1, 2]
 		  Position		  [180, 108, 230, 252]
 		  ZOrder		  20
@@ -4113,7 +4068,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3464::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 5"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 5"
 		  Ports			  [4, 2]
 		  Position		  [180, 106, 230, 249]
 		  ZOrder		  20
@@ -4926,7 +4881,6 @@ Model {
 		Line {
 		  SrcBlock		  "Selector4"
 		  SrcPort		  1
-		  Points		  [35, 0]
 		  DstBlock		  "Sum8"
 		  DstPort		  1
 		}
@@ -5367,7 +5321,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3415::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 3"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 3"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
 		  ZOrder		  15
@@ -5542,7 +5496,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3271::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 10"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 10"
 		  Ports			  [6, 5]
 		  Position		  [180, 102, 230, 243]
 		  ZOrder		  31
@@ -5812,7 +5766,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3456::3515"
-		  Tag			  "Stateflow S-Function Car_7_Jan_final 2"
+		  Tag			  "Stateflow S-Function Car_8_Jan_final 2"
 		  Ports			  [6, 3]
 		  Position		  [180, 100, 230, 280]
 		  ZOrder		  22
@@ -6013,16 +5967,9 @@ Model {
 	      SrcPort		      2
 	      Points		      [50, 0]
 	      Branch {
-		Points			[0, -140; 199, 0]
-		Branch {
-		  Points		  [0, -52; 964, 0; 0, 67]
-		  DstBlock		  "Mux1"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "Demux1"
-		  DstPort		  1
-		}
+		Points			[0, -140]
+		DstBlock		"Demux1"
+		DstPort			1
 	      }
 	      Branch {
 		Labels			[-1, 1]
@@ -6078,16 +6025,9 @@ Model {
 	    Line {
 	      SrcBlock		      "stateflowforwholesequence"
 	      SrcPort		      1
-	      Points		      [0, 15; 28, 0]
-	      Branch {
-		Points			[0, -97; 484, 0; 0, -13]
-		DstBlock		"Mux1"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Demux3"
-		DstPort			1
-	      }
+	      Points		      [0, 15]
+	      DstBlock		      "Demux3"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Saturationpz"
@@ -6497,12 +6437,6 @@ Model {
 	      SrcBlock		      "stateflowforwholesequence"
 	      SrcPort		      4
 	      DstBlock		      "pwm"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Mux1"
-	      SrcPort		      1
-	      DstBlock		      "Pd VS P1111111111111"
 	      DstPort		      1
 	    }
 	  }
@@ -13469,7 +13403,7 @@ MatData {
 Stateflow {
   machine {
     id			    1
-    name		    "Car_7_Jan_final"
+    name		    "Car_8_Jan_final"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
     firstTarget		    156
@@ -13870,10 +13804,7 @@ Stateflow {
     firstTransition	    31
     firstJunction	    30
     viewObj		    20
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -14586,10 +14517,7 @@ Stateflow {
     firstTransition	    63
     firstJunction	    62
     viewObj		    55
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    11
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -14907,8 +14835,6 @@ Stateflow {
     firstJunction	    79
     viewObj		    72
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -15089,14 +15015,13 @@ Stateflow {
     id			    82
     name		    "UAV 1/Trajectory Logic/stateflowforwholesequence"
     windowPosition	    [1912 0 1936 1096]
-    viewLimits		    [344.022 2228.022 -48.128 828.872]
+    viewLimits		    [376.022 2260.022 -48.128 894.872]
     zoomFactor		    1.333
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 87 0 0]
     firstTransition	    148
     viewObj		    82
-    visible		    1
     machine		    1
     subviewS {
       y1		      5.636
