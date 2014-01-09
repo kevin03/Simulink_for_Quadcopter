@@ -60,21 +60,6 @@ ViconPose(16) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(17) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(18) = QuadEulerXYZ.Rotation(3); % Yaw
 
-% *********************************
-% AS_330_4
-% *********************************
-
-% X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('AS_330_4', 'AS_330_4');
-ViconPose(19) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
-ViconPose(20) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
-ViconPose(21) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
-
-% Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('AS_330_4', 'AS_330_4');
-ViconPose(22) = QuadEulerXYZ.Rotation(1); % Roll
-ViconPose(23) = QuadEulerXYZ.Rotation(2); % Pitch
-ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 
 % *********************************
 % test
@@ -82,15 +67,15 @@ ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 
 % X, Y, Z Global Coordinates of the Quad
 Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('test1', 'test1');
-ViconPose(25) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
-ViconPose(26) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
-ViconPose(27) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
+ViconPose(19) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
+ViconPose(20) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
+ViconPose(21) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
 QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('test1', 'test1');
-ViconPose(28) = QuadEulerXYZ.Rotation(1); % Roll
-ViconPose(29) = QuadEulerXYZ.Rotation(2); % Pitch
-ViconPose(30) = QuadEulerXYZ.Rotation(3); % Yaw
+ViconPose(22) = QuadEulerXYZ.Rotation(1); % Roll
+ViconPose(23) = QuadEulerXYZ.Rotation(2); % Pitch
+ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 
 end 
 
