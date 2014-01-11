@@ -76,23 +76,6 @@ ViconPose(22) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(23) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(24) = QuadEulerXYZ.Rotation(3); % Yaw
 
-% *********************************
-% Formation Quad 3
-% *********************************
-% SubjectName = 'k1'; SegmentName = 'k1';
-
-% X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('AS_330_3', 'AS_330_3');
-ViconPose(25) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
-ViconPose(26) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
-ViconPose(27) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
-
-% Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('AS_330_3', 'AS_330_3');
-ViconPose(28) = QuadEulerXYZ.Rotation(1); % Roll
-ViconPose(29) = QuadEulerXYZ.Rotation(2); % Pitch
-ViconPose(30) = QuadEulerXYZ.Rotation(3); % Yaw
-
 end 
 
 
