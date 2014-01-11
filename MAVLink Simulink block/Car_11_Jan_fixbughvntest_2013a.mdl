@@ -1,12 +1,12 @@
 Model {
-  Name			  "Car_11_Jan_stabletest_2013a"
+  Name			  "Car_11_Jan_fixbughvntest_2013a"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2999"
+    ComputedModelVersion    "1.3000"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -58,21 +58,21 @@ Model {
 	Dimension		5
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "StateflowChart"
 	  LoadSaveID		  "3271"
 	  Extents		  [1332.0, 567.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [1169.6491616666665, 2.1616702776842089]
+	  ZoomFactor		  [1.75]
+	  Offset		  [1927.0777330952385, 89.161670277683726]
 	}
 	Object {
 	  $ObjectID		  6
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2388"
-	  Extents		  [1336.0, 611.0]
-	  ZoomFactor		  [1.5]
-	  Offset		  [520.31687160410524, 304.96363022621722]
+	  Extents		  [1332.0, 567.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [18.233538270771987, 31.380296892883905]
 	}
 	Object {
 	  $ObjectID		  7
@@ -94,10 +94,10 @@ Model {
 	}
 	Object {
 	  $ObjectID		  9
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2360"
-	  Extents		  [1336.0, 611.0]
+	  Extents		  [1332.0, 567.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [-173.5, 1.0]
 	}
@@ -111,9 +111,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "eric"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jan 11 21:28:54 2014"
-  RTWModifiedTimeStamp	  311376534
-  ModelVersionFormat	  "1.%<AutoIncrement:2999>"
+  LastModifiedDate	  "Sat Jan 11 21:32:51 2014"
+  RTWModifiedTimeStamp	  311376769
+  ModelVersionFormat	  "1.%<AutoIncrement:3000>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -150,11 +150,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    10
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Car_11_Jan_stabletest_2013a"
+    model_		    "Car_11_Jan_fixbughvntest_2013a"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Car_11_Jan_stabletest_2013a"
+      Cell		      "Car_11_Jan_fixbughvntest_2013a"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -1194,7 +1194,7 @@ Model {
     }
   }
   System {
-    Name		    "Car_11_Jan_stabletest_2013a"
+    Name		    "Car_11_Jan_fixbughvntest_2013a"
     Location		    [-8, 0, 1378, 788]
     Open		    on
     ModelBrowserVisibility  off
@@ -1484,7 +1484,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"UAV 1"
-	Location		[-8, 0, 1378, 788]
+	Location		[-8, -8, 1374, 736]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1985,7 +1985,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Trajectory Logic"
-	    Location		    [-8, 0, 1378, 788]
+	    Location		    [-8, -8, 1374, 736]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1997,7 +1997,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "UAV Bus"
@@ -2238,7 +2238,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3519::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 7"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 7"
 		  Ports			  [3, 3]
 		  Position		  [180, 100, 230, 180]
 		  ZOrder		  27
@@ -2395,7 +2395,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3550::24"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 8"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 8"
 		  Ports			  [2, 2]
 		  Position		  [180, 100, 230, 160]
 		  ZOrder		  10
@@ -2615,7 +2615,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3447::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 4"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 4"
 		  Ports			  [6, 4]
 		  Position		  [180, 102, 230, 243]
 		  ZOrder		  32
@@ -3016,7 +3016,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3372::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 1"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 1"
 		  Ports			  [10, 4]
 		  Position		  [180, 100, 230, 320]
 		  ZOrder		  60
@@ -3395,7 +3395,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3517::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 6"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 6"
 		  Ports			  [1, 2]
 		  Position		  [180, 100, 230, 160]
 		  ZOrder		  31
@@ -3535,7 +3535,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3464::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 5"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 5"
 		  Ports			  [4, 2]
 		  Position		  [180, 102, 230, 203]
 		  ZOrder		  31
@@ -4811,7 +4811,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3271::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 10"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 10"
 		  Ports			  [6, 5]
 		  Position		  [180, 102, 230, 243]
 		  ZOrder		  43
@@ -5069,7 +5069,7 @@ Model {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
 		  SID			  "3456::3549"
-		  Tag			  "Stateflow S-Function Car_11_Jan_stabletest_2013a 2"
+		  Tag			  "Stateflow S-Function Car_11_Jan_fixbughvntest_2013a 2"
 		  Ports			  [6, 3]
 		  Position		  [180, 102, 230, 243]
 		  ZOrder		  33
@@ -5245,7 +5245,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "rc6"
 	      SID		      "3556"
-	      Position		      [455, 103, 485, 117]
+	      Position		      [455, 118, 485, 132]
 	      ZOrder		      312
 	      Port		      "8"
 	      IconDisplay	      "Port number"
@@ -7171,7 +7171,7 @@ Model {
 		    Position		    [315, 96, 400, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    ">"
@@ -7269,7 +7269,7 @@ Model {
 		    Position		    [290, 96, 375, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    "<"
@@ -8032,7 +8032,7 @@ Model {
 		    Position		    [315, 96, 400, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    ">"
@@ -8130,7 +8130,7 @@ Model {
 		    Position		    [290, 96, 375, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    "<"
@@ -8893,7 +8893,7 @@ Model {
 		    Position		    [315, 96, 400, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    ">"
@@ -8991,7 +8991,7 @@ Model {
 		    Position		    [290, 96, 375, 124]
 		    ZOrder		    -3
 		    ShowName		    off
-		    LibraryVersion	    "1.281"
+		    LibraryVersion	    "1.274"
 		    SourceBlock		    "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
 		    SourceType		    "Compare To Constant"
 		    relop		    "<"
@@ -10023,7 +10023,7 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "Car_11_Jan_stabletest_2013a"
+    name		    "Car_11_Jan_fixbughvntest_2013a"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
     firstTarget		    163
@@ -11633,8 +11633,8 @@ Stateflow {
     id			    82
     name		    "UAV 1/Trajectory Logic/stateflowforwholesequence"
     windowPosition	    [1912 0 1936 1096]
-    viewLimits		    [1169.649 2501.649 2.162 569.162]
-    zoomFactor		    1.333
+    viewLimits		    [1927.078 2688.221 89.162 413.162]
+    zoomFactor		    0.762
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 87 0 0]
