@@ -22,7 +22,7 @@ function varargout = OpGUI(varargin)
 
 % Edit the above text to modify the response to help OpGUI
 
-% Last Modified by GUIDE v2.5 14-Sep-2011 09:24:42
+% Last Modified by GUIDE v2.5 14-Jan-2014 22:18:01
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -51,7 +51,6 @@ function OpGUI_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to OpGUI (see VARARGIN)
-
 % Choose default command line output for OpGUI
 handles.output = hObject;
 
@@ -106,3 +105,24 @@ function figure1_CreateFcn(hObject, eventdata, handles)
 set_param(gcbh,'Userdata',hObject); 
 %--------End of part 1--------------%
 
+
+
+% --- Executes during object creation, after setting all properties.
+function text1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to text1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes during object creation, after setting all properties.
+function text2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to text2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes during object creation, after setting all properties.
+function text3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to text3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
