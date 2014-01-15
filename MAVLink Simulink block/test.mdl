@@ -1,12 +1,12 @@
 Model {
   Name			  "test"
-  Version		  8.1
+  Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.47"
+    ComputedModelVersion    "1.48"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1693.0, 882.0]
+	Extents			[1691.0, 880.0]
 	ZoomFactor		[2.5]
-	Offset			[-45.878922716627642, -7.977517564402774]
+	Offset			[-25.358920768747851, -14.127520938025668]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "Vicon"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Vicon"
+  LastModifiedBy	  "NTU User"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 15 14:16:03 2014"
-  RTWModifiedTimeStamp	  311694594
-  ModelVersionFormat	  "1.%<AutoIncrement:47>"
+  LastModifiedDate	  "Wed Jan 15 16:02:20 2014"
+  RTWModifiedTimeStamp	  311702518
+  ModelVersionFormat	  "1.%<AutoIncrement:48>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -163,13 +163,13 @@ Model {
     Dimension		    2
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.13.0"
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -204,7 +204,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -236,7 +236,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -292,7 +292,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -382,12 +382,11 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
 	  ProdBitPerLong	  32
-	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  32
@@ -397,20 +396,17 @@ Model {
 	  ProdEndianess		  "Unspecified"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
-	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "32-bit Generic"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
-	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
-	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -423,7 +419,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -438,7 +434,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -453,7 +449,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    15
@@ -502,7 +498,6 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
-	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -523,7 +518,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		22
@@ -591,7 +586,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		15
@@ -648,12 +643,10 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      off
-	      GenerateAllocFcn	      off
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -679,13 +672,13 @@ Model {
     }
     Simulink.ConfigSet {
       $ObjectID		      18
-      Version		      "1.13.0"
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  19
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "inf"
 	  AbsTol		  "auto"
@@ -720,7 +713,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  20
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -752,7 +745,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  21
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
@@ -795,7 +788,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  22
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -885,12 +878,11 @@ Model {
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  23
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  16
 	  ProdBitPerLong	  32
-	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
 	  ProdBitPerPointer	  8
@@ -900,20 +892,17 @@ Model {
 	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  8
 	  ProdShiftRightIntArith  on
-	  ProdLongLongMode	  off
 	  ProdHWDeviceType	  "Atmel->AVR"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
 	  TargetBitPerLong	  32
-	  TargetBitPerLongLong	  64
 	  TargetBitPerFloat	  32
 	  TargetBitPerDouble	  64
 	  TargetBitPerPointer	  32
 	  TargetLargestAtomicInteger "Char"
 	  TargetLargestAtomicFloat "None"
 	  TargetShiftRightIntArith on
-	  TargetLongLongMode	  off
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
@@ -926,7 +915,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  24
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -941,7 +930,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  25
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -956,7 +945,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  26
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -993,7 +982,6 @@ Model {
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
 	  CodeProfilingInstrumentation off
-	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -1014,7 +1002,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      27
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      ForceParamTrailComments off
 	      GenerateComments	      on
 	      IgnoreCustomStorageClasses on
@@ -1055,7 +1043,7 @@ Model {
 	    Simulink.STFCustomTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      28
-	      Version		      "1.13.0"
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		1
@@ -1098,12 +1086,10 @@ Model {
 	      SupportVariableSizeSignals on
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.ERTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      off
-	      GenerateAllocFcn	      off
 	      SystemTargetFile	      "realtime.tlc"
 	      DialogCategory	      0
 	      Array {
@@ -1112,7 +1098,7 @@ Model {
 		Simulink.ERTTargetCC {
 		  $BackupClass		  "Simulink.TargetCC"
 		  $ObjectID		  29
-		  Version		  "1.13.0"
+		  Version		  "1.12.1"
 		  Array {
 		    Type		    "Cell"
 		    Dimension		    1
@@ -1155,12 +1141,10 @@ Model {
 		  SupportVariableSizeSignals on
 		  EnableShiftOperators	  on
 		  ParenthesesLevel	  "Nominal"
-		  MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.ERTCustomization"
 		  ModelStepFunctionPrototypeControlCompliant off
 		  CPPClassGenCompliant	  off
 		  AutosarCompliant	  off
 		  GRTInterface		  off
-		  GenerateAllocFcn	  off
 		  GenerateASAP2		  off
 		  ExtMode		  off
 		  ExtModeTransport	  3
@@ -1234,7 +1218,7 @@ Model {
 	}
 	RealTime.SettingsController {
 	  $ObjectID		  30
-	  Version		  "1.13.0"
+	  Version		  "1.12.1"
 	  Description		  "Run on Hardware Dialog"
 	  Name			  "Run on Hardware"
 	  Array {
@@ -1405,7 +1389,6 @@ Model {
       SystemSampleTime	      "-1"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -1439,7 +1422,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "250"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "24"
+    SIDHighWatermark	    "25"
     Block {
       BlockType		      Constant
       Name		      "Constant"
@@ -1474,6 +1457,15 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       SFBlockType	      "MATLAB Function"
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		32
+	$ClassName		"Simulink.Mask"
+	SelfModifiable		"on"
+	Display			"bgColor = Simulink.Root.ColorString2Rgb(get_param(gcbh, 'BackgroundColor')); image(imread('private/eml_mem"
+	"brane_16.png','png','BackgroundColor',bgColor(1:3)),'center'); disp([10 10 'fcn']);"
+	IconUnits		"normalized"
+      }
       System {
 	Name			"MATLAB Function"
 	Location		[223, 338, 826, 833]
@@ -1489,7 +1481,7 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"22"
+	SIDHighWatermark	"24"
 	Block {
 	  BlockType		  Inport
 	  Name			  "u"
@@ -1576,82 +1568,6 @@ Model {
       ZOrder		      20
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Real-time\nClock"
-      SID		      "23"
-      Ports		      []
-      Position		      [211, 26, 248, 57]
-      ZOrder		      23
-      ShowPortLabels	      "none"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      Object {
-	$PropName		"MaskObject"
-	$ObjectID		32
-	$ClassName		"Simulink.Mask"
-	Type			"Real-time Clock"
-	Description		"Real-time Synchronization Block"
-	Help			"This block synchronizes simulation time with the PC real-time clock or UNIX system clock. The first dialog en"
-	"try is the period at which the clock is checked to insure real-time synchronization. The second dialog entry is the n"
-	"umber of seconds that the simulation time must be within real-time before a warning is printed."
-	Display			"plot(0,0,100,100,[40,60,60,54,54,64,69,76,82,77,81,83,83,81,78,74,70,64,57,49,41,35,32,30,30,31,34,40,47,4"
-	"7,40,40],[90,90,85,85,80,79,76,87,80,70,64,57,49,41,33,28,24,22,21,23,25,31,37,46,56,65,73,78,80,85,85,90],[69,53,53]"
-	",[64,50,73])"
-	Array {
-	  Type			  "Simulink.MaskParameter"
-	  Dimension		  2
-	  Object {
-	    $ObjectID		    33
-	    Type		    "edit"
-	    Name		    "sample_time"
-	    Prompt		    "Synchronize with real-time every n seconds:"
-	    Value		    "0.02"
-	  }
-	  Object {
-	    $ObjectID		    34
-	    Type		    "edit"
-	    Name		    "tolerance"
-	    Prompt		    "Real-time warning tolerance (seconds):"
-	    Value		    "1"
-	  }
-	  PropName		  "Parameters"
-	}
-      }
-      System {
-	Name			"Real-time\nClock"
-	Location		[-8, 0, 1930, 1056]
-	Open			off
-	ModelBrowserVisibility	on
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  S-Function
-	  Name			  "Real-time\nClock"
-	  SID			  "24"
-	  Ports			  []
-	  Position		  [70, 52, 140, 78]
-	  ZOrder		  -1
-	  ShowName		  off
-	  FunctionName		  "rtclock"
-	  Parameters		  "sample_time, tolerance"
-	  EnableBusSupport	  off
-	}
-      }
-    }
-    Block {
       BlockType		      Reference
       Name		      "Serial Configuration"
       SID		      "22"
@@ -1662,7 +1578,7 @@ Model {
       LibraryVersion	      "1.84"
       SourceBlock	      "instrumentlib/Serial Configuration"
       SourceType	      "Serial Configuration"
-      ComPortMenu	      "COM2"
+      ComPortMenu	      "<Please select a port...>"
       ComPort		      "COM2"
       ObjConstructor	      "serial('COM2');"
       BaudRate		      "57600"
@@ -1683,7 +1599,7 @@ Model {
       LibraryVersion	      "1.84"
       SourceBlock	      "instrumentlib/Serial Send"
       SourceType	      "Serial Send"
-      ComPortMenu	      "COM2"
+      ComPortMenu	      "<Please select a port...>"
       ComPort		      "COM2"
       ObjConstructor	      "serial('COM2');"
       Terminator	      "<none>"
@@ -1720,7 +1636,7 @@ Model {
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.6 (R2013a) dated Jan 19 2013, 14:32:20
+#    Stateflow Version 7.6 (R2012b) dated Jul 26 2012, 22:31:44
 #
 #
 
@@ -1731,7 +1647,7 @@ Stateflow {
     created		    "14-Jan-2014 12:44:24"
     isLibrary		    0
     firstTarget		    9
-    sfVersion		    76014001.0015
+    sfVersion		    76014001.001
   }
   chart {
     id			    2
@@ -1743,10 +1659,7 @@ Stateflow {
     firstTransition	    7
     firstJunction	    6
     viewObj		    2
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
