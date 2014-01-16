@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3061"
+    ComputedModelVersion    "1.3062"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -63,7 +63,7 @@ Model {
 	  LoadSaveID		  "3271"
 	  Extents		  [1884.0, 877.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [544.00156389795245, 2.5680498608088556]
+	  Offset		  [222.00156389795245, 2.5680498608088556]
 	}
 	Object {
 	  $ObjectID		  6
@@ -72,7 +72,7 @@ Model {
 	  LoadSaveID		  "2388"
 	  Extents		  [1884.0, 877.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [20.833607739396097, 202.68360773939617]
+	  Offset		  [20.799999999999955, 202.68360773939617]
 	}
 	Object {
 	  $ObjectID		  7
@@ -120,9 +120,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Wk"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 16 14:40:18 2014"
-  RTWModifiedTimeStamp	  311717467
-  ModelVersionFormat	  "1.%<AutoIncrement:3061>"
+  LastModifiedDate	  "Thu Jan 16 20:30:24 2014"
+  RTWModifiedTimeStamp	  311804987
+  ModelVersionFormat	  "1.%<AutoIncrement:3062>"
   ConfigurationManager	  "None"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -10874,7 +10874,7 @@ Stateflow {
     name		    "Car_15_Jan_addtimerrelay_2012b"
     created		    "03-Sep-2012 14:26:53"
     isLibrary		    0
-    firstTarget		    175
+    firstTarget		    176
     debug {
       runTimeCheck	      [0 0 0 0]
       animation		      [0 0 0]
@@ -12030,10 +12030,7 @@ Stateflow {
     firstTransition	    63
     firstJunction	    62
     viewObj		    57
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    6
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12517,10 +12514,7 @@ Stateflow {
     firstTransition	    90
     firstJunction	    89
     viewObj		    83
-    visible		    1
     machine		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    8
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12676,12 +12670,12 @@ Stateflow {
     id			    92
     name		    "UAV 1/Trajectory Logic/stateflowforwholesequence"
     windowPosition	    [1912 0 1936 1096]
-    viewLimits		    [544.002 2428.002 2.568 945.568]
+    viewLimits		    [222.002 2106.002 2.568 879.568]
     zoomFactor		    1.333
     chartColor		    [1 1 1]
     screen		    [1 1 1920 1080 1.333333333333333]
     treeNode		    [0 97 0 0]
-    firstTransition	    171
+    firstTransition	    172
     viewObj		    92
     visible		    1
     machine		    1
@@ -12689,7 +12683,7 @@ Stateflow {
       y1		      5.636
       zoomFactor	      1.003
     }
-    ssIdHighWaterMark	    89
+    ssIdHighWaterMark	    90
     decomposition	    CLUSTER_CHART
     firstData		    142
     chartFileNumber	    10
@@ -13016,8 +13010,8 @@ Stateflow {
   }
   transition {
     id			    115
-    labelString		    "[Pos[2] > landing_area[2]-0.05]"
-    labelPosition	    [902.37 1035.974 166.5 17]
+    labelString		    "[Pos[2] > lz-0.05]"
+    labelPosition	    [902.37 1035.974 92 17]
     fontSize		    12
     src {
       id		      98
@@ -13334,9 +13328,9 @@ Stateflow {
   }
   transition {
     id			    128
-    labelString		    "{PosDesired = Pos;PosDesired[2] = -1.3;smooth_flag = 1;pwm = 1650;lx = Pos[0];ly = Pos[1];timere"
-    "nable = 0;}"
-    labelPosition	    [243.847 32.709 585 17]
+    labelString		    "{PosDesired = Pos;PosDesired[2] = -1.3;smooth_flag = 1;pwm = 1650;lx = Pos[0];ly = Pos[1];lz = P"
+    "os[2];timerenable = 0;}"
+    labelPosition	    [243.847 32.709 644.25 17]
     fontSize		    12
     arrowSize		    12.839
     src {
@@ -13361,7 +13355,7 @@ Stateflow {
   }
   transition {
     id			    129
-    labelString		    "after(5,sec)\n"
+    labelString		    "after(3,sec)\n"
     labelPosition	    [580.256 131.422 62.75 32]
     fontSize		    12
     arrowSize		    12.839
@@ -14248,7 +14242,7 @@ Stateflow {
     id			    170
     ssIdNumber		    83
     name		    "timerenable"
-    linkNode		    [92 169 0]
+    linkNode		    [92 169 171]
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -14262,8 +14256,24 @@ Stateflow {
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  transition {
+  data {
     id			    171
+    ssIdNumber		    90
+    name		    "lz"
+    linkNode		    [92 170 0]
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      type {
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+    }
+    dataType		    "double"
+  }
+  transition {
+    id			    172
     labelString		    "[RC[6] > 0.5]"
     labelPosition	    [436.007 880.743 81.211 17.466]
     fontSize		    14
@@ -14277,7 +14287,7 @@ Stateflow {
     }
     midPoint		    [522.6108 899.997]
     chart		    92
-    linkNode		    [92 0 172]
+    linkNode		    [92 0 173]
     dataLimits		    [520.211 525.011 845.794 946.2]
     stampAngle		    NaN
     subviewer		    92
@@ -14289,7 +14299,7 @@ Stateflow {
     ssIdNumber		    49
   }
   transition {
-    id			    172
+    id			    173
     labelString		    "[RC[6] < -0.5]"
     labelPosition	    [1080.622 904.945 86.208 17.466]
     fontSize		    14
@@ -14303,7 +14313,7 @@ Stateflow {
     }
     midPoint		    [1069.5316 891.997]
     chart		    92
-    linkNode		    [92 171 173]
+    linkNode		    [92 172 174]
     dataLimits		    [1067.132 1071.932 845.794 946.2]
     stampAngle		    NaN
     subviewer		    92
@@ -14315,7 +14325,7 @@ Stateflow {
     ssIdNumber		    50
   }
   transition {
-    id			    173
+    id			    174
     labelString		    "{HoverThrottle=0.01;}"
     labelPosition	    [34.089 1055.592 95.5 15]
     fontSize		    10
@@ -14328,7 +14338,7 @@ Stateflow {
     }
     midPoint		    [153.9325 1079.7789]
     chart		    92
-    linkNode		    [92 172 0]
+    linkNode		    [92 173 0]
     dataLimits		    [108.877 203.4 1077.504 1082.304]
     subviewer		    92
     drawStyle		    SMART
@@ -14339,22 +14349,22 @@ Stateflow {
     ssIdNumber		    51
   }
   instance {
-    id			    174
+    id			    175
     name		    "UAV 1/Trajectory Logic/stateflowforwholesequence"
     machine		    1
     chart		    92
   }
   target {
-    id			    175
+    id			    176
     name		    "sfun"
     codeFlags		    ""
     machine		    1
-    linkNode		    [1 0 176]
+    linkNode		    [1 0 177]
   }
   target {
-    id			    176
+    id			    177
     name		    "rtw"
     machine		    1
-    linkNode		    [1 175 0]
+    linkNode		    [1 176 0]
   }
 }
