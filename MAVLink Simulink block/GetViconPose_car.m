@@ -15,13 +15,13 @@ car = 1;
 % SubjectName = 'x330'; SegmentName = 'x330';
 if(uav == 1)
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('MAV1', 'MAV1');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('eagle1', 'eagle1');
 ViconPose(1) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(2) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(3) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('MAV1', 'MAV1');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('eagle1', 'eagle1');
 ViconPose(4) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(5) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
@@ -29,13 +29,13 @@ ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
 elseif(uav == 2)
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('MAV2', 'MAV2');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('eagle2', 'eagle2');
 ViconPose(1) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(2) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(3) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('MAV2', 'MAV2');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('eagle2', 'eagle2');
 ViconPose(4) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(5) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
@@ -43,13 +43,13 @@ ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
 else
 
 % X, Y, Z Global Coordinates of the Quad
-Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('MAV3', 'MAV3');
+Output_GetSegmentGlobalTranslation = MyClient.GetSegmentGlobalTranslation('eagle3', 'eagle3');
 ViconPose(1) = Output_GetSegmentGlobalTranslation.Translation(1);  % X-coordinate
 ViconPose(2) = Output_GetSegmentGlobalTranslation.Translation(2);  % Y-coordinate
 ViconPose(3) = Output_GetSegmentGlobalTranslation.Translation(3);  % Z-coordinate
 
 % Euler Angles
-QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('MAV3', 'MAV3');
+QuadEulerXYZ = MyClient.GetSegmentGlobalRotationEulerXYZ('eagle3', 'eagle3');
 ViconPose(4) = QuadEulerXYZ.Rotation(1); % Roll
 ViconPose(5) = QuadEulerXYZ.Rotation(2); % Pitch
 ViconPose(6) = QuadEulerXYZ.Rotation(3); % Yaw
