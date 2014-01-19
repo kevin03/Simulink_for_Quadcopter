@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.50"
+    ComputedModelVersion    "1.67"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -56,7 +56,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1691.0, 880.0]
 	ZoomFactor		[2.5]
-	Offset			[-25.358920768747851, -14.127520938025668]
+	Offset			[-63.199999999999989, -49.400000000000034]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "Vicon"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Wk"
+  LastModifiedBy	  "Vicon"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 16 20:56:27 2014"
-  RTWModifiedTimeStamp	  311806178
-  ModelVersionFormat	  "1.%<AutoIncrement:50>"
+  LastModifiedDate	  "Sun Jan 19 17:58:34 2014"
+  RTWModifiedTimeStamp	  312054743
+  ModelVersionFormat	  "1.%<AutoIncrement:67>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1241,8 +1241,8 @@ Model {
       }
       Name		      "Run on Hardware Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Run on Target Hardware"
-      ConfigPrmDlgPosition     [ 414, 165, 1506, 871 ] 
+      CurrentDlgPage	      "Simulation Target"
+      ConfigPrmDlgPosition     [ 406, 126, 1514, 870 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1330,6 +1330,13 @@ Model {
       Outputs		      "4"
       DisplayOption	      "none"
       BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Inport
@@ -1422,13 +1429,14 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "250"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "25"
+    SIDHighWatermark	    "33"
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "18"
       Position		      [110, 155, 140, 185]
       ZOrder		      18
+      SampleTime	      "1"
     }
     Block {
       BlockType		      Constant
@@ -1437,6 +1445,17 @@ Model {
       Position		      [110, 250, 140, 280]
       ZOrder		      19
       Value		      "0"
+      SampleTime	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      SID		      "33"
+      Ports		      [1]
+      Position		      [380, 4, 500, 176]
+      ZOrder		      30
+      Decimation	      "1"
+      Lockdown		      off
     }
     Block {
       BlockType		      SubSystem
@@ -1566,23 +1585,22 @@ Model {
       SID		      "20"
       Position		      [190, 207, 220, 243]
       ZOrder		      20
-      CurrentSetting	      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Serial Configuration"
-      SID		      "22"
+      SID		      "32"
       Ports		      []
       Position		      [15, 15, 125, 61]
-      ZOrder		      22
+      ZOrder		      29
       Priority		      "-200000"
       LibraryVersion	      "1.84"
       SourceBlock	      "instrumentlib/Serial Configuration"
       SourceType	      "Serial Configuration"
-      ComPortMenu	      "<Please select a port...>"
-      ComPort		      "COM2"
-      ObjConstructor	      "serial('COM2');"
-      BaudRate		      "57600"
+      ComPortMenu	      "COM21"
+      ComPort		      "COM21"
+      ObjConstructor	      "serial('COM21');"
+      BaudRate		      "9600"
       DataBits		      "8"
       Parity		      "none"
       StopBits		      "1"
@@ -1593,24 +1611,18 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Serial Send"
-      SID		      "21"
+      SID		      "31"
       Ports		      [1]
       Position		      [385, 207, 495, 253]
-      ZOrder		      21
+      ZOrder		      28
       LibraryVersion	      "1.84"
       SourceBlock	      "instrumentlib/Serial Send"
       SourceType	      "Serial Send"
-      ComPortMenu	      "<Please select a port...>"
-      ComPort		      "COM2"
-      ObjConstructor	      "serial('COM2');"
+      ComPortMenu	      "COM21"
+      ComPort		      "COM21"
+      ObjConstructor	      "serial('COM21');"
       Terminator	      "<none>"
       EnableBlockingMode      on
-    }
-    Line {
-      SrcBlock		      "MATLAB Function"
-      SrcPort		      1
-      DstBlock		      "Serial Send"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Manual Switch"
@@ -1632,6 +1644,20 @@ Model {
       Points		      [13, 0; 0, -30]
       DstBlock		      "Manual Switch"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "MATLAB Function"
+      SrcPort		      1
+      Points		      [13, 0]
+      Branch {
+	Points			[0, -140]
+	DstBlock		"Display"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Serial Send"
+	DstPort			1
+      }
     }
   }
 }
@@ -1689,7 +1715,7 @@ Stateflow {
     eml {
       isEML		      1
       script		      "function y = fcn(u)\n%#codegen\n%transmit_packet = zeros(1,1);\nif u == 0\ntransmit_packet='OFFRE"
-      "LAYT';\ny = int8(transmit_packet);\n\nelse\ntransmit_packet=' ONHAHAHT';\ny = int8(transmit_packet);\nend"
+      "LAY';\ny = int8(transmit_packet);\n\nelse\ntransmit_packet=' ONHAHAH';\ny = int8(transmit_packet);\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
