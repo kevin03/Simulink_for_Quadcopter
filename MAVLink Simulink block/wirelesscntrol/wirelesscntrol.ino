@@ -23,12 +23,19 @@ void loop()
     ch6 = pulseIn(10, HIGH, 25000);
     ch5 = pulseIn(11, HIGH, 25000);
 if(ch6<1500)
-{digitalWrite(relay, HIGH);}
+{digitalWrite(relay, HIGH);
+ digitalWrite(green, LOW);
+ //digitalWrite(red, LOW);
+ digitalWrite(blue, HIGH);
+ }
 
 if(ch6>1500)
 {
 delay(3000);
   digitalWrite(relay, LOW);
+  digitalWrite(green, HIGH);
+ //digitalWrite(red, LOW);
+ digitalWrite(blue, LOW);
 }
 
   delay(100);

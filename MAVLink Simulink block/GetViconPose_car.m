@@ -7,7 +7,7 @@ while (MyClient.GetFrame().Result.Value) ~= (Result.Success)
 end 
 
 uav = 2;
-car = 1;
+car = 2;
 
 % *********************************
 % x330
