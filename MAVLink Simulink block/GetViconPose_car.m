@@ -6,8 +6,8 @@ while (MyClient.GetFrame().Result.Value) ~= (Result.Success)
 	fprintf( '.' );
 end 
 
-uav = 1;
-car = 3;
+uav = 3;
+car = 1;
 
 % *********************************
 % x330
