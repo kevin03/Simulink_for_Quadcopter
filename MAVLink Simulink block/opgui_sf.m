@@ -28,6 +28,7 @@ sys = simsizes(sizes);
 x0  = [0];
 str = [];
 ts  = [Ts 0];
+
 OpGUI;
 
 function sys=mdlUpdate(t,x,u,Ts)
