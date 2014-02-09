@@ -31,6 +31,8 @@ ts  = [Ts 0];
 
 OpGUI;
 
+
+
 function sys=mdlUpdate(t,x,u,Ts)
 fig = get_param(gcbh,'UserData');
 sys=x;
